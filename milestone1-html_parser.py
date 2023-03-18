@@ -1,0 +1,223 @@
+"""
+This .py file scrapes the allrecipes website using python's beautiful soup, requests, and regex libraries for
+various data points. The parameters we are collecting are Recipe Title, Ingredients, recipe details (Prep Time,
+Cook Time, etc.), Number of Reviews, Recipe Rating, Nutrition Facts, Date published, and
+Recipe Category (e.g. Main Dish, Breakfast).
+"""
+# import libraries
+from bs4 import BeautifulSoup
+import requests
+import re
+
+
+# index link for allrecipes.com
+SOURCE = "https://www.allrecipes.com/recipes-a-z-6735880"
+
+
+def get_index_links(main_index_link):  # ADDED INDEX FOR TESTS !!!!! Remove to start data mining !!!!!!!
+    """
+    Receives the source url and pulls the highest level urls from the index page.
+    :param: str: url
+    :return: list: urls
+    """
+    response = requests.get(main_index_link).text
+    soup = BeautifulSoup(response, features="html.parser")
+    a_tags = soup.find_all('a', class_='link-list__link')
+    index_links = [a_tag['href'] for a_tag in a_tags]
+    return index_links[0:2]
+
+
+def get_recipe_links(index_link):
+    """
+    Receives a link from the index_links and scrapes all the recipe urls from that page.
+    :param: str: url
+    :return: list: urls
+    """
+    response = requests.get(index_link).text
+    soup = BeautifulSoup(response, features="html.parser")
+    top_link_tags = soup.find_all('a', {
+        'class': 'comp card--image-top mntl-card-list-items mntl-document-card mntl-card card card--no-image'})
+    top_links = [attr['href'] for attr in top_link_tags]
+    bottom_link_tags = soup.find_all('a', class_='comp mntl-card-list-items mntl-document-card mntl-card card '
+                                                 'card--no-image')
+    bottom_links = [attr['href'] for attr in bottom_link_tags]
+    recipe_links = top_links + bottom_links
+    return recipe_links
+
+
+def get_all_links(index_links):
+    """
+    Receives a list of the urls from the index page and calls the get_recipe function on each of them
+    to scrape the recipe urls from all pages. Returns a list of all recipe links.
+    :param: list: index links
+    :return: list: urls
+    """
+    all_links = []
+    for link in index_links:
+        all_links.extend(get_recipe_links(link))
+    return all_links
+
+
+def parser(link):
+    """
+    This function will provide the BeautifulSoup object for the scraping functions called on each recipe link.
+    :param: str: link str
+    :return: BeautifulSoup object
+    """
+    response = requests.get(link).text
+    soup = BeautifulSoup(response, features="html.parser")
+    return soup
+
+
+def get_title(soup):
+    """
+    Scrapes the title from each recipe page.
+    :param: BeautifulSoup object
+    :return: str: recipe title
+    """
+    title = soup.title.string
+    return title
+
+
+def get_ingredients(soup):
+    """
+    Scrapes the ingredients, returns a list of strings with each ingredient and its quantity.
+    :param: BeautifulSoup object
+    :return: list: ingredients
+    """
+    ingredients = []
+    p_tags = soup.find_all("ul", class_="mntl-structured-ingredients__list")
+    for p in p_tags:
+        ingredients.append(p.text.strip())
+    if len(ingredients) == 0:  # accounts for non-recipe web pages
+        return ingredients
+    ingredients = ''.join(ingredients).replace('\n\n\n', ' ?').split('?')
+    return ingredients
+
+
+def get_recipe_details(soup):
+    """
+    Scrapes the recipe details (e.g., "Prep Time", "Cook Time", etc.) and returns then as a dictionary.
+    :param: BeautifulSoup object
+    :return: dict: recipe_details
+    """
+    grid_elements = soup.find('div', class_='mntl-recipe-details__content').find_all('div',
+                                                                                     class_='mntl-recipe-details__label')
+    recipe_details = {}
+    for element in grid_elements:
+        label = element.text.strip()
+        data = element.find_next_sibling(class_="mntl-recipe-details__value").text.strip()
+        recipe_details[label] = data
+    return recipe_details
+
+
+def get_num_reviews(soup):
+    """
+    Returns the number of reviews on each recipe as an integer.
+    :param: BeautifulSoup object
+    :return: str: number of reviews
+    """
+    num_reviews_elem = soup.find('div', {'id': 'mntl-recipe-review-bar__comment-count_1-0'}).text
+    if any(char.isdigit() for char in num_reviews_elem):
+        num_reviews = "".join([i for i in num_reviews_elem if i.isnumeric()])
+    else:
+        num_reviews = "0"  # for web pages that have no reviews yet
+    return num_reviews
+
+
+def get_rating(soup):
+    """
+    Returns the rating of the recipe as a float.
+    :param: BeautifulSoup object
+    :return: float: recipe rating
+    """
+    rating_elem = soup.find('div', {'id': 'mntl-recipe-review-bar__rating_1-0'})
+    if rating_elem:
+        rating_elem_text = rating_elem.text.strip()
+        rating = float(re.search(r'\d+.\d+', rating_elem_text).group())
+    else:
+        rating = None  # for web pages that have no ratings yet
+    return rating
+
+
+def get_nutrition_facts(soup):
+    """
+    Extracts nutrition facts for each recipe and stores then in a dictionary.
+    :param: BeautifulSoup object
+    :return: dict: nutrition facts
+    """
+    nutrition_table = soup.find('table', class_='mntl-nutrition-facts-summary__table')
+    nutrition_facts = {}
+    for row in nutrition_table.find_all('tr'):
+        cells = row.find_all('td')
+        if len(cells) == 2:
+            key = cells[0].text.strip().lower()
+            value = cells[1].text.strip()
+            nutrition_facts[value] = key
+    return nutrition_facts
+
+
+def get_date_published(soup):
+    """
+    Extracts the date that the recipe was published on allrecipes.com
+    :param: BeautifulSoup object
+    :return: str: date published
+    """
+    date_elem = soup.find('div', class_='mntl-attribution__item-date')
+    date_published = date_elem.text.strip().replace('Updated on ', '').split()
+    date_published = " ".join(date_published[2:])  # returns only the date without "published on"
+    return date_published
+
+
+def get_categories(soup):
+    """
+    Gets the categories of the recipe (e.g. breakfast, main dish, vegan) and returns them as a list of strings.
+    :param: BeautifulSoup object
+    :return: list: categories
+    """
+    breadcrumb = soup.find('ul', class_='mntl-breadcrumbs')
+    categories = [elem.text.strip() for elem in breadcrumb.find_all('li')]
+    return categories
+
+
+def main():
+    """
+    Takes in the index link for allrecipes.com to begin scraping the site. Iterates over
+    all recipe links and calls scraping functions on each of them. Iteration will skip over non-recipe web pages.
+    :return: None: prints to console
+    """
+
+    index_links = get_index_links(SOURCE)
+    all_links = get_all_links(index_links)
+    count = 0
+
+    for link in all_links:
+        soup = parser(link)
+        ingredients = get_ingredients(soup)
+
+        # to avoid scraping web pages that aren't recipes
+        if len(ingredients) == 0:
+            continue
+
+        title = get_title(soup)
+        print(f'Recipe: {title}')
+        print(f'Ingredients: {ingredients}')
+        recipe_details = get_recipe_details(soup)
+        print(f'Recipe details: {recipe_details}')
+        num_reviews = get_num_reviews(soup)
+        print(f'Number of reviews: {num_reviews}')
+        rating = get_rating(soup)
+        print(f'Rating: {rating}')
+        nutrition_facts = get_nutrition_facts(soup)
+        print(f'Nutritional facts: {nutrition_facts}')
+        date_published = get_date_published(soup)
+        print(f'Publish date: {date_published}')
+        categories = get_categories(soup)
+        print(f'Categories: {categories}')
+
+        count += 1
+        print(f"Scraped recipe number {count}\n")
+
+
+if __name__ == '__main__':
+    main()
