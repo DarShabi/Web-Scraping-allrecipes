@@ -8,7 +8,7 @@ Recipe Category (e.g. Main Dish, Breakfast).
 from bs4 import BeautifulSoup
 import requests
 import re
-
+import logging
 
 SOURCE = "https://www.allrecipes.com/recipes-a-z-6735880"
 
@@ -54,6 +54,7 @@ def get_all_links(index_links):
     all_links = []
     for link in index_links:
         all_links.extend(get_recipe_links(link))
+        logging.info(f'Links from: {link}  retrieved')
     return all_links
 
 
@@ -186,34 +187,43 @@ def main():
     :return: None: prints to console
     """
 
+    # Set up logging configuration
+    logging.basicConfig(
+        filename='logging_info.log',
+        filemode='w',
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        level=logging.INFO
+    )
+
     index_links = get_index_links(SOURCE)
     all_links = get_all_links(index_links)
     count = 1
+    with open('scraping.log', 'w+') as output_file:
+        for link in all_links:
+            soup = parser(link)
+            ingredients = get_ingredients(soup)
 
-    for link in all_links:
-        soup = parser(link)
-        ingredients = get_ingredients(soup)
+            # to avoid scraping web pages that aren't recipes
+            if len(ingredients) == 0:
+                continue
 
-        # to avoid scraping web pages that aren't recipes
-        if len(ingredients) == 0:
-            continue
+            # call each scraping method
+            title = get_title(soup)
+            recipe_details = get_recipe_details(soup)
+            num_reviews = get_num_reviews(soup)
+            rating = get_rating(soup)
+            nutrition_facts = get_nutrition_facts(soup)
+            date_published = get_date_published(soup)
+            categories = get_categories(soup)
 
-        # call each scraping method
-        title = get_title(soup)
-        recipe_details = get_recipe_details(soup)
-        num_reviews = get_num_reviews(soup)
-        rating = get_rating(soup)
-        nutrition_facts = get_nutrition_facts(soup)
-        date_published = get_date_published(soup)
-        categories = get_categories(soup)
+            output_file.write(f'\nRecipe: {title}\nIngredients: {ingredients}\nRecipe details: {recipe_details}\n'
+                           f'Number of reviews: {num_reviews}\nRating: {rating}\nNutritional facts: {nutrition_facts}\n'
+                           f'Publish date: {date_published}\nCategories: {categories}\n')
 
-        print(f'Recipe: {title}\nIngredients: {ingredients}\nRecipe details: {recipe_details}\n'
-              f'Number of reviews: {num_reviews}\nRating: {rating}\nNutritional facts: {nutrition_facts}\n'
-              f'Publish date: {date_published}\nCategories: {categories}')
-
-        # logging info
-        print(f"Scraped recipe number {count}\n")
-        count += 1
+            # logging info
+            logging.info(f'Scraped recipe number: {count}\n')
+            print(f'Scraping recipe number {count}...')
+            count += 1
 
 
 if __name__ == '__main__':
