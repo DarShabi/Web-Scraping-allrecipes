@@ -80,7 +80,8 @@ def get_title(soup):
 
 def get_ingredients(soup):
     """
-    Scrapes the ingredients, returns a list of strings with each ingredient and its quantity.
+    Scrapes the ingredients, returns a list of strings with each ingredient and its quantity. To filter out
+    non-recipe web pages, if there are no ingredients listed, will just return an empty list.
     :param: BeautifulSoup object
     :return: list: ingredients
     """
@@ -126,9 +127,10 @@ def get_num_reviews(soup):
 
 def get_rating(soup):
     """
-    Returns the rating of the recipe as a float.
+    Returns the rating of the recipe as a float. If there are no reviews on the recipe, will
+    return the rating as NoneType object.
     :param: BeautifulSoup object
-    :return: float: recipe rating
+    :return: float: recipe rating or None
     """
     rating_elem = soup.find('div', {'id': 'mntl-recipe-review-bar__rating_1-0'})
     if rating_elem:
