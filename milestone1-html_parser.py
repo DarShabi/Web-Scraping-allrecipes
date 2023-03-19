@@ -10,7 +10,6 @@ import requests
 import re
 
 
-# index link for allrecipes.com
 SOURCE = "https://www.allrecipes.com/recipes-a-z-6735880"
 
 
@@ -89,7 +88,7 @@ def get_ingredients(soup):
     p_tags = soup.find_all("ul", class_="mntl-structured-ingredients__list")
     for p in p_tags:
         ingredients.append(p.text.strip())
-    if len(ingredients) == 0:  # accounts for non-recipe web pages
+    if len(ingredients) == 0:
         return ingredients
     ingredients = ''.join(ingredients).replace('\n\n\n', ' ?').split('?')
     return ingredients
@@ -121,7 +120,7 @@ def get_num_reviews(soup):
     if any(char.isdigit() for char in num_reviews_elem):
         num_reviews = "".join([i for i in num_reviews_elem if i.isnumeric()])
     else:
-        num_reviews = "0"  # for web pages that have no reviews yet
+        num_reviews = "0"  # should we make this a global constant?
     return num_reviews
 
 
@@ -136,7 +135,7 @@ def get_rating(soup):
         rating_elem_text = rating_elem.text.strip()
         rating = float(re.search(r'\d+.\d+', rating_elem_text).group())
     else:
-        rating = None  # for web pages that have no ratings yet
+        rating = None
     return rating
 
 
@@ -165,7 +164,7 @@ def get_date_published(soup):
     """
     date_elem = soup.find('div', class_='mntl-attribution__item-date')
     date_published = date_elem.text.strip().replace('Updated on ', '').split()
-    date_published = " ".join(date_published[2:])  # returns only the date without "published on"
+    date_published = " ".join(date_published[2:])
     return date_published
 
 
@@ -189,7 +188,7 @@ def main():
 
     index_links = get_index_links(SOURCE)
     all_links = get_all_links(index_links)
-    count = 0
+    count = 1
 
     for link in all_links:
         soup = parser(link)
@@ -199,24 +198,22 @@ def main():
         if len(ingredients) == 0:
             continue
 
+        # call each scraping method
         title = get_title(soup)
-        print(f'Recipe: {title}')
-        print(f'Ingredients: {ingredients}')
         recipe_details = get_recipe_details(soup)
-        print(f'Recipe details: {recipe_details}')
         num_reviews = get_num_reviews(soup)
-        print(f'Number of reviews: {num_reviews}')
         rating = get_rating(soup)
-        print(f'Rating: {rating}')
         nutrition_facts = get_nutrition_facts(soup)
-        print(f'Nutritional facts: {nutrition_facts}')
         date_published = get_date_published(soup)
-        print(f'Publish date: {date_published}')
         categories = get_categories(soup)
-        print(f'Categories: {categories}')
 
-        count += 1
+        print(f'Recipe: {title}\nIngredients: {ingredients}\nRecipe details: {recipe_details}\n'
+              f'Number of reviews: {num_reviews}\nRating: {rating}\nNutritional facts: {nutrition_facts}\n'
+              f'Publish date: {date_published}\nCategories: {categories}')
+
+        # logging info
         print(f"Scraped recipe number {count}\n")
+        count += 1
 
 
 if __name__ == '__main__':
