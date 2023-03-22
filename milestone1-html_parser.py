@@ -188,7 +188,6 @@ def main():
     """
     Takes in the index link for allrecipes.com to begin scraping the site. Iterates over
     all recipe links and calls scraping functions on each of them. Iteration will skip over non-recipe web pages.
-    :param args: argparse Namespace object
     :return: None: prints to console
     """
 
