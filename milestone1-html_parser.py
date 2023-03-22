@@ -188,7 +188,7 @@ def main():
     """
     Takes in the index link for allrecipes.com to begin scraping the site. Iterates over
     all recipe links and calls scraping functions on each of them. Iteration will skip over non-recipe web pages.
-    :return: None: prints to console
+    :return: None: writes output to scraping.log file
     """
 
     # Set up logging configuration
