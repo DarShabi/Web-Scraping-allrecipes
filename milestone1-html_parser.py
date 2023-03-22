@@ -60,7 +60,7 @@ def get_all_links(index_links):
     return all_links
 
 
-def make_soup(link): # func name changed to avoid confusion with argparse
+def make_soup(link): ## func name changed to avoid confusion with argparse
     """
     This function will provide the BeautifulSoup object for the scraping functions called on each recipe link.
     :param: str: link str
