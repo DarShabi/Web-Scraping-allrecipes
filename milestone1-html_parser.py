@@ -184,6 +184,17 @@ def get_categories(soup):
     return categories
 
 
+## For the --all argument: function to check if any other arguments are provided
+def has_other_args(args):
+    """
+    Check if any other argument is provided alongside the 'all' flag.
+    :param args: argparse.Namespace object containing the arguments
+    :return: bool: True if any other argument is provided, False otherwise
+    """
+    return any([args.title, args.ingredients, args.details, args.reviews, args.rating, args.nutrition,
+                args.published, args.category])
+
+
 def main():
     """
     Takes in the index link for allrecipes.com to begin scraping the site. Iterates over
@@ -213,6 +224,7 @@ def main():
     parser.add_argument('--nutrition', action='store_true', help='Scrape nutrition facts')
     parser.add_argument('--published', action='store_true', help='Scrape publish date')
     parser.add_argument('--category', action='store_true', help='Scrape recipe category')
+    parser.add_argument('--all', action='store_true', help='Scrape all available data')
 
     ## use parse_known_args() instead of parse_args()
     args, unknown_args = parser.parse_known_args()
@@ -237,6 +249,17 @@ def main():
         logging.info(f'Unrecognized arguments: {unknown_args}')
         print(f'\nUnrecognized arguments: {unknown_args}')
         exit()
+
+    ## Check if --all is provided with other arguments
+    if args.all and has_other_args(args):
+        parser.print_help()
+        logging.info(f'--all argument should not be used with other arguments')
+        print('\n--all argument should not be used with other arguments.')
+        exit()
+
+    ## If user chooses to scrape all avaiable data
+    if args.all:
+        args.title = args.ingredients = args.details = args.reviews = args.rating = args.nutrition = args.published = args.category = True
 
     count = 1
     with open('scraping.log', 'w+') as output_file:
@@ -266,6 +289,7 @@ def main():
                 scraped_data['published'] = get_date_published(soup)
             if args.category:
                 scraped_data['category'] = get_categories(soup)
+
 
             # write scraped data to output file
             output_file.write(f'\nRecipe {count}:\n')
