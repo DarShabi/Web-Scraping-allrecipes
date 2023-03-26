@@ -15,7 +15,7 @@ import sys
 SOURCE = "https://www.allrecipes.com/recipes-a-z-6735880"
 
 
-def get_index_links(main_index_link):  # ADDED INDEX FOR TESTS !!!!! Remove to start data mining !!!!!!!
+def get_index_links(main_index_link):  # ADDED INDEX FOR TESTS !!!! Remove to start data mining !!!!!!!
     """
     Receives the source url and pulls the highest level urls from the index page.
     :param: str: url
