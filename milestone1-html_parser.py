@@ -104,8 +104,8 @@ def get_recipe_details(soup):
     :param: BeautifulSoup object
     :return: dict: recipe_details
     """
-    grid_elements = soup.find('div', class_='mntl-recipe-details__content').find_all('div',
-                                                                                     class_='mntl-recipe-details__label')
+    grid_elements = soup.find('div', class_='mntl-recipe-details__content')\
+                        .find_all('div', class_='mntl-recipe-details__label')
     recipe_details = {}
     for element in grid_elements:
         label = element.text.strip()
@@ -223,6 +223,7 @@ def main():
     parser.add_argument('--nutrition', action='store_true', help='Scrape nutrition facts')
     parser.add_argument('--published', action='store_true', help='Scrape publish date')
     parser.add_argument('--category', action='store_true', help='Scrape recipe category')
+    parser.add_argument('--link', action='store_true', help='Get the link to the recipe')
     parser.add_argument('--all', action='store_true', help='Scrape all available data')
 
     # Use parse_known_args() instead of parse_args()
@@ -236,7 +237,7 @@ def main():
         exit()
 
     # Check if too many arguments were passed
-    elif len(sys.argv) > 9:
+    elif len(sys.argv) > 10:
         parser.print_help()
         logging.info(f'Too many arguments')
         print('\ntoo many arguments were passed.')
@@ -256,9 +257,10 @@ def main():
         print('\n--all argument should not be used with other arguments.')
         exit()
 
-    # If user chooses to scrape all avaiable data
+    # If user chooses to scrape all available data
     if args.all:
-        args.title = args.ingredients = args.details = args.reviews = args.rating = args.nutrition = args.published = args.category = True
+        args.title = args.ingredients = args.details = args.reviews = args.rating = args.nutrition = \
+            args.published = args.category = args.link = True
 
     count = 1
     with open('scraping.log', 'w+') as output_file:
@@ -288,6 +290,8 @@ def main():
                 scraped_data['published'] = get_date_published(soup)
             if args.category:
                 scraped_data['category'] = get_categories(soup)
+            if args.link:
+                scraped_data['Link'] = link
 
             # write scraped data to output file
             output_file.write(f'\nRecipe {count}:\n')
