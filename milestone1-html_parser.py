@@ -192,7 +192,7 @@ def has_other_args(args):
     :return: bool: True if any other argument is provided, False otherwise
     """
     return any([args.title, args.ingredients, args.details, args.reviews, args.rating, args.nutrition,
-                args.published, args.category])
+                args.published, args.category, args.link])
 
 
 def main():
