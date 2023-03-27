@@ -2,10 +2,10 @@
 Recipe 1:
 Title: Air Fryer Lemon Pepper Roasted Cashews Recipe
 Ingredients: ['1 cup raw cashews ', '1 tablespoon olive oil ', '½ teaspoon lemon-pepper seasoning ', '½ teaspoon garlic powder ', '½ teaspoon salt']
-Details: {'Prep Time:': '3 mins', 'Cook Time:': '7 mins', 'Total Time:': '10 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 3, 'Cook Time:': 7, 'Total Time:': 10, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '219', 'Fat': '18g', 'Carbs': '11g', 'Protein': '6g'}
+Nutrition: {'Calories': 219, 'Fat': 18, 'Carbs': 11, 'Protein': 6}
 Published: February 15, 2023
 Category: ['Recipes', 'Appetizers and Snacks', 'Snacks']
 Link: https://www.allrecipes.com/recipe/8525657/air-fryer-lemon-pepper-roasted-cashews/
@@ -14,10 +14,10 @@ Link: https://www.allrecipes.com/recipe/8525657/air-fryer-lemon-pepper-roasted-c
 Recipe 2:
 Title: Air Fryer Pretzel Crescent Rolls Recipe
 Ingredients: ['1 quart water ', '¼ cup baking soda ', '1 (8 ounce) package refrigerated crescent roll dough ', '  pretzel salt ', '  cooking spray']
-Details: {'Prep Time:': '5 mins', 'Total Time:': '5 mins', 'Servings:': '8'}
+Details: {'Prep Time:': 5, 'Total Time:': 5, 'Servings:': 8}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '110', 'Fat': '6g', 'Carbs': '11g', 'Protein': '2g'}
+Nutrition: {'Calories': 110, 'Fat': 6, 'Carbs': 11, 'Protein': 2}
 Published: February 11, 2023
 Category: ['Recipes', 'Bread', 'Yeast Bread Recipes', 'Pretzel Recipes']
 Link: https://www.allrecipes.com/recipe/8537838/air-fryer-pretzel-crescent-rolls/
@@ -26,10 +26,10 @@ Link: https://www.allrecipes.com/recipe/8537838/air-fryer-pretzel-crescent-rolls
 Recipe 3:
 Title: Air Fryer Crispy Cajun Black-Eyed Peas Recipe
 Ingredients: ['1 (14.5 ounce) can black-eyed peas, rinsed and drained ', '1 tablespoon olive oil ', '1 ½ teaspoons Cajun seasoning (such as Old Bay®)']
-Details: {'Prep Time:': '4 mins', 'Cook Time:': '14 mins', 'Total Time:': '18 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 4, 'Cook Time:': 14, 'Total Time:': 18, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '111', 'Fat': '4g', 'Carbs': '14g', 'Protein': '5g'}
+Nutrition: {'Calories': 111, 'Fat': 4, 'Carbs': 14, 'Protein': 5}
 Published: February 8, 2023
 Category: ['Everyday Cooking', 'Cookware and Equipment', 'Air Fryer', 'Appetizers and Snacks']
 Link: https://www.allrecipes.com/recipe/8532490/air-fryer-crispy-cajun-black-eyed-peas/
@@ -38,10 +38,10 @@ Link: https://www.allrecipes.com/recipe/8532490/air-fryer-crispy-cajun-black-eye
 Recipe 4:
 Title: Quick Air Fryer Tilapia Recipe
 Ingredients: ['olive oil cooking spray ', '2 tablespoons all-purpose flour ', '1 ½ teaspoons seafood seasoning (such as Old Bay®) ', '¾ teaspoon paprika ', '½ teaspoon garlic powder ', '  salt and freshly ground black pepper to taste ', '1 pound tilapia fillets, thawed if frozen ', '  4 lemon slices']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '8 mins', 'Total Time:': '18 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 8, 'Total Time:': 18, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '132', 'Fat': '2g', 'Carbs': '4g', 'Protein': '24g'}
+Nutrition: {'Calories': 132, 'Fat': 2, 'Carbs': 4, 'Protein': 24}
 Published: February 2, 2023
 Category: ['Recipes', 'Seafood', 'Fish', 'Tilapia']
 Link: https://www.allrecipes.com/recipe/8532969/quick-air-fryer-tilapia/
@@ -50,10 +50,10 @@ Link: https://www.allrecipes.com/recipe/8532969/quick-air-fryer-tilapia/
 Recipe 5:
 Title: Air Fryer Tajin Chickpeas Recipe
 Ingredients: ['1 (15.5 ounce) can chickpeas, drained and rinsed ', '¾ tablespoon avocado oil ', '2 teaspoons chili-lime seasoning (such as Tajin®) ', '¼ teaspoon garlic powder ', '1 pinch cayenne pepper, or to taste ', '  salt to taste']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '15 mins', 'Total Time:': '25 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 15, 'Total Time:': 25, 'Servings:': 4}
 Reviews: 0
 Rating: 5.0
-Nutrition: {'Calories': '155', 'Fat': '4g', 'Carbs': '25g', 'Protein': '6g'}
+Nutrition: {'Calories': 155, 'Fat': 4, 'Carbs': 25, 'Protein': 6}
 Published: January 25, 2023
 Category: ['Recipes', 'Fruits and Vegetables', 'Beans and Peas', 'Garbanzo Beans']
 Link: https://www.allrecipes.com/recipe/8529798/air-fryer-chickpeas/
@@ -62,10 +62,10 @@ Link: https://www.allrecipes.com/recipe/8529798/air-fryer-chickpeas/
 Recipe 6:
 Title: Air Fryer Loaded Mashed Potato Cakes Recipe
 Ingredients: ['2 cups cold mashed potatoes ', '1 cup shredded Cheddar cheese ', '3  green onions, chopped ', '¼ cup real bacon bits ', '2 tablespoons all-purpose flour ', '1 small egg, beaten']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '12 mins', 'Freeze Time:': '10 mins', 'Total Time:': '32 mins', 'Servings:': '6', 'Yield:': '6 potato cakes'}
+Details: {'Prep Time:': 10, 'Cook Time:': 12, 'Freeze Time:': 10, 'Total Time:': 32, 'Servings:': 6, 'Yield:': '6 potato cakes'}
 Reviews: 1
 Rating: 5.0
-Nutrition: {'Calories': '171', 'Fat': '8g', 'Carbs': '15g', 'Protein': '9g'}
+Nutrition: {'Calories': 171, 'Fat': 8, 'Carbs': 15, 'Protein': 9}
 Published: January 24, 2023
 Category: ['Recipes', 'Side Dish', 'Potato']
 Link: https://www.allrecipes.com/recipe/8527072/air-fryer-loaded-mashed-potato-cakes/
@@ -74,10 +74,10 @@ Link: https://www.allrecipes.com/recipe/8527072/air-fryer-loaded-mashed-potato-c
 Recipe 7:
 Title: Air Fryer Chicken Bites with Parmesan Cheese Recipe
 Ingredients: ['2 teaspoons olive oil ', '2 teaspoons Worcestershire sauce ', '1 teaspoon dried Italian seasoning ', '½ teaspoon garlic powder ', '¼ teaspoon salt ', '⅛ teaspoon freshly ground black pepper ', '1 pound skinless, boneless chicken breast, cut into 1-inch cubes ', '2 tablespoons all-purpose flour ', '  cooking spray ', '¼ cup shredded Parmesan cheese ', '2 tablespoons chopped fresh parsley']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '18 mins', 'Total Time:': '28 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 18, 'Total Time:': 28, 'Servings:': 4}
 Reviews: 2
 Rating: 5.0
-Nutrition: {'Calories': '187', 'Fat': '5g', 'Carbs': '4g', 'Protein': '29g'}
+Nutrition: {'Calories': 187, 'Fat': 5, 'Carbs': 4, 'Protein': 29}
 Published: September 13, 2022
 Category: ['Recipes', 'Appetizers and Snacks', 'Meat and Poultry', 'Chicken']
 Link: https://www.allrecipes.com/recipe/8457744/air-fryer-chicken-bites-with-parmesan-cheese/
@@ -86,10 +86,10 @@ Link: https://www.allrecipes.com/recipe/8457744/air-fryer-chicken-bites-with-par
 Recipe 8:
 Title: Air Fryer Mini Croissants with Nutella and Jam
 Ingredients: ['1 sheet frozen puff pastry, thawed ', '1 large egg ', '1 tablespoon water ', '8 teaspoons chocolate-hazelnut spread (such as Nutella®) ', '4 teaspoons strawberry jam ', '1 teaspoon cinnamon sugar, or as needed']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '14 mins', 'Total Time:': '29 mins', 'Servings:': '8', 'Yield:': '8 mini croissants'}
+Details: {'Prep Time:': 15, 'Cook Time:': 14, 'Total Time:': 29, 'Servings:': 8, 'Yield:': '8 mini croissants'}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '211', 'Fat': '14g', 'Carbs': '19g', 'Protein': '3g'}
+Nutrition: {'Calories': 211, 'Fat': 14, 'Carbs': 19, 'Protein': 3}
 Published: September 14, 2022
 Category: ['Recipes', 'Breakfast and Brunch']
 Link: https://www.allrecipes.com/recipe/8457748/air-fryer-mini-croissants-with-nutella-and-jam/
@@ -98,10 +98,10 @@ Link: https://www.allrecipes.com/recipe/8457748/air-fryer-mini-croissants-with-n
 Recipe 9:
 Title: Air Fryer Croissants with Cherries and Cream Cheese Recipe
 Ingredients: ['flour for dusting ', '1 (8 ounce) package refrigerated crescent roll dough (such as Pillsbury® ', '1 (8 ounce) tub cream cheese ', '1 (15 ounce) can pitted sour cherries, drained ', '  cooking spray ', '  ground cinnamon to taste']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '5 mins', 'Total Time:': '15 mins', 'Servings:': '8', 'Yield:': '8 croissants'}
+Details: {'Prep Time:': 10, 'Cook Time:': 5, 'Total Time:': 15, 'Servings:': 8, 'Yield:': '8 croissants'}
 Reviews: 1
 Rating: 4.6
-Nutrition: {'Calories': '227', 'Fat': '16g', 'Carbs': '16g', 'Protein': '5g'}
+Nutrition: {'Calories': 227, 'Fat': 16, 'Carbs': 16, 'Protein': 5}
 Published: August 31, 2022
 Category: ['Recipes', 'Bread', 'Pastries']
 Link: https://www.allrecipes.com/recipe/8458926/air-fryer-cherry-cream-cheese-croissants/
@@ -110,10 +110,10 @@ Link: https://www.allrecipes.com/recipe/8458926/air-fryer-cherry-cream-cheese-cr
 Recipe 10:
 Title: Air Fryer Halloumi Cheese Recipe
 Ingredients: ['8 ounces halloumi cheese ', '2 teaspoons olive oil ', '  cooking spray']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '7 mins', 'Total Time:': '17 mins', 'Servings:': '12', 'Yield:': '12 slices halloumi'}
+Details: {'Prep Time:': 10, 'Cook Time:': 7, 'Total Time:': 17, 'Servings:': 12, 'Yield:': '12 slices halloumi'}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '66', 'Fat': '6g', 'Carbs': '1g', 'Protein': '4g'}
+Nutrition: {'Calories': 66, 'Fat': 6, 'Carbs': 1, 'Protein': 4}
 Published: August 24, 2022
 Category: ['Recipes', 'Appetizers and Snacks', 'Cheese']
 Link: https://www.allrecipes.com/recipe/8462063/air-fryer-halloumi-cheese/
@@ -122,10 +122,10 @@ Link: https://www.allrecipes.com/recipe/8462063/air-fryer-halloumi-cheese/
 Recipe 11:
 Title: Air Fryer Ranch Chicken Bites Recipe
 Ingredients: ['1 pound boneless, skinless chicken thighs, trimmed and cut into 1-inch cubes ', '2 tablespoons avocado oil ', '1 tablespoon white vinegar ', '1 ½ teaspoons dry ranch dressing mix (such as Hidden Valley Ranch®) ', '1 teaspoon garlic powder ', '½ teaspoon salt ', '½ teaspoon freshly ground black pepper ', '3 tablespoons shredded extra-sharp Cheddar cheese ', '1 tablespoon chopped fresh parsley']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '10 mins', 'Marinate Time:': '30 mins', 'Total Time:': '50 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 10, 'Marinate Time:': 30, 'Total Time:': 50, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '328', 'Fat': '26g', 'Carbs': '1g', 'Protein': '21g'}
+Nutrition: {'Calories': 328, 'Fat': 26, 'Carbs': 1, 'Protein': 21}
 Published: September 22, 2022
 Category: ['Recipes', 'Appetizers and Snacks', 'Meat and Poultry', 'Chicken']
 Link: https://www.allrecipes.com/recipe/8462076/air-fryer-ranch-chicken-bites/
@@ -134,10 +134,10 @@ Link: https://www.allrecipes.com/recipe/8462076/air-fryer-ranch-chicken-bites/
 Recipe 12:
 Title: Air Fryer Frozen Chicken Strips Recipe
 Ingredients: ['25 ounces frozen cooked, breaded crispy chicken strips (such as Tyson®)']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '11 mins', 'Total Time:': '16 mins', 'Servings:': '8'}
+Details: {'Prep Time:': 5, 'Cook Time:': 11, 'Total Time:': 16, 'Servings:': 8}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '106', 'Fat': '2g', 'Carbs': '3g', 'Protein': '20g'}
+Nutrition: {'Calories': 106, 'Fat': 2, 'Carbs': 3, 'Protein': 20}
 Published: August 31, 2022
 Category: ['Recipes', 'Meat and Poultry', 'Chicken', 'Chicken Breast']
 Link: https://www.allrecipes.com/recipe/8463459/air-fryer-frozen-chicken-strips/
@@ -146,10 +146,10 @@ Link: https://www.allrecipes.com/recipe/8463459/air-fryer-frozen-chicken-strips/
 Recipe 13:
 Title: Air Fryer Spicy Onion Rings Recipe
 Ingredients: ['2 large sweet onions, sliced 1/2 inch thick⅔ cup buttermilk ', '1  egg ', '¼ cup all-purpose flour ', "1 teaspoon RedHot Chile and Lime Seasoning Blend (such as Frank's®) ", '½ teaspoon adobo all-purpose seasoning (such as Goya®)2 cups panko bread crumbs ', '1 teaspoon adobo all-purpose seasoning (such as Goya®) ', "½ teaspoon RedHot Chile and Lime Seasoning Blend (such as Frank's®) ", '  olive oil cooking spray ', '1 teaspoon kosher salt, or to taste']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '10 mins', 'Chill Time:': '30 mins', 'Total Time:': '1 hrs', 'Servings:': '4'}
+Details: {'Prep Time:': 20, 'Cook Time:': 10, 'Chill Time:': 30, 'Total Time:': 60, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '230', 'Fat': '4g', 'Carbs': '53g', 'Protein': '10g'}
+Nutrition: {'Calories': 230, 'Fat': 4, 'Carbs': 53, 'Protein': 10}
 Published: September 1, 2022
 Category: ['Recipes', 'Side Dish', 'Vegetables', 'Onion']
 Link: https://www.allrecipes.com/recipe/8465728/air-fryer-spicy-onion-rings/
@@ -158,10 +158,10 @@ Link: https://www.allrecipes.com/recipe/8465728/air-fryer-spicy-onion-rings/
 Recipe 14:
 Title: Air Fryer BBQ Chicken Drummies Recipe
 Ingredients: ['2 pounds chicken drummies ', '1 ½ tablespoons olive oil ', '1 teaspoon garlic powder ', '½ teaspoon salt ', '⅛ teaspoon freshly ground black pepper ', '¾ cup barbecue sauce']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '30 mins', 'Total Time:': '35 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 5, 'Cook Time:': 30, 'Total Time:': 35, 'Servings:': 4}
 Reviews: 1
 Rating: 5.0
-Nutrition: {'Calories': '483', 'Fat': '25g', 'Carbs': '18g', 'Protein': '44g'}
+Nutrition: {'Calories': 483, 'Fat': 25, 'Carbs': 18, 'Protein': 44}
 Published: January 5, 2023
 Category: ['Recipes', 'Meat and Poultry', 'Chicken', 'Chicken Leg Recipes']
 Link: https://www.allrecipes.com/recipe/8521490/air-fryer-bbq-chicken-drummies/
@@ -170,10 +170,10 @@ Link: https://www.allrecipes.com/recipe/8521490/air-fryer-bbq-chicken-drummies/
 Recipe 15:
 Title: Air Fryer Grilled Peaches with Cinnamon Recipe
 Ingredients: ['1 medium firm peach, halved and pitted ', '2 tablespoons unsalted butter ', '1 teaspoon light brown sugar ', '¼ teaspoon ground cinnamon ', '2 scoops vanilla ice cream']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '12 mins', 'Cool Time:': '5 mins', 'Total Time:': '22 mins', 'Servings:': '2'}
+Details: {'Prep Time:': 5, 'Cook Time:': 12, 'Cool Time:': 5, 'Total Time:': 22, 'Servings:': 2}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '150', 'Fat': '14g', 'Carbs': '7g', 'Protein': '1g'}
+Nutrition: {'Calories': 150, 'Fat': 14, 'Carbs': 7, 'Protein': 1}
 Published: September 13, 2022
 Category: ['Recipes', 'Desserts', 'Fruit Desserts', 'Peach Dessert Recipes']
 Link: https://www.allrecipes.com/recipe/8472779/air-fryer-grilled-peaches-with-cinnamon/
@@ -182,10 +182,10 @@ Link: https://www.allrecipes.com/recipe/8472779/air-fryer-grilled-peaches-with-c
 Recipe 16:
 Title: Air Fryer Puffed Butter Beans Recipe
 Ingredients: ['1 (16 ounce) can large butter beans, drained and rinsed ', '1 tablespoon olive oil ', '1 teaspoon salt ', '1 teaspoon freshly ground black pepper ', '1 teaspoon garlic powder ', '  Optional: preferred seasoning blend']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '15 mins', 'Total Time:': '20 mins', 'Servings:': '4', 'Yield:': '1 cup'}
+Details: {'Prep Time:': 5, 'Cook Time:': 15, 'Total Time:': 20, 'Servings:': 4, 'Yield:': '1 cup'}
 Reviews: 3
 Rating: 3.7
-Nutrition: {'Calories': '116', 'Fat': '3g', 'Carbs': '16g', 'Protein': '6g'}
+Nutrition: {'Calories': 116, 'Fat': 3, 'Carbs': 16, 'Protein': 6}
 Published: December 19, 2022
 Category: ['Kitchen Tips', 'All About Ingredients', 'All About Beans and Legumes']
 Link: https://www.allrecipes.com/recipe/8521489/air-fryer-puffed-butter-beans/
@@ -194,10 +194,10 @@ Link: https://www.allrecipes.com/recipe/8521489/air-fryer-puffed-butter-beans/
 Recipe 17:
 Title: Air Fryer Pizza Recipe
 Ingredients: ['olive oil cooking spray ', '1 (13.8 ounce) package refrigerated pizza dough (such as Pillsbury®) ', '6 tablespoons pizza sauce, divided ', '10 ounces shredded mozzarella cheese, divided ', '14 slices pepperoni, divided ', '½ cup onion slices, divided (Optional) ', '  sprinkle of dried basil and red pepper flakes (optional)']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '8 mins', 'Total Time:': '23 mins', 'Servings:': '2', 'Yield:': '2 personal pizzas'}
+Details: {'Prep Time:': 15, 'Cook Time:': 8, 'Total Time:': 23, 'Servings:': 2, 'Yield:': '2 personal pizzas'}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '966', 'Fat': '36g', 'Carbs': '101g', 'Protein': '55g'}
+Nutrition: {'Calories': 966, 'Fat': 36, 'Carbs': 101, 'Protein': 55}
 Published: December 7, 2022
 Category: ['Recipes', 'Main Dishes', 'Pizza Recipes']
 Link: https://www.allrecipes.com/recipe/8514636/air-fryer-pizza/
@@ -206,10 +206,10 @@ Link: https://www.allrecipes.com/recipe/8514636/air-fryer-pizza/
 Recipe 18:
 Title: Air Fryer Smoked Salmon Wontons Recipe
 Ingredients: ['1 (6 ounce) package cream cheese, softened ', '3 ounces cold-smoked salmon, finely chopped ', '1 ½ tablespoons minced capers ', '1 ½ tablespoons finely minced red onion ', '48  wonton wrappers ', '  water as needed ', '  cooking spray']
-Details: {'Prep Time:': '45 mins', 'Cook Time:': '5 mins', 'Total Time:': '50 mins', 'Servings:': '48', 'Yield:': '48 wonton appetizers'}
+Details: {'Prep Time:': 45, 'Cook Time:': 5, 'Total Time:': 50, 'Servings:': 48, 'Yield:': '48 wonton appetizers'}
 Reviews: 0
 Rating: 5.0
-Nutrition: {'Calories': '38', 'Fat': '1g', 'Carbs': '5g', 'Protein': '1g'}
+Nutrition: {'Calories': 38, 'Fat': 1, 'Carbs': 5, 'Protein': 1}
 Published: November 28, 2022
 Category: ['Recipes', 'Appetizers and Snacks']
 Link: https://www.allrecipes.com/recipe/8507574/air-fryer-smoked-salmon-wontons/
@@ -218,10 +218,10 @@ Link: https://www.allrecipes.com/recipe/8507574/air-fryer-smoked-salmon-wontons/
 Recipe 19:
 Title: Air-Fried Raspberry Brie Bites Recipe
 Ingredients: ['1 (8 ounce) round Brie cheese ', '1 (8 ounce) package phyllo dough, thawed ', '1 cup raspberry jam ', '1 cup butter, melted ', '2 tablespoons honey ', '  flakey salt to taste']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '15 mins', 'Total Time:': '35 mins', 'Servings:': '16', 'Yield:': '16 bites'}
+Details: {'Prep Time:': 20, 'Cook Time:': 15, 'Total Time:': 35, 'Servings:': 16, 'Yield:': '16 bites'}
 Reviews: 1
 Rating: 4.0
-Nutrition: {'Calories': '252', 'Fat': '16g', 'Carbs': '23g', 'Protein': '4g'}
+Nutrition: {'Calories': 252, 'Fat': 16, 'Carbs': 23, 'Protein': 4}
 Published: October 12, 2022
 Category: ['Recipes', 'Appetizers and Snacks', 'Cheese']
 Link: https://www.allrecipes.com/recipe/8493638/air-fried-raspberry-brie-bites/
@@ -230,10 +230,10 @@ Link: https://www.allrecipes.com/recipe/8493638/air-fried-raspberry-brie-bites/
 Recipe 20:
 Title: Spicy Chicken Jerky in the Air Fryer Recipe
 Ingredients: ['2 (5 ounce) boneless chicken breasts, cut into strips ', '½ cup mojo criollo marinade (such as Goya®) ', '2 teaspoons Cajun seasoning ', '6  wooden skewers']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '1 hrs 30 mins', 'Additional Time:': '16 hrs', 'Total Time:': '17 hrs 40 mins', 'Servings:': '6', 'Yield:': '6 skewers'}
+Details: {'Prep Time:': 10, 'Cook Time:': 90, 'Additional Time:': 960, 'Total Time:': 1060, 'Servings:': 6, 'Yield:': '6 skewers'}
 Reviews: 1
 Rating: 4.0
-Nutrition: {'Calories': '54', 'Fat': '1g', 'Carbs': '0g', 'Protein': '10g'}
+Nutrition: {'Calories': 54, 'Fat': 1, 'Carbs': 0, 'Protein': 10}
 Published: 2022
 Category: ['Recipes', 'Appetizers and Snacks', 'Meat and Poultry', 'Jerky Recipes']
 Link: https://www.allrecipes.com/recipe/279283/spicy-chicken-jerky-in-the-air-fryer/
@@ -242,10 +242,10 @@ Link: https://www.allrecipes.com/recipe/279283/spicy-chicken-jerky-in-the-air-fr
 Recipe 21:
 Title: Air Fryer Scrambled Eggs On The Go Recipe
 Ingredients: ['cooking spray ', '2 large eggs, beaten ', '  salt and freshly ground black pepper to taste']
-Details: {'Prep Time:': '4 mins', 'Cook Time:': '6 mins', 'Total Time:': '10 mins', 'Servings:': '1'}
+Details: {'Prep Time:': 4, 'Cook Time:': 6, 'Total Time:': 10, 'Servings:': 1}
 Reviews: 0
 Rating: 4.0
-Nutrition: {'Calories': '143', 'Fat': '10g', 'Carbs': '1g', 'Protein': '13g'}
+Nutrition: {'Calories': 143, 'Fat': 10, 'Carbs': 1, 'Protein': 13}
 Published: November 4, 2022
 Category: ['Recipes', 'Breakfast and Brunch', 'Eggs', 'Scrambled']
 Link: https://www.allrecipes.com/recipe/8499615/air-fryer-scrambled-eggs-on-the-go/
@@ -254,10 +254,10 @@ Link: https://www.allrecipes.com/recipe/8499615/air-fryer-scrambled-eggs-on-the-
 Recipe 22:
 Title: Basic Air Fryer Hot Dogs Recipe
 Ingredients: ['4  hot dog buns ', '4  hot dogs']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '5 mins', 'Total Time:': '10 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 5, 'Cook Time:': 5, 'Total Time:': 10, 'Servings:': 4}
 Reviews: 69
 Rating: 4.7
-Nutrition: {'Calories': '269', 'Fat': '15g', 'Carbs': '23g', 'Protein': '9g'}
+Nutrition: {'Calories': 269, 'Fat': 15, 'Carbs': 23, 'Protein': 9}
 Published: 2023
 Category: ['Recipes', 'Main Dishes', 'Sandwich Recipes', 'Hot Dogs and Corn Dogs Recipes']
 Link: https://www.allrecipes.com/recipe/268494/basic-air-fryer-hot-dogs/
@@ -266,10 +266,10 @@ Link: https://www.allrecipes.com/recipe/268494/basic-air-fryer-hot-dogs/
 Recipe 23:
 Title: Air Fryer Potato Wedges Recipe
 Ingredients: ['2 medium russet potatoes ', '1 ½ tablespoons olive oil ', '½ teaspoon ground paprika ', '½ teaspoon parsley flakes ', '½ teaspoon chili powder ', '½ teaspoon sea salt ', '⅛ teaspoon ground black pepper']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '30 mins', 'Total Time:': '35 mins', 'Servings:': '4', 'Yield:': '16 potato wedges'}
+Details: {'Prep Time:': 5, 'Cook Time:': 30, 'Total Time:': 35, 'Servings:': 4, 'Yield:': '16 potato wedges'}
 Reviews: 103
 Rating: 4.8
-Nutrition: {'Calories': '129', 'Fat': '5g', 'Carbs': '19g', 'Protein': '2g'}
+Nutrition: {'Calories': 129, 'Fat': 5, 'Carbs': 19, 'Protein': 2}
 Published: 2023
 Category: ['Recipes', 'Side Dish', 'Fries Recipes', 'French Fries Recipes']
 Link: https://www.allrecipes.com/recipe/266826/air-fryer-potato-wedges/
@@ -278,10 +278,10 @@ Link: https://www.allrecipes.com/recipe/266826/air-fryer-potato-wedges/
 Recipe 24:
 Title: Air Fryer Meatballs Recipe
 Ingredients: ['16 ounces lean ground beef ', '4 ounces ground pork ', '½ cup grated Parmesan cheese ', '⅓ cup Italian seasoned bread crumbs ', '1  egg ', '2 cloves garlic, minced ', '1 teaspoon Italian seasoning ', '½ teaspoon salt']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '20 mins', 'Additional Time:': '5 mins', 'Total Time:': '35 mins', 'Servings:': '4', 'Yield:': '16 meatballs'}
+Details: {'Prep Time:': 10, 'Cook Time:': 20, 'Additional Time:': 5, 'Total Time:': 35, 'Servings:': 4, 'Yield:': '16 meatballs'}
 Reviews: 36
 Rating: 4.8
-Nutrition: {'Calories': '457', 'Fat': '33g', 'Carbs': '8g', 'Protein': '30g'}
+Nutrition: {'Calories': 457, 'Fat': 33, 'Carbs': 8, 'Protein': 30}
 Published: 2022
 Category: ['Recipes', 'Main Dishes', 'Meatball Recipes']
 Link: https://www.allrecipes.com/recipe/275548/air-fryer-meatballs/
@@ -290,10 +290,10 @@ Link: https://www.allrecipes.com/recipe/275548/air-fryer-meatballs/
 Recipe 25:
 Title: Easy Air Fryer Baked Potatoes Recipe
 Ingredients: ['4 large baking potatoes, scrubbed ', '2 tablespoons olive oil ', '  kosher salt and freshly ground black pepper to taste ', '½ teaspoon garlic powder, or to taste ', '½ teaspoon dried parsley, or to taste ', '4 tablespoons butter']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '40 mins', 'Total Time:': '50 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 40, 'Total Time:': 50, 'Servings:': 4}
 Reviews: 24
 Rating: 4.7
-Nutrition: {'Calories': '448', 'Fat': '19g', 'Carbs': '65g', 'Protein': '8g'}
+Nutrition: {'Calories': 448, 'Fat': 19, 'Carbs': 65, 'Protein': 8}
 Published: 2023
 Category: ['Recipes', 'Side Dish', 'Potato', 'Baked Potato Recipes']
 Link: https://www.allrecipes.com/recipe/275253/easy-air-fryer-baked-potatoes/
@@ -302,10 +302,10 @@ Link: https://www.allrecipes.com/recipe/275253/easy-air-fryer-baked-potatoes/
 Recipe 26:
 Title: Air Fryer Roasted Asparagus Recipe
 Ingredients: ['1 bunch fresh asparagus, trimmed ', '  avocado oil cooking spray ', '½ teaspoon garlic powder ', '½ teaspoon Himalayan pink salt ', '¼ teaspoon ground multi-colored peppercorns ', '¼ teaspoon red pepper flakes ', '¼ cup freshly grated Parmesan cheese']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '10 mins', 'Total Time:': '20 mins', 'Servings:': '2'}
+Details: {'Prep Time:': 10, 'Cook Time:': 10, 'Total Time:': 20, 'Servings:': 2}
 Reviews: 18
 Rating: 4.6
-Nutrition: {'Calories': '94', 'Fat': '3g', 'Carbs': '10g', 'Protein': '9g'}
+Nutrition: {'Calories': 94, 'Fat': 3, 'Carbs': 10, 'Protein': 9}
 Published: 2023
 Category: ['Recipes', 'Side Dish', 'Vegetables', 'Asparagus']
 Link: https://www.allrecipes.com/recipe/279177/air-fryer-roasted-asparagus/
@@ -314,10 +314,10 @@ Link: https://www.allrecipes.com/recipe/279177/air-fryer-roasted-asparagus/
 Recipe 27:
 Title: Air Fryer Chicken Thighs Recipe
 Ingredients: ['4  skin-on, boneless chicken thighs ', '2 teaspoons extra-virgin olive oil ', '1 teaspoon smoked paprika ', '¾ teaspoon garlic powder ', '½ teaspoon salt ', '½ teaspoon ground black pepper']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '20 mins', 'Total Time:': '30 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 20, 'Total Time:': 30, 'Servings:': 4}
 Reviews: 118
 Rating: 4.7
-Nutrition: {'Calories': '213', 'Fat': '14g', 'Carbs': '1g', 'Protein': '19g'}
+Nutrition: {'Calories': 213, 'Fat': 14, 'Carbs': 1, 'Protein': 19}
 Published: 2022
 Category: ['Everyday Cooking', 'Cookware and Equipment', 'Air Fryer', 'Main Dishes']
 Link: https://www.allrecipes.com/recipe/272858/air-fryer-chicken-thighs/
@@ -326,10 +326,10 @@ Link: https://www.allrecipes.com/recipe/272858/air-fryer-chicken-thighs/
 Recipe 28:
 Title: Simple Air Fryer Brussels Sprouts Recipe
 Ingredients: ['1 ½ pounds Brussels sprouts ', '2 tablespoons olive oil ', '1 teaspoon garlic powder ', '1 teaspoon salt ', '½ teaspoon ground black pepper']
-Details: {'Cook Time:': '15 mins', 'Additional Time:': '15 mins', 'Total Time:': '30 mins', 'Servings:': '6'}
+Details: {'Cook Time:': 15, 'Additional Time:': 15, 'Total Time:': 30, 'Servings:': 6}
 Reviews: 25
 Rating: 4.4
-Nutrition: {'Calories': '91', 'Fat': '5g', 'Carbs': '11g', 'Protein': '4g'}
+Nutrition: {'Calories': 91, 'Fat': 5, 'Carbs': 11, 'Protein': 4}
 Published: 2022
 Category: ['Recipes', 'Side Dish', 'Vegetables', 'Brussels Sprouts']
 Link: https://www.allrecipes.com/recipe/269967/simple-air-fryer-brussels-sprouts/
@@ -338,10 +338,10 @@ Link: https://www.allrecipes.com/recipe/269967/simple-air-fryer-brussels-sprouts
 Recipe 29:
 Title: Air Fryer Meatloaf Recipe
 Ingredients: ['1 pound lean ground beef ', '1 small onion, finely chopped ', '1 large egg, lightly beaten ', '3 tablespoons dry bread crumbs ', '1 tablespoon chopped fresh thyme ', '1 teaspoon salt ', '  ground black pepper to taste ', '2  mushrooms, thickly sliced ', '1 tablespoon olive oil, or as needed']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '25 mins', 'Additional Time:': '10 mins', 'Total Time:': '45 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 25, 'Additional Time:': 10, 'Total Time:': 45, 'Servings:': 4}
 Reviews: 46
 Rating: 4.3
-Nutrition: {'Calories': '297', 'Fat': '19g', 'Carbs': '6g', 'Protein': '25g'}
+Nutrition: {'Calories': 297, 'Fat': 19, 'Carbs': 6, 'Protein': 25}
 Published: 2022
 Category: ['Recipes', 'Main Dishes', 'Meatloaf Recipes', 'Beef Meatloaf Recipes']
 Link: https://www.allrecipes.com/recipe/266164/air-fryer-meatloaf/
@@ -350,10 +350,10 @@ Link: https://www.allrecipes.com/recipe/266164/air-fryer-meatloaf/
 Recipe 30:
 Title: Easy Air Fryer Pork Chops Recipe
 Ingredients: ['½ cup grated Parmesan cheese ', '1 teaspoon paprika ', '1 teaspoon garlic powder ', '1 teaspoon kosher salt ', '1 teaspoon dried parsley ', '½ teaspoon ground black pepper ', '4 (5 ounce) boneless pork chops ', '2 tablespoons extra virgin olive oil']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '20 mins', 'Total Time:': '25 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 5, 'Cook Time:': 20, 'Total Time:': 25, 'Servings:': 4}
 Reviews: 129
 Rating: 4.8
-Nutrition: {'Calories': '305', 'Fat': '17g', 'Carbs': '2g', 'Protein': '35g'}
+Nutrition: {'Calories': 305, 'Fat': 17, 'Carbs': 2, 'Protein': 35}
 Published: 2023
 Category: ['Everyday Cooking', 'Cookware and Equipment', 'Air Fryer', 'Main Dishes']
 Link: https://www.allrecipes.com/recipe/275576/easy-air-fryer-pork-chops/
@@ -362,10 +362,10 @@ Link: https://www.allrecipes.com/recipe/275576/easy-air-fryer-pork-chops/
 Recipe 31:
 Title: Air Fryer Sweet Potato Fries Recipe
 Ingredients: ['1 medium sweet potato, peeled ', '1 tablespoon canola oil ', '½ teaspoon kosher salt ', '¼ teaspoon pepper ', '⅛ teaspoon garlic powder ', '⅛ teaspoon ground sweet paprika']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '10 mins', 'Total Time:': '20 mins', 'Servings:': '2'}
+Details: {'Prep Time:': 10, 'Cook Time:': 10, 'Total Time:': 20, 'Servings:': 2}
 Reviews: 56
 Rating: 4.6
-Nutrition: {'Calories': '119', 'Fat': '7g', 'Carbs': '14g', 'Protein': '1g'}
+Nutrition: {'Calories': 119, 'Fat': 7, 'Carbs': 14, 'Protein': 1}
 Published: 2023
 Category: ['Everyday Cooking', 'Cookware and Equipment', 'Air Fryer', 'Side Dishes']
 Link: https://www.allrecipes.com/recipe/264825/air-fried-sweet-potato-fries/
@@ -374,10 +374,10 @@ Link: https://www.allrecipes.com/recipe/264825/air-fried-sweet-potato-fries/
 Recipe 32:
 Title: Air Fryer Roasted Garlic Recipe
 Ingredients: ['1 head garlic ', '  aluminum foil ', '1 teaspoon extra-virgin olive oil ', '¼ teaspoon salt ', '¼ teaspoon ground black pepper']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '20 mins', 'Total Time:': '25 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 5, 'Cook Time:': 20, 'Total Time:': 25, 'Servings:': 4}
 Reviews: 14
 Rating: 4.6
-Nutrition: {'Calories': '32', 'Fat': '1g', 'Carbs': '5g', 'Protein': '1g'}
+Nutrition: {'Calories': 32, 'Fat': 1, 'Carbs': 5, 'Protein': 1}
 Published: 2022
 Category: ['Recipes', 'Fruits and Vegetables', 'Vegetables', 'Garlic']
 Link: https://www.allrecipes.com/recipe/279505/air-fryer-roasted-garlic/
@@ -386,10 +386,10 @@ Link: https://www.allrecipes.com/recipe/279505/air-fryer-roasted-garlic/
 Recipe 33:
 Title: Air Fryer Chicken Taquitos Recipe
 Ingredients: ['1 teaspoon vegetable oil ', '2 tablespoons diced onion ', '1 clove garlic, minced ', '2 tablespoons chopped green chiles (such as Ortega®) ', '2 tablespoons Mexican-style hot tomato sauce (such as El Pato®) ', '1 cup shredded rotisserie chicken ', '½ cup shredded Mexican cheese blend ', '2 tablespoons Neufchâtel cheese ', '  salt and ground black pepper to taste ', '6  corn tortillas ', '  avocado oil cooking spray']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '20 mins', 'Total Time:': '30 mins', 'Servings:': '6', 'Yield:': '6 taquitos'}
+Details: {'Prep Time:': 10, 'Cook Time:': 20, 'Total Time:': 30, 'Servings:': 6, 'Yield:': '6 taquitos'}
 Reviews: 35
 Rating: 4.8
-Nutrition: {'Calories': '174', 'Fat': '9g', 'Carbs': '13g', 'Protein': '10g'}
+Nutrition: {'Calories': 174, 'Fat': 9, 'Carbs': 13, 'Protein': 10}
 Published: 2022
 Category: ['Recipes', 'Appetizers and Snacks', 'Meat and Poultry', 'Chicken']
 Link: https://www.allrecipes.com/recipe/279015/air-fryer-chicken-taquitos/
@@ -398,10 +398,10 @@ Link: https://www.allrecipes.com/recipe/279015/air-fryer-chicken-taquitos/
 Recipe 34:
 Title: Air Fryer Baked Potatoes Recipe
 Ingredients: ['2 large russet potatoes, scrubbed ', '1 tablespoon peanut oil ', '½ teaspoon coarse sea salt']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '1 hrs', 'Total Time:': '1 hrs 5 mins', 'Servings:': '2', 'Yield:': '2 baked potatoes'}
+Details: {'Prep Time:': 5, 'Cook Time:': 60, 'Total Time:': 65, 'Servings:': 2, 'Yield:': '2 baked potatoes'}
 Reviews: 54
 Rating: 4.8
-Nutrition: {'Calories': '344', 'Fat': '7g', 'Carbs': '65g', 'Protein': '8g'}
+Nutrition: {'Calories': 344, 'Fat': 7, 'Carbs': 65, 'Protein': 8}
 Published: 2022
 Category: ['Everyday Cooking', 'Cookware and Equipment', 'Air Fryer', 'Side Dishes']
 Link: https://www.allrecipes.com/recipe/265979/air-fryer-baked-potatoes/
@@ -410,10 +410,10 @@ Link: https://www.allrecipes.com/recipe/265979/air-fryer-baked-potatoes/
 Recipe 35:
 Title: Air-Fryer Roasted Veggies Recipe
 Ingredients: ['½ cup diced zucchini ', '½ cup diced summer squash ', '½ cup diced mushrooms ', '½ cup diced cauliflower ', '½ cup diced asparagus ', '½ cup diced sweet red pepper ', '2 teaspoons vegetable oil ', '¼ teaspoon salt ', '¼ teaspoon ground black pepper ', '  1/4 teaspoon seasoning, or more to taste']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '10 mins', 'Total Time:': '30 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 20, 'Cook Time:': 10, 'Total Time:': 30, 'Servings:': 4}
 Reviews: 9
 Rating: 4.7
-Nutrition: {'Calories': '37', 'Fat': '2g', 'Carbs': '3g', 'Protein': '1g'}
+Nutrition: {'Calories': 37, 'Fat': 2, 'Carbs': 3, 'Protein': 1}
 Published: 2023
 Category: ['Side Dish', 'Vegetables', 'Squash', 'Zucchini']
 Link: https://www.allrecipes.com/recipe/269890/air-fryer-roasted-veggies/
@@ -422,10 +422,10 @@ Link: https://www.allrecipes.com/recipe/269890/air-fryer-roasted-veggies/
 Recipe 36:
 Title: Air Fryer Sausage Patties Recipe
 Ingredients: ['1 (12 ounce) package sausage patties (such as Johnsonville®) ', '1  serving nonstick cooking spray']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '10 mins', 'Total Time:': '15 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 5, 'Cook Time:': 10, 'Total Time:': 15, 'Servings:': 4}
 Reviews: 10
 Rating: 4.9
-Nutrition: {'Calories': '145', 'Fat': '9g', 'Carbs': '1g', 'Protein': '14g'}
+Nutrition: {'Calories': 145, 'Fat': 9, 'Carbs': 1, 'Protein': 14}
 Published: 2023
 Category: ['Recipes', 'Breakfast and Brunch', 'Meat and Seafood', 'Sausage']
 Link: https://www.allrecipes.com/recipe/275390/air-fryer-sausage-patties/
@@ -434,10 +434,10 @@ Link: https://www.allrecipes.com/recipe/275390/air-fryer-sausage-patties/
 Recipe 37:
 Title: Air Fryer Pasta Chips Recipe
 Ingredients: ['2 cups farfalle pasta ', '1 tablespoon olive oil ', '½ cup grated Parmesan cheese ', '1 teaspoon garlic powder ', '1 teaspoon Italian seasoning ', '½ teaspoon salt']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '40 mins', 'Additional Time:': '5 mins', 'Total Time:': '50 mins', 'Servings:': '8'}
+Details: {'Prep Time:': 5, 'Cook Time:': 40, 'Additional Time:': 5, 'Total Time:': 50, 'Servings:': 8}
 Reviews: 11
 Rating: 4.3
-Nutrition: {'Calories': '72', 'Fat': '3g', 'Carbs': '7g', 'Protein': '3g'}
+Nutrition: {'Calories': 72, 'Fat': 3, 'Carbs': 7, 'Protein': 3}
 Published: 2023
 Category: ['Recipes', 'Appetizers and Snacks', 'Snacks', 'Snack Chip Recipes']
 Link: https://www.allrecipes.com/recipe/279396/air-fryer-pasta-chips/
@@ -446,10 +446,10 @@ Link: https://www.allrecipes.com/recipe/279396/air-fryer-pasta-chips/
 Recipe 38:
 Title: Air Fryer French Fries Recipe
 Ingredients: ['1 pound russet potatoes, peeled ', '2 teaspoons vegetable oil ', '1 pinch cayenne pepper ', '½ teaspoon kosher salt']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '25 mins', 'Additional Time:': '25 mins', 'Total Time:': '1 hrs', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 25, 'Additional Time:': 25, 'Total Time:': 60, 'Servings:': 4}
 Reviews: 39
 Rating: 4.7
-Nutrition: {'Calories': '108', 'Fat': '2g', 'Carbs': '20g', 'Protein': '2g'}
+Nutrition: {'Calories': 108, 'Fat': 2, 'Carbs': 20, 'Protein': 2}
 Published: 2023
 Category: ['Recipes', 'Side Dish', 'Fries Recipes', 'French Fries Recipes']
 Link: https://www.allrecipes.com/recipe/278581/air-fryer-french-fries/
@@ -458,10 +458,10 @@ Link: https://www.allrecipes.com/recipe/278581/air-fryer-french-fries/
 Recipe 39:
 Title: Air Fryer Tilapia with Fresh Lemon Pepper Recipe
 Ingredients: ['4 (6 ounce) tilapia fillets ', '2 tablespoons lemon zest ', '2 tablespoons olive oil ', '2 cloves garlic, minced ', '1 ½ teaspoons coarsely ground black peppercorns ', '½ teaspoon salt ', '1 pinch paprika, or to taste ', '  cooking spray ', '1 sprig parsley, chopped, or more to taste ', '4 wedges lemon']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '10 mins', 'Total Time:': '20 mins', 'Servings:': '4', 'Yield:': '4 tilapia fillets'}
+Details: {'Prep Time:': 10, 'Cook Time:': 10, 'Total Time:': 20, 'Servings:': 4, 'Yield:': '4 tilapia fillets'}
 Reviews: 6
 Rating: 4.7
-Nutrition: {'Calories': '239', 'Fat': '9g', 'Carbs': '3g', 'Protein': '35g'}
+Nutrition: {'Calories': 239, 'Fat': 9, 'Carbs': 3, 'Protein': 35}
 Published: July 9, 2020
 Category: ['Recipes', 'Seafood', 'Fish', 'Tilapia']
 Link: https://www.allrecipes.com/recipe/280935/air-fryer-tilapia-with-fresh-lemon-pepper/
@@ -470,10 +470,10 @@ Link: https://www.allrecipes.com/recipe/280935/air-fryer-tilapia-with-fresh-lemo
 Recipe 40:
 Title: Air Fryer Lobster Tails with Lemon-Garlic Butter Recipe
 Ingredients: ['2 (4 ounce) lobster tails ', '4 tablespoons butter ', '1 teaspoon lemon zest ', '1 clove garlic, grated ', '  salt and ground black pepper to taste ', '1 teaspoon chopped fresh parsley ', '2 wedges lemon']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '10 mins', 'Total Time:': '20 mins', 'Servings:': '2', 'Yield:': '2 lobster tails'}
+Details: {'Prep Time:': 10, 'Cook Time:': 10, 'Total Time:': 20, 'Servings:': 2, 'Yield:': '2 lobster tails'}
 Reviews: 24
 Rating: 4.8
-Nutrition: {'Calories': '313', 'Fat': '26g', 'Carbs': '3g', 'Protein': '18g'}
+Nutrition: {'Calories': 313, 'Fat': 26, 'Carbs': 3, 'Protein': 18}
 Published: 2023
 Category: ['Recipes', 'Seafood', 'Shellfish', 'Lobster']
 Link: https://www.allrecipes.com/recipe/276006/air-fryer-lobster-tails-with-lemon-garlic-butter/
@@ -482,10 +482,10 @@ Link: https://www.allrecipes.com/recipe/276006/air-fryer-lobster-tails-with-lemo
 Recipe 41:
 Title: Air Fryer Chicken Cordon Bleu Recipe
 Ingredients: ['2  boneless, skinless chicken breasts ', '  salt and ground black pepper to taste ', '1 tablespoon Dijon mustard ', '4 slices deli Swiss cheese ', '4 slices deli ham ', '  2 toothpicks ', '¼ cup all-purpose flour ', '1  egg, beaten ', '1 cup panko bread crumbs ', '⅓ cup grated Parmesan cheese ', '  cooking spray']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '20 mins', 'Additional Time:': '5 mins', 'Total Time:': '40 mins', 'Servings:': '2'}
+Details: {'Prep Time:': 15, 'Cook Time:': 20, 'Additional Time:': 5, 'Total Time:': 40, 'Servings:': 2}
 Reviews: 30
 Rating: 4.6
-Nutrition: {'Calories': '728', 'Fat': '32g', 'Carbs': '57g', 'Protein': '64g'}
+Nutrition: {'Calories': 728, 'Fat': 32, 'Carbs': 57, 'Protein': 64}
 Published: 2022
 Category: ['Recipes', 'Main Dishes', 'Chicken', 'Chicken Cordon Bleu Recipes']
 Link: https://www.allrecipes.com/recipe/278806/air-fryer-chicken-cordon-bleu/
@@ -494,10 +494,10 @@ Link: https://www.allrecipes.com/recipe/278806/air-fryer-chicken-cordon-bleu/
 Recipe 42:
 Title: Air Fryer Roasted Okra Recipe
 Ingredients: ['½ pound okra, ends trimmed and pods sliced ', '1 teaspoon olive oil ', '¼ teaspoon salt ', '⅛ teaspoon ground black pepper']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '15 mins', 'Total Time:': '20 mins', 'Servings:': '1'}
+Details: {'Prep Time:': 5, 'Cook Time:': 15, 'Total Time:': 20, 'Servings:': 1}
 Reviews: 14
 Rating: 4.6
-Nutrition: {'Calories': '113', 'Fat': '5g', 'Carbs': '16g', 'Protein': '5g'}
+Nutrition: {'Calories': 113, 'Fat': 5, 'Carbs': 16, 'Protein': 5}
 Published: 2022
 Category: ['Recipes', 'Side Dish', 'Vegetables']
 Link: https://www.allrecipes.com/recipe/267772/air-fryer-roasted-okra/
@@ -506,10 +506,10 @@ Link: https://www.allrecipes.com/recipe/267772/air-fryer-roasted-okra/
 Recipe 43:
 Title: Crumbed Chicken Tenderloins (Air Fried) Recipe
 Ingredients: ['1 large egg ', '½ cup dry bread crumbs ', '2 tablespoons vegetable oil ', '8  chicken tenderloins']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '15 mins', 'Total Time:': '30 mins', 'Servings:': '4', 'Yield:': '8 tenderloins'}
+Details: {'Prep Time:': 15, 'Cook Time:': 15, 'Total Time:': 30, 'Servings:': 4, 'Yield:': '8 tenderloins'}
 Reviews: 142
 Rating: 4.7
-Nutrition: {'Calories': '253', 'Fat': '11g', 'Carbs': '10g', 'Protein': '26g'}
+Nutrition: {'Calories': 253, 'Fat': 11, 'Carbs': 10, 'Protein': 26}
 Published: 2023
 Category: ['Recipes', 'Meat and Poultry', 'Chicken']
 Link: https://www.allrecipes.com/recipe/260625/crumbed-chicken-tenderloins-air-fried/
@@ -518,10 +518,10 @@ Link: https://www.allrecipes.com/recipe/260625/crumbed-chicken-tenderloins-air-f
 Recipe 44:
 Title: Air Fryer Rib-Eye Steak Recipe
 Ingredients: ['2  rib-eye steaks, cut 1 1/2- inch thick ', '½ cup reduced-sodium soy sauce ', '¼ cup olive oil ', '4 teaspoons grill seasoning (such as Montreal Steak Seasoning®)']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '15 mins', 'Additional Time:': '2 hrs 5 mins', 'Total Time:': '2 hrs 25 mins', 'Servings:': '2'}
+Details: {'Prep Time:': 5, 'Cook Time:': 15, 'Additional Time:': 125, 'Total Time:': 145, 'Servings:': 2}
 Reviews: 15
 Rating: 4.5
-Nutrition: {'Calories': '652', 'Fat': '49g', 'Carbs': '8g', 'Protein': '44g'}
+Nutrition: {'Calories': 652, 'Fat': 49, 'Carbs': 8, 'Protein': 44}
 Published: 2023
 Category: ['Meat and Poultry', 'Beef', 'Steaks', 'Rib-Eye Steak Recipes']
 Link: https://www.allrecipes.com/recipe/271044/air-fryer-rib-eye-steak/
@@ -530,10 +530,10 @@ Link: https://www.allrecipes.com/recipe/271044/air-fryer-rib-eye-steak/
 Recipe 45:
 Title: Air Fryer Calamari Recipe
 Ingredients: ['½ cup all-purpose flour ', '1 large egg ', '¼ cup milk ', '2 cups panko bread crumbs ', '1 teaspoon sea salt ', '1 teaspoon ground black pepper ', '1 pound calamari rings, patted dry ', '  nonstick cooking spray']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '10 mins', 'Total Time:': '20 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 10, 'Total Time:': 20, 'Servings:': 4}
 Reviews: 4
 Rating: 4.4
-Nutrition: {'Calories': '297', 'Fat': '5g', 'Carbs': '51g', 'Protein': '25g'}
+Nutrition: {'Calories': 297, 'Fat': 5, 'Carbs': 51, 'Protein': 25}
 Published: 2022
 Category: ['Recipes', 'Appetizers and Snacks', 'Tapas']
 Link: https://www.allrecipes.com/recipe/280571/air-fryer-calamari/
@@ -542,10 +542,10 @@ Link: https://www.allrecipes.com/recipe/280571/air-fryer-calamari/
 Recipe 46:
 Title: Air Fryer Chicken Katsu with Homemade Katsu Sauce Recipe
 Ingredients: ['½ cup ketchup ', '2 tablespoons soy sauce ', '1 tablespoon brown sugar ', '1 tablespoon sherry ', '2 teaspoons Worcestershire sauce ', '1 teaspoon minced garlic1 pound boneless skinless chicken breast, sliced in half horizontally ', '1 pinch salt and ground black pepper to taste ', '2 large eggs, beaten ', '1 ½ cups panko bread crumbs ', '  cooking spray']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '20 mins', 'Total Time:': '40 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 20, 'Cook Time:': 20, 'Total Time:': 40, 'Servings:': 4}
 Reviews: 27
 Rating: 4.5
-Nutrition: {'Calories': '318', 'Fat': '7g', 'Carbs': '41g', 'Protein': '32g'}
+Nutrition: {'Calories': 318, 'Fat': 7, 'Carbs': 41, 'Protein': 32}
 Published: 2022
 Category: ['Recipes', 'Cuisine', 'Asian', 'Japanese']
 Link: https://www.allrecipes.com/recipe/278708/air-fryer-chicken-katsu-with-homemade-katsu-sauce/
@@ -554,10 +554,10 @@ Link: https://www.allrecipes.com/recipe/278708/air-fryer-chicken-katsu-with-home
 Recipe 47:
 Title: Air Fryer Hasselback Potatoes Recipe
 Ingredients: ['4 medium Yukon Gold potatoes ', '3 tablespoons melted butter ', '1 tablespoon olive oil ', '3 cloves garlic, crushed ', '½ teaspoon ground paprika ', '  salt and ground black pepper to taste ', '1 tablespoon chopped fresh parsley']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '30 mins', 'Total Time:': '45 mins', 'Servings:': '4', 'Yield:': '4 potatoes'}
+Details: {'Prep Time:': 15, 'Cook Time:': 30, 'Total Time:': 45, 'Servings:': 4, 'Yield:': '4 potatoes'}
 Reviews: 22
 Rating: 4.0
-Nutrition: {'Calories': '207', 'Fat': '12g', 'Carbs': '23g', 'Protein': '3g'}
+Nutrition: {'Calories': 207, 'Fat': 12, 'Carbs': 23, 'Protein': 3}
 Published: 2023
 Category: ['Recipes', 'Side Dish', 'Potato']
 Link: https://www.allrecipes.com/recipe/277077/air-fryer-hasselback-potatoes/
@@ -566,10 +566,10 @@ Link: https://www.allrecipes.com/recipe/277077/air-fryer-hasselback-potatoes/
 Recipe 48:
 Title: Air Fryer Bacon Recipe
 Ingredients: ['½ (16 ounce) package bacon']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '15 mins', 'Total Time:': '20 mins', 'Servings:': '6', 'Yield:': '1/2 pound'}
+Details: {'Prep Time:': 5, 'Cook Time:': 15, 'Total Time:': 20, 'Servings:': 6, 'Yield:': '1/2 pound'}
 Reviews: 23
 Rating: 4.0
-Nutrition: {'Calories': '67', 'Fat': '5g', 'Carbs': '0g', 'Protein': '5g'}
+Nutrition: {'Calories': 67, 'Fat': 5, 'Carbs': 0, 'Protein': 5}
 Published: 2023
 Category: ['Recipes', 'Side Dish']
 Link: https://www.allrecipes.com/recipe/269960/air-fryer-bacon/
@@ -578,10 +578,10 @@ Link: https://www.allrecipes.com/recipe/269960/air-fryer-bacon/
 Recipe 49:
 Title: Air Fryer Roasted Bananas Recipe
 Ingredients: ['1  banana, sliced into 1/8-inch thick diagonals ', '  avocado oil cooking spray']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '10 mins', 'Total Time:': '15 mins', 'Servings:': '1'}
+Details: {'Prep Time:': 5, 'Cook Time:': 10, 'Total Time:': 15, 'Servings:': 1}
 Reviews: 9
 Rating: 4.5
-Nutrition: {'Calories': '107', 'Fat': '1g', 'Carbs': '27g', 'Protein': '1g'}
+Nutrition: {'Calories': 107, 'Fat': 1, 'Carbs': 27, 'Protein': 1}
 Published: 2023
 Category: ['Recipes', 'Desserts', 'Fruit Desserts', 'Banana Dessert Recipes']
 Link: https://www.allrecipes.com/recipe/272347/air-fryer-roasted-bananas/
@@ -590,10 +590,10 @@ Link: https://www.allrecipes.com/recipe/272347/air-fryer-roasted-bananas/
 Recipe 50:
 Title: Air Fryer Scotch Eggs Recipe
 Ingredients: ['3 tablespoons Greek yogurt ', "2 tablespoons mango chutney (such as Patak's®) ", '1 tablespoon mayonnaise ', '⅛ teaspoon salt ', '⅛ teaspoon pepper ', '⅛ teaspoon curry powder ', '⅛ teaspoon cayenne pepper (Optional)1 pound pork sausage (such as Jimmy Dean®) ', '6  eggs, hard-boiled and shelled ', '⅓ cup flour ', '2  eggs, lightly beaten ', '1 cup panko bread crumbs ', '  cooking spray']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '15 mins', 'Total Time:': '30 mins', 'Servings:': '6', 'Yield:': '6 scotch eggs'}
+Details: {'Prep Time:': 15, 'Cook Time:': 15, 'Total Time:': 30, 'Servings:': 6, 'Yield:': '6 scotch eggs'}
 Reviews: 30
 Rating: 4.8
-Nutrition: {'Calories': '407', 'Fat': '28g', 'Carbs': '22g', 'Protein': '21g'}
+Nutrition: {'Calories': 407, 'Fat': 28, 'Carbs': 22, 'Protein': 21}
 Published: 2023
 Category: ['Recipes', 'Breakfast and Brunch', 'Eggs']
 Link: https://www.allrecipes.com/recipe/270943/air-fryer-scotch-eggs/
@@ -602,10 +602,10 @@ Link: https://www.allrecipes.com/recipe/270943/air-fryer-scotch-eggs/
 Recipe 51:
 Title: Air Fryer Eggplant Parmesan Recipe
 Ingredients: ['½ cup Italian bread crumbs ', '¼ cup freshly grated Parmesan cheese ', '1 teaspoon Italian seasoning ', '1 teaspoon salt ', '½ teaspoon dried basil ', '½ teaspoon garlic powder ', '½ teaspoon onion powder ', '½ teaspoon freshly ground black pepper ', '¼ cup flour ', '2 large eggs, beaten ', '1 medium eggplant, sliced into 1/2-inch rounds ', '1 cup marinara sauce, or more to taste ', '8 slices mozzarella cheese, or as needed']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '20 mins', 'Total Time:': '35 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 15, 'Cook Time:': 20, 'Total Time:': 35, 'Servings:': 4}
 Reviews: 62
 Rating: 4.7
-Nutrition: {'Calories': '377', 'Fat': '16g', 'Carbs': '36g', 'Protein': '24g'}
+Nutrition: {'Calories': 377, 'Fat': 16, 'Carbs': 36, 'Protein': 24}
 Published: 2023
 Category: ['Recipes', 'Appetizers and Snacks', 'Cheese']
 Link: https://www.allrecipes.com/recipe/270940/air-fryer-eggplant-parmesan/
@@ -614,10 +614,10 @@ Link: https://www.allrecipes.com/recipe/270940/air-fryer-eggplant-parmesan/
 Recipe 52:
 Title: Air Fryer Zucchini Chips Recipe
 Ingredients: ['1 cup panko bread crumbs ', '¾ cup grated Parmesan cheese ', '1 medium zucchini, thinly sliced ', '1 large egg, beaten ', '  cooking spray']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '25 mins', 'Total Time:': '35 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 25, 'Total Time:': 35, 'Servings:': 4}
 Reviews: 53
 Rating: 4.5
-Nutrition: {'Calories': '160', 'Fat': '7g', 'Carbs': '21g', 'Protein': '11g'}
+Nutrition: {'Calories': 160, 'Fat': 7, 'Carbs': 21, 'Protein': 11}
 Published: 2023
 Category: ['Recipes', 'Appetizers and Snacks', 'Vegetable', 'Zucchini Appetizer Recipes']
 Link: https://www.allrecipes.com/recipe/267107/air-fryer-zucchini-chips/
@@ -626,10 +626,10 @@ Link: https://www.allrecipes.com/recipe/267107/air-fryer-zucchini-chips/
 Recipe 53:
 Title: Air Fryer Fingerling Potatoes Recipe
 Ingredients: ['1 pound fingerling potatoes, halved lengthwise ', '1 tablespoon olive oil ', '½ teaspoon ground paprika ', '½ teaspoon parsley flakes ', '½ teaspoon garlic powder ', '  salt and ground black pepper to taste']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '15 mins', 'Total Time:': '25 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 15, 'Total Time:': 25, 'Servings:': 4}
 Reviews: 8
 Rating: 4.8
-Nutrition: {'Calories': '120', 'Fat': '4g', 'Carbs': '20g', 'Protein': '2g'}
+Nutrition: {'Calories': 120, 'Fat': 4, 'Carbs': 20, 'Protein': 2}
 Published: 2023
 Category: ['Recipes', 'Side Dish', 'Potato']
 Link: https://www.allrecipes.com/recipe/277321/air-fryer-fingerling-potatoes/
@@ -638,10 +638,10 @@ Link: https://www.allrecipes.com/recipe/277321/air-fryer-fingerling-potatoes/
 Recipe 54:
 Title: Air Fryer Rotisserie Chicken Recipe
 Ingredients: ['1 tablespoon sea salt ', '2 teaspoons ground paprika ', '1 teaspoon onion powder ', '1 teaspoon ground thyme ', '1 teaspoon ground white pepper ', '½ teaspoon ground black pepper ', '½ teaspoon cayenne pepper ', '½ teaspoon garlic powder ', '3 tablespoons vegetable oil, divided ', '1 (4 pound) whole fryer chicken, giblets removed']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '1 hrs', 'Additional Time:': '10 mins', 'Total Time:': '1 hrs 15 mins', 'Servings:': '6'}
+Details: {'Prep Time:': 5, 'Cook Time:': 60, 'Additional Time:': 10, 'Total Time:': 75, 'Servings:': 6}
 Reviews: 14
 Rating: 4.8
-Nutrition: {'Calories': '351', 'Fat': '18g', 'Carbs': '2g', 'Protein': '43g'}
+Nutrition: {'Calories': 351, 'Fat': 18, 'Carbs': 2, 'Protein': 43}
 Published: January 7, 2019
 Category: ['Everyday Cooking', 'Cookware and Equipment', 'Air Fryer', 'Main Dishes']
 Link: https://www.allrecipes.com/recipe/269948/air-fryer-rotisserie-chicken/
@@ -650,10 +650,10 @@ Link: https://www.allrecipes.com/recipe/269948/air-fryer-rotisserie-chicken/
 Recipe 55:
 Title: Dry-Rub Air-Fried Chicken Wings Recipe
 Ingredients: ['1 tablespoon dark brown sugar ', '1 tablespoon sweet paprika ', '½ tablespoon kosher salt ', '1 teaspoon garlic powder ', '1 teaspoon onion powder ', '1 teaspoon poultry seasoning ', '½ teaspoon mustard powder ', '½ teaspoon freshly ground black pepper ', '8  chicken wings, or more as needed']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '35 mins', 'Total Time:': '45 mins', 'Servings:': '2', 'Yield:': '8 wings'}
+Details: {'Prep Time:': 10, 'Cook Time:': 35, 'Total Time:': 45, 'Servings:': 2, 'Yield:': '8 wings'}
 Reviews: 28
 Rating: 4.6
-Nutrition: {'Calories': '318', 'Fat': '19g', 'Carbs': '11g', 'Protein': '26g'}
+Nutrition: {'Calories': 318, 'Fat': 19, 'Carbs': 11, 'Protein': 26}
 Published: 2023
 Category: ['Meat and Poultry', 'Chicken', 'Wings', 'Buffalo']
 Link: https://www.allrecipes.com/recipe/272428/dry-rub-air-fried-chicken-wings/
@@ -662,10 +662,10 @@ Link: https://www.allrecipes.com/recipe/272428/dry-rub-air-fried-chicken-wings/
 Recipe 56:
 Title: Homemade Croutons in the Air Fryer Recipe
 Ingredients: ['4 slices white bread, cubed ', '1 teaspoon parsley flakes ', '½ teaspoon garlic powder ', '½ teaspoon seasoned salt ', '3 tablespoons unsalted butter, melted']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '10 mins', 'Additional Time:': '5 mins', 'Total Time:': '20 mins', 'Servings:': '6'}
+Details: {'Prep Time:': 5, 'Cook Time:': 10, 'Additional Time:': 5, 'Total Time:': 20, 'Servings:': 6}
 Reviews: 19
 Rating: 4.9
-Nutrition: {'Calories': '97', 'Fat': '6g', 'Carbs': '9g', 'Protein': '1g'}
+Nutrition: {'Calories': 97, 'Fat': 6, 'Carbs': 9, 'Protein': 1}
 Published: 2023
 Category: ['Recipes', 'Side Dish', 'Sauces and Condiments', 'Crouton Recipes']
 Link: https://www.allrecipes.com/recipe/279399/homemade-croutons-in-the-air-fryer/
@@ -674,10 +674,10 @@ Link: https://www.allrecipes.com/recipe/279399/homemade-croutons-in-the-air-frye
 Recipe 57:
 Title: Air Fryer Buttermilk Fried Chicken Recipe
 Ingredients: ['1 ½ pounds boneless, skinless chicken thighs ', '2 cups buttermilk ', '1 cup all-purpose flour ', '1 tablespoon seasoned salt ', '½ tablespoon ground black pepper ', '1 cup panko bread crumbs ', '  cooking spray']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '30 mins', 'Additional Time:': '4 hrs', 'Total Time:': '4 hrs 35 mins', 'Servings:': '6'}
+Details: {'Prep Time:': 5, 'Cook Time:': 30, 'Additional Time:': 240, 'Total Time:': 275, 'Servings:': 6}
 Reviews: 5
 Rating: 4.6
-Nutrition: {'Calories': '335', 'Fat': '13g', 'Carbs': '33g', 'Protein': '25g'}
+Nutrition: {'Calories': 335, 'Fat': 13, 'Carbs': 33, 'Protein': 25}
 Published: 2022
 Category: ['Recipes', 'Meat and Poultry', 'Chicken', 'Chicken Thigh Recipes']
 Link: https://www.allrecipes.com/recipe/272659/air-fryer-buttermilk-fried-chicken/
@@ -686,10 +686,10 @@ Link: https://www.allrecipes.com/recipe/272659/air-fryer-buttermilk-fried-chicke
 Recipe 58:
 Title: Air-Fried Roasted Sweet Peppers and Onions Recipe
 Ingredients: ['1 cup sliced green bell pepper ', '1 cup sliced red bell pepper ', '1 cup sliced red onion ', '1 tablespoon olive oil ', '½ teaspoon kosher salt ', '2 tablespoons chopped fresh cilantro ', '1 tablespoon fresh lime juice']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '10 mins', 'Total Time:': '25 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 15, 'Cook Time:': 10, 'Total Time:': 25, 'Servings:': 4}
 Reviews: 4
 Rating: 4.5
-Nutrition: {'Calories': '55', 'Fat': '4g', 'Carbs': '6g', 'Protein': '1g'}
+Nutrition: {'Calories': 55, 'Fat': 4, 'Carbs': 6, 'Protein': 1}
 Published: 2022
 Category: ['Recipes', 'Side Dish', 'Vegetables', 'Onion']
 Link: https://www.allrecipes.com/recipe/275428/air-fried-roasted-sweet-peppers-and-onions/
@@ -698,10 +698,10 @@ Link: https://www.allrecipes.com/recipe/275428/air-fried-roasted-sweet-peppers-a
 Recipe 59:
 Title: Breaded Air Fryer Pork Chops Recipe
 Ingredients: ['4 (5 ounce) boneless, center-cut pork chops, 1-inch thick ', '1 teaspoon Cajun seasoning ', '1 ½ cups cheese and garlic croutons ', '2 large eggs ', '  cooking spray']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '10 mins', 'Total Time:': '20 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 10, 'Total Time:': 20, 'Servings:': 4}
 Reviews: 58
 Rating: 4.7
-Nutrition: {'Calories': '327', 'Fat': '15g', 'Carbs': '10g', 'Protein': '35g'}
+Nutrition: {'Calories': 327, 'Fat': 15, 'Carbs': 10, 'Protein': 35}
 Published: 2023
 Category: ['Recipes', 'Main Dishes', 'Pork', 'Pork Chop Recipes']
 Link: https://www.allrecipes.com/recipe/275553/breaded-air-fryer-pork-chops/
@@ -710,22 +710,22 @@ Link: https://www.allrecipes.com/recipe/275553/breaded-air-fryer-pork-chops/
 Recipe 60:
 Title: Baked Boneless Chicken Thighs Recipe
 Ingredients: ['1 1/2 teaspoons smoked paprika ', '1 1/4 teaspoons garlic powder ', '1 1/4 teaspoons white sugar ', '1 teaspoon freshly ground black pepper ', '1/2 teaspoon onion powder ', '1/2 teaspoon cayenne pepper ', '1/2 teaspoon salt ', '2 tablespoons olive oil ', '1 1/2 pounds boneless skinless chicken thighs ', 'fresh snipped herbs (optional)']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '30 mins', 'Total Time:': '40 mins', 'Servings:': '4 servings'}
+Details: {'Prep Time:': 10, 'Cook Time:': 30, 'Total Time:': 40, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '352', 'Fat': '20g', 'Carbs': '3g', 'Protein': '42g'}
+Nutrition: {'Calories': 352, 'Fat': 20, 'Carbs': 3, 'Protein': 42}
 Published: March 25, 2023
 Category: ['Meat and Poultry', 'Chicken', 'Baked and Roasted', 'Thighs']
 Link: https://www.allrecipes.com/baked-boneless-chicken-thighs-recipe-7371069
 
 
 Recipe 61:
-Title: One-Pot Chicken Fajita PastaRecipe
+Title: One-Pot Chicken Fajita Pasta Recipe
 Ingredients: ['2 tablespoons chili powder ', '1 tablespoon cumin ', '2 teaspoons salt ', '1 teaspoon onion powder ', '1 teaspoon garlic powder ', '1 teaspoon Mexican oregano ', '1 1/2 pounds chicken breast, cut into strips ', '2 tablespoons olive oil, divided ', '1 medium red onion, peeled and cut into 1/2-inch wedges ', '4 garlic cloves, minced ', '1 cup chicken broth, or more as needed ', '1 cup salsa ', '4 cups milk ', '1 lb penne pasta ', '1 medium red pepper, cut into 1/2-inch strips ', '1 medium green pepper, cut into 1/2-inch strips ', '1 medium yellow pepper, cut into 1/2-inch strips ', '4 cup shredded Mexican 4-cheese blend ', '1/4 cup minced cilantro']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '35 mins', 'Total Time:': '55 mins', 'Servings:': '8'}
+Details: {'Prep Time:': 20, 'Cook Time:': 35, 'Total Time:': 55, 'Servings:': 8}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '565', 'Fat': '26g', 'Carbs': '34g', 'Protein': '49g'}
+Nutrition: {'Calories': 565, 'Fat': 26, 'Carbs': 34, 'Protein': 49}
 Published: 2023
 Category: ['Mexican', 'Main Dishes', 'Fajita Recipes', 'Chicken']
 Link: https://www.allrecipes.com/one-pot-chicken-fajita-pasta-recipe-7370932
@@ -734,10 +734,10 @@ Link: https://www.allrecipes.com/one-pot-chicken-fajita-pasta-recipe-7370932
 Recipe 62:
 Title: Creamy Garlic Butter Shrimp Pasta Recipe
 Ingredients: ['1 lb angel hair pasta ', '1 stick unsalted butter ', '1/4 cup minced garlic, or to taste ', '1 lb frozen jumbo shrimp, peeled and deveined ', '1  teaspoon Greek seasoning (such as Cavender All Purpose Greek Seasoning) ', '1 pinch crushed red pepper flakes ', '4 ounces cream cheese, cubed ', '1 cup heavy whipping cream ', '1 cup milk ', '1/2 cup freshly grated Parmigiana Reggiano cheese ', '1/2 cup reserved pasta water, or as needed ', 'freshly chopped fresh parsley for garnish to taste (optional)']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '10 mins', 'Total Time:': '30 mins', 'Servings:': '5'}
+Details: {'Prep Time:': 20, 'Cook Time:': 10, 'Total Time:': 30, 'Servings:': 5}
 Reviews: 1
 Rating: 5.0
-Nutrition: {'Calories': '680', 'Fat': '49g', 'Carbs': '37g', 'Protein': '25g'}
+Nutrition: {'Calories': 680, 'Fat': 49, 'Carbs': 37, 'Protein': 25}
 Published: March 22, 2023
 Category: ['Recipes', 'Main Dishes', 'Pasta', 'Shrimp']
 Link: https://www.allrecipes.com/creamy-garlic-butter-shrimp-pasta-recipe-7369994
@@ -746,10 +746,10 @@ Link: https://www.allrecipes.com/creamy-garlic-butter-shrimp-pasta-recipe-736999
 Recipe 63:
 Title: Chicken Parmesan Pizza Recipe
 Ingredients: ['12 frozen chicken nuggets ', '1 12-inch pre-baked pizza crust ', '1/2 cup marinara sauce ', '2 button mushrooms, sliced ', '1/2 cup shredded mozzarella cheese ', '1/4 cup shredded Parmesan cheese ', '6 basil leaves, cut into thin ribbons']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '18 mins', 'Total Time:': '23 mins', 'Servings:': '4 servings'}
+Details: {'Prep Time:': 5, 'Cook Time:': 18, 'Total Time:': 23, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '4455', 'Fat': '105g', 'Carbs': '746g', 'Protein': '117g'}
+Nutrition: {'Calories': 4455, 'Fat': 105, 'Carbs': 746, 'Protein': 117}
 Published: March 22, 2023
 Category: ['Recipes', 'Main Dishes', 'Pizza Recipes', 'Chicken']
 Link: https://www.allrecipes.com/chicken-parmesan-pizza-recipe-7369199
@@ -758,10 +758,10 @@ Link: https://www.allrecipes.com/chicken-parmesan-pizza-recipe-7369199
 Recipe 64:
 Title: Brandied Cherries Recipe
 Ingredients: ['1 cup white sugar ', '3/4 cup water ', '1 star anise pod (optional) ', '1 cup brandy ', '1 pound fresh sweet or sour cherries, pitted']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '3 mins', 'Refrigerate Time:': '8 hrs', 'Total Time:': '8 hrs 13 mins', 'Servings:': '48 servings'}
+Details: {'Prep Time:': 10, 'Cook Time:': 3, 'Refrigerate Time:': 480, 'Total Time:': 493, 'Servings:': 48}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '30', 'Fat': '0g', 'Carbs': '6g', 'Protein': '0g'}
+Nutrition: {'Calories': 30, 'Fat': 0, 'Carbs': 6, 'Protein': 0}
 Published: March 14, 2023
 Category: ['Recipes', 'Fruits and Vegetables', 'Fruits', 'Cherries']
 Link: https://www.allrecipes.com/brandied-cherries-recipe-7255227
@@ -770,10 +770,10 @@ Link: https://www.allrecipes.com/brandied-cherries-recipe-7255227
 Recipe 65:
 Title: Garlic and Herb Baked Gruyere Recipe
 Ingredients: ['6 ounces Gruyere cheese, cut into small cubes ', '2 teaspoons chopped fresh dill ', '1 teaspoon ranch seasoning and salad dressing mix (such as Hidden Valley®) ', '1 teaspoon chopped fresh thyme leaves ', '1 clove garlic, crushed ', 'olive oil cooking spray']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '5 mins', 'Total Time:': '10 mins', 'Servings:': '2 servings'}
+Details: {'Prep Time:': 5, 'Cook Time:': 5, 'Total Time:': 10, 'Servings:': 2}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '359', 'Fat': '28g', 'Carbs': '2g', 'Protein': '26g'}
+Nutrition: {'Calories': 359, 'Fat': 28, 'Carbs': 2, 'Protein': 26}
 Published: March 9, 2023
 Category: ['Recipes', 'Appetizers and Snacks', 'Cheese']
 Link: https://www.allrecipes.com/garlic-and-herb-baked-gruyere-recipe-7253007
@@ -782,10 +782,10 @@ Link: https://www.allrecipes.com/garlic-and-herb-baked-gruyere-recipe-7253007
 Recipe 66:
 Title: Sheet Pan Balsamic Pork Tenderloin with Rainbow Vegetables Recipe
 Ingredients: ['4 tablespoons olive oil, divided ', '2  dates, pitted and chopped, or to taste ', '3 tablespoons white balsamic vinegar ', '2 teaspoons minced fresh rosemary ', '1 teaspoon sliced garlic ', '1 teaspoon salt, or to taste ', '½ teaspoon freshly ground black pepper, or to taste ', '6 cups 1/2-inch x 2-inch rainbow carrot sticks ', '4 cups 1/2-inch x 2-inch peeled, seeded butternut squash chunks ', '½  red onion, sliced lengthwise ', '2 (1 1/4 pound) pork tenderloins']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '45 mins', 'Total Time:': '1 hrs', 'Servings:': '8'}
+Details: {'Prep Time:': 15, 'Cook Time:': 45, 'Total Time:': 60, 'Servings:': 8}
 Reviews: 0
 Rating: 5.0
-Nutrition: {'Calories': '306', 'Fat': '12g', 'Carbs': '19g', 'Protein': '31g'}
+Nutrition: {'Calories': 306, 'Fat': 12, 'Carbs': 19, 'Protein': 31}
 Published: February 27, 2023
 Category: ['Recipes', 'Meat and Poultry', 'Pork', 'Pork Tenderloin Recipes']
 Link: https://www.allrecipes.com/recipe/8544430/sheet-balsamic-pork-tenderloin-with-rainbow-vegetables/
@@ -794,10 +794,10 @@ Link: https://www.allrecipes.com/recipe/8544430/sheet-balsamic-pork-tenderloin-w
 Recipe 67:
 Title: Crustless Taco Pie Recipe
 Ingredients: ['1 pound lean ground beef ', '3 tablespoons bold taco seasoning ', '6 large eggs ', '⅓ cup heavy cream ', '¼ teaspoon granulated garlic ', '1 cup shredded Cheddar cheese']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '40 mins', 'Cool Time:': '5 mins', 'Total Time:': '55 mins', 'Servings:': '6'}
+Details: {'Prep Time:': 10, 'Cook Time:': 40, 'Cool Time:': 5, 'Total Time:': 55, 'Servings:': 6}
 Reviews: 0
 Rating: 5.0
-Nutrition: {'Calories': '408', 'Fat': '32g', 'Carbs': '4g', 'Protein': '25g'}
+Nutrition: {'Calories': 408, 'Fat': 32, 'Carbs': 4, 'Protein': 25}
 Published: February 25, 2023
 Category: ['Recipes', 'Cuisine', 'Latin American', 'Mexican']
 Link: https://www.allrecipes.com/recipe/8543921/crustless-taco-pie/
@@ -806,10 +806,10 @@ Link: https://www.allrecipes.com/recipe/8543921/crustless-taco-pie/
 Recipe 68:
 Title: One-Dish Meatball and Ravioli Casserole Recipe
 Ingredients: ['1 (24 ounce) jar marinara sauce ', '1 (9 ounce) package frozen cheese ravioli ', '1 (14 ounce) package frozen cooked meatballs, thawed ', '2 cups shredded mozzarella cheese ', '¼ cup grated Parmesan cheese, or more to taste ', '¼ teaspoon crushed red pepper flakes, or to taste (Optional)']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '40 mins', 'Total Time:': '50 mins', 'Servings:': '6'}
+Details: {'Prep Time:': 10, 'Cook Time:': 40, 'Total Time:': 50, 'Servings:': 6}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '450', 'Fat': '22g', 'Carbs': '34g', 'Protein': '28g'}
+Nutrition: {'Calories': 450, 'Fat': 22, 'Carbs': 34, 'Protein': 28}
 Published: February 25, 2023
 Category: ['Recipes', 'Main Dishes', 'Casserole Recipes', 'Beef']
 Link: https://www.allrecipes.com/recipe/8540109/one-dish-meatball-and-ravioli-casserole/
@@ -818,10 +818,10 @@ Link: https://www.allrecipes.com/recipe/8540109/one-dish-meatball-and-ravioli-ca
 Recipe 69:
 Title: Sweet and Sour Pork Stir Fry Recipe
 Ingredients: ['1 pound pork loin, cut into bite-sized pieces ', '1 tablespoon Chinese five-spice powder ', '¼ cup vegetable oil, divided, or as needed ', '½  red bell pepper, cut into bite-sized pieces ', '½  yellow bell pepper, cut into bite-sized pieces ', '½  orange bell pepper, cut into bite-sized pieces ', '½  red onion, cut into bite-sized pieces ', '3 cloves garlic, chopped ', '1 cup chopped broccoli ', '1 cup fresh pineapple, cut into bite-size chunks ', '¼ cup sweet and sour sauce']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '15 mins', 'Total Time:': '30 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 15, 'Cook Time:': 15, 'Total Time:': 30, 'Servings:': 4}
 Reviews: 7
 Rating: 3.9
-Nutrition: {'Calories': '408', 'Fat': '28g', 'Carbs': '15g', 'Protein': '24g'}
+Nutrition: {'Calories': 408, 'Fat': 28, 'Carbs': 15, 'Protein': 24}
 Published: February 25, 2023
 Category: ['Recipes', 'Main Dishes', 'Stir-Fry', 'Pork']
 Link: https://www.allrecipes.com/recipe/8543965/sweet-and-sour-pork-stir-fry/
@@ -830,10 +830,10 @@ Link: https://www.allrecipes.com/recipe/8543965/sweet-and-sour-pork-stir-fry/
 Recipe 70:
 Title: Baked Gochujang Chicken Wings Recipe
 Ingredients: ['½ cup gochujang (Korean hot pepper paste) ', '1 cup soy sauce ', '1 cup honey ', '¼ cup rice vinegar ', '2 tablespoons freshly grated ginger ', '4 cloves garlic, chopped ', '1 teaspoon salt ', '1 teaspoon freshly ground black pepper ', '10  whole chicken wings3 tablespoons chopped fresh cilantro ', '2  green onions, thinly sliced ', '2 tablespoons butter ', '½ teaspoon sesame oil ', '½ teaspoon freshly ground black pepper ', '½  lime, juiced']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '50 mins', 'Marinate Time:': '1 hrs', 'Total Time:': '2 hrs 10 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 20, 'Cook Time:': 50, 'Marinate Time:': 60, 'Total Time:': 130, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '938', 'Fat': '43g', 'Carbs': '94g', 'Protein': '47g'}
+Nutrition: {'Calories': 938, 'Fat': 43, 'Carbs': 94, 'Protein': 47}
 Published: February 25, 2023
 Category: ['Meat and Poultry', 'Chicken', 'Baked and Roasted', 'Wings']
 Link: https://www.allrecipes.com/recipe/8543954/baked-gochujang-chicken-wings/
@@ -842,10 +842,10 @@ Link: https://www.allrecipes.com/recipe/8543954/baked-gochujang-chicken-wings/
 Recipe 71:
 Title: Meatball Casserole Recipe
 Ingredients: ['8 ounces rotini pasta ', '1 (24 ounce) jar prepared marinara sauce ', '1 cup water ', '½ cup prepared pizza sauce ', '½ cup milk ', '10  frozen cooked meatballs, thawed ', '¼ cup grated Parmesan cheese, or to taste']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '45 mins', 'Total Time:': '55 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 45, 'Total Time:': 55, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '448', 'Fat': '26g', 'Carbs': '33g', 'Protein': '22g'}
+Nutrition: {'Calories': 448, 'Fat': 26, 'Carbs': 33, 'Protein': 22}
 Published: February 25, 2023
 Category: ['Recipes', 'Main Dishes', 'Casserole Recipes']
 Link: https://www.allrecipes.com/recipe/8541312/meatball-casserole/
@@ -854,10 +854,10 @@ Link: https://www.allrecipes.com/recipe/8541312/meatball-casserole/
 Recipe 72:
 Title: Spicy Shrimp Ramen Noodles with Asparagus Recipe
 Ingredients: ['2 teaspoons sesame oil, divided ', '8 ounces medium shrimp, peeled and deveined ', '¼ cup chopped carrot ', '4 ounces button mushrooms, sliced ', '4 cups vegetable broth ', '1 tablespoon hoisin sauce ', '1 tablespoon soy sauce ', '2 teaspoons chile-garlic sauce (such as Sriracha®) ', '5  fresh asparagus, trimmed and chopped ', '2 (3 ounce) packages instant ramen noodles, flavor packet discarded ', '2  green onions, chopped']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '20 mins', 'Total Time:': '25 mins', 'Servings:': '2'}
+Details: {'Prep Time:': 5, 'Cook Time:': 20, 'Total Time:': 25, 'Servings:': 2}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '637', 'Fat': '22g', 'Carbs': '72g', 'Protein': '37g'}
+Nutrition: {'Calories': 637, 'Fat': 22, 'Carbs': 72, 'Protein': 37}
 Published: February 25, 2023
 Category: ['Recipes', 'Pasta and Noodles', 'Noodle Recipes', 'Ramen Noodle Recipes']
 Link: https://www.allrecipes.com/recipe/8543953/spicy-shrimp-ramen-with-asparagus/
@@ -866,10 +866,10 @@ Link: https://www.allrecipes.com/recipe/8543953/spicy-shrimp-ramen-with-asparagu
 Recipe 73:
 Title: No-Tortilla Fish Taco Bowls Recipe
 Ingredients: ['1 ½ teaspoons onion powder ', '1 teaspoon garlic powder ', '1 teaspoon smoked paprika ', '¼ teaspoon dried thyme ', '½ teaspoon cayenne pepper, or to taste ', '½ teaspoon salt, or to taste ', '¼ teaspoon freshly ground black pepper, or to taste ', '2  limes, divided ', '6 tablespoons olive oil, divided ', '1 ½ pounds skinless cod fillets, about 1-inch thick4 cups shredded green and red cabbage ', '1 cup shredded carrots ', '2 tablespoons olive oil ', '½ teaspoon salt, or to taste ', '½ teaspoon ground cumin½ cup mayonnaise ', '2  chipotle peppers in adobo sauce, minced ', '¼ teaspoon salt, or to taste ', '¼ teaspoon cayenne pepper, or to taste¼ cup chopped fresh cilantro ', '½ cup prepared guacamole ', '  lime wedges ', '1 cup chopped fresh tomatoes']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '6 mins', 'Refrigerate Time:': '1 day 6 hrs', 'Total Time:': '1 day 6 hrs 26 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 20, 'Cook Time:': 6, 'Refrigerate Time:': 1800, 'Total Time:': 1826, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '678', 'Fat': '54g', 'Carbs': '20g', 'Protein': '34g'}
+Nutrition: {'Calories': 678, 'Fat': 54, 'Carbs': 20, 'Protein': 34}
 Published: February 25, 2023
 Category: ['Recipes', 'Cuisine', 'Latin American', 'Mexican']
 Link: https://www.allrecipes.com/recipe/8532492/no-tortilla-fish-taco-bowls/
@@ -878,10 +878,10 @@ Link: https://www.allrecipes.com/recipe/8532492/no-tortilla-fish-taco-bowls/
 Recipe 74:
 Title: Smoked Paprika Chicken Thighs Recipe
 Ingredients: ['1 tablespoon smoked paprika ', '1 teaspoon granulated garlic ', '½ teaspoon ancho chile powder ', '½ teaspoon salt ', '¼ teaspoon ground turmeric ', '¼ teaspoon freshly ground black pepper ', '1 tablespoon olive oil ', '1 tablespoon cider vinegar ', '4 large bone-in, skin-on chicken thighs ', '2 tablespoons melted butter ', '2 tablespoons minced fresh parsley (Optional)']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '40 mins', 'Total Time:': '1 hrs', 'Servings:': '4'}
+Details: {'Prep Time:': 20, 'Cook Time:': 40, 'Total Time:': 60, 'Servings:': 4}
 Reviews: 4
 Rating: 4.6
-Nutrition: {'Calories': '448', 'Fat': '35g', 'Carbs': '2g', 'Protein': '30g'}
+Nutrition: {'Calories': 448, 'Fat': 35, 'Carbs': 2, 'Protein': 30}
 Published: February 25, 2023
 Category: ['Meat and Poultry', 'Chicken', 'Baked and Roasted', 'Thighs']
 Link: https://www.allrecipes.com/recipe/8544439/smoked-paprika-chicken-thighs/
@@ -890,10 +890,10 @@ Link: https://www.allrecipes.com/recipe/8544439/smoked-paprika-chicken-thighs/
 Recipe 75:
 Title: Chimichurri Chicken Recipe
 Ingredients: ['1 cup packed fresh parsley leaves ', '2 tablespoons fresh oregano leaves ', '1 tablespoon minced garlic ', '½ cup chopped green onion (including green tops) ', '1  jalapeño pepper, seeds and membranes removed, diced ', '2 tablespoons white wine vinegar ', '1 tablespoon fresh lemon juice ', '½ cup olive oil ', '  salt and freshly ground black pepper to taste ', '3 pounds chicken tenders ', '1 ½ teaspoons smoked paprika']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '20 mins', 'Total Time:': '40 mins', 'Servings:': '10'}
+Details: {'Prep Time:': 20, 'Cook Time:': 20, 'Total Time:': 40, 'Servings:': 10}
 Reviews: 0
 Rating: 5.0
-Nutrition: {'Calories': '253', 'Fat': '13g', 'Carbs': '2g', 'Protein': '32g'}
+Nutrition: {'Calories': 253, 'Fat': 13, 'Carbs': 2, 'Protein': 32}
 Published: 2023
 Category: ['Recipes', 'Meat and Poultry', 'Chicken', 'Chicken Tenders Recipes']
 Link: https://www.allrecipes.com/recipe/8489220/chimichurri-chicken/
@@ -902,10 +902,10 @@ Link: https://www.allrecipes.com/recipe/8489220/chimichurri-chicken/
 Recipe 76:
 Title: Instant Pot Dump and Go Seven Can Soup
 Ingredients: ['1 (15.25 ounce) can whole kernel corn, drained ', '1 (15 ounce) can ranch-style beans ', '1 (15 ounce) can no-bean chili ', '1 (14.5 ounce) can cut green beans, drained ', '1 (14.5 ounce) can diced potatoes, drained ', "1 (10.75 ounce) can  condensed nacho cheese soup (such as Campbell's® Fiesta Nacho Cheese) ", '1 (10 ounce) can diced tomatoes and green chiles (such as RO*TEL®)']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '40 mins', 'Release Pressure Time:': '5 mins', 'Total Time:': '50 mins', 'Servings:': '6'}
+Details: {'Prep Time:': 5, 'Cook Time:': 40, 'Release Pressure Time:': 5, 'Total Time:': 50, 'Servings:': 6}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '288', 'Fat': '7g', 'Carbs': '45g', 'Protein': '15g'}
+Nutrition: {'Calories': 288, 'Fat': 7, 'Carbs': 45, 'Protein': 15}
 Published: February 24, 2023
 Category: ['Recipes', 'Everyday Cooking', 'Instant Pot¨', 'Soups, Stews and Chili']
 Link: https://www.allrecipes.com/recipe/8532487/instant-pot-dump-and-go-seven-can-soup/
@@ -914,10 +914,10 @@ Link: https://www.allrecipes.com/recipe/8532487/instant-pot-dump-and-go-seven-ca
 Recipe 77:
 Title: Creamy Chicken and Mushroom Stroganoff Recipe
 Ingredients: ['3 tablespoons butter ', '1 medium onion, diced ', '1 cup sliced mushrooms ', '1 pound skinless, boneless chicken breasts, cut into thin strips ', '1 teaspoon Greek seasoning ', '½ teaspoon freshly ground black pepper ', '1 (12 ounce) package egg noodles ', '½ cup chicken broth ', '½ cup milk ', '½ teaspoon Worcestershire sauce ', '½ cup sour cream ', '2 tablespoons all-purpose flour ', '1 tablespoon chopped fresh parsley, or to taste']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '25 mins', 'Total Time:': '45 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 20, 'Cook Time:': 25, 'Total Time:': 45, 'Servings:': 4}
 Reviews: 3
 Rating: 5.0
-Nutrition: {'Calories': '637', 'Fat': '21g', 'Carbs': '70g', 'Protein': '42g'}
+Nutrition: {'Calories': 637, 'Fat': 21, 'Carbs': 70, 'Protein': 42}
 Published: February 23, 2023
 Category: ['Recipes', 'Main Dishes', 'Chicken']
 Link: https://www.allrecipes.com/recipe/8543753/creamy-chicken-and-mushroom-stroganoff/
@@ -926,10 +926,10 @@ Link: https://www.allrecipes.com/recipe/8543753/creamy-chicken-and-mushroom-stro
 Recipe 78:
 Title: Miso Noodle Soup Recipe
 Ingredients: ['2 large eggs ', '1 tablespoon sesame oil ', '2 teaspoons finely grated fresh ginger ', '2 teaspoons finely grated garlic ', '⅓ cup thinly sliced leek (green part) ', '1 ½ cups thinly sliced cabbage ', '½ cup enoki mushrooms ', '4 ounces refrigerated fresh ramen noodles ', '3 cups water ', '2 tablespoons miso paste ', '1 tablespoon soy sauce, or to taste ', '1 teaspoon black sesame seeds, or to taste ', '2 tablespoons sliced green onion, or to taste']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '10 mins', 'Total Time:': '15 mins', 'Servings:': '2'}
+Details: {'Prep Time:': 5, 'Cook Time:': 10, 'Total Time:': 15, 'Servings:': 2}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '429', 'Fat': '14g', 'Carbs': '59g', 'Protein': '18g'}
+Nutrition: {'Calories': 429, 'Fat': 14, 'Carbs': 59, 'Protein': 18}
 Published: February 23, 2023
 Category: ['Recipes', 'Soups, Stews and Chili Recipes', 'Soup Recipes', 'Noodle Soup Recipes']
 Link: https://www.allrecipes.com/recipe/8465716/miso-noodle-soup/
@@ -938,10 +938,10 @@ Link: https://www.allrecipes.com/recipe/8465716/miso-noodle-soup/
 Recipe 79:
 Title: Steak and Rice Bowls with Vegetable Relish Recipe
 Ingredients: ['1  lime, juiced ', '1  jalapeño pepper, seeded and chopped ', '2 small garlic cloves, chopped ', '2 teaspoons balsamic vinegar ', '1 teaspoon minced fresh ginger root ', '½ teaspoon white sugar ', '½ teaspoon ground cumin ', '½ teaspoon chili powder ', '½ teaspoon salt, or to taste ', '¼ teaspoon cayenne pepper, or to taste ', '¼ teaspoon ground white pepper, or to taste ', '¼ cup chopped fresh cilantro leaves ', '½ cup extra-virgin olive oil ', '1 ½ pounds flank steak (about 1-inch thick)1 (8 ounce) can sweet corn, drained ', '1 (15 ounce) can black beans, rinsed and drained ', '1  red bell pepper, seeded and chopped1 tablespoon unsalted butter ', '1 tablespoon olive oil ', '½ teaspoon low-sodium steak seasoning (such as Montreal Steak Seasoning®)4 cups hot cooked white rice ', '1  avocado - peeled, pitted, and diced ', '4 tablespoons sour cream (Optional) ', '2  green onions, chopped (Optional)']
-Details: {'Prep Time:': '1 hrs 10 mins', 'Cook Time:': '10 mins', 'Marinate Time:': '1 hrs', 'Rest Time:': '10 mins', 'Total Time:': '2 hrs 30 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 70, 'Cook Time:': 10, 'Marinate Time:': 60, 'Rest Time:': 10, 'Total Time:': 150, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '719', 'Fat': '43g', 'Carbs': '75g', 'Protein': '11g'}
+Nutrition: {'Calories': 719, 'Fat': 43, 'Carbs': 75, 'Protein': 11}
 Published: February 23, 2023
 Category: ['Recipes', 'Main Dishes', 'Bowls']
 Link: https://www.allrecipes.com/recipe/8543757/steak-and-rice-bowls-with-vegetable-relish/
@@ -950,10 +950,10 @@ Link: https://www.allrecipes.com/recipe/8543757/steak-and-rice-bowls-with-vegeta
 Recipe 80:
 Title: Baked Brie with Honey, Pecans, and Cranberries Recipe
 Ingredients: ['1 (8 ounce) wheel Brie cheese ', '2 tablespoons honey ', '1 ½ tablespoons toasted chopped pecans ', '1 ½ tablespoons dried cranberries ', '½ teaspoon minced fresh rosemary (Optional)']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '10 mins', 'Total Time:': '15 mins', 'Servings:': '8'}
+Details: {'Prep Time:': 5, 'Cook Time:': 10, 'Total Time:': 15, 'Servings:': 8}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '125', 'Fat': '9g', 'Carbs': '6g', 'Protein': '6g'}
+Nutrition: {'Calories': 125, 'Fat': 9, 'Carbs': 6, 'Protein': 6}
 Published: February 23, 2023
 Category: ['Recipes', 'Appetizers and Snacks', 'Cheese', 'Baked Brie Recipes']
 Link: https://www.allrecipes.com/recipe/8541325/baked-brie-with-honey-pecans-and-cranberries/
@@ -962,10 +962,10 @@ Link: https://www.allrecipes.com/recipe/8541325/baked-brie-with-honey-pecans-and
 Recipe 81:
 Title: Chicken Parmesan Meatballs Recipe
 Ingredients: ['1 large egg, beaten ', '¾ cup grated Parmesan cheese ', '1 ¾ cups Italian-style panko bread crumbs, divided ', '1 teaspoon garlic powder ', '1 teaspoon Italian seasoning ', '¾ teaspoon crushed red pepper flakes ', '½ teaspoon salt ', '½ teaspoon freshly ground black pepper ', '1 ½ pounds ground chicken ', '2 tablespoons olive oil, divided ', '2 tablespoons unsalted butter, divided ', '1 (28 ounce) jar marinara sauce ', '½ cup shredded mozzarella cheese ', '2 tablespoons snipped fresh parsley (Optional)']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '40 mins', 'Total Time:': '1 hrs', 'Servings:': '6', 'Yield:': '24 meatballs'}
+Details: {'Prep Time:': 20, 'Cook Time:': 40, 'Total Time:': 60, 'Servings:': 6, 'Yield:': '24 meatballs'}
 Reviews: 3
 Rating: 5.0
-Nutrition: {'Calories': '836', 'Fat': '26g', 'Carbs': '135g', 'Protein': '24g'}
+Nutrition: {'Calories': 836, 'Fat': 26, 'Carbs': 135, 'Protein': 24}
 Published: February 23, 2023
 Category: ['Recipes', 'Main Dishes', 'Meatball Recipes']
 Link: https://www.allrecipes.com/recipe/8543745/chicken-parmesan-meatballs/
@@ -974,10 +974,10 @@ Link: https://www.allrecipes.com/recipe/8543745/chicken-parmesan-meatballs/
 Recipe 82:
 Title: Smash Burgers Recipe
 Ingredients: ['1 tablespoon ketchup ', '1 tablespoon mayonnaise ', '½ tablespoon sweet pickle relish ', '1 teaspoon vinegar ', '½ teaspoon white sugar ', '½ teaspoon granulated garlic ', '  salt and freshly ground black pepper to taste1 pound ground beef, at least 20% fat, refrigerated until cold ', '4  hamburger buns, split ', '1 tablespoon butter, or as needed ', '4 slices Cheddar or Colby cheese ', '½ small red onion, sliced ', '  salt and freshly ground black pepper to taste']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '8 mins', 'Total Time:': '18 mins', 'Servings:': '4', 'Yield:': '4 smash burgers'}
+Details: {'Prep Time:': 10, 'Cook Time:': 8, 'Total Time:': 18, 'Servings:': 4, 'Yield:': '4 smash burgers'}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '652', 'Fat': '47g', 'Carbs': '25g', 'Protein': '30g'}
+Nutrition: {'Calories': 652, 'Fat': 47, 'Carbs': 25, 'Protein': 30}
 Published: February 23, 2023
 Category: ['Recipes', 'Main Dishes', 'Burger Recipes', 'Cheeseburger Recipes']
 Link: https://www.allrecipes.com/recipe/8543770/smash-burgers/
@@ -986,10 +986,10 @@ Link: https://www.allrecipes.com/recipe/8543770/smash-burgers/
 Recipe 83:
 Title: Crescent Breakfast Squares Recipe
 Ingredients: ['2  12x16-inch parchment paper sheets ', '2 (12 ounce) packages crescent roll dough (such as Pillsbury® Grands!™) ', '8 slices deli ham ', '2 tablespoons Dijon mustard, or more to taste ', '3 tablespoons unsalted butter, divided ', '½ cup diced onion ', '½ cup diced red bell pepper ', '10 large eggs ', '1 tablespoon half-and-half cream or heavy whipping cream ', '1 pinch salt and freshly ground black pepper to taste ', '8 slices Swiss cheese ', "1 tablespoon bagel seasoning (such as Trader Joe's® Everything But the Bagel Seasoning Blend)"]
-Details: {'Prep Time:': '30 mins', 'Cook Time:': '25 mins', 'Cool Time:': '15 mins', 'Total Time:': '1 hrs 10 mins', 'Servings:': '8'}
+Details: {'Prep Time:': 30, 'Cook Time:': 25, 'Cool Time:': 15, 'Total Time:': 70, 'Servings:': 8}
 Reviews: 1
 Rating: 4.5
-Nutrition: {'Calories': '636', 'Fat': '39g', 'Carbs': '39g', 'Protein': '27g'}
+Nutrition: {'Calories': 636, 'Fat': 39, 'Carbs': 39, 'Protein': 27}
 Published: February 23, 2023
 Category: ['Everyday Cooking', 'Special Collections', 'Allrecipes Allstar Recipes', 'Breakfast and Brunch']
 Link: https://www.allrecipes.com/recipe/8532966/crescent-breakfast-squares/
@@ -998,10 +998,10 @@ Link: https://www.allrecipes.com/recipe/8532966/crescent-breakfast-squares/
 Recipe 84:
 Title: Tex-Mex Pork Crescent Roll Squares Recipe
 Ingredients: ['2 (8 ounce) cans refrigerated crescent roll dough ', '2 cups shredded sharp Cheddar cheese, divided ', '¾ pound cooked pulled pork, or any diced, cooked pork ', '1 (15 ounce) can black beans, rinsed and drained ', '1 (10 ounce) can diced tomatoes with green chile peppers (such as RO*TEL®), drained ', '3  green onions, chopped ', '1 tablespoon taco seasoning mix ', '4 ounces crumbled cotija cheese ', '1  jalapeno pepper, thinly sliced ', '1  avocado, sliced (Optional) ', '¼ cup chopped fresh cilantro, or more to taste (Optional) ', '1  lime, cut into wedges (Optional)']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '20 mins', 'Total Time:': '40 mins', 'Servings:': '32'}
+Details: {'Prep Time:': 20, 'Cook Time:': 20, 'Total Time:': 40, 'Servings:': 32}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '123', 'Fat': '7g', 'Carbs': '8g', 'Protein': '6g'}
+Nutrition: {'Calories': 123, 'Fat': 7, 'Carbs': 8, 'Protein': 6}
 Published: February 22, 2023
 Category: ['Recipes', 'Bread', 'Yeast Bread Recipes', 'Flat Bread Recipes']
 Link: https://www.allrecipes.com/recipe/8532983/tex-mex-pork-crescent-roll-squares/
@@ -1010,10 +1010,10 @@ Link: https://www.allrecipes.com/recipe/8532983/tex-mex-pork-crescent-roll-squar
 Recipe 85:
 Title: Carrot Apple Cake with Cream Cheese Frosting Recipe
 Ingredients: ['3 cups all-purpose flour ', '2 teaspoons baking powder ', '2 teaspoons ground cinnamon ', '1 teaspoon ground ginger ', '½ teaspoon baking soda ', '½ teaspoon salt ', '¼ teaspoon ground nutmeg ', '¼ teaspoon ground cloves ', '¼ teaspoon ground allspice ', '¾ cup unsalted butter, softened ', '¼ cup vegetable oil ', '1 cup firmly packed dark brown sugar ', '¾ cup white sugar ', '4 large eggs, at room temperature ', '2 teaspoons vanilla extract ', '1 cup buttermilk, at room temperature ', '1 ½ cups grated carrot ', '1 cup peeled and grated Granny Smith apple ', '¾ cup raisins (Optional) ', '¾ cup chopped pecans (Optional)½ cup unsalted butter, softened ', '12 ounces cream cheese, softened ', "4 ½ cups confectioners' sugar ", '1 ½ teaspoons vanilla extract ', '⅛ teaspoon salt ', '3 tablespoons heavy cream, or as needed']
-Details: {'Prep Time:': '1 hrs', 'Cook Time:': '45 mins', 'Cool Time:': '2 hrs', 'Total Time:': '3 hrs 45 mins', 'Servings:': '16'}
+Details: {'Prep Time:': 60, 'Cook Time:': 45, 'Cool Time:': 120, 'Total Time:': 225, 'Servings:': 16}
 Reviews: 1
 Rating: 2.0
-Nutrition: {'Calories': '580', 'Fat': '28g', 'Carbs': '78g', 'Protein': '7g'}
+Nutrition: {'Calories': 580, 'Fat': 28, 'Carbs': 78, 'Protein': 7}
 Published: February 22, 2023
 Category: ['Recipes', 'Desserts', 'Cakes', 'Carrot Cake Recipes']
 Link: https://www.allrecipes.com/recipe/8542272/carrot-apple-cake-with-cream-cheese-frosting/
@@ -1022,10 +1022,10 @@ Link: https://www.allrecipes.com/recipe/8542272/carrot-apple-cake-with-cream-che
 Recipe 86:
 Title: Easy Air Fryer Whole Chicken Recipe
 Ingredients: ['2 tablespoons olive oil ', '2 ½ teaspoons Italian seasoning ', '2 ½ teaspoons poultry seasoning ', '2 teaspoons paprika ', '2 teaspoons salt ', '1 (5 pound) whole chicken, giblets removed']
-Details: {'Prep Time:': '10 mins', 'Fry Time:': '1 hrs 5 mins', 'Rest Time:': '10 mins', 'Total Time:': '1 hrs 25 mins', 'Servings:': '8'}
+Details: {'Prep Time:': 10, 'Fry Time:': 65, 'Rest Time:': 10, 'Total Time:': 85, 'Servings:': 8}
 Reviews: 1
 Rating: 5.0
-Nutrition: {'Calories': '34', 'Fat': '4g', 'Carbs': '1g', 'Protein': '0g'}
+Nutrition: {'Calories': 34, 'Fat': 4, 'Carbs': 1, 'Protein': 0}
 Published: February 22, 2023
 Category: ['Recipes', 'Meat and Poultry', 'Chicken', 'Whole Chicken Recipes']
 Link: https://www.allrecipes.com/recipe/8453018/easy-air-fryer-whole-chicken/
@@ -1034,10 +1034,10 @@ Link: https://www.allrecipes.com/recipe/8453018/easy-air-fryer-whole-chicken/
 Recipe 87:
 Title: Croissant French Toast Recipe
 Ingredients: ['4 large croissants, halved horizontally, left out overnight ', '3 large eggs ', '½ cup half-and-half ', '1 tablespoon white sugar ', '2 teaspoons vanilla extract ', '½ teaspoon ground cinnamon ', '¼ teaspoon salt ', '1 pinch ground nutmeg ', '2 tablespoons unsalted butter']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '15 mins', 'Rest Time:': '8 hrs', 'Total Time:': '8 hrs 25 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Cook Time:': 15, 'Rest Time:': 480, 'Total Time:': 505, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '436', 'Fat': '27g', 'Carbs': '36g', 'Protein': '11g'}
+Nutrition: {'Calories': 436, 'Fat': 27, 'Carbs': 36, 'Protein': 11}
 Published: February 22, 2023
 Category: ['Recipes', 'Breakfast and Brunch', 'French Toast Recipes']
 Link: https://www.allrecipes.com/recipe/8495603/croissant-french-toast/
@@ -1046,10 +1046,10 @@ Link: https://www.allrecipes.com/recipe/8495603/croissant-french-toast/
 Recipe 88:
 Title: Cake Mix Birthday Cake Pancakes Recipe
 Ingredients: ['⅓ cup butter, melted and cooled ', '⅔ cup milk ', '2 large eggs ', '1 (15.25 ounce) package cake mix with candy bits (such as Pillsbury® Funfetti®) ', '½ cup whipped cream, or to taste (Optional) ', '2 teaspoons multicolored candy sprinkles, or to taste (Optional)']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '15 mins', 'Total Time:': '20 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 5, 'Cook Time:': 15, 'Total Time:': 20, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '622', 'Fat': '28g', 'Carbs': '86g', 'Protein': '9g'}
+Nutrition: {'Calories': 622, 'Fat': 28, 'Carbs': 86, 'Protein': 9}
 Published: February 22, 2023
 Category: ['Recipes', 'Breakfast and Brunch', 'Pancake Recipes']
 Link: https://www.allrecipes.com/recipe/8537839/cake-mix-birthday-cake-pancakes/
@@ -1058,10 +1058,10 @@ Link: https://www.allrecipes.com/recipe/8537839/cake-mix-birthday-cake-pancakes/
 Recipe 89:
 Title: Grandma's Pumpkin Something Recipe
 Ingredients: ['1 cup milk ', '1 cup white sugar ', '3 large eggs ', '1 teaspoon ground cinnamon ', '¼ teaspoon ground ginger ', '⅛ teaspoon ground cloves ', '½ teaspoon salt ', '3 ½ cups pumpkin puree ', '1 (15.25 ounce) package yellow cake mix ', '1 cup chopped pecans ', '¾ cup butter, melted ', '1 cup whipped heavy cream (Optional)']
-Details: {'Prep Time:': '10 mins', 'Bake Time:': '1 hrs', 'Total Time:': '1 hrs 10 mins', 'Servings:': '16'}
+Details: {'Prep Time:': 10, 'Bake Time:': 60, 'Total Time:': 70, 'Servings:': 16}
 Reviews: 1
 Rating: 5.0
-Nutrition: {'Calories': '333', 'Fat': '19g', 'Carbs': '40g', 'Protein': '4g'}
+Nutrition: {'Calories': 333, 'Fat': 19, 'Carbs': 40, 'Protein': 4}
 Published: February 22, 2023
 Category: ['Vegetables', 'Squash', 'Winter Squash', 'Pumpkin']
 Link: https://www.allrecipes.com/recipe/8512612/grandmas-pumpkin-something/
@@ -1070,10 +1070,10 @@ Link: https://www.allrecipes.com/recipe/8512612/grandmas-pumpkin-something/
 Recipe 90:
 Title: Creamy Tuscan Chicken Pasta Recipe
 Ingredients: ['3 tablespoons olive oil ', '4  skinless, boneless chicken thighs ', '¾ teaspoon kosher salt ', '¼ teaspoon ground black pepper ', '1 large onion, finely chopped ', '4 cloves garlic, minced ', '½ cup dry white wine ', '½ cup chopped, drained oil-packed sun-dried tomatoes ', '1 cup low-sodium chicken broth ', '1 ½ teaspoons Italian seasoning ', '4 cups fresh baby spinach ', '1 cup freshly grated aged Asiago cheese ', '1 cup heavy cream ', '1 tablespoon freshly squeezed lemon juice ', '1 (16 ounce) package mini farfalle pasta']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '45 mins', 'Total Time:': '1 hrs 5 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 20, 'Cook Time:': 45, 'Total Time:': 65, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '948', 'Fat': '44g', 'Carbs': '94g', 'Protein': '43g'}
+Nutrition: {'Calories': 948, 'Fat': 44, 'Carbs': 94, 'Protein': 43}
 Published: February 22, 2023
 Category: ['Recipes', 'Main Dishes', 'Pasta', 'Chicken']
 Link: https://www.allrecipes.com/recipe/8541316/creamy-tuscan-chicken-pasta/
@@ -1082,10 +1082,10 @@ Link: https://www.allrecipes.com/recipe/8541316/creamy-tuscan-chicken-pasta/
 Recipe 91:
 Title: Chicken Broccoli Alfredo Bake Recipe
 Ingredients: ['1 ½ cups cottage cheese ', '1 ½ cups evaporated milk ', '3 ½ ounces freshly grated Parmesan cheese ', '¼ teaspoon granulated garlic ', '1 pinch ground white pepper ', '1 tablespoon chopped fresh parsley1 tablespoon butter ', '2 cloves garlic, minced ', '½ teaspoon salt ', '1 pinch freshly ground black pepper ', '3 cups uncooked rotini pasta ', '1 cup chicken broth ', '1 cup chopped broccoli ', '1 (6 ounce) skinless, boneless chicken breast, cubed ', '½ teaspoon Italian seasoning ', '  salt and freshly ground black pepper to taste ', '¼ cup freshly grated Parmesan cheese']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '15 mins', 'Bake Time:': '55 mins', 'Total Time:': '1 hrs 20 mins', 'Servings:': '5'}
+Details: {'Prep Time:': 10, 'Cook Time:': 15, 'Bake Time:': 55, 'Total Time:': 80, 'Servings:': 5}
 Reviews: 0
 Rating: 4.0
-Nutrition: {'Calories': '707', 'Fat': '48g', 'Carbs': '47g', 'Protein': '24g'}
+Nutrition: {'Calories': 707, 'Fat': 48, 'Carbs': 47, 'Protein': 24}
 Published: February 18, 2023
 Category: ['Recipes', 'Main Dishes', 'Casserole Recipes', 'Chicken']
 Link: https://www.allrecipes.com/recipe/8499613/chicken-broccoli-alfredo-bake/
@@ -1094,10 +1094,10 @@ Link: https://www.allrecipes.com/recipe/8499613/chicken-broccoli-alfredo-bake/
 Recipe 92:
 Title: Easy Sesame Chicken Recipe
 Ingredients: ['½ cup cornstarch ', '1 teaspoon salt ', '½ teaspoon freshly ground black pepper ', '4  skinless, boneless chicken breast halves, cut into bite-sized pieces ', '¼ cup vegetable oil ', '¼ cup honey ', '¼ cup reduced-sodium soy sauce ', '¼ cup rice vinegar ', '1 tablespoon chile-garlic sauce (such as Sriracha®) ', '2 cloves garlic, chopped ', '2 teaspoons minced fresh ginger root ', '2 teaspoons sesame oil ', '2 tablespoons toasted sesame seeds, divided ', '2  green onions, chopped']
-Details: {'Prep Time:': '7 mins', 'Cook Time:': '15 mins', 'Total Time:': '22 mins', 'Servings:': '6'}
+Details: {'Prep Time:': 7, 'Cook Time:': 15, 'Total Time:': 22, 'Servings:': 6}
 Reviews: 2
 Rating: 5.0
-Nutrition: {'Calories': '293', 'Fat': '13g', 'Carbs': '24g', 'Protein': '20g'}
+Nutrition: {'Calories': 293, 'Fat': 13, 'Carbs': 24, 'Protein': 20}
 Published: February 18, 2023
 Category: ['Meat and Poultry', 'Chicken', 'Chicken Breast', 'Asian-Style']
 Link: https://www.allrecipes.com/recipe/8502498/easy-sesame-chicken/
@@ -1106,10 +1106,10 @@ Link: https://www.allrecipes.com/recipe/8502498/easy-sesame-chicken/
 Recipe 93:
 Title: Chicken Minestrone Soup Recipe
 Ingredients: ['4 tablespoons olive oil, divided ', '½ pound skinless, boneless chicken breast, cut into bite-sized pieces ', '1 cup chopped onion ', '2 cloves garlic, minced ', '½ cup sliced carrot ', '½ cup chopped celery ', '5 cups chicken stock ', '1 (14.5 ounce) can diced tomatoes with basil, garlic, and oregano ', '1 (15.5 ounce) can cannellini beans, drained and rinsed ', '1 (15.5 ounce) can kidney beans, drained and rinsed ', '1 (6 ounce) can tomato paste ', '1 small zucchini, quartered lengthwise and cut into 1/2 inch slices ', '½ cup frozen cut green beans ', '1 teaspoon Italian seasoning ', '½ cup ditalini pasta ', '  salt and freshly ground black pepper to taste ', '⅓ cup grated Parmesan cheese, or more to taste (Optional) ', '2 teaspoons chopped fresh parsley']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '35 mins', 'Total Time:': '55 mins', 'Servings:': '8'}
+Details: {'Prep Time:': 20, 'Cook Time:': 35, 'Total Time:': 55, 'Servings:': 8}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '260', 'Fat': '8g', 'Carbs': '33g', 'Protein': '15g'}
+Nutrition: {'Calories': 260, 'Fat': 8, 'Carbs': 33, 'Protein': 15}
 Published: February 16, 2023
 Category: ['Soups, Stews and Chili Recipes', 'Soup Recipes', 'Vegetable Soup Recipes', 'Minestrone']
 Link: https://www.allrecipes.com/recipe/8499644/chicken-minestrone-soup/
@@ -1118,10 +1118,10 @@ Link: https://www.allrecipes.com/recipe/8499644/chicken-minestrone-soup/
 Recipe 94:
 Title: Pappardelle Bolognese Recipe
 Ingredients: ['1 small onion, cut into 1-inch pieces ', '1 medium carrot, cut into 2-inch pieces ', '1  celery stalk, cut into 2-inch pieces ', '2 tablespoons extra-virgin olive oil ', '2 cloves garlic, minced ', '½ pound ground beef ', '½ pound ground veal ', '½ cup Cabernet Sauvignon wine ', '1 (28 ounce) can crushed tomatoes ', '1 ½ teaspoons dried oregano ', '¾ teaspoon salt ', '¼ teaspoon freshly ground black pepper ', '½ cup milk ', '1 pinch freshly grated nutmeg, or to taste ', '1 (16 ounce) package pappardelle pasta']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '1 hrs 15 mins', 'Total Time:': '1 hrs 25 mins', 'Servings:': '6'}
+Details: {'Prep Time:': 10, 'Cook Time:': 75, 'Total Time:': 85, 'Servings:': 6}
 Reviews: 1
 Rating: 1.0
-Nutrition: {'Calories': '576', 'Fat': '19g', 'Carbs': '71g', 'Protein': '27g'}
+Nutrition: {'Calories': 576, 'Fat': 19, 'Carbs': 71, 'Protein': 27}
 Published: February 16, 2023
 Category: ['Recipes', 'Main Dishes', 'Pasta']
 Link: https://www.allrecipes.com/recipe/8457750/pappardelle-bolognese/
@@ -1130,10 +1130,10 @@ Link: https://www.allrecipes.com/recipe/8457750/pappardelle-bolognese/
 Recipe 95:
 Title: Chicageaux Spicy Smokehouse Tots Recipe
 Ingredients: ['1 (32 ounce) package frozen bite-size potato nuggets (such as Tater Tots®) ', '3 tablespoons olive oil, divided, or as needed ', '3 tablespoons barbeque seasoning, divided, or to taste ', '4  skinless, boneless chicken thighs ', '4 tablespoons butter ', "2 1/2 cups hot pepper sauce (such as Frank's RedHot®), or to taste ", '1 tablespoon hot honey, or to taste ', '2 cups shredded Mexican-style cheese blend ', '1 cup white Mexican cheese sauce (queso blanco) ', '¼ cup pickled red onions, or to taste ', '1 tablespoon chopped fresh parsley, or to taste']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '30 mins', 'Total Time:': '45 mins', 'Servings:': '6'}
+Details: {'Prep Time:': 15, 'Cook Time:': 30, 'Total Time:': 45, 'Servings:': 6}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '961', 'Fat': '61g', 'Carbs': '78g', 'Protein': '39g'}
+Nutrition: {'Calories': 961, 'Fat': 61, 'Carbs': 78, 'Protein': 39}
 Published: 2023
 Category: ['Main Dishes', 'Casserole Recipes', 'Vegetable', 'Tater Tots¨']
 Link: https://www.allrecipes.com/recipe/8539817/chicageaux-spicy-smokehouse-tots/
@@ -1142,10 +1142,10 @@ Link: https://www.allrecipes.com/recipe/8539817/chicageaux-spicy-smokehouse-tots
 Recipe 96:
 Title: Mocha Cookie Bars Recipe
 Ingredients: ['1 tablespoon instant espresso powder ', '1 tablespoon strong brewed coffee ', '1 cup all-purpose flour ', '¼ cup unsweetened cocoa powder ', '½ teaspoon cream of tartar ', '½ teaspoon baking soda ', '½ teaspoon salt ', '¼ teaspoon ground cinnamon ', '½ cup unsalted butter, softened ', '½ cup white sugar ', '¼ cup firmly packed brown sugar ', '1 large egg, at room temperature ', '2 teaspoons vanilla extract1 tablespoon white sugar ', '½ teaspoon ground cinnamon']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '20 mins', 'Cool Time:': '10 mins', 'Total Time:': '45 mins', 'Servings:': '16', 'Yield:': '16 mocha cookie bars'}
+Details: {'Prep Time:': 15, 'Cook Time:': 20, 'Cool Time:': 10, 'Total Time:': 45, 'Servings:': 16, 'Yield:': '16 mocha cookie bars'}
 Reviews: 2
 Rating: 5.0
-Nutrition: {'Calories': '130', 'Fat': '6g', 'Carbs': '17g', 'Protein': '2g'}
+Nutrition: {'Calories': 130, 'Fat': 6, 'Carbs': 17, 'Protein': 2}
 Published: February 13, 2023
 Category: ['Recipes', 'Desserts', 'Cookies', 'Bar Cookie Recipes']
 Link: https://www.allrecipes.com/recipe/8537837/mocha-cookie-bars/
@@ -1154,10 +1154,10 @@ Link: https://www.allrecipes.com/recipe/8537837/mocha-cookie-bars/
 Recipe 97:
 Title: Chicken Fajita Burrito Recipe
 Ingredients: ['10 ounces skinless, boneless chicken breasts, cut into thin strips ', '½  onion, cut into strips ', '5 ounces multi-colored bell pepper strips ', '2 tablespoons vegetable oil ', '½  lime, juiced ', '2 tablespoons fajita seasoning ', '4 (12 inch) flour tortillas ', '1 cup refried beans, warmed ', '⅔ cup shredded Cheddar cheese ', '1 ½ cups cooked Mexican rice ', '¼ cup sour cream ', '⅓ cup guacamole']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '25 mins', 'Marinate Time:': '2 hrs', 'Total Time:': '2 hrs 40 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 15, 'Cook Time:': 25, 'Marinate Time:': 120, 'Total Time:': 160, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '792', 'Fat': '29g', 'Carbs': '95g', 'Protein': '37g'}
+Nutrition: {'Calories': 792, 'Fat': 29, 'Carbs': 95, 'Protein': 37}
 Published: February 12, 2023
 Category: ['Latin American', 'Mexican', 'Main Dishes', 'Burrito Recipes']
 Link: https://www.allrecipes.com/recipe/8538304/chicken-fajita-burrito/
@@ -1166,10 +1166,10 @@ Link: https://www.allrecipes.com/recipe/8538304/chicken-fajita-burrito/
 Recipe 98:
 Title: Southwest Chicken Salad Recipe
 Ingredients: ['1  avocado - peeled, pitted, and chopped ', '¼ cup sour cream ', '1 tablespoon mayonnaise ', '1 tablespoon water ', '2 tablespoons freshly squeezed lime juice ', '½ (1 ounce) packet ranch dressing mix ', '½ teaspoon salt ', '2 (6 ounce) skinless, boneless chicken breast halves ', '1 tablespoon olive oil ', '1 ½ tablespoons fajita seasoning ', '1 medium ear corn, husk and silk removed ', '1 medium head romaine lettuce, chopped ', '½ cup halved grape tomatoes ', '1 (15 ounce) can black beans, rinsed and drained ', '½ small red onion, sliced into petals']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '20 mins', 'Total Time:': '30 mins', 'Servings:': '2'}
+Details: {'Prep Time:': 10, 'Cook Time:': 20, 'Total Time:': 30, 'Servings:': 2}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '827', 'Fat': '37g', 'Carbs': '71g', 'Protein': '59g'}
+Nutrition: {'Calories': 827, 'Fat': 37, 'Carbs': 71, 'Protein': 59}
 Published: February 10, 2023
 Category: ['Recipes', 'BBQ & Grilling', 'Chicken', 'Salads']
 Link: https://www.allrecipes.com/recipe/8508761/southwest-chicken-salad/
@@ -1178,10 +1178,10 @@ Link: https://www.allrecipes.com/recipe/8508761/southwest-chicken-salad/
 Recipe 99:
 Title: Toasted Almond and Coconut Cake with White Chocolate Ganache Recipe
 Ingredients: ['½ cup white chocolate chips ', '½ cup heavy cream1 cup sweetened flaked coconut ', '¾ cup finely chopped almonds ', '¾ cup unsalted butter ', '1 ½ cups all-purpose flour ', '1 teaspoon baking powder ', '½ teaspoon salt ', '½ teaspoon ground nutmeg ', '¾ cup white sugar ', '¼ cup firmly packed brown sugar ', '2 large eggs, at room temperature ', '1 teaspoon almond extract ', '1 teaspoon vanilla extract ', '1 ¼ cups buttermilk, at room temperature']
-Details: {'Prep Time:': '1 hrs', 'Cook Time:': '1 hrs', 'Cool Time:': '30 mins', 'Total Time:': '2 hrs 30 mins', 'Servings:': '16'}
+Details: {'Prep Time:': 60, 'Cook Time:': 60, 'Cool Time:': 30, 'Total Time:': 150, 'Servings:': 16}
 Reviews: 1
 Rating: 5.0
-Nutrition: {'Calories': '291', 'Fat': '18g', 'Carbs': '29g', 'Protein': '4g'}
+Nutrition: {'Calories': 291, 'Fat': 18, 'Carbs': 29, 'Protein': 4}
 Published: February 9, 2023
 Category: ['Recipes', 'Desserts', 'Cakes', 'Coconut Cake Recipes']
 Link: https://www.allrecipes.com/recipe/8532961/toasted-almond-and-coconut-cake-with-white-chocolate-ganache/
@@ -1190,10 +1190,10 @@ Link: https://www.allrecipes.com/recipe/8532961/toasted-almond-and-coconut-cake-
 Recipe 100:
 Title: 5 Minute Baileys Chocolate Mousse Recipe
 Ingredients: ['1 cup heavy whipping cream ', '¼ cup Baileys® Irish Cream ', '¼ cup unsweetened cocoa powder ', '¼ cup powdered sugar ', '½ teaspoon vanilla extract ', ' pinch salt']
-Details: {'Prep Time:': '5 mins', 'Total Time:': '5 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 5, 'Total Time:': 5, 'Servings:': 4}
 Reviews: 1
 Rating: 5.0
-Nutrition: {'Calories': '305', 'Fat': '23g', 'Carbs': '19g', 'Protein': '2g'}
+Nutrition: {'Calories': 305, 'Fat': 23, 'Carbs': 19, 'Protein': 2}
 Published: January 22, 2023
 Category: ['Recipes', 'Desserts', 'Mousse Recipes', 'Chocolate Mousse Recipes']
 Link: https://www.allrecipes.com/recipe/8529769/5-minute-baileys-chocolate-mousse/
@@ -1202,10 +1202,10 @@ Link: https://www.allrecipes.com/recipe/8529769/5-minute-baileys-chocolate-mouss
 Recipe 101:
 Title: Lemon Chicken Romano Recipe
 Ingredients: ['4  chicken cutlets, about 1/2-inch thick ', '  salt and freshly ground black pepper to taste ', '¼ cup all-purpose flour ', '2 large eggs ', '2 tablespoons water ', '¾ cup Italian-style panko bread crumbs ', '⅓ cup grated Romano cheese ', '2 teaspoons lemon zest ', '½ teaspoon dried oregano ', '½ teaspoon garlic powder ', '  salt and freshly ground black pepper to taste ', '¼ cup olive oil ', '1 tablespoon unsalted butter ', '¾ cup shredded mozzarella cheese ', '2 teaspoons chopped fresh parsley ', '4 large lemon wedges']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '12 mins', 'Total Time:': '27 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 15, 'Cook Time:': 12, 'Total Time:': 27, 'Servings:': 4}
 Reviews: 16
 Rating: 4.6
-Nutrition: {'Calories': '541', 'Fat': '30g', 'Carbs': '33g', 'Protein': '41g'}
+Nutrition: {'Calories': 541, 'Fat': 30, 'Carbs': 33, 'Protein': 41}
 Published: January 12, 2023
 Category: ['Meat and Poultry', 'Chicken', 'Chicken Breast', 'Breaded Chicken']
 Link: https://www.allrecipes.com/recipe/8513735/lemon-chicken-romano/
@@ -1214,10 +1214,10 @@ Link: https://www.allrecipes.com/recipe/8513735/lemon-chicken-romano/
 Recipe 102:
 Title: Easy Creamy Chicken Ramen Recipe
 Ingredients: ['1 tablespoon unsalted butter ', '2 cloves garlic, minced ', '½ cup chicken broth ', '½ cup whipping cream ', '1 (3 ounce) package ramen noodles (without flavor packet) ', '1 teaspoon reduced-sodium soy sauce ', '¼ cup chopped cooked chicken  ', '  1 pinch everything bagel seasoning (optional)']
-Details: {'Prep Time:': '1 mins', 'Total Time:': '1 mins', 'Servings:': '1'}
+Details: {'Prep Time:': 1, 'Total Time:': 1, 'Servings:': 1}
 Reviews: 1
 Rating: 4.5
-Nutrition: {'Calories': '958', 'Fat': '73g', 'Carbs': '56g', 'Protein': '21g'}
+Nutrition: {'Calories': 958, 'Fat': 73, 'Carbs': 56, 'Protein': 21}
 Published: January 11, 2023
 Category: ['Recipes', 'Pasta and Noodles', 'Noodle Recipes', 'Ramen Noodle Recipes']
 Link: https://www.allrecipes.com/recipe/8505574/easy-creamy-chicken-ramen/
@@ -1226,10 +1226,10 @@ Link: https://www.allrecipes.com/recipe/8505574/easy-creamy-chicken-ramen/
 Recipe 103:
 Title: Creamy Gochujang Tortellini Recipe
 Ingredients: ['1 (20 ounce) package refrigerated cheese tortellini ', '¼ cup unsalted butter ', '2 tablespoons unsalted butter ', '2 cloves garlic, minced ', '3 tablespoons white miso paste ', '⅓ cup heavy whipping cream ', '4 ounces freshly grated Parmesan cheese ', '2 tablespoons gochujang (Korean hot pepper paste), divided ', '1 cup reserved pasta water']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '10 mins', 'Total Time:': '15 mins', 'Servings:': '5'}
+Details: {'Prep Time:': 5, 'Cook Time:': 10, 'Total Time:': 15, 'Servings:': 5}
 Reviews: 1
 Rating: 3.0
-Nutrition: {'Calories': '660', 'Fat': '36g', 'Carbs': '61g', 'Protein': '26g'}
+Nutrition: {'Calories': 660, 'Fat': 36, 'Carbs': 61, 'Protein': 26}
 Published: January 6, 2023
 Category: ['Recipes', 'Pasta and Noodles', 'Pasta by Shape Recipes', 'Tortellini Recipes']
 Link: https://www.allrecipes.com/recipe/8522526/creamy-gochujang-tortellini/
@@ -1238,10 +1238,10 @@ Link: https://www.allrecipes.com/recipe/8522526/creamy-gochujang-tortellini/
 Recipe 104:
 Title: Creamy Veggie Cavatappi Pasta without Cream Recipe
 Ingredients: ['tablespoon olive oil ', '1 pound Roma tomatoes ', '2 medium carrots, peeled and cut into 3-inch pieces ', '1  onion, diced ', '1  red bell pepper, cut into strips ', '1  zucchini, sliced ', '7 cloves garlic, peeled ', '1 ½ teaspoons Italian seasoning ', '  salt to taste ', '  red pepper flakes to taste (Optional) ', '1 (16 ounce) package cavatappi pasta ', '⅓ cup shredded Italian cheese blend (Optional)']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '15 mins', 'Total Time:': '25 mins', 'Servings:': '6'}
+Details: {'Prep Time:': 10, 'Cook Time:': 15, 'Total Time:': 25, 'Servings:': 6}
 Reviews: 1
 Rating: 4.0
-Nutrition: {'Calories': '317', 'Fat': '2g', 'Carbs': '67g', 'Protein': '11g'}
+Nutrition: {'Calories': 317, 'Fat': 2, 'Carbs': 67, 'Protein': 11}
 Published: January 5, 2023
 Category: ['Recipes', 'Main Dishes', 'Pasta']
 Link: https://www.allrecipes.com/recipe/8525662/creamy-veggie-cavatappi-pasta-without-cream/
@@ -1250,10 +1250,10 @@ Link: https://www.allrecipes.com/recipe/8525662/creamy-veggie-cavatappi-pasta-wi
 Recipe 105:
 Title: Grilled Teriyaki Tofu Bowls
 Ingredients: ['1 (16 ounce) package extra firm tofu, drained and pressed ', '⅔ cup teriyaki sauce, divided ', '1 large red bell pepper ', '2 small zucchini ', '½  fresh pineapple, peeled and cored ', '1 large onion ', '¼ cup olive oil ', '  salt and ground black pepper to taste ', '2 cups hot cooked rice ', '1 tablespoon sesame seeds']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '20 mins', 'Total Time:': '40 mins', 'Servings:': '4', 'Yield:': '4 bowls'}
+Details: {'Prep Time:': 20, 'Cook Time:': 20, 'Total Time:': 40, 'Servings:': 4, 'Yield:': '4 bowls'}
 Reviews: 2
 Rating: 5.0
-Nutrition: {'Calories': '431', 'Fat': '21g', 'Carbs': '48g', 'Protein': '16g'}
+Nutrition: {'Calories': 431, 'Fat': 21, 'Carbs': 48, 'Protein': 16}
 Published: May 18, 2021
 Category: ['Recipes', 'Main Dishes', 'Bowls']
 Link: https://www.allrecipes.com/recipe/284474/grilled-teriyaki-tofu-bowls/
@@ -1262,10 +1262,10 @@ Link: https://www.allrecipes.com/recipe/284474/grilled-teriyaki-tofu-bowls/
 Recipe 106:
 Title: Grilled Bone-In Chicken Breast with Chimichurri Recipe
 Ingredients: ['5 cloves garlic ', '1 cup chopped fresh cilantro ', '½ cup chopped fresh flat-leaf parsley ', '1 tablespoon chopped fresh oregano ', '1 teaspoon salt ', '½ cup olive oil ', '2 tablespoons red wine vinegar ', '1 tablespoon lime juice ', '4 (6 ounce) bone-in chicken breast halves ', '1 tablespoon herb rub with salt']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '20 mins', 'Total Time:': '35 mins', 'Servings:': '4', 'Yield:': '4 servings'}
+Details: {'Prep Time:': 15, 'Cook Time:': 20, 'Total Time:': 35, 'Servings:': 4, 'Yield:': '4 servings'}
 Reviews: 1
 Rating: 5.0
-Nutrition: {'Calories': '481', 'Fat': '36g', 'Carbs': '4g', 'Protein': '35g'}
+Nutrition: {'Calories': 481, 'Fat': 36, 'Carbs': 4, 'Protein': 35}
 Published: May 23, 2021
 Category: ['Recipes', 'BBQ & Grilling', 'Chicken']
 Link: https://www.allrecipes.com/recipe/284538/grilled-bone-in-chicken-breast-with-chimichurri/
@@ -1274,10 +1274,10 @@ Link: https://www.allrecipes.com/recipe/284538/grilled-bone-in-chicken-breast-wi
 Recipe 107:
 Title: Sparkling Cherry Lemonade Recipe
 Ingredients: ['2 ½ cups pitted and halved cherries ', '⅔ cup freshly squeezed lemon juice ', '½ cup sugar, or to taste ', '2 cups water ', '1 cup lemon-lime soda ', '  ice as needed ', '  cherries and lemon slices for garnish (optional)']
-Details: {'Prep Time:': '10 mins', 'Total Time:': '10 mins', 'Servings:': '4'}
+Details: {'Prep Time:': 10, 'Total Time:': 10, 'Servings:': 4}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '198', 'Fat': '1g', 'Carbs': '50g', 'Protein': '1g'}
+Nutrition: {'Calories': 198, 'Fat': 1, 'Carbs': 50, 'Protein': 1}
 Published: June 16, 2022
 Category: ['Recipes', 'Drinks Recipes', 'Lemonade Recipes']
 Link: https://www.allrecipes.com/recipe/8406323/sparkling-cherry-lemonade/
@@ -1286,10 +1286,10 @@ Link: https://www.allrecipes.com/recipe/8406323/sparkling-cherry-lemonade/
 Recipe 108:
 Title: Sole Oreganata Recipe
 Ingredients: ['3 tablespoons dry bread crumbs ', '3 tablespoons panko bread crumbs ', '2 tablespoons freshly grated Parmesan cheese ', '¼ teaspoon dried oregano ', '1 pinch salt ', '2 tablespoons butter, melted ', '2 (5 ounce) sole fillets1 tablespoon butter ', '¼ cup whipping cream ', '2 tablespoons Pinot Grigio wine ', '½ teaspoon lemon juice ', '1 pinch ground white pepper']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '15 mins', 'Total Time:': '25 mins', 'Servings:': '2', 'Yield:': '2 servings'}
+Details: {'Prep Time:': 10, 'Cook Time:': 15, 'Total Time:': 25, 'Servings:': 2, 'Yield:': '2 servings'}
 Reviews: 1
 Rating: 5.0
-Nutrition: {'Calories': '485', 'Fat': '32g', 'Carbs': '16g', 'Protein': '32g'}
+Nutrition: {'Calories': 485, 'Fat': 32, 'Carbs': 16, 'Protein': 32}
 Published: March 3, 2022
 Category: ['Recipes', 'Seafood', 'Fish']
 Link: https://www.allrecipes.com/recipe/8354684/sole-oreganata/
@@ -1298,10 +1298,10 @@ Link: https://www.allrecipes.com/recipe/8354684/sole-oreganata/
 Recipe 109:
 Title: Air Fryer Lava Cakes Recipe
 Ingredients: ['⅓ cup semisweet chocolate chips  ', '¼ cup unsalted butter ', '½ cup powdered sugar ', '1 large egg ', '1 large egg yolk ', '½ teaspoon vanilla extract ', '⅛ teaspoon salt ', '3 tablespoons all-purpose flour']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '15 mins', 'Additional Time:': '5 mins', 'Total Time:': '25 mins', 'Servings:': '2'}
+Details: {'Prep Time:': 5, 'Cook Time:': 15, 'Additional Time:': 5, 'Total Time:': 25, 'Servings:': 2}
 Reviews: 5
 Rating: 5.0
-Nutrition: {'Calories': '456', 'Fat': '29g', 'Carbs': '43g', 'Protein': '6g'}
+Nutrition: {'Calories': 456, 'Fat': 29, 'Carbs': 43, 'Protein': 6}
 Published: December 15, 2020
 Category: ['Recipes', 'Desserts', 'Chocolate Dessert Recipes']
 Link: https://www.allrecipes.com/recipe/282687/air-fryer-lava-cakes/
@@ -1310,10 +1310,10 @@ Link: https://www.allrecipes.com/recipe/282687/air-fryer-lava-cakes/
 Recipe 110:
 Title: Broccoli-Cheddar Frittata
 Ingredients: ['7 large eggs ', '¼ cup heavy cream ', '1 teaspoon smoked paprika ', '  salt and freshly ground black pepper to taste ', '2 tablespoons unsalted butter ', '½ cup chopped onion ', '1 ½ cups chopped fresh broccoli ', '1 cup frozen diced hash brown potatoes, thawed ', '1 cup shredded Cheddar cheese ', '4 slices bacon, cooked and crumbled']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '15 mins', 'Additional Time:': '10 mins', 'Total Time:': '40 mins', 'Servings:': '8', 'Yield:': '8 servings'}
+Details: {'Prep Time:': 15, 'Cook Time:': 15, 'Additional Time:': 10, 'Total Time:': 40, 'Servings:': 8, 'Yield:': '8 servings'}
 Reviews: 2
 Rating: 5.0
-Nutrition: {'Calories': '179', 'Fat': '15g', 'Carbs': '6g', 'Protein': '8g'}
+Nutrition: {'Calories': 179, 'Fat': 15, 'Carbs': 6, 'Protein': 8}
 Published: October 3, 2020
 Category: ['Recipes', 'Breakfast and Brunch', 'Eggs', 'Frittata Recipes']
 Link: https://www.allrecipes.com/recipe/281840/broccoli-cheddar-frittata/
@@ -1322,10 +1322,10 @@ Link: https://www.allrecipes.com/recipe/281840/broccoli-cheddar-frittata/
 Recipe 111:
 Title: Blueberry Cream Cheese Wontons Recipe
 Ingredients: ['½ (8 ounce) package cream cheese ', '48  wonton wrappers ', '1 cup blueberry pie filling ', '  water as needed ', '  cooking spray ', '¼ cup powdered sugar']
-Details: {'Prep Time:': '30 mins', 'Cook Time:': '5 mins', 'Total Time:': '35 mins', 'Servings:': '48', 'Yield:': '48 wontons'}
+Details: {'Prep Time:': 30, 'Cook Time:': 5, 'Total Time:': 35, 'Servings:': 48, 'Yield:': '48 wontons'}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '44', 'Fat': '1g', 'Carbs': '8g', 'Protein': '1g'}
+Nutrition: {'Calories': 44, 'Fat': 1, 'Carbs': 8, 'Protein': 1}
 Published: September 6, 2022
 Category: ['Recipes', 'Desserts', 'Fruit Desserts', 'Blueberry Dessert Recipes']
 Link: https://www.allrecipes.com/recipe/8465703/blueberry-cream-cheese-wontons/
@@ -1334,10 +1334,10 @@ Link: https://www.allrecipes.com/recipe/8465703/blueberry-cream-cheese-wontons/
 Recipe 112:
 Title: Cranberry-Orange Bundt® Cake
 Ingredients: ['1 tablespoon vegetable shortening, melted ', '2 tablespoons cake flour ', '1 medium orange  ', '½ cup fresh cranberries ', '⅔ cup white sugar ', '¼ cup butter, softened ', '1 large egg ', '¼ teaspoon almond extract ', '1 ¼ cups cake flour ', '½ teaspoon baking soda ', '¼ teaspoon salt ', '¼ cup buttermilk¼ cup fresh cranberries ', '5 tablespoons sugar, divided ', '3 tablespoons water½ cup powdered sugar ', '1 tablespoon orange juice ', '1 teaspoon grated orange zest']
-Details: {'Prep Time:': '20 mins', 'Cook Time:': '35 mins', 'Additional Time:': '20 mins', 'Total Time:': '1 hrs 15 mins', 'Servings:': '4', 'Yield:': '4 servings'}
+Details: {'Prep Time:': 20, 'Cook Time:': 35, 'Additional Time:': 20, 'Total Time:': 75, 'Servings:': 4, 'Yield:': '4 servings'}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '614', 'Fat': '17g', 'Carbs': '112g', 'Protein': '7g'}
+Nutrition: {'Calories': 614, 'Fat': 17, 'Carbs': 112, 'Protein': 7}
 Published: October 31, 2020
 Category: ['Recipes', 'Desserts', 'Cakes', 'Bundt Cake Recipes']
 Link: https://www.allrecipes.com/recipe/282203/cranberry-orange-bundt-cake/
@@ -1346,10 +1346,10 @@ Link: https://www.allrecipes.com/recipe/282203/cranberry-orange-bundt-cake/
 Recipe 113:
 Title: Air Fryer Apple Bombs
 Ingredients: ['¼ cup white sugar ', '½ teaspoon ground cinnamon ', '1 ¼ cups peeled, cored, and chopped apples ', '1 (16.3 ounce) package refrigerated biscuit dough (such as Pillsbury Grands!®) ', '  avocado oil cooking spray']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '10 mins', 'Total Time:': '25 mins', 'Servings:': '16', 'Yield:': '16 apple bombs'}
+Details: {'Prep Time:': 15, 'Cook Time:': 10, 'Total Time:': 25, 'Servings:': 16, 'Yield:': '16 apple bombs'}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '109', 'Fat': '4g', 'Carbs': '17g', 'Protein': '2g'}
+Nutrition: {'Calories': 109, 'Fat': 4, 'Carbs': 17, 'Protein': 2}
 Published: December 4, 2020
 Category: ['Recipes']
 Link: https://www.allrecipes.com/recipe/282585/air-fryer-apple-bombs/
@@ -1358,10 +1358,10 @@ Link: https://www.allrecipes.com/recipe/282585/air-fryer-apple-bombs/
 Recipe 114:
 Title: Sheet Pan Chicken Fajita Quesadillas Recipe
 Ingredients: ['1 tablespoon olive oil ', '1  onion, chopped ', '1  green bell pepper, chopped ', '1  red bell pepper, chopped ', '1 pound skinless, boneless chicken breast, chopped ', '2 tablespoons water ', '1 (1.12 ounce) package fajita seasoning mix ', '8  flour tortillas ', '2 cups shredded Mexican cheese blend ', '4 tablespoons sour cream, for serving ', '4 tablespoons pico de gallo, or to taste ', '2 tablespoons chopped fresh cilantro, for garnish']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '30 mins', 'Total Time:': '40 mins', 'Servings:': '8'}
+Details: {'Prep Time:': 10, 'Cook Time:': 30, 'Total Time:': 40, 'Servings:': 8}
 Reviews: 1
 Rating: 5.0
-Nutrition: {'Calories': '407', 'Fat': '18g', 'Carbs': '35g', 'Protein': '26g'}
+Nutrition: {'Calories': 407, 'Fat': 18, 'Carbs': 35, 'Protein': 26}
 Published: October 12, 2022
 Category: ['Latin American', 'Mexican', 'Main Dishes', 'Quesadilla Recipes']
 Link: https://www.allrecipes.com/recipe/8479625/sheet-pan-chicken-fajita-quesadillas/
@@ -1370,10 +1370,10 @@ Link: https://www.allrecipes.com/recipe/8479625/sheet-pan-chicken-fajita-quesadi
 Recipe 115:
 Title: Chocolate Beet Cake with Beet-Vanilla Glaze Recipe
 Ingredients: ['baking spray with flour ', '1 ¾ cups all-purpose flour ', '1 cup unsweetened cocoa powder ', '2 teaspoons baking soda ', '1 teaspoon baking powder ', '½ teaspoon salt ', '4 large eggs, separated, at room temperature ', '1 cup firmly packed brown sugar ', '1 cup white sugar ', '½ cup unsalted butter, at room temperature ', '¼ cup vegetable oil ', '1 ¼ cups pureed cooked beets ', '1 tablespoon vanilla extract ', '1 cup buttermilk, at room temperature ', '1 ½ cups chocolate chips1 cup powdered sugar ', '2 tablespoons heavy cream ', '2 teaspoons pureed cooked beets ', '1 teaspoon vanilla extract ', '1 pinch salt']
-Details: {'Prep Time:': '30 mins', 'Cook Time:': '55 mins', 'Cool Time:': '1 hrs', 'Total Time:': '2 hrs 25 mins', 'Servings:': '12'}
+Details: {'Prep Time:': 30, 'Cook Time:': 55, 'Cool Time:': 60, 'Total Time:': 145, 'Servings:': 12}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '518', 'Fat': '23g', 'Carbs': '79g', 'Protein': '7g'}
+Nutrition: {'Calories': 518, 'Fat': 23, 'Carbs': 79, 'Protein': 7}
 Published: September 20, 2022
 Category: ['Recipes', 'Desserts', 'Cakes', 'Chocolate Cake Recipes']
 Link: https://www.allrecipes.com/recipe/8468517/chocolate-beet-cake-with-beet-vanilla-glaze/
@@ -1382,10 +1382,10 @@ Link: https://www.allrecipes.com/recipe/8468517/chocolate-beet-cake-with-beet-va
 Recipe 116:
 Title: Chorizo-Stuffed Poblano Peppers Recipe
 Ingredients: ['1 pound chorizo sausage ', '1 medium onion, chopped ', '1 cup canned black beans ', '1 cup frozen corn ', '6 leaves fresh basil, chopped ', '  nonstick cooking spray ', '4 medium poblano peppers, halved lengthwise and seeded ', '¼ cup shredded Cheddar cheese, or to taste']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '25 mins', 'Total Time:': '35 mins', 'Servings:': '4', 'Yield:': '4 servings'}
+Details: {'Prep Time:': 10, 'Cook Time:': 25, 'Total Time:': 35, 'Servings:': 4, 'Yield:': '4 servings'}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '562', 'Fat': '38g', 'Carbs': '25g', 'Protein': '30g'}
+Nutrition: {'Calories': 562, 'Fat': 38, 'Carbs': 25, 'Protein': 30}
 Published: August 30, 2021
 Category: ['Fruits and Vegetables', 'Vegetables', 'Chile Peppers', 'Poblano']
 Link: https://www.allrecipes.com/recipe/285394/chorizo-stuffed-poblano-peppers/
@@ -1394,10 +1394,10 @@ Link: https://www.allrecipes.com/recipe/285394/chorizo-stuffed-poblano-peppers/
 Recipe 117:
 Title: Perfect Poached Egg
 Ingredients: ['1 large egg ', '1 tablespoon white vinegar']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '5 mins', 'Total Time:': '10 mins', 'Servings:': '1', 'Yield:': '1 poached egg'}
+Details: {'Prep Time:': 5, 'Cook Time:': 5, 'Total Time:': 10, 'Servings:': 1, 'Yield:': '1 poached egg'}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '72', 'Fat': '5g', 'Carbs': '0g', 'Protein': '6g'}
+Nutrition: {'Calories': 72, 'Fat': 5, 'Carbs': 0, 'Protein': 6}
 Published: July 4, 2021
 Category: ['Recipes', 'Breakfast and Brunch', 'Eggs']
 Link: https://www.allrecipes.com/recipe/284903/perfect-poached-egg/
@@ -1406,10 +1406,10 @@ Link: https://www.allrecipes.com/recipe/284903/perfect-poached-egg/
 Recipe 118:
 Title: Clam Pizza with Red Sauce
 Ingredients: ['2 tablespoons olive oil, divided ', '⅓ cup chopped onion ', '3 cloves garlic, chopped ', '1 (6 ounce) can tomato paste ', '1 (15 ounce) can crushed tomatoes ', '½ teaspoon oregano, or to taste ', '  salt and freshly ground black pepper to taste ', '1 (12 inch) premade thin pizza crust ', '1 tablespoon olive oil ', '½ cup grated Parmesan cheese, divided, or to taste ', '½ cup shredded Italian cheese blend, or more to taste, divided ', '1 (6.5 ounce) can chopped clams, drained ', '½ cup chopped sun-dried tomatoes ', '⅓ cup pineapple tidbits, drained ', '1 tablespoon chopped fresh basil, or to taste']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '30 mins', 'Total Time:': '45 mins', 'Servings:': '2', 'Yield:': '2 servings'}
+Details: {'Prep Time:': 15, 'Cook Time:': 30, 'Total Time:': 45, 'Servings:': 2, 'Yield:': '2 servings'}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '1092', 'Fat': '42g', 'Carbs': '124g', 'Protein': '60g'}
+Nutrition: {'Calories': 1092, 'Fat': 42, 'Carbs': 124, 'Protein': 60}
 Published: June 8, 2021
 Category: ['Recipes', 'Main Dishes', 'Pizza Recipes']
 Link: https://www.allrecipes.com/recipe/284680/clam-pizza-with-red-sauce/
@@ -1418,10 +1418,10 @@ Link: https://www.allrecipes.com/recipe/284680/clam-pizza-with-red-sauce/
 Recipe 119:
 Title: Blended Baked Oats Recipe
 Ingredients: ['cooking spray ', '1 cup rolled oats ', '1 large ripe banana ', '1 large egg ', '1 teaspoon baking powder ', '⅛ teaspoon salt ', '½ cup almond milk ', '2 tablespoons maple syrup (or sweetener of your choice) ', '1 teaspoon vanilla ', '½ teaspoon ground cinnamon ', '¼ cup fresh blueberries']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '25 mins', 'Total Time:': '30 mins', 'Servings:': '2', 'Yield:': '2 servings'}
+Details: {'Prep Time:': 5, 'Cook Time:': 25, 'Total Time:': 30, 'Servings:': 2, 'Yield:': '2 servings'}
 Reviews: 15
 Rating: 4.5
-Nutrition: {'Calories': '337', 'Fat': '6g', 'Carbs': '63g', 'Protein': '10g'}
+Nutrition: {'Calories': 337, 'Fat': 6, 'Carbs': 63, 'Protein': 10}
 Published: March 16, 2021
 Category: ['Recipes', 'Breakfast and Brunch', 'Cereals', 'Oatmeal Recipes']
 Link: https://www.allrecipes.com/recipe/283660/blended-baked-oats/
@@ -1430,10 +1430,10 @@ Link: https://www.allrecipes.com/recipe/283660/blended-baked-oats/
 Recipe 120:
 Title: Four Ingredient White Cake
 Ingredients: ['1 ¾ cups self-rising flour ', '¾ cup  vanilla-infused sugar ', '⅓ cup vegetable oil ', '1 cup carbonated water ', '  frosting of your choice (optional)']
-Details: {'Prep Time:': '10 mins', 'Cook Time:': '35 mins', 'Total Time:': '45 mins', 'Servings:': '9', 'Yield:': '1 8x8-inch cake'}
+Details: {'Prep Time:': 10, 'Cook Time:': 35, 'Total Time:': 45, 'Servings:': 9, 'Yield:': '1 8x8-inch cake'}
 Reviews: 1
 Rating: 4.0
-Nutrition: {'Calories': '221', 'Fat': '8g', 'Carbs': '35g', 'Protein': '2g'}
+Nutrition: {'Calories': 221, 'Fat': 8, 'Carbs': 35, 'Protein': 2}
 Published: October 13, 2022
 Category: ['Recipes', 'Desserts', 'Cakes', 'White Cake Recipes']
 Link: https://www.allrecipes.com/recipe/8489150/four-ingredient-white-cake/
@@ -1442,10 +1442,10 @@ Link: https://www.allrecipes.com/recipe/8489150/four-ingredient-white-cake/
 Recipe 121:
 Title: Air Fryer Orange-Cranberry Butternut Squash with Ginger
 Ingredients: ['1 sheet heavy-duty aluminum foil ', '2 pounds butternut squash, peeled and seeded ', '½ cup fresh cranberries, rinsed and dried ', '½ cup orange juice ', '¼ cup honey ', '¼ cup melted butter ', '2 tablespoons grated fresh ginger  ', '½ teaspoon salt, or to taste ', '⅛ teaspoon ground white pepper, or to taste ', '½ small orange, sliced ', '1 tablespoon chopped fresh parsley, or to taste']
-Details: {'Prep Time:': '15 mins', 'Cook Time:': '30 mins', 'Total Time:': '45 mins', 'Servings:': '6', 'Yield:': '6 servings'}
+Details: {'Prep Time:': 15, 'Cook Time:': 30, 'Total Time:': 45, 'Servings:': 6, 'Yield:': '6 servings'}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '197', 'Fat': '8g', 'Carbs': '34g', 'Protein': '2g'}
+Nutrition: {'Calories': 197, 'Fat': 8, 'Carbs': 34, 'Protein': 2}
 Published: November 10, 2020
 Category: ['Vegetables', 'Squash', 'Winter Squash', 'Butternut Squash']
 Link: https://www.allrecipes.com/recipe/282303/air-fryer-orange-cranberry-butternut-squash-with-ginger/
@@ -1454,10 +1454,10 @@ Link: https://www.allrecipes.com/recipe/282303/air-fryer-orange-cranberry-butter
 Recipe 122:
 Title: Peppermint Coffee Creamer
 Ingredients: ['¾ cup milk ', '¼ cup heavy whipping cream ', '2 tablespoons stevia powder, or to taste ', '1 teaspoon vanilla extract ', '½ teaspoon peppermint extract, or more to taste']
-Details: {'Prep Time:': '5 mins', 'Cook Time:': '5 mins', 'Total Time:': '10 mins', 'Servings:': '8', 'Yield:': '8 servings'}
+Details: {'Prep Time:': 5, 'Cook Time:': 5, 'Total Time:': 10, 'Servings:': 8, 'Yield:': '8 servings'}
 Reviews: 0
 Rating: None
-Nutrition: {'Calories': '42', 'Fat': '3g', 'Carbs': '4g', 'Protein': '1g'}
+Nutrition: {'Calories': 42, 'Fat': 3, 'Carbs': 4, 'Protein': 1}
 Published: December 20, 2020
 Category: ['Recipes', 'Drinks Recipes', 'Coffee Drinks Recipes', 'Creamer']
 Link: https://www.allrecipes.com/recipe/282790/peppermint-coffee-creamer/

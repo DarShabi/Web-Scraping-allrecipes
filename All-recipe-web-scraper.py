@@ -111,7 +111,35 @@ def get_recipe_details(soup):
         label = element.text.strip()
         data = element.find_next_sibling(class_="mntl-recipe-details__value").text.strip()
         recipe_details[label] = data
+    # convert the time to integer(minutes)
+    for key, value in recipe_details.items():
+        if 'Time' in key:
+            recipe_details[key] = convert_to_minutes(value)
+        elif key == 'Servings:' and value is not None:
+            value = value.split()
+            recipe_details[key] = int(value[0])
     return recipe_details
+
+
+def convert_to_minutes(value_str):
+    # Split the value string into parts
+    parts = value_str.split()
+
+    # Calculate the total time in minutes
+    total_minutes = 0
+    for i in range(0, len(parts), 2):
+        value = int(parts[i])
+        unit = parts[i+1]
+        if unit == 'day' or unit == 'days':
+            total_minutes += value * 24 * 60
+        elif unit == 'mins' or unit == 'min':
+            total_minutes += value
+        elif unit == 'hours' or unit == 'hour' or unit == 'hrs':
+            total_minutes += value * 60
+        else:
+            raise ValueError(f'Invalid time unit: {unit}')
+
+    return total_minutes
 
 
 def get_num_reviews(soup):
@@ -157,7 +185,9 @@ def get_nutrition_facts(soup):
         if len(cells) == 2:
             key = cells[0].text.strip().lower()
             value = cells[1].text.strip()
-            nutrition_facts[value] = key
+            if key[-1] == 'g':
+                key = key[:-1]
+            nutrition_facts[value] = int(key)
     return nutrition_facts
 
 
@@ -194,7 +224,7 @@ def has_other_args(args):
                 args.published, args.category, args.link])
 
 
-def setup_argparse(): ## Set argparse arguments
+def setup_argparse():
     """
     Set up argparse arguments for the scraper.
     :return: parser: An argparse.ArgumentParser object with the configured arguments.
@@ -214,52 +244,51 @@ def setup_argparse(): ## Set argparse arguments
     return parser
 
 
-def validate_args(parser): ## validating the arguments passed by the user
+def validate_args(parser):
     """
     Validate the arguments passed by the user.
     :param parser:  An argparse.ArgumentParser object with the configured arguments.
     :return: args_setter: A Namespace object containing the parsed arguments.
     """
-    # Use parse_known_args() instead of parse_args()
+    # Use parse_known_args() instead of parse_args() to flag unknown args
     args_setter, unknown_args = parser.parse_known_args()
 
     # Check if any arguments were passed
     if len(sys.argv) <= 1:
-        parser.print_help()
-        logging.info(f'No argument was passed')
-        print('\nAt least one argument is required.')
-        exit()
+        message = 'No argument was passed'
+        exit_gracefully(message, parser)
 
     # Check if too many arguments were passed
     elif len(sys.argv) > 10:
-        parser.print_help()
-        logging.info(f'Too many arguments')
-        print('\ntoo many arguments were passed.')
-        exit()
+        message = 'Too many arguments'
+        exit_gracefully(message, parser)
 
     # Check if unrecognized arguments were passed
     if unknown_args:
-        parser.print_help()
-        logging.info(f'Unrecognized arguments: {unknown_args}')
-        print(f'\nUnrecognized arguments: {unknown_args}')
-        exit()
+        message = f'Unrecognized arguments: {unknown_args}'
+        exit_gracefully(message, parser)
 
     # Check if --all is provided with other arguments
     if args_setter.all and has_other_args(args_setter):
-        parser.print_help()
-        logging.info(f'--all argument should not be used with other arguments')
-        print('\n--all argument should not be used with other arguments.')
-        exit()
+        message = '--all argument should not be used with other arguments'
+        exit_gracefully(message, parser)
 
     # If user chooses to scrape all available data
     if args_setter.all:
-        args_setter.title = args_setter.ingredients = args_setter.details = args_setter.reviews = args_setter.rating = args_setter.nutrition = \
-            args_setter.published = args_setter.category = args_setter.link = True
+        args_setter.title = args_setter.ingredients = args_setter.details = args_setter.reviews = args_setter.rating\
+            = args_setter.nutrition = args_setter.published = args_setter.category = args_setter.link = True
 
     return args_setter
 
 
-def argparse_setter(): ## calls the set up and the validator funcs
+def exit_gracefully(msg, parser_exit):
+    parser_exit.print_help()
+    logging.info(msg)
+    print(f'\n{msg}')
+    exit()
+
+
+def argparse_setter():
     """
     Set up and validate the argparse arguments for the scraper.
     :return: args_setter: A Namespace object containing the parsed and validated arguments.
@@ -269,7 +298,7 @@ def argparse_setter(): ## calls the set up and the validator funcs
     return args_setter
 
 
-def logging_setter(): ## a function to set the logging config
+def logging_setter():
     """
     Set up logging configuration
     :return: logging configuration
@@ -282,7 +311,7 @@ def logging_setter(): ## a function to set the logging config
     )
 
 
-def scraper(all_links_scraper, args_scraper): ## function that actualy scrapes
+def scraper(all_links_scraper, args_scraper):
     """
     Scrape recipe data from allrecipes.com based on the provided arguments.
     :param: all_links_scraper: A list of URLs to scrape for recipe data.
@@ -298,7 +327,6 @@ def scraper(all_links_scraper, args_scraper): ## function that actualy scrapes
             if len(ingredients) == 0:
                 continue
 
-            ## Made the code-block that calls the scraping functions more compact
             # call each scraping method based on the argparse arguments
             function_map = {
                 'title': get_title,
