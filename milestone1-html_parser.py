@@ -9,11 +9,13 @@ from bs4 import BeautifulSoup
 import requests
 import re
 import logging
+import argparse
+import sys
 
 SOURCE = "https://www.allrecipes.com/recipes-a-z-6735880"
 
 
-def get_index_links(main_index_link):  # ADDED INDEX FOR TESTS !!!!! Remove to start data mining !!!!!!!
+def get_index_links(main_index_link):  # ADDED INDEX FOR TESTS !!!! Remove to start data mining !!!!!!!
     """
     Receives the source url and pulls the highest level urls from the index page.
     :param: str: url
@@ -58,7 +60,7 @@ def get_all_links(index_links):
     return all_links
 
 
-def parser(link):
+def make_soup(link):  # func name changed to avoid confusion with argparse
     """
     This function will provide the BeautifulSoup object for the scraping functions called on each recipe link.
     :param: str: link str
@@ -102,8 +104,8 @@ def get_recipe_details(soup):
     :param: BeautifulSoup object
     :return: dict: recipe_details
     """
-    grid_elements = soup.find('div', class_='mntl-recipe-details__content').find_all('div',
-                                                                                     class_='mntl-recipe-details__label')
+    grid_elements = soup.find('div', class_='mntl-recipe-details__content')\
+                        .find_all('div', class_='mntl-recipe-details__label')
     recipe_details = {}
     for element in grid_elements:
         label = element.text.strip()
@@ -182,11 +184,22 @@ def get_categories(soup):
     return categories
 
 
+# For the --all argument: function to check if any other arguments are provided
+def has_other_args(args):
+    """
+    Check if any other argument is provided alongside the 'all' flag.
+    :param args: argparse.Namespace object containing the arguments
+    :return: bool: True if any other argument is provided, False otherwise
+    """
+    return any([args.title, args.ingredients, args.details, args.reviews, args.rating, args.nutrition,
+                args.published, args.category, args.link])
+
+
 def main():
     """
     Takes in the index link for allrecipes.com to begin scraping the site. Iterates over
     all recipe links and calls scraping functions on each of them. Iteration will skip over non-recipe web pages.
-    :return: None: prints to console
+    :return: None: writes output to scraping.log file
     """
 
     # Set up logging configuration
@@ -199,28 +212,92 @@ def main():
 
     index_links = get_index_links(SOURCE)
     all_links = get_all_links(index_links)
+
+    # Set argparse arguments
+    parser = argparse.ArgumentParser(description='Scrape data from allrecipes.com')
+    parser.add_argument('--title', action='store_true', help='Scrape recipe title')
+    parser.add_argument('--ingredients', action='store_true', help='Scrape recipe ingredients')
+    parser.add_argument('--details', action='store_true', help='Scrape recipe details (prep time, cook time, etc.)')
+    parser.add_argument('--reviews', action='store_true', help='Scrape number of reviews')
+    parser.add_argument('--rating', action='store_true', help='Scrape recipe rating')
+    parser.add_argument('--nutrition', action='store_true', help='Scrape nutrition facts')
+    parser.add_argument('--published', action='store_true', help='Scrape publish date')
+    parser.add_argument('--category', action='store_true', help='Scrape recipe category')
+    parser.add_argument('--link', action='store_true', help='Get the link to the recipe')
+    parser.add_argument('--all', action='store_true', help='Scrape all available data')
+
+    # Use parse_known_args() instead of parse_args()
+    args, unknown_args = parser.parse_known_args()
+
+    # Check if any arguments were passed
+    if len(sys.argv) <= 1:
+        parser.print_help()
+        logging.info(f'No argument was passed')
+        print('\nAt least one argument is required.')
+        exit()
+
+    # Check if too many arguments were passed
+    elif len(sys.argv) > 10:
+        parser.print_help()
+        logging.info(f'Too many arguments')
+        print('\ntoo many arguments were passed.')
+        exit()
+
+    # Check if unrecognized arguments were passed
+    if unknown_args:
+        parser.print_help()
+        logging.info(f'Unrecognized arguments: {unknown_args}')
+        print(f'\nUnrecognized arguments: {unknown_args}')
+        exit()
+
+    # Check if --all is provided with other arguments
+    if args.all and has_other_args(args):
+        parser.print_help()
+        logging.info(f'--all argument should not be used with other arguments')
+        print('\n--all argument should not be used with other arguments.')
+        exit()
+
+    # If user chooses to scrape all available data
+    if args.all:
+        args.title = args.ingredients = args.details = args.reviews = args.rating = args.nutrition = \
+            args.published = args.category = args.link = True
+
     count = 1
     with open('scraping.log', 'w+') as output_file:
         for link in all_links:
-            soup = parser(link)
+            soup = make_soup(link)
             ingredients = get_ingredients(soup)
 
             # to avoid scraping web pages that aren't recipes
             if len(ingredients) == 0:
                 continue
 
-            # call each scraping method
-            title = get_title(soup)
-            recipe_details = get_recipe_details(soup)
-            num_reviews = get_num_reviews(soup)
-            rating = get_rating(soup)
-            nutrition_facts = get_nutrition_facts(soup)
-            date_published = get_date_published(soup)
-            categories = get_categories(soup)
+            # call each scraping method based on the argparse arguments
+            scraped_data = {}
+            if args.title:
+                scraped_data['title'] = get_title(soup)
+            if args.ingredients:
+                scraped_data['ingredients'] = get_ingredients(soup)
+            if args.details:
+                scraped_data['details'] = get_recipe_details(soup)
+            if args.reviews:
+                scraped_data['reviews'] = get_num_reviews(soup)
+            if args.rating:
+                scraped_data['rating'] = get_rating(soup)
+            if args.nutrition:
+                scraped_data['nutrition'] = get_nutrition_facts(soup)
+            if args.published:
+                scraped_data['published'] = get_date_published(soup)
+            if args.category:
+                scraped_data['category'] = get_categories(soup)
+            if args.link:
+                scraped_data['Link'] = link
 
-            output_file.write(f'\nRecipe: {title}\nIngredients: {ingredients}\nRecipe details: {recipe_details}\n'
-                           f'Number of reviews: {num_reviews}\nRating: {rating}\nNutritional facts: {nutrition_facts}\n'
-                           f'Publish date: {date_published}\nCategories: {categories}\n')
+            # write scraped data to output file
+            output_file.write(f'\nRecipe {count}:\n')
+            for key, value in scraped_data.items():
+                output_file.write(f'{key.capitalize()}: {value}\n')
+            output_file.write('\n')
 
             # logging info
             logging.info(f'Scraped recipe number: {count}\n')
