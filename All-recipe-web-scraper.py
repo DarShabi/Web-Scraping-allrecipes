@@ -21,11 +21,13 @@ def get_index_links(main_index_link):  # ADDED INDEX FOR TESTS !!!! Remove to st
     :param: str: url
     :return: list: urls
     """
-    response = requests.get(main_index_link).text
-    soup = BeautifulSoup(response, features="html.parser")
-    a_tags = soup.find_all('a', class_='link-list__link')
-    index_links = [a_tag['href'] for a_tag in a_tags]
-    return index_links[0:2]
+    msg = 'Error getting index links'
+    response = get_exception(main_index_link, msg)
+    if response:
+        soup = BeautifulSoup(response, features="html.parser")
+        a_tags = soup.find_all('a', class_='link-list__link')
+        index_links = [a_tag['href'] for a_tag in a_tags]
+        return index_links[0:2]
 
 
 def get_recipe_links(index_link):
@@ -34,16 +36,18 @@ def get_recipe_links(index_link):
     :param: str: url
     :return: list: urls
     """
-    response = requests.get(index_link).text
-    soup = BeautifulSoup(response, features="html.parser")
-    top_link_tags = soup.find_all('a', {
-        'class': 'comp card--image-top mntl-card-list-items mntl-document-card mntl-card card card--no-image'})
-    top_links = [attr['href'] for attr in top_link_tags]
-    bottom_link_tags = soup.find_all('a', class_='comp mntl-card-list-items mntl-document-card mntl-card card '
-                                                 'card--no-image')
-    bottom_links = [attr['href'] for attr in bottom_link_tags]
-    recipe_links = top_links + bottom_links
-    return recipe_links
+    msg = 'Error getting recipe links'
+    response = get_exception(index_link, msg)
+    if response:
+        soup = BeautifulSoup(response, features="html.parser")
+        top_link_tags = soup.find_all('a', {
+            'class': 'comp card--image-top mntl-card-list-items mntl-document-card mntl-card card card--no-image'})
+        top_links = [attr['href'] for attr in top_link_tags]
+        bottom_link_tags = soup.find_all('a', class_='comp mntl-card-list-items mntl-document-card mntl-card card '
+                                         'card--no-image')
+        bottom_links = [attr['href'] for attr in bottom_link_tags]
+        recipe_links = top_links + bottom_links
+        return recipe_links
 
 
 def get_all_links(index_links):
@@ -60,15 +64,32 @@ def get_all_links(index_links):
     return all_links
 
 
+def get_exception(link_get, msg_get):
+    """
+    Fetches the content of the given URL and handles exceptions using the given error message.
+    :param: link_get: str, the URL to fetch
+    :param: msg_get: str, the error message to log in case of an exception
+    :return: str or False, the response text if the request is successful, False if an exception occurs
+    """
+    response_get = False
+    try:
+        response_get = requests.get(link_get).text
+    except requests.exceptions.RequestException as e:
+        logging.error(f"{msg_get}: {e}")
+    return response_get
+
+
 def make_soup(link):
     """
     This function will provide the BeautifulSoup object for the scraping functions called on each recipe link.
     :param: str: link str
     :return: BeautifulSoup object
     """
-    response = requests.get(link).text
-    soup = BeautifulSoup(response, features="html.parser")
-    return soup
+    msg = 'Error making soup'
+    response = get_exception(link, msg)
+    if response:
+        soup = BeautifulSoup(response, features="html.parser")
+        return soup
 
 
 def get_title(soup):
@@ -282,9 +303,13 @@ def validate_args(parser):
 
 
 def exit_gracefully(msg, parser_exit):
+    """
+    Prints the argparse help message, logs an error message, and exits the program.
+    :param msg: A string representing the error message to log.
+    :param parser_exit: An ArgumentParser object used for printing the help message.
+    """
     parser_exit.print_help()
-    logging.info(msg)
-    print(f'\n{msg}')
+    logging.error(msg)
     exit()
 
 
@@ -303,11 +328,13 @@ def logging_setter():
     Set up logging configuration
     :return: logging configuration
     """
-    return logging.basicConfig(
-        filename='logging_info.log',
-        filemode='w',
+    logging.basicConfig(
         format='%(asctime)s - %(levelname)s - %(message)s',
-        level=logging.INFO
+        level=logging.INFO,
+        handlers=[
+            logging.FileHandler("logging_info.log"),
+            logging.StreamHandler()
+        ]
     )
 
 
@@ -318,39 +345,41 @@ def scraper(all_links_scraper, args_scraper):
             args_scraper: A Namespace object containing the parsed and validated arguments from argparse.
     """
     count = 1
-    with open('scraping.log', 'w+') as output_file:
+    with open('scraping.log', 'w+', encoding='utf-8') as output_file:
         for link in all_links_scraper:
-            soup = make_soup(link)
-            ingredients = get_ingredients(soup)
+            try:
+                soup = make_soup(link)
+                ingredients = get_ingredients(soup)
 
-            # to avoid scraping web pages that aren't recipes
-            if len(ingredients) == 0:
-                continue
+                # to avoid scraping web pages that aren't recipes
+                if len(ingredients) == 0:
+                    continue
 
-            # call each scraping method based on the argparse arguments
-            function_map = {
-                'title': get_title,
-                'ingredients': get_ingredients,
-                'details': get_recipe_details,
-                'reviews': get_num_reviews,
-                'rating': get_rating,
-                'nutrition': get_nutrition_facts,
-                'published': get_date_published,
-                'category': get_categories,
-                'link': lambda _: link
-            }
-            scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
+                # call each scraping method based on the argparse arguments
+                function_map = {
+                    'title': get_title,
+                    'ingredients': get_ingredients,
+                    'details': get_recipe_details,
+                    'reviews': get_num_reviews,
+                    'rating': get_rating,
+                    'nutrition': get_nutrition_facts,
+                    'published': get_date_published,
+                    'category': get_categories,
+                    'link': lambda _: link
+                }
+                scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
 
-            # write scraped data to output file
-            output_file.write(f'\nRecipe {count}:\n')
-            for key, value in scraped_data.items():
-                output_file.write(f'{key.capitalize()}: {value}\n')
-            output_file.write('\n')
+                # write scraped data to output file
+                output_file.write(f'\nRecipe {count}:\n')
+                for key, value in scraped_data.items():
+                    output_file.write(f'{key.capitalize()}: {value}\n')
+                output_file.write('\n')
 
-            # logging info
-            logging.info(f'Scraped recipe number: {count}\n')
-            print(f'Scraping recipe number {count}...')
-            count += 1
+                # logging info
+                logging.info(f'Scraped recipe number: {count}\n')
+                count += 1
+            except Exception as e:
+                logging.error(f'Error scraping recipe from link {link}: {e}')
 
 
 def main():
@@ -359,8 +388,8 @@ def main():
     all recipe links and calls scraping functions on each of them. Iteration will skip over non-recipe web pages.
     :return: None: writes output to scraping.log file
     """
-    logging_setter()
 
+    logging_setter()
     index_links = get_index_links(SOURCE)
     all_links = get_all_links(index_links)
     args = argparse_setter()
