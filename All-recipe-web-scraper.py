@@ -4,7 +4,7 @@ various data points. The parameters we are collecting are Recipe Title, Ingredie
 Cook Time, etc.), Number of Reviews, Recipe Rating, Nutrition Facts, Date published, and
 Recipe Category (e.g. Main Dish, Breakfast).
 """
-# import libraries
+
 from bs4 import BeautifulSoup
 import requests
 import re
@@ -12,8 +12,26 @@ import logging
 import argparse
 import sys
 
-SOURCE = "https://www.allrecipes.com/recipes-a-z-6735880"
-
+from constants import SOURCE
+from constants import INDEX_LINK_CLASS
+from constants import ERR_INDEX
+from constants import ERR_RECIPE
+from constants import TOP_LINK_CLASS
+from constants import BOTTOM_LINK_CLASS
+from constants import INGREDIENTS_CLASS
+from constants import DETAILS_CONTENT
+from constants import DETAILS_LABEL
+from constants import DETAILS_VALUE
+from constants import HOURS
+from constants import MINS
+from constants import REVIEWS_CLASS
+from constants import RATING_CLASS
+from constants import NUTRITION_CLASS
+from constants import DATE_CLASS
+from constants import CATEGORY_CLASS
+from constants import MIN_ARGS
+from constants import MAX_ARGS
+from constants import PUBLISHED_ON
 
 def get_index_links(main_index_link):  # ADDED INDEX FOR TESTS !!!! Remove to start data mining !!!!!!!
     """
@@ -21,11 +39,10 @@ def get_index_links(main_index_link):  # ADDED INDEX FOR TESTS !!!! Remove to st
     :param: str: url
     :return: list: urls
     """
-    msg = 'Error getting index links'
-    response = get_exception(main_index_link, msg)
+    response = get_exception(main_index_link, ERR_INDEX)
     if response:
         soup = BeautifulSoup(response, features="html.parser")
-        a_tags = soup.find_all('a', class_='link-list__link')
+        a_tags = soup.find_all('a', class_=INDEX_LINK_CLASS)
         index_links = [a_tag['href'] for a_tag in a_tags]
         return index_links[0:2]
 
@@ -36,15 +53,13 @@ def get_recipe_links(index_link):
     :param: str: url
     :return: list: urls
     """
-    msg = 'Error getting recipe links'
-    response = get_exception(index_link, msg)
+    response = get_exception(index_link, ERR_RECIPE)
     if response:
         soup = BeautifulSoup(response, features="html.parser")
         top_link_tags = soup.find_all('a', {
-            'class': 'comp card--image-top mntl-card-list-items mntl-document-card mntl-card card card--no-image'})
+            'class': TOP_LINK_CLASS})
         top_links = [attr['href'] for attr in top_link_tags]
-        bottom_link_tags = soup.find_all('a', class_='comp mntl-card-list-items mntl-document-card mntl-card card '
-                                         'card--no-image')
+        bottom_link_tags = soup.find_all('a', class_=BOTTOM_LINK_CLASS)
         bottom_links = [attr['href'] for attr in bottom_link_tags]
         recipe_links = top_links + bottom_links
         return recipe_links
@@ -110,7 +125,7 @@ def get_ingredients(soup):
     :return: list: ingredients
     """
     ingredients = []
-    p_tags = soup.find_all("ul", class_="mntl-structured-ingredients__list")
+    p_tags = soup.find_all("ul", class_=INGREDIENTS_CLASS)
     for p in p_tags:
         ingredients.append(p.text.strip())
     if len(ingredients) == 0:
@@ -125,14 +140,14 @@ def get_recipe_details(soup):
     :param: BeautifulSoup object
     :return: dict: recipe_details
     """
-    grid_elements = soup.find('div', class_='mntl-recipe-details__content')\
-                        .find_all('div', class_='mntl-recipe-details__label')
+    grid_elements = soup.find('div', class_=DETAILS_CONTENT)\
+                        .find_all('div', class_=DETAILS_LABEL)
     recipe_details = {}
     for element in grid_elements:
         label = element.text.strip()
-        data = element.find_next_sibling(class_="mntl-recipe-details__value").text.strip()
+        data = element.find_next_sibling(class_=DETAILS_VALUE).text.strip()
         recipe_details[label] = data
-    # convert the time to integer(minutes)
+    # convert the time to int(minutes)
     for key, value in recipe_details.items():
         if 'Time' in key:
             recipe_details[key] = convert_to_minutes(value)
@@ -152,11 +167,11 @@ def convert_to_minutes(value_str):
         value = int(parts[i])
         unit = parts[i+1]
         if unit == 'day' or unit == 'days':
-            total_minutes += value * 24 * 60
+            total_minutes += value * HOURS * MINS
         elif unit == 'mins' or unit == 'min':
             total_minutes += value
         elif unit == 'hours' or unit == 'hour' or unit == 'hrs':
-            total_minutes += value * 60
+            total_minutes += value * MINS
         else:
             raise ValueError(f'Invalid time unit: {unit}')
 
@@ -169,11 +184,11 @@ def get_num_reviews(soup):
     :param: BeautifulSoup object
     :return: str: number of reviews
     """
-    num_reviews_elem = soup.find('div', {'id': 'mntl-recipe-review-bar__comment-count_1-0'}).text
+    num_reviews_elem = soup.find('div', {'id': REVIEWS_CLASS}).text
     if any(char.isdigit() for char in num_reviews_elem):
         num_reviews = "".join([i for i in num_reviews_elem if i.isnumeric()])
     else:
-        num_reviews = "0"  # should we make this a global constant?
+        num_reviews = "0"
     return num_reviews
 
 
@@ -184,7 +199,7 @@ def get_rating(soup):
     :param: BeautifulSoup object
     :return: float: recipe rating or None
     """
-    rating_elem = soup.find('div', {'id': 'mntl-recipe-review-bar__rating_1-0'})
+    rating_elem = soup.find('div', {'id': RATING_CLASS})
     if rating_elem:
         rating_elem_text = rating_elem.text.strip()
         rating = float(re.search(r'\d+.\d+', rating_elem_text).group())
@@ -199,7 +214,7 @@ def get_nutrition_facts(soup):
     :param: BeautifulSoup object
     :return: dict: nutrition facts
     """
-    nutrition_table = soup.find('table', class_='mntl-nutrition-facts-summary__table')
+    nutrition_table = soup.find('table', class_=NUTRITION_CLASS)
     nutrition_facts = {}
     for row in nutrition_table.find_all('tr'):
         cells = row.find_all('td')
@@ -218,9 +233,9 @@ def get_date_published(soup):
     :param: BeautifulSoup object
     :return: str: date published
     """
-    date_elem = soup.find('div', class_='mntl-attribution__item-date')
-    date_published = date_elem.text.strip().replace('Updated on ', '').split()
-    date_published = " ".join(date_published[2:])
+    date_elem = soup.find('div', class_=DATE_CLASS)
+    date_published = date_elem.text.strip().replace('Updated on ', '').split() # how to encode this?
+    date_published = " ".join(date_published[PUBLISHED_ON:]) #is this a magic number?
     return date_published
 
 
@@ -230,7 +245,7 @@ def get_categories(soup):
     :param: BeautifulSoup object
     :return: list: categories
     """
-    breadcrumb = soup.find('ul', class_='mntl-breadcrumbs')
+    breadcrumb = soup.find('ul', class_=CATEGORY_CLASS)
     categories = [elem.text.strip() for elem in breadcrumb.find_all('li')]
     return categories
 
@@ -275,12 +290,12 @@ def validate_args(parser):
     args_setter, unknown_args = parser.parse_known_args()
 
     # Check if any arguments were passed
-    if len(sys.argv) <= 1:
+    if len(sys.argv) <= MIN_ARGS:
         message = 'No argument was passed'
         exit_gracefully(message, parser)
 
     # Check if too many arguments were passed
-    elif len(sys.argv) > 10:
+    elif len(sys.argv) > MAX_ARGS:
         message = 'Too many arguments'
         exit_gracefully(message, parser)
 
