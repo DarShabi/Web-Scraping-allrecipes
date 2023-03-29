@@ -37,6 +37,8 @@ from constants import GRAMS
 from constants import NO_REVIEWS
 from constants import TIME
 from constants import SERVINGS
+from constants import NEXT_INDEX
+from constants import NEXT_PAIR
 
 
 def get_index_links(main_index_link):
@@ -152,24 +154,20 @@ def get_recipe_details(soup):
         label = element.text.strip()
         data = element.find_next_sibling(class_=DETAILS_VALUE).text.strip()
         recipe_details[label] = data
-    # convert the time to int(minutes)
-    for key, value in recipe_details.items():
+    for key, value in recipe_details.items():  # convert the time and number of servings to int
         if TIME in key:
             recipe_details[key] = convert_to_minutes(value)
-        elif key == SERVINGS and value is not None:
+        elif key == SERVINGS and value.isdigit():
             recipe_details[key] = int(value)
     return recipe_details
 
 
 def convert_to_minutes(value_str):
-    # Split the value string into parts
-    parts = value_str.split()
-
-    # Calculate the total time in minutes
+    values_list = value_str.split()
     total_minutes = 0
-    for i in range(0, len(parts), 2):
-        value = int(parts[i])
-        unit = parts[i + 1]
+    for i in range(0, len(values_list), NEXT_PAIR):
+        value = int(values_list[i])
+        unit = values_list[i + NEXT_INDEX]
         if unit == 'day' or unit == 'days':
             total_minutes += value * HOURS * MINS
         elif unit == 'mins' or unit == 'min':
@@ -178,7 +176,6 @@ def convert_to_minutes(value_str):
             total_minutes += value * MINS
         else:
             raise ValueError(f'Invalid time unit: {unit}')
-
     return total_minutes
 
 
