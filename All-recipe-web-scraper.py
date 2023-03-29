@@ -128,7 +128,7 @@ def get_ingredients(soup):
     p_tags = soup.find_all("ul", class_=INGREDIENTS_CLASS)
     for p in p_tags:
         ingredients.append(p.text.strip())
-    if len(ingredients) == 0:
+    if not len(ingredients):
         return ingredients
     ingredients = ''.join(ingredients).replace('\n\n\n', ' ?').split('?')
     return ingredients
@@ -367,7 +367,7 @@ def scraper(all_links_scraper, args_scraper):
                 ingredients = get_ingredients(soup)
 
                 # to avoid scraping web pages that aren't recipes
-                if len(ingredients) == 0:
+                if not len(ingredients):
                     continue
 
                 # call each scraping method based on the argparse arguments
