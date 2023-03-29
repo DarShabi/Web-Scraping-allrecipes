@@ -2,9 +2,6 @@
 SOURCE = "https://www.allrecipes.com/recipes-a-z-6735880"
 INDEX_LINK_CLASS = 'link-list__link'
 
-ERR_INDEX = 'Error getting index links'
-ERR_RECIPE = 'Error getting recipe links'
-
 TOP_LINK_CLASS = 'comp card--image-top mntl-card-list-items mntl-document-card mntl-card card card--no-image'
 BOTTOM_LINK_CLASS = 'comp mntl-card-list-items mntl-document-card mntl-card card card--no-image' # not sure if this was copied correctly
 INGREDIENTS_CLASS = 'mntl-structured-ingredients__list'

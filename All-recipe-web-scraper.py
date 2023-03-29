@@ -14,8 +14,6 @@ import sys
 
 from constants import SOURCE
 from constants import INDEX_LINK_CLASS
-from constants import ERR_INDEX
-from constants import ERR_RECIPE
 from constants import TOP_LINK_CLASS
 from constants import BOTTOM_LINK_CLASS
 from constants import INGREDIENTS_CLASS
@@ -39,19 +37,18 @@ from constants import GRAMS
 from constants import NO_REVIEWS
 
 
-
-def get_index_links(main_index_link):  # ADDED INDEX FOR TESTS !!!! Remove to start data mining !!!!!!!
+def get_index_links(main_index_link):
     """
     Receives the source url and pulls the highest level urls from the index page.
     :param: str: url
     :return: list: urls
     """
-    response = get_exception(main_index_link, ERR_INDEX)
+    response = check_request_exception(main_index_link, get_index_links)
     if response:
         soup = BeautifulSoup(response, features="html.parser")
         a_tags = soup.find_all('a', class_=INDEX_LINK_CLASS)
         index_links = [a_tag['href'] for a_tag in a_tags]
-        return index_links[0:2]
+        return index_links[0:2]  # ADDED INDEX FOR TESTS !!!! Remove to start data mining !!!!!!!
 
 
 def get_recipe_links(index_link):
@@ -60,7 +57,7 @@ def get_recipe_links(index_link):
     :param: str: url
     :return: list: urls
     """
-    response = get_exception(index_link, ERR_RECIPE)
+    response = check_request_exception(index_link, get_recipe_links)
     if response:
         soup = BeautifulSoup(response, features="html.parser")
         top_link_tags = soup.find_all('a', {
@@ -86,18 +83,18 @@ def get_all_links(index_links):
     return all_links
 
 
-def get_exception(link_get, msg_get):
+def check_request_exception(link, func_name):
     """
     Fetches the content of the given URL and handles exceptions using the given error message.
-    :param: link_get: str, the URL to fetch
-    :param: msg_get: str, the error message to log in case of an exception
+    :param: str: the URL to fetch
+    :param: str: the error message to log in case of an exception
     :return: str or False, the response text if the request is successful, False if an exception occurs
     """
     response_get = False
     try:
-        response_get = requests.get(link_get).text
+        response_get = requests.get(link).text
     except requests.exceptions.RequestException as e:
-        logging.error(f"{msg_get}: {e}")
+        logging.error(f"Problem getting link {link} in {func_name.__name__}. Error: {e}")
     return response_get
 
 
@@ -108,7 +105,7 @@ def make_soup(link):
     :return: BeautifulSoup object
     """
     msg = 'Error making soup'
-    response = get_exception(link, msg)
+    response = check_request_exception(link, make_soup)
     if response:
         soup = BeautifulSoup(response, features="html.parser")
         return soup
