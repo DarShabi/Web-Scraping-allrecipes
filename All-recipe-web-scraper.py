@@ -233,9 +233,8 @@ def get_date_published(soup):
     :param: BeautifulSoup object
     :return: str: date published
     """
-    date_elem = soup.find('div', class_=DATE_CLASS)
-    date_published = date_elem.text.strip().replace('Updated on ', '').split() # how to encode this?
-    date_published = " ".join(date_published[PUBLISHED_ON:]) #is this a magic number?
+    date_elem = soup.find('div', class_=DATE_CLASS).text.strip().split()
+    date_published = " ".join(date_elem[PUBLISHED_ON:])
     return date_published
 
 
