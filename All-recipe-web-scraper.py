@@ -4,41 +4,13 @@ various data points. The parameters we are collecting are Recipe Title, Ingredie
 Cook Time, etc.), Number of Reviews, Recipe Rating, Nutrition Facts, Date published, and
 Recipe Category (e.g. Main Dish, Breakfast).
 """
-# libraries
 from bs4 import BeautifulSoup
 import requests
 import re
 import logging
 import argparse
 import sys
-
-from constants import SOURCE
-from constants import INDEX_LINK_CLASS
-from constants import TOP_LINK_CLASS
-from constants import BOTTOM_LINK_CLASS
-from constants import INGREDIENTS_CLASS
-from constants import DETAILS_CONTENT
-from constants import DETAILS_LABEL
-from constants import DETAILS_VALUE
-from constants import HOURS
-from constants import MINS
-from constants import REVIEWS_CLASS
-from constants import RATING_CLASS
-from constants import NUTRITION_CLASS
-from constants import DATE_CLASS
-from constants import CATEGORY_CLASS
-from constants import MIN_ARGS
-from constants import MAX_ARGS
-from constants import PUBLISHED_ON
-from constants import AMOUNT_INDEX
-from constants import LABEL_INDEX
-from constants import GRAMS_INDEX
-from constants import GRAMS
-from constants import NO_REVIEWS
-from constants import TIME
-from constants import SERVINGS
-from constants import NEXT_INDEX
-from constants import NEXT_PAIR
+import constants as c
 
 
 def get_index_links(main_index_link):
@@ -50,7 +22,7 @@ def get_index_links(main_index_link):
     response = check_request_exception(main_index_link, get_index_links)
     if response:
         soup = BeautifulSoup(response, features="html.parser")
-        a_tags = soup.find_all('a', class_=INDEX_LINK_CLASS)
+        a_tags = soup.find_all('a', class_=c.INDEX_LINK_CLASS)
         index_links = [a_tag['href'] for a_tag in a_tags]
         return index_links[:2]
 
@@ -65,9 +37,9 @@ def get_recipe_links(index_link):
     if response:
         soup = BeautifulSoup(response, features="html.parser")
         top_link_tags = soup.find_all('a', {
-            'class': TOP_LINK_CLASS})
+            'class': c.TOP_LINK_CLASS})
         top_links = [attr['href'] for attr in top_link_tags]
-        bottom_link_tags = soup.find_all('a', class_=BOTTOM_LINK_CLASS)
+        bottom_link_tags = soup.find_all('a', class_=c.BOTTOM_LINK_CLASS)
         bottom_links = [attr['href'] for attr in bottom_link_tags]
         recipe_links = top_links + bottom_links
         return recipe_links
@@ -99,6 +71,7 @@ def check_request_exception(link, func_name):
         response_get = requests.get(link).text
     except requests.exceptions.RequestException as e:
         logging.error(f"Problem getting link {link} in {func_name.__name__}. Error: {e}")
+        # check that this works lol
     return response_get
 
 
@@ -132,7 +105,7 @@ def get_ingredients(soup):
     :return: list: ingredients
     """
     ingredients = []
-    p_tags = soup.find_all("ul", class_=INGREDIENTS_CLASS)
+    p_tags = soup.find_all("ul", class_=c.INGREDIENTS_CLASS)
     for p in p_tags:
         ingredients.append(p.text.strip())
     if not len(ingredients):
@@ -147,17 +120,17 @@ def get_recipe_details(soup):
     :param: BeautifulSoup object
     :return: dict: recipe_details
     """
-    grid_elements = soup.find('div', class_=DETAILS_CONTENT) \
-        .find_all('div', class_=DETAILS_LABEL)
+    grid_elements = soup.find('div', class_=c.DETAILS_CONTENT) \
+        .find_all('div', class_=c.DETAILS_LABEL)
     recipe_details = {}
     for element in grid_elements:
         label = element.text.strip()
-        data = element.find_next_sibling(class_=DETAILS_VALUE).text.strip()
+        data = element.find_next_sibling(class_=c.DETAILS_VALUE).text.strip()
         recipe_details[label] = data
     for key, value in recipe_details.items():  # convert the time and number of servings to int
-        if TIME in key:
+        if c.TIME in key:
             recipe_details[key] = convert_to_minutes(value)
-        elif key == SERVINGS and value.isdigit():
+        elif key == c.SERVINGS and value.isdigit():
             recipe_details[key] = int(value)
     return recipe_details
 
@@ -165,15 +138,15 @@ def get_recipe_details(soup):
 def convert_to_minutes(value_str):
     values_list = value_str.split()
     total_minutes = 0
-    for i in range(0, len(values_list), NEXT_PAIR):
+    for i in range(0, len(values_list), c.NEXT_PAIR):
         value = int(values_list[i])
-        unit = values_list[i + NEXT_INDEX]
+        unit = values_list[i + c.NEXT_INDEX]
         if unit == 'day' or unit == 'days':
-            total_minutes += value * HOURS * MINS
+            total_minutes += value * c.HOURS * c.MINS
         elif unit == 'mins' or unit == 'min':
             total_minutes += value
         elif unit == 'hours' or unit == 'hour' or unit == 'hrs':
-            total_minutes += value * MINS
+            total_minutes += value * c.MINS
         else:
             raise ValueError(f'Invalid time unit: {unit}')
     return total_minutes
@@ -185,11 +158,11 @@ def get_num_reviews(soup):
     :param: BeautifulSoup object
     :return: str: number of reviews
     """
-    num_reviews_elem = soup.find('div', {'id': REVIEWS_CLASS}).text
+    num_reviews_elem = soup.find('div', {'id': c.REVIEWS_CLASS}).text
     if any(char.isdigit() for char in num_reviews_elem):
         num_reviews = "".join([i for i in num_reviews_elem if i.isnumeric()])
     else:
-        num_reviews = NO_REVIEWS
+        num_reviews = c.NO_REVIEWS
     return num_reviews
 
 
@@ -200,7 +173,7 @@ def get_rating(soup):
     :param: BeautifulSoup object
     :return: float: recipe rating or None
     """
-    rating_elem = soup.find('div', {'id': RATING_CLASS})
+    rating_elem = soup.find('div', {'id': c.RATING_CLASS})
     if rating_elem:
         rating_elem_text = rating_elem.text.strip()
         rating = float(re.search(r'\d+.\d+', rating_elem_text).group())
@@ -215,14 +188,14 @@ def get_nutrition_facts(soup):
     :param: BeautifulSoup object
     :return: dict: nutrition facts
     """
-    nutrition_table = soup.find('table', class_=NUTRITION_CLASS)
+    nutrition_table = soup.find('table', class_=c.NUTRITION_CLASS)
     nutrition_facts = {}
     for row in nutrition_table.find_all('tr'):
         cells = row.find_all('td')
-        amount = cells[AMOUNT_INDEX].text.strip().lower()
-        label = cells[LABEL_INDEX].text.strip()
-        if GRAMS in amount:
-            amount = amount[:GRAMS_INDEX]
+        amount = cells[c.AMOUNT_INDEX].text.strip().lower()
+        label = cells[c.LABEL_INDEX].text.strip()
+        if c.GRAMS in amount:
+            amount = amount[:c.GRAMS_INDEX]
         nutrition_facts[label] = int(amount)
     return nutrition_facts
 
@@ -233,8 +206,8 @@ def get_date_published(soup):
     :param: BeautifulSoup object
     :return: str: date published
     """
-    date_elem = soup.find('div', class_=DATE_CLASS).text.strip().split()
-    date_published = " ".join(date_elem[PUBLISHED_ON:])
+    date_elem = soup.find('div', class_=c.DATE_CLASS).text.strip().split()
+    date_published = " ".join(date_elem[c.PUBLISHED_ON:])
     return date_published
 
 
@@ -244,7 +217,7 @@ def get_categories(soup):
     :param: BeautifulSoup object
     :return: list: categories
     """
-    breadcrumb = soup.find('ul', class_=CATEGORY_CLASS)
+    breadcrumb = soup.find('ul', class_=c.CATEGORY_CLASS)
     categories = [elem.text.strip() for elem in breadcrumb.find_all('li')]
     return categories
 
@@ -289,12 +262,12 @@ def validate_args(parser):
     args_setter, unknown_args = parser.parse_known_args()
 
     # Check if any arguments were passed
-    if len(sys.argv) <= MIN_ARGS:
+    if len(sys.argv) <= c.MIN_ARGS:
         message = 'No argument was passed'
         exit_gracefully(message, parser)
 
     # Check if too many arguments were passed
-    elif len(sys.argv) > MAX_ARGS:
+    elif len(sys.argv) > c.MAX_ARGS:
         message = 'Too many arguments'
         exit_gracefully(message, parser)
 
@@ -355,7 +328,7 @@ def scraper(all_links_scraper, args_scraper):
     :param: all_links_scraper: A list of URLs to scrape for recipe data.
             args_scraper: A Namespace object containing the parsed and validated arguments from argparse.
     """
-    count = 1
+    recipes_scraped = 1
     with open('scraping.log', 'w+', encoding='utf-8') as output_file:
         for link in all_links_scraper:
             try:
@@ -379,14 +352,14 @@ def scraper(all_links_scraper, args_scraper):
                 scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
 
                 # write scraped data to output file
-                output_file.write(f'\nRecipe {count}:\n')
+                output_file.write(f'\nRecipe {recipes_scraped}:\n')
                 for key, value in scraped_data.items():
                     output_file.write(f'{key.capitalize()}: {value}\n')
                 output_file.write('\n')
 
                 # logging info
-                logging.info(f'Scraped recipe number: {count}\n')
-                count += 1
+                logging.info(f'Scraped recipe number: {recipes_scraped}\n')
+                recipes_scraped += 1
             except Exception as e:
                 logging.error(f'Error scraping recipe details from link {link}: {e}')
 
@@ -399,7 +372,7 @@ def main():
     """
 
     logging_setter()
-    index_links = get_index_links(SOURCE)
+    index_links = get_index_links(c.SOURCE)
     all_links = get_all_links(index_links)
     args = argparse_setter()
     scraper(all_links, args)
