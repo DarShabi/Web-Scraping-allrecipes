@@ -4,7 +4,7 @@ various data points. The parameters we are collecting are Recipe Title, Ingredie
 Cook Time, etc.), Number of Reviews, Recipe Rating, Nutrition Facts, Date published, and
 Recipe Category (e.g. Main Dish, Breakfast).
 """
-#libraries
+# libraries
 from bs4 import BeautifulSoup
 import requests
 import re
@@ -32,6 +32,7 @@ from constants import CATEGORY_CLASS
 from constants import MIN_ARGS
 from constants import MAX_ARGS
 from constants import PUBLISHED_ON
+
 
 def get_index_links(main_index_link):  # ADDED INDEX FOR TESTS !!!! Remove to start data mining !!!!!!!
     """
@@ -140,8 +141,8 @@ def get_recipe_details(soup):
     :param: BeautifulSoup object
     :return: dict: recipe_details
     """
-    grid_elements = soup.find('div', class_=DETAILS_CONTENT)\
-                        .find_all('div', class_=DETAILS_LABEL)
+    grid_elements = soup.find('div', class_=DETAILS_CONTENT) \
+        .find_all('div', class_=DETAILS_LABEL)
     recipe_details = {}
     for element in grid_elements:
         label = element.text.strip()
@@ -165,7 +166,7 @@ def convert_to_minutes(value_str):
     total_minutes = 0
     for i in range(0, len(parts), 2):
         value = int(parts[i])
-        unit = parts[i+1]
+        unit = parts[i + 1]
         if unit == 'day' or unit == 'days':
             total_minutes += value * HOURS * MINS
         elif unit == 'mins' or unit == 'min':
@@ -218,12 +219,11 @@ def get_nutrition_facts(soup):
     nutrition_facts = {}
     for row in nutrition_table.find_all('tr'):
         cells = row.find_all('td')
-        if len(cells) == 2:
-            key = cells[0].text.strip().lower()
-            value = cells[1].text.strip()
-            if key[-1] == 'g':
-                key = key[:-1]
-            nutrition_facts[value] = int(key)
+        key = cells[0].text.strip().lower()
+        value = cells[1].text.strip()
+        if key[-1] == 'g':
+            key = key[:-1]
+        nutrition_facts[value] = int(key)
     return nutrition_facts
 
 
@@ -310,7 +310,7 @@ def validate_args(parser):
 
     # If user chooses to scrape all available data
     if args_setter.all:
-        args_setter.title = args_setter.ingredients = args_setter.details = args_setter.reviews = args_setter.rating\
+        args_setter.title = args_setter.ingredients = args_setter.details = args_setter.reviews = args_setter.rating \
             = args_setter.nutrition = args_setter.published = args_setter.category = args_setter.link = True
 
     return args_setter
