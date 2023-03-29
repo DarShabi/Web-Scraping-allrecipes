@@ -158,6 +158,7 @@ def get_categories(soup):
     categories = [elem.text.strip() for elem in breadcrumb.find_all('li')]
     return categories
 
+
 def scraper(all_links_scraper, args_scraper):
     """
     Scrape recipe data from allrecipes.com based on the provided arguments.

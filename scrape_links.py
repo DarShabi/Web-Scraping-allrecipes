@@ -3,6 +3,7 @@ import logging
 from bs4 import BeautifulSoup
 import constants as c
 
+
 def get_index_links(main_index_link):
     """
     Receives the source url and pulls the highest level urls from the index page.
@@ -47,6 +48,7 @@ def get_all_links(index_links):
         all_links.extend(get_recipe_links(link))
         logging.info(f'Links from: {link}  retrieved')
     return all_links
+
 
 def check_request_exception(link, func_name):
     """
