@@ -35,6 +35,8 @@ from constants import LABEL_INDEX
 from constants import GRAMS_INDEX
 from constants import GRAMS
 from constants import NO_REVIEWS
+from constants import TIME
+from constants import SERVINGS
 
 
 def get_index_links(main_index_link):
@@ -48,7 +50,7 @@ def get_index_links(main_index_link):
         soup = BeautifulSoup(response, features="html.parser")
         a_tags = soup.find_all('a', class_=INDEX_LINK_CLASS)
         index_links = [a_tag['href'] for a_tag in a_tags]
-        return index_links[0:2]  # ADDED INDEX FOR TESTS !!!! Remove to start data mining !!!!!!!
+        return index_links[:2]
 
 
 def get_recipe_links(index_link):
@@ -104,7 +106,6 @@ def make_soup(link):
     :param: str: link str
     :return: BeautifulSoup object
     """
-    msg = 'Error making soup'
     response = check_request_exception(link, make_soup)
     if response:
         soup = BeautifulSoup(response, features="html.parser")
@@ -153,11 +154,10 @@ def get_recipe_details(soup):
         recipe_details[label] = data
     # convert the time to int(minutes)
     for key, value in recipe_details.items():
-        if 'Time' in key:
+        if TIME in key:
             recipe_details[key] = convert_to_minutes(value)
-        elif key == 'Servings:' and value is not None:
-            value = value.split()
-            recipe_details[key] = int(value[0])
+        elif key == SERVINGS and value is not None:
+            recipe_details[key] = int(value)
     return recipe_details
 
 
@@ -348,10 +348,7 @@ def logging_setter():
     logging.basicConfig(
         format='%(asctime)s - %(levelname)s - %(message)s',
         level=logging.INFO,
-        handlers=[
-            logging.FileHandler("logging_info.log"),
-            logging.StreamHandler()
-        ]
+        handlers=[logging.FileHandler("logging_info.log"), logging.StreamHandler()]
     )
 
 
@@ -367,8 +364,6 @@ def scraper(all_links_scraper, args_scraper):
             try:
                 soup = make_soup(link)
                 ingredients = get_ingredients(soup)
-
-                # to avoid scraping web pages that aren't recipes
                 if not len(ingredients):
                     continue
 
@@ -396,7 +391,7 @@ def scraper(all_links_scraper, args_scraper):
                 logging.info(f'Scraped recipe number: {count}\n')
                 count += 1
             except Exception as e:
-                logging.error(f'Error scraping recipe from link {link}: {e}')
+                logging.error(f'Error scraping recipe details from link {link}: {e}')
 
 
 def main():

@@ -14,11 +14,12 @@ NUTRITION_CLASS = 'mntl-nutrition-facts-summary__table'
 DATE_CLASS = 'mntl-attribution__item-date'
 CATEGORY_CLASS = 'mntl-breadcrumbs'
 NO_REVIEWS = "0"
-
+TIME = "Time"
 AMOUNT_INDEX = 0
 LABEL_INDEX = 1
 GRAMS_INDEX = -1
 GRAMS = 'g'
+SERVINGS = 'Servings:'
 
 MIN_ARGS = 1
 MAX_ARGS = 10
