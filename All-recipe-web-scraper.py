@@ -36,6 +36,7 @@ from constants import AMOUNT_INDEX
 from constants import LABEL_INDEX
 from constants import GRAMS_INDEX
 from constants import GRAMS
+from constants import NO_REVIEWS
 
 
 
@@ -194,7 +195,7 @@ def get_num_reviews(soup):
     if any(char.isdigit() for char in num_reviews_elem):
         num_reviews = "".join([i for i in num_reviews_elem if i.isnumeric()])
     else:
-        num_reviews = "0"
+        num_reviews = NO_REVIEWS
     return num_reviews
 
 

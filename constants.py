@@ -16,6 +16,7 @@ RATING_CLASS = 'mntl-recipe-review-bar__rating_1-0'
 NUTRITION_CLASS = 'mntl-nutrition-facts-summary__table'
 DATE_CLASS = 'mntl-attribution__item-date'
 CATEGORY_CLASS = 'mntl-breadcrumbs'
+NO_REVIEWS = "0"
 
 AMOUNT_INDEX = 0
 LABEL_INDEX = 1
