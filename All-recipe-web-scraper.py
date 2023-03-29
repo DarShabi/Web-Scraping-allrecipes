@@ -32,6 +32,11 @@ from constants import CATEGORY_CLASS
 from constants import MIN_ARGS
 from constants import MAX_ARGS
 from constants import PUBLISHED_ON
+from constants import AMOUNT_INDEX
+from constants import LABEL_INDEX
+from constants import GRAMS_INDEX
+from constants import GRAMS
+
 
 
 def get_index_links(main_index_link):  # ADDED INDEX FOR TESTS !!!! Remove to start data mining !!!!!!!
@@ -219,11 +224,11 @@ def get_nutrition_facts(soup):
     nutrition_facts = {}
     for row in nutrition_table.find_all('tr'):
         cells = row.find_all('td')
-        key = cells[0].text.strip().lower()
-        value = cells[1].text.strip()
-        if key[-1] == 'g':
-            key = key[:-1]
-        nutrition_facts[value] = int(key)
+        amount = cells[AMOUNT_INDEX].text.strip().lower()
+        label = cells[LABEL_INDEX].text.strip()
+        if GRAMS in amount:
+            amount = amount[:GRAMS_INDEX]
+        nutrition_facts[label] = int(amount)
     return nutrition_facts
 
 

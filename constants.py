@@ -17,6 +17,10 @@ NUTRITION_CLASS = 'mntl-nutrition-facts-summary__table'
 DATE_CLASS = 'mntl-attribution__item-date'
 CATEGORY_CLASS = 'mntl-breadcrumbs'
 
+AMOUNT_INDEX = 0
+LABEL_INDEX = 1
+GRAMS_INDEX = -1
+GRAMS = 'g'
 
 MIN_ARGS = 1
 MAX_ARGS = 10
