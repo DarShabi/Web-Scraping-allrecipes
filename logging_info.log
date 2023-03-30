@@ -1,809 +1,246 @@
-2023-03-27 21:05:41,884 - INFO - Links from: https://www.allrecipes.com/recipes/23070/everyday-cooking/cookware-and-equipment/air-fryer/  retrieved
-2023-03-27 21:05:42,498 - INFO - Links from: https://www.allrecipes.com/recipes/16492/everyday-cooking/special-collections/allrecipes-allstars/  retrieved
-2023-03-27 21:05:43,604 - INFO - Scraped recipe number: 1
+2023-03-30 11:05:15,071 - INFO - Links from: https://www.allrecipes.com/recipes/23070/everyday-cooking/cookware-and-equipment/air-fryer/  retrieved
+2023-03-30 11:05:15,621 - INFO - Links from: https://www.allrecipes.com/recipes/16492/everyday-cooking/special-collections/allrecipes-allstars/  retrieved
+2023-03-30 11:05:16,527 - INFO - Scraped recipe number: 1
 
-2023-03-27 21:05:44,247 - INFO - Scraped recipe number: 2
+2023-03-30 11:05:17,020 - INFO - Scraped recipe number: 2
 
-2023-03-27 21:05:45,169 - INFO - Scraped recipe number: 3
+2023-03-30 11:05:17,532 - INFO - Scraped recipe number: 3
 
-2023-03-27 21:05:45,797 - INFO - Scraped recipe number: 4
+2023-03-30 11:05:18,041 - INFO - Scraped recipe number: 4
 
-2023-03-27 21:05:46,415 - INFO - Scraped recipe number: 5
+2023-03-30 11:05:18,533 - INFO - Scraped recipe number: 5
 
-2023-03-27 21:05:47,085 - INFO - Scraped recipe number: 6
+2023-03-30 11:05:19,020 - INFO - Scraped recipe number: 6
 
-2023-03-27 21:05:47,706 - INFO - Scraped recipe number: 7
+2023-03-30 11:05:19,532 - INFO - Scraped recipe number: 7
 
-2023-03-27 21:05:48,355 - INFO - Scraped recipe number: 8
+2023-03-30 11:05:20,028 - INFO - Scraped recipe number: 8
 
-2023-03-27 21:05:48,994 - INFO - Scraped recipe number: 9
+2023-03-30 11:05:20,547 - INFO - Scraped recipe number: 9
 
-2023-03-27 21:05:49,700 - INFO - Scraped recipe number: 10
+2023-03-30 11:05:21,034 - INFO - Scraped recipe number: 10
 
-2023-03-27 21:05:50,316 - INFO - Scraped recipe number: 11
+2023-03-30 11:05:21,575 - INFO - Scraped recipe number: 11
 
-2023-03-27 21:05:50,949 - INFO - Scraped recipe number: 12
+2023-03-30 11:05:22,074 - INFO - Scraped recipe number: 12
 
-2023-03-27 21:05:51,590 - INFO - Scraped recipe number: 13
+2023-03-30 11:05:22,569 - INFO - Scraped recipe number: 13
 
-2023-03-27 21:05:52,227 - INFO - Scraped recipe number: 14
+2023-03-30 11:05:23,070 - INFO - Scraped recipe number: 14
 
-2023-03-27 21:05:52,859 - INFO - Scraped recipe number: 15
+2023-03-30 11:05:23,587 - INFO - Scraped recipe number: 15
 
-2023-03-27 21:05:53,505 - INFO - Scraped recipe number: 16
+2023-03-30 11:05:24,117 - INFO - Scraped recipe number: 16
 
-2023-03-27 21:05:54,163 - INFO - Scraped recipe number: 17
+2023-03-30 11:05:24,618 - INFO - Scraped recipe number: 17
 
-2023-03-27 21:05:54,778 - INFO - Scraped recipe number: 18
+2023-03-30 11:05:25,122 - INFO - Scraped recipe number: 18
 
-2023-03-27 21:05:55,394 - INFO - Scraped recipe number: 19
+2023-03-30 11:05:25,618 - INFO - Scraped recipe number: 19
 
-2023-03-27 21:05:56,012 - INFO - Scraped recipe number: 20
+2023-03-30 11:05:26,129 - INFO - Scraped recipe number: 20
 
-2023-03-27 21:05:56,654 - INFO - Scraped recipe number: 21
+2023-03-30 11:05:26,629 - INFO - Scraped recipe number: 21
 
-2023-03-27 21:05:57,289 - INFO - Scraped recipe number: 22
+2023-03-30 11:05:27,139 - INFO - Scraped recipe number: 22
 
-2023-03-27 21:05:57,966 - INFO - Scraped recipe number: 23
+2023-03-30 11:05:27,659 - INFO - Scraped recipe number: 23
 
-2023-03-27 21:05:58,605 - INFO - Scraped recipe number: 24
+2023-03-30 11:05:28,167 - INFO - Scraped recipe number: 24
 
-2023-03-27 21:05:59,266 - INFO - Scraped recipe number: 25
+2023-03-30 11:05:28,684 - INFO - Scraped recipe number: 25
 
-2023-03-27 21:05:59,918 - INFO - Scraped recipe number: 26
+2023-03-30 11:05:29,200 - INFO - Scraped recipe number: 26
 
-2023-03-27 21:06:00,595 - INFO - Scraped recipe number: 27
+2023-03-30 11:05:29,720 - INFO - Scraped recipe number: 27
 
-2023-03-27 21:06:01,228 - INFO - Scraped recipe number: 28
+2023-03-30 11:05:30,249 - INFO - Scraped recipe number: 28
 
-2023-03-27 21:06:01,906 - INFO - Scraped recipe number: 29
+2023-03-30 11:05:30,766 - INFO - Scraped recipe number: 29
 
-2023-03-27 21:06:02,600 - INFO - Scraped recipe number: 30
+2023-03-30 11:05:31,283 - INFO - Scraped recipe number: 30
 
-2023-03-27 21:06:03,305 - INFO - Scraped recipe number: 31
+2023-03-30 11:05:31,818 - INFO - Scraped recipe number: 31
 
-2023-03-27 21:06:03,956 - INFO - Scraped recipe number: 32
+2023-03-30 11:05:32,330 - INFO - Scraped recipe number: 32
 
-2023-03-27 21:06:05,134 - INFO - Scraped recipe number: 33
+2023-03-30 11:05:33,246 - INFO - Scraped recipe number: 33
 
-2023-03-27 21:06:05,827 - INFO - Scraped recipe number: 34
+2023-03-30 11:05:33,728 - INFO - Scraped recipe number: 34
 
-2023-03-27 21:06:06,502 - INFO - Scraped recipe number: 35
+2023-03-30 11:05:34,288 - INFO - Scraped recipe number: 35
 
-2023-03-27 21:06:07,115 - INFO - Scraped recipe number: 36
+2023-03-30 11:05:34,843 - INFO - Scraped recipe number: 36
 
-2023-03-27 21:06:07,725 - INFO - Scraped recipe number: 37
+2023-03-30 11:05:35,488 - INFO - Scraped recipe number: 37
 
-2023-03-27 21:06:08,428 - INFO - Scraped recipe number: 38
+2023-03-30 11:05:36,138 - INFO - Scraped recipe number: 38
 
-2023-03-27 21:06:09,094 - INFO - Scraped recipe number: 39
+2023-03-30 11:05:36,693 - INFO - Scraped recipe number: 39
 
-2023-03-27 21:06:09,747 - INFO - Scraped recipe number: 40
+2023-03-30 11:05:37,364 - INFO - Scraped recipe number: 40
 
-2023-03-27 21:06:10,388 - INFO - Scraped recipe number: 41
+2023-03-30 11:05:37,907 - INFO - Scraped recipe number: 41
 
-2023-03-27 21:06:11,025 - INFO - Scraped recipe number: 42
+2023-03-30 11:05:38,471 - INFO - Scraped recipe number: 42
 
-2023-03-27 21:06:11,678 - INFO - Scraped recipe number: 43
+2023-03-30 11:05:39,114 - INFO - Scraped recipe number: 43
 
-2023-03-27 21:06:12,305 - INFO - Scraped recipe number: 44
+2023-03-30 11:05:39,702 - INFO - Scraped recipe number: 44
 
-2023-03-27 21:06:12,957 - INFO - Scraped recipe number: 45
+2023-03-30 11:05:40,270 - INFO - Scraped recipe number: 45
 
-2023-03-27 21:06:13,598 - INFO - Scraped recipe number: 46
+2023-03-30 11:05:40,967 - INFO - Scraped recipe number: 46
 
-2023-03-27 21:06:14,252 - INFO - Scraped recipe number: 47
+2023-03-30 11:05:41,612 - INFO - Scraped recipe number: 47
 
-2023-03-27 21:06:14,923 - INFO - Scraped recipe number: 48
+2023-03-30 11:05:42,172 - INFO - Scraped recipe number: 48
 
-2023-03-27 21:06:15,534 - INFO - Scraped recipe number: 49
+2023-03-30 11:05:42,795 - INFO - Scraped recipe number: 49
 
-2023-03-27 21:06:16,168 - INFO - Scraped recipe number: 50
+2023-03-30 11:05:43,376 - INFO - Scraped recipe number: 50
 
-2023-03-27 21:06:16,815 - INFO - Scraped recipe number: 51
+2023-03-30 11:05:43,951 - INFO - Scraped recipe number: 51
 
-2023-03-27 21:06:17,471 - INFO - Scraped recipe number: 52
+2023-03-30 11:05:44,528 - INFO - Scraped recipe number: 52
 
-2023-03-27 21:06:18,104 - INFO - Scraped recipe number: 53
+2023-03-30 11:05:45,170 - INFO - Scraped recipe number: 53
 
-2023-03-27 21:06:18,903 - INFO - Scraped recipe number: 54
+2023-03-30 11:05:45,714 - INFO - Scraped recipe number: 54
 
-2023-03-27 21:06:19,552 - INFO - Scraped recipe number: 55
+2023-03-30 11:05:46,368 - INFO - Scraped recipe number: 55
 
-2023-03-27 21:06:21,177 - INFO - Scraped recipe number: 56
+2023-03-30 11:05:47,924 - INFO - Scraped recipe number: 56
 
-2023-03-27 21:06:21,901 - INFO - Scraped recipe number: 57
+2023-03-30 11:05:48,484 - INFO - Scraped recipe number: 57
 
-2023-03-27 21:06:22,517 - INFO - Scraped recipe number: 58
+2023-03-30 11:05:49,040 - INFO - Scraped recipe number: 58
 
-2023-03-27 21:06:23,197 - INFO - Scraped recipe number: 59
+2023-03-30 11:05:49,600 - INFO - Scraped recipe number: 59
 
-2023-03-27 21:06:24,502 - INFO - Scraped recipe number: 60
+2023-03-30 11:05:50,172 - INFO - Scraped recipe number: 60
 
-2023-03-27 21:06:25,530 - INFO - Scraped recipe number: 61
+2023-03-30 11:05:50,791 - INFO - Scraped recipe number: 61
 
-2023-03-27 21:06:26,145 - INFO - Scraped recipe number: 62
+2023-03-30 11:05:51,397 - INFO - Scraped recipe number: 62
 
-2023-03-27 21:06:26,752 - INFO - Scraped recipe number: 63
+2023-03-30 11:05:51,946 - INFO - Scraped recipe number: 63
 
-2023-03-27 21:06:27,374 - INFO - Scraped recipe number: 64
+2023-03-30 11:05:52,616 - INFO - Scraped recipe number: 64
 
-2023-03-27 21:06:28,026 - INFO - Scraped recipe number: 65
+2023-03-30 11:05:53,214 - INFO - Scraped recipe number: 65
 
-2023-03-27 21:06:28,691 - INFO - Scraped recipe number: 66
+2023-03-30 11:05:53,879 - INFO - Scraped recipe number: 66
 
-2023-03-27 21:06:29,346 - INFO - Scraped recipe number: 67
+2023-03-30 11:05:54,451 - INFO - Scraped recipe number: 67
 
-2023-03-27 21:06:29,996 - INFO - Scraped recipe number: 68
+2023-03-30 11:05:55,115 - INFO - Scraped recipe number: 68
 
-2023-03-27 21:06:30,594 - INFO - Scraped recipe number: 69
+2023-03-30 11:05:55,664 - INFO - Scraped recipe number: 69
 
-2023-03-27 21:06:31,233 - INFO - Scraped recipe number: 70
+2023-03-30 11:05:56,339 - INFO - Scraped recipe number: 70
 
-2023-03-27 21:06:31,840 - INFO - Scraped recipe number: 71
+2023-03-30 11:05:57,019 - INFO - Scraped recipe number: 71
 
-2023-03-27 21:06:32,458 - INFO - Scraped recipe number: 72
+2023-03-30 11:05:57,569 - INFO - Scraped recipe number: 72
 
-2023-03-27 21:06:33,084 - INFO - Scraped recipe number: 73
+2023-03-30 11:05:58,137 - INFO - Scraped recipe number: 73
 
-2023-03-27 21:06:33,725 - INFO - Scraped recipe number: 74
+2023-03-30 11:05:58,681 - INFO - Scraped recipe number: 74
 
-2023-03-27 21:06:34,334 - INFO - Scraped recipe number: 75
+2023-03-30 11:05:59,285 - INFO - Scraped recipe number: 75
 
-2023-03-27 21:06:34,993 - INFO - Scraped recipe number: 76
+2023-03-30 11:05:59,873 - INFO - Scraped recipe number: 76
 
-2023-03-27 21:06:35,599 - INFO - Scraped recipe number: 77
+2023-03-30 11:06:00,535 - INFO - Scraped recipe number: 77
 
-2023-03-27 21:06:36,256 - INFO - Scraped recipe number: 78
+2023-03-30 11:06:01,091 - INFO - Scraped recipe number: 78
 
-2023-03-27 21:06:36,875 - INFO - Scraped recipe number: 79
+2023-03-30 11:06:01,639 - INFO - Scraped recipe number: 79
 
-2023-03-27 21:06:37,514 - INFO - Scraped recipe number: 80
+2023-03-30 11:06:02,263 - INFO - Scraped recipe number: 80
 
-2023-03-27 21:06:38,168 - INFO - Scraped recipe number: 81
+2023-03-30 11:06:02,848 - INFO - Scraped recipe number: 81
 
-2023-03-27 21:06:38,809 - INFO - Scraped recipe number: 82
+2023-03-30 11:06:03,524 - INFO - Scraped recipe number: 82
 
-2023-03-27 21:06:39,461 - INFO - Scraped recipe number: 83
+2023-03-30 11:06:04,155 - INFO - Scraped recipe number: 83
 
-2023-03-27 21:06:40,118 - INFO - Scraped recipe number: 84
+2023-03-30 11:06:04,716 - INFO - Scraped recipe number: 84
 
-2023-03-27 21:06:40,735 - INFO - Scraped recipe number: 85
+2023-03-30 11:06:05,271 - INFO - Scraped recipe number: 85
 
-2023-03-27 21:06:41,388 - INFO - Scraped recipe number: 86
+2023-03-30 11:06:05,948 - INFO - Scraped recipe number: 86
 
-2023-03-27 21:06:42,024 - INFO - Scraped recipe number: 87
+2023-03-30 11:06:06,495 - INFO - Scraped recipe number: 87
 
-2023-03-27 21:06:42,631 - INFO - Scraped recipe number: 88
+2023-03-30 11:06:07,027 - INFO - Scraped recipe number: 88
 
-2023-03-27 21:06:43,282 - INFO - Scraped recipe number: 89
+2023-03-30 11:06:07,555 - INFO - Scraped recipe number: 89
 
-2023-03-27 21:06:43,929 - INFO - Scraped recipe number: 90
+2023-03-30 11:06:08,100 - INFO - Scraped recipe number: 90
 
-2023-03-27 21:06:44,571 - INFO - Scraped recipe number: 91
+2023-03-30 11:06:08,631 - INFO - Scraped recipe number: 91
 
-2023-03-27 21:06:45,183 - INFO - Scraped recipe number: 92
+2023-03-30 11:06:09,176 - INFO - Scraped recipe number: 92
 
-2023-03-27 21:06:45,823 - INFO - Scraped recipe number: 93
+2023-03-30 11:06:09,696 - INFO - Scraped recipe number: 93
 
-2023-03-27 21:06:46,447 - INFO - Scraped recipe number: 94
+2023-03-30 11:06:10,211 - INFO - Scraped recipe number: 94
 
-2023-03-27 21:06:47,088 - INFO - Scraped recipe number: 95
+2023-03-30 11:06:10,716 - INFO - Scraped recipe number: 95
 
-2023-03-27 21:06:47,708 - INFO - Scraped recipe number: 96
+2023-03-30 11:06:11,242 - INFO - Scraped recipe number: 96
 
-2023-03-27 21:06:48,369 - INFO - Scraped recipe number: 97
+2023-03-30 11:06:11,771 - INFO - Scraped recipe number: 97
 
-2023-03-27 21:06:48,991 - INFO - Scraped recipe number: 98
+2023-03-30 11:06:12,296 - INFO - Scraped recipe number: 98
 
-2023-03-27 21:06:49,797 - INFO - Scraped recipe number: 99
+2023-03-30 11:06:12,797 - INFO - Scraped recipe number: 99
 
-2023-03-27 21:06:50,418 - INFO - Scraped recipe number: 100
+2023-03-30 11:06:13,281 - INFO - Scraped recipe number: 100
 
-2023-03-27 21:06:51,064 - INFO - Scraped recipe number: 101
+2023-03-30 11:06:13,792 - INFO - Scraped recipe number: 101
 
-2023-03-27 21:06:51,700 - INFO - Scraped recipe number: 102
+2023-03-30 11:06:14,325 - INFO - Scraped recipe number: 102
 
-2023-03-27 21:06:52,320 - INFO - Scraped recipe number: 103
+2023-03-30 11:06:14,853 - INFO - Scraped recipe number: 103
 
-2023-03-27 21:06:52,984 - INFO - Scraped recipe number: 104
+2023-03-30 11:06:15,353 - INFO - Scraped recipe number: 104
 
-2023-03-27 21:06:53,636 - INFO - Scraped recipe number: 105
+2023-03-30 11:06:15,873 - INFO - Scraped recipe number: 105
 
-2023-03-27 21:06:54,431 - INFO - Scraped recipe number: 106
+2023-03-30 11:06:16,400 - INFO - Scraped recipe number: 106
 
-2023-03-27 21:06:55,069 - INFO - Scraped recipe number: 107
+2023-03-30 11:06:16,928 - INFO - Scraped recipe number: 107
 
-2023-03-27 21:06:55,691 - INFO - Scraped recipe number: 108
+2023-03-30 11:06:17,466 - INFO - Scraped recipe number: 108
 
-2023-03-27 21:06:56,317 - INFO - Scraped recipe number: 109
+2023-03-30 11:06:17,979 - INFO - Scraped recipe number: 109
 
-2023-03-27 21:06:56,935 - INFO - Scraped recipe number: 110
+2023-03-30 11:06:18,537 - INFO - Scraped recipe number: 110
 
-2023-03-27 21:06:57,566 - INFO - Scraped recipe number: 111
+2023-03-30 11:06:19,058 - INFO - Scraped recipe number: 111
 
-2023-03-27 21:06:58,187 - INFO - Scraped recipe number: 112
+2023-03-30 11:06:19,594 - INFO - Scraped recipe number: 112
 
-2023-03-27 21:06:58,802 - INFO - Scraped recipe number: 113
+2023-03-30 11:06:20,122 - INFO - Scraped recipe number: 113
 
-2023-03-27 21:06:59,454 - INFO - Scraped recipe number: 114
+2023-03-30 11:06:20,642 - INFO - Scraped recipe number: 114
 
-2023-03-27 21:07:00,072 - INFO - Scraped recipe number: 115
+2023-03-30 11:06:21,167 - INFO - Scraped recipe number: 115
 
-2023-03-27 21:07:00,689 - INFO - Scraped recipe number: 116
+2023-03-30 11:06:21,702 - INFO - Scraped recipe number: 116
 
-2023-03-27 21:07:01,292 - INFO - Scraped recipe number: 117
+2023-03-30 11:06:22,221 - INFO - Scraped recipe number: 117
 
-2023-03-27 21:07:01,958 - INFO - Scraped recipe number: 118
+2023-03-30 11:06:22,809 - INFO - Scraped recipe number: 118
 
-2023-03-27 21:07:02,596 - INFO - Scraped recipe number: 119
+2023-03-30 11:06:23,348 - INFO - Scraped recipe number: 119
 
-2023-03-27 21:07:03,244 - INFO - Scraped recipe number: 120
+2023-03-30 11:06:23,862 - INFO - Scraped recipe number: 120
 
-2023-03-27 21:07:03,888 - INFO - Scraped recipe number: 121
+2023-03-30 11:06:24,431 - INFO - Scraped recipe number: 121
 
-2023-03-27 21:07:04,540 - INFO - Scraped recipe number: 122
-
-2023-03-28 15:58:49,239 - INFO - Links from: https://www.allrecipes.com/recipes/23070/everyday-cooking/cookware-and-equipment/air-fryer/  retrieved
-2023-03-28 15:58:49,847 - INFO - Links from: https://www.allrecipes.com/recipes/16492/everyday-cooking/special-collections/allrecipes-allstars/  retrieved
-2023-03-28 15:58:51,180 - INFO - Scraped recipe number: 1
-
-2023-03-28 15:58:51,840 - INFO - Scraped recipe number: 2
-
-2023-03-28 15:58:52,460 - INFO - Scraped recipe number: 3
-
-2023-03-28 15:58:53,191 - INFO - Scraped recipe number: 4
-
-2023-03-28 15:58:53,801 - INFO - Scraped recipe number: 5
-
-2023-03-28 15:58:54,485 - INFO - Scraped recipe number: 6
-
-2023-03-28 15:58:55,122 - INFO - Scraped recipe number: 7
-
-2023-03-28 15:58:56,058 - INFO - Scraped recipe number: 8
-
-2023-03-28 15:58:56,668 - INFO - Scraped recipe number: 9
-
-2023-03-28 15:58:57,346 - INFO - Scraped recipe number: 10
-
-2023-03-28 15:58:57,959 - INFO - Scraped recipe number: 11
-
-2023-03-28 15:58:58,634 - INFO - Scraped recipe number: 12
-
-2023-03-28 15:58:59,256 - INFO - Scraped recipe number: 13
-
-2023-03-28 15:58:59,932 - INFO - Scraped recipe number: 14
-
-2023-03-28 15:59:00,615 - INFO - Scraped recipe number: 15
-
-2023-03-28 15:59:01,293 - INFO - Scraped recipe number: 16
-
-2023-03-28 15:59:01,897 - INFO - Scraped recipe number: 17
-
-2023-03-28 15:59:02,539 - INFO - Scraped recipe number: 18
-
-2023-03-28 15:59:03,169 - INFO - Scraped recipe number: 19
-
-2023-03-28 15:59:03,829 - INFO - Scraped recipe number: 20
-
-2023-03-28 15:59:04,425 - INFO - Scraped recipe number: 21
-
-2023-03-28 15:59:05,101 - INFO - Scraped recipe number: 22
-
-2023-03-28 15:59:05,788 - INFO - Scraped recipe number: 23
-
-2023-03-28 15:59:06,462 - INFO - Scraped recipe number: 24
-
-2023-03-28 15:59:20,808 - INFO - Links from: https://www.allrecipes.com/recipes/23070/everyday-cooking/cookware-and-equipment/air-fryer/  retrieved
-2023-03-28 15:59:21,384 - INFO - Links from: https://www.allrecipes.com/recipes/16492/everyday-cooking/special-collections/allrecipes-allstars/  retrieved
-2023-03-28 15:59:21,385 - INFO - Unrecognized arguments: ['hi', 'there']
-2023-03-28 16:01:22,077 - INFO - Links from: https://www.allrecipes.com/recipes/23070/everyday-cooking/cookware-and-equipment/air-fryer/  retrieved
-2023-03-28 16:01:22,678 - INFO - Links from: https://www.allrecipes.com/recipes/16492/everyday-cooking/special-collections/allrecipes-allstars/  retrieved
-2023-03-28 16:01:22,679 - ERROR - Unrecognized arguments: ['hi', 'there']
-2023-03-28 16:13:28,228 - INFO - Links from: https://www.allrecipes.com/recipes/23070/everyday-cooking/cookware-and-equipment/air-fryer/  retrieved
-2023-03-28 16:13:29,108 - INFO - Links from: https://www.allrecipes.com/recipes/16492/everyday-cooking/special-collections/allrecipes-allstars/  retrieved
-2023-03-28 16:13:30,330 - INFO - Scraped recipe number: 1
-
-2023-03-28 16:16:40,062 - INFO - Links from: https://www.allrecipes.com/recipes/23070/everyday-cooking/cookware-and-equipment/air-fryer/  retrieved
-2023-03-28 16:16:40,738 - INFO - Links from: https://www.allrecipes.com/recipes/16492/everyday-cooking/special-collections/allrecipes-allstars/  retrieved
-2023-03-28 16:16:42,309 - INFO - Scraped recipe number: 1
-
-2023-03-28 16:16:43,273 - INFO - Scraped recipe number: 2
-
-2023-03-28 16:16:44,561 - INFO - Scraped recipe number: 3
-
-2023-03-28 18:25:39,397 - INFO - Links from: https://www.allrecipes.com/recipes/23070/everyday-cooking/cookware-and-equipment/air-fryer/  retrieved
-2023-03-28 18:25:40,047 - INFO - Links from: https://www.allrecipes.com/recipes/16492/everyday-cooking/special-collections/allrecipes-allstars/  retrieved
-2023-03-28 18:25:41,598 - INFO - Scraped recipe number: 1
-
-2023-03-28 18:25:42,568 - INFO - Scraped recipe number: 2
-
-2023-03-28 18:25:43,213 - INFO - Scraped recipe number: 3
-
-2023-03-28 18:25:44,608 - INFO - Scraped recipe number: 4
-
-2023-03-28 18:25:45,358 - INFO - Scraped recipe number: 5
-
-2023-03-28 18:25:46,310 - INFO - Scraped recipe number: 6
-
-2023-03-28 18:25:47,249 - INFO - Scraped recipe number: 7
-
-2023-03-28 18:25:48,050 - INFO - Scraped recipe number: 8
-
-2023-03-28 18:25:49,026 - INFO - Scraped recipe number: 9
-
-2023-03-28 18:25:49,990 - INFO - Scraped recipe number: 10
-
-2023-03-28 18:25:50,628 - INFO - Scraped recipe number: 11
-
-2023-03-28 18:25:51,760 - INFO - Scraped recipe number: 12
-
-2023-03-28 18:25:52,838 - INFO - Scraped recipe number: 13
-
-2023-03-28 18:25:54,265 - INFO - Scraped recipe number: 14
-
-2023-03-28 18:25:55,203 - INFO - Scraped recipe number: 15
-
-2023-03-28 18:25:55,925 - INFO - Scraped recipe number: 16
-
-2023-03-28 18:25:56,869 - INFO - Scraped recipe number: 17
-
-2023-03-28 18:25:57,613 - INFO - Scraped recipe number: 18
-
-2023-03-28 18:25:58,463 - INFO - Scraped recipe number: 19
-
-2023-03-28 18:25:59,458 - INFO - Scraped recipe number: 20
-
-2023-03-28 18:26:00,116 - INFO - Scraped recipe number: 21
-
-2023-03-28 18:26:01,170 - INFO - Scraped recipe number: 22
-
-2023-03-28 18:26:02,730 - INFO - Scraped recipe number: 23
-
-2023-03-28 18:26:03,672 - INFO - Scraped recipe number: 24
-
-2023-03-28 18:26:04,314 - INFO - Scraped recipe number: 25
-
-2023-03-28 18:26:05,362 - INFO - Scraped recipe number: 26
-
-2023-03-28 18:26:07,321 - INFO - Scraped recipe number: 27
-
-2023-03-28 18:26:08,283 - INFO - Scraped recipe number: 28
-
-2023-03-28 18:26:09,002 - INFO - Scraped recipe number: 29
-
-2023-03-28 18:26:10,049 - INFO - Scraped recipe number: 30
-
-2023-03-28 18:26:11,020 - INFO - Scraped recipe number: 31
-
-2023-03-28 18:26:11,696 - INFO - Scraped recipe number: 32
-
-2023-03-28 18:26:13,221 - INFO - Scraped recipe number: 33
-
-2023-03-28 18:26:14,183 - INFO - Scraped recipe number: 34
-
-2023-03-28 18:26:15,126 - INFO - Scraped recipe number: 35
-
-2023-03-28 18:26:15,804 - INFO - Scraped recipe number: 36
-
-2023-03-28 18:26:16,794 - INFO - Scraped recipe number: 37
-
-2023-03-28 18:26:17,521 - INFO - Scraped recipe number: 38
-
-2023-03-28 18:26:18,472 - INFO - Scraped recipe number: 39
-
-2023-03-28 18:26:19,418 - INFO - Scraped recipe number: 40
-
-2023-03-28 18:26:20,457 - INFO - Scraped recipe number: 41
-
-2023-03-28 18:26:22,143 - INFO - Scraped recipe number: 42
-
-2023-03-28 18:26:23,246 - INFO - Scraped recipe number: 43
-
-2023-03-28 18:26:24,275 - INFO - Scraped recipe number: 44
-
-2023-03-28 18:26:25,314 - INFO - Scraped recipe number: 45
-
-2023-03-28 18:26:26,498 - INFO - Scraped recipe number: 46
-
-2023-03-28 18:26:27,449 - INFO - Scraped recipe number: 47
-
-2023-03-28 18:26:28,428 - INFO - Scraped recipe number: 48
-
-2023-03-28 18:26:29,337 - INFO - Scraped recipe number: 49
-
-2023-03-28 18:26:30,838 - INFO - Scraped recipe number: 50
-
-2023-03-28 18:26:31,589 - INFO - Scraped recipe number: 51
-
-2023-03-28 18:26:32,565 - INFO - Scraped recipe number: 52
-
-2023-03-28 18:26:33,595 - INFO - Scraped recipe number: 53
-
-2023-03-28 18:26:34,497 - INFO - Scraped recipe number: 54
-
-2023-03-28 18:26:35,266 - INFO - Scraped recipe number: 55
-
-2023-03-28 18:26:37,397 - INFO - Scraped recipe number: 56
-
-2023-03-28 18:26:38,301 - INFO - Scraped recipe number: 57
-
-2023-03-28 18:26:39,753 - INFO - Scraped recipe number: 58
-
-2023-03-28 18:26:40,511 - INFO - Scraped recipe number: 59
-
-2023-03-28 18:26:41,473 - INFO - Scraped recipe number: 60
-
-2023-03-28 18:26:42,504 - INFO - Scraped recipe number: 61
-
-2023-03-28 18:26:43,418 - INFO - Scraped recipe number: 62
-
-2023-03-28 18:26:44,163 - INFO - Scraped recipe number: 63
-
-2023-03-28 18:26:45,169 - INFO - Scraped recipe number: 64
-
-2023-03-28 18:26:46,149 - INFO - Scraped recipe number: 65
-
-2023-03-28 18:26:46,904 - INFO - Scraped recipe number: 66
-
-2023-03-28 18:26:47,803 - INFO - Scraped recipe number: 67
-
-2023-03-28 18:26:48,848 - INFO - Scraped recipe number: 68
-
-2023-03-28 18:26:49,803 - INFO - Scraped recipe number: 69
-
-2023-03-28 18:26:50,880 - INFO - Scraped recipe number: 70
-
-2023-03-28 18:26:51,800 - INFO - Scraped recipe number: 71
-
-2023-03-28 18:26:52,526 - INFO - Scraped recipe number: 72
-
-2023-03-28 18:26:53,492 - INFO - Scraped recipe number: 73
-
-2023-03-28 18:26:54,171 - INFO - Scraped recipe number: 74
-
-2023-03-28 18:26:55,150 - INFO - Scraped recipe number: 75
-
-2023-03-28 18:26:56,222 - INFO - Scraped recipe number: 76
-
-2023-03-28 18:26:57,812 - INFO - Scraped recipe number: 77
-
-2023-03-28 18:26:58,729 - INFO - Scraped recipe number: 78
-
-2023-03-28 18:26:59,666 - INFO - Scraped recipe number: 79
-
-2023-03-28 18:27:00,421 - INFO - Scraped recipe number: 80
-
-2023-03-28 18:27:01,376 - INFO - Scraped recipe number: 81
-
-2023-03-28 18:27:02,302 - INFO - Scraped recipe number: 82
-
-2023-03-28 18:27:03,016 - INFO - Scraped recipe number: 83
-
-2023-03-28 18:27:03,930 - INFO - Scraped recipe number: 84
-
-2023-03-28 18:27:04,733 - INFO - Scraped recipe number: 85
-
-2023-03-28 18:27:05,566 - INFO - Scraped recipe number: 86
-
-2023-03-28 18:27:07,123 - INFO - Scraped recipe number: 87
-
-2023-03-28 18:27:07,778 - INFO - Scraped recipe number: 88
-
-2023-03-28 18:27:08,769 - INFO - Scraped recipe number: 89
-
-2023-03-28 18:27:09,611 - INFO - Scraped recipe number: 90
-
-2023-03-28 18:27:10,600 - INFO - Scraped recipe number: 91
-
-2023-03-28 18:27:11,541 - INFO - Scraped recipe number: 92
-
-2023-03-28 18:27:12,583 - INFO - Scraped recipe number: 93
-
-2023-03-28 18:27:13,586 - INFO - Scraped recipe number: 94
-
-2023-03-28 18:27:14,388 - INFO - Scraped recipe number: 95
-
-2023-03-28 18:27:15,809 - INFO - Scraped recipe number: 96
-
-2023-03-28 18:27:16,922 - INFO - Scraped recipe number: 97
-
-2023-03-28 18:27:17,832 - INFO - Scraped recipe number: 98
-
-2023-03-28 18:27:18,752 - INFO - Scraped recipe number: 99
-
-2023-03-28 18:27:19,437 - INFO - Scraped recipe number: 100
-
-2023-03-28 18:27:20,404 - INFO - Scraped recipe number: 101
-
-2023-03-28 18:27:21,079 - INFO - Scraped recipe number: 102
-
-2023-03-28 18:27:22,106 - INFO - Scraped recipe number: 103
-
-2023-03-28 18:27:23,191 - INFO - Scraped recipe number: 104
-
-2023-03-28 18:27:25,133 - INFO - Scraped recipe number: 105
-
-2023-03-28 18:27:25,861 - INFO - Scraped recipe number: 106
-
-2023-03-28 18:27:26,783 - INFO - Scraped recipe number: 107
-
-2023-03-28 18:27:27,689 - INFO - Scraped recipe number: 108
-
-2023-03-28 18:27:28,398 - INFO - Scraped recipe number: 109
-
-2023-03-28 18:27:29,467 - INFO - Scraped recipe number: 110
-
-2023-03-28 18:27:30,547 - INFO - Scraped recipe number: 111
-
-2023-03-28 18:27:31,570 - INFO - Scraped recipe number: 112
-
-2023-03-28 18:27:32,547 - INFO - Scraped recipe number: 113
-
-2023-03-28 18:27:34,026 - INFO - Scraped recipe number: 114
-
-2023-03-28 18:27:35,017 - INFO - Scraped recipe number: 115
-
-2023-03-28 18:27:35,686 - INFO - Scraped recipe number: 116
-
-2023-03-28 18:27:36,642 - INFO - Scraped recipe number: 117
-
-2023-03-28 18:27:37,388 - INFO - Scraped recipe number: 118
-
-2023-03-28 18:27:38,401 - INFO - Scraped recipe number: 119
-
-2023-03-28 18:27:39,310 - INFO - Scraped recipe number: 120
-
-2023-03-28 18:27:40,231 - INFO - Scraped recipe number: 121
-
-2023-03-28 18:27:40,947 - INFO - Scraped recipe number: 122
-
-2023-03-28 21:43:01,435 - INFO - Links from: https://www.allrecipes.com/recipes/23070/everyday-cooking/cookware-and-equipment/air-fryer/  retrieved
-2023-03-28 21:43:02,165 - INFO - Links from: https://www.allrecipes.com/recipes/16492/everyday-cooking/special-collections/allrecipes-allstars/  retrieved
-2023-03-28 21:43:02,170 - ERROR - No argument was passed
-2023-03-28 21:43:47,222 - INFO - Links from: https://www.allrecipes.com/recipes/23070/everyday-cooking/cookware-and-equipment/air-fryer/  retrieved
-2023-03-28 21:43:47,923 - INFO - Links from: https://www.allrecipes.com/recipes/16492/everyday-cooking/special-collections/allrecipes-allstars/  retrieved
-2023-03-28 21:43:49,211 - INFO - Scraped recipe number: 1
-
-2023-03-28 21:43:49,952 - INFO - Scraped recipe number: 2
-
-2023-03-28 21:43:50,678 - INFO - Scraped recipe number: 3
-
-2023-03-28 21:43:51,432 - INFO - Scraped recipe number: 4
-
-2023-03-28 21:43:52,138 - INFO - Scraped recipe number: 5
-
-2023-03-28 21:43:52,918 - INFO - Scraped recipe number: 6
-
-2023-03-28 21:43:53,649 - INFO - Scraped recipe number: 7
-
-2023-03-28 21:43:54,411 - INFO - Scraped recipe number: 8
-
-2023-03-28 21:43:55,191 - INFO - Scraped recipe number: 9
-
-2023-03-28 21:43:55,972 - INFO - Scraped recipe number: 10
-
-2023-03-28 21:43:56,665 - INFO - Scraped recipe number: 11
-
-2023-03-28 21:43:57,425 - INFO - Scraped recipe number: 12
-
-2023-03-28 21:43:58,126 - INFO - Scraped recipe number: 13
-
-2023-03-28 21:43:58,905 - INFO - Scraped recipe number: 14
-
-2023-03-28 21:43:59,629 - INFO - Scraped recipe number: 15
-
-2023-03-28 21:44:00,363 - INFO - Scraped recipe number: 16
-
-2023-03-28 21:44:01,116 - INFO - Scraped recipe number: 17
-
-2023-03-28 21:44:01,889 - INFO - Scraped recipe number: 18
-
-2023-03-28 21:44:02,583 - INFO - Scraped recipe number: 19
-
-2023-03-28 21:44:03,391 - INFO - Scraped recipe number: 20
-
-2023-03-28 21:44:04,112 - INFO - Scraped recipe number: 21
-
-2023-03-28 21:44:04,949 - INFO - Scraped recipe number: 22
-
-2023-03-28 21:44:05,720 - INFO - Scraped recipe number: 23
-
-2023-03-28 21:44:06,427 - INFO - Scraped recipe number: 24
-
-2023-03-28 21:44:07,249 - INFO - Scraped recipe number: 25
-
-2023-03-28 21:44:07,958 - INFO - Scraped recipe number: 26
-
-2023-03-28 21:44:08,756 - INFO - Scraped recipe number: 27
-
-2023-03-28 21:44:09,536 - INFO - Scraped recipe number: 28
-
-2023-03-28 21:44:10,265 - INFO - Scraped recipe number: 29
-
-2023-03-28 21:44:11,089 - INFO - Scraped recipe number: 30
-
-2023-03-28 21:44:11,857 - INFO - Scraped recipe number: 31
-
-2023-03-28 21:44:12,654 - INFO - Scraped recipe number: 32
-
-2023-03-28 21:44:14,029 - INFO - Scraped recipe number: 33
-
-2023-03-28 21:44:14,765 - INFO - Scraped recipe number: 34
-
-2023-03-28 21:44:15,562 - INFO - Scraped recipe number: 35
-
-2023-03-28 21:44:16,268 - INFO - Scraped recipe number: 36
-
-2023-03-28 21:44:17,038 - INFO - Scraped recipe number: 37
-
-2023-03-28 21:44:17,818 - INFO - Scraped recipe number: 38
-
-2023-03-28 21:44:18,548 - INFO - Scraped recipe number: 39
-
-2023-03-28 21:44:19,371 - INFO - Scraped recipe number: 40
-
-2023-03-28 21:44:20,105 - INFO - Scraped recipe number: 41
-
-2023-03-28 21:44:20,885 - INFO - Scraped recipe number: 42
-
-2023-03-28 21:44:21,606 - INFO - Scraped recipe number: 43
-
-2023-03-28 21:44:22,428 - INFO - Scraped recipe number: 44
-
-2023-03-28 21:44:23,175 - INFO - Scraped recipe number: 45
-
-2023-03-28 21:44:23,879 - INFO - Scraped recipe number: 46
-
-2023-03-28 21:44:24,624 - INFO - Scraped recipe number: 47
-
-2023-03-28 21:44:25,408 - INFO - Scraped recipe number: 48
-
-2023-03-28 21:44:26,111 - INFO - Scraped recipe number: 49
-
-2023-03-28 21:44:26,922 - INFO - Scraped recipe number: 50
-
-2023-03-28 21:44:27,678 - INFO - Scraped recipe number: 51
-
-2023-03-28 21:44:28,443 - INFO - Scraped recipe number: 52
-
-2023-03-28 21:44:29,159 - INFO - Scraped recipe number: 53
-
-2023-03-28 21:44:29,928 - INFO - Scraped recipe number: 54
-
-2023-03-28 21:44:30,653 - INFO - Scraped recipe number: 55
-
-2023-03-28 21:44:32,673 - INFO - Scraped recipe number: 56
-
-2023-03-28 21:44:33,386 - INFO - Scraped recipe number: 57
-
-2023-03-28 21:44:34,087 - INFO - Scraped recipe number: 58
-
-2023-03-28 21:44:34,934 - INFO - Scraped recipe number: 59
-
-2023-03-28 21:44:35,643 - INFO - Scraped recipe number: 60
-
-2023-03-28 21:44:36,406 - INFO - Scraped recipe number: 61
-
-2023-03-28 21:44:37,098 - INFO - Scraped recipe number: 62
-
-2023-03-28 21:44:37,861 - INFO - Scraped recipe number: 63
-
-2023-03-28 21:44:38,577 - INFO - Scraped recipe number: 64
-
-2023-03-28 21:44:39,346 - INFO - Scraped recipe number: 65
-
-2023-03-28 21:44:40,075 - INFO - Scraped recipe number: 66
-
-2023-03-28 21:44:40,811 - INFO - Scraped recipe number: 67
-
-2023-03-28 21:44:41,533 - INFO - Scraped recipe number: 68
-
-2023-03-28 21:44:42,308 - INFO - Scraped recipe number: 69
-
-2023-03-28 21:44:43,065 - INFO - Scraped recipe number: 70
-
-2023-03-28 21:44:43,836 - INFO - Scraped recipe number: 71
-
-2023-03-28 21:44:44,530 - INFO - Scraped recipe number: 72
-
-2023-03-28 21:44:45,307 - INFO - Scraped recipe number: 73
-
-2023-03-28 21:44:46,021 - INFO - Scraped recipe number: 74
-
-2023-03-28 21:44:46,771 - INFO - Scraped recipe number: 75
-
-2023-03-28 21:44:47,517 - INFO - Scraped recipe number: 76
-
-2023-03-28 21:44:48,286 - INFO - Scraped recipe number: 77
-
-2023-03-28 21:44:48,996 - INFO - Scraped recipe number: 78
-
-2023-03-28 21:44:49,750 - INFO - Scraped recipe number: 79
-
-2023-03-28 21:44:50,474 - INFO - Scraped recipe number: 80
-
-2023-03-28 21:44:51,327 - INFO - Scraped recipe number: 81
-
-2023-03-28 21:44:52,078 - INFO - Scraped recipe number: 82
-
-2023-03-28 21:44:52,777 - INFO - Scraped recipe number: 83
-
-2023-03-28 21:44:53,567 - INFO - Scraped recipe number: 84
-
-2023-03-28 21:44:54,290 - INFO - Scraped recipe number: 85
-
-2023-03-28 21:44:55,046 - INFO - Scraped recipe number: 86
-
-2023-03-28 21:44:55,781 - INFO - Scraped recipe number: 87
-
-2023-03-28 21:44:56,531 - INFO - Scraped recipe number: 88
-
-2023-03-28 21:44:57,244 - INFO - Scraped recipe number: 89
-
-2023-03-28 21:44:58,028 - INFO - Scraped recipe number: 90
-
-2023-03-28 21:44:58,928 - INFO - Scraped recipe number: 91
-
-2023-03-28 21:44:59,658 - INFO - Scraped recipe number: 92
-
-2023-03-28 21:45:00,395 - INFO - Scraped recipe number: 93
-
-2023-03-28 21:45:01,155 - INFO - Scraped recipe number: 94
-
-2023-03-28 21:45:01,918 - INFO - Scraped recipe number: 95
-
-2023-03-28 21:45:02,696 - INFO - Scraped recipe number: 96
-
-2023-03-28 21:45:03,485 - INFO - Scraped recipe number: 97
-
-2023-03-28 21:45:04,271 - INFO - Scraped recipe number: 98
-
-2023-03-28 21:45:05,177 - INFO - Scraped recipe number: 99
-
-2023-03-28 21:45:05,952 - INFO - Scraped recipe number: 100
-
-2023-03-28 21:45:06,684 - INFO - Scraped recipe number: 101
-
-2023-03-28 21:45:07,487 - INFO - Scraped recipe number: 102
-
-2023-03-28 21:45:08,233 - INFO - Scraped recipe number: 103
-
-2023-03-28 21:45:08,949 - INFO - Scraped recipe number: 104
-
-2023-03-28 21:45:09,716 - INFO - Scraped recipe number: 105
-
-2023-03-28 21:45:10,443 - INFO - Scraped recipe number: 106
-
-2023-03-28 21:45:11,231 - INFO - Scraped recipe number: 107
-
-2023-03-28 21:45:11,936 - INFO - Scraped recipe number: 108
-
-2023-03-28 21:45:12,728 - INFO - Scraped recipe number: 109
-
-2023-03-28 21:45:13,463 - INFO - Scraped recipe number: 110
-
-2023-03-28 21:45:14,250 - INFO - Scraped recipe number: 111
-
-2023-03-28 21:45:15,025 - INFO - Scraped recipe number: 112
-
-2023-03-28 21:45:15,814 - INFO - Scraped recipe number: 113
-
-2023-03-28 21:45:16,545 - INFO - Scraped recipe number: 114
-
-2023-03-28 21:45:17,290 - INFO - Scraped recipe number: 115
-
-2023-03-28 21:45:18,037 - INFO - Scraped recipe number: 116
-
-2023-03-28 21:45:18,774 - INFO - Scraped recipe number: 117
-
-2023-03-28 21:45:19,540 - INFO - Scraped recipe number: 118
-
-2023-03-28 21:45:20,303 - INFO - Scraped recipe number: 119
-
-2023-03-28 21:45:21,068 - INFO - Scraped recipe number: 120
-
-2023-03-28 21:45:21,815 - INFO - Scraped recipe number: 121
-
-2023-03-28 21:45:22,549 - INFO - Scraped recipe number: 122
+2023-03-30 11:06:24,963 - INFO - Scraped recipe number: 122
 

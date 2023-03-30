@@ -17,6 +17,7 @@ RATING_CLASS = 'mntl-recipe-review-bar__rating_1-0'
 NUTRITION_CLASS = 'mntl-nutrition-facts-summary__table'
 DATE_CLASS = 'mntl-attribution__item-date'
 CATEGORY_CLASS = 'mntl-breadcrumbs'
+INSTRUCTIONS_CLASS = 'comp mntl-sc-block-group--OL mntl-sc-block mntl-sc-block-startgroup'
 
 # Other constants
 NO_REVIEWS = "0"
@@ -29,7 +30,7 @@ SERVINGS = 'Servings:'
 NEXT_INDEX = 1
 NEXT_PAIR = 2
 MIN_ARGS = 1
-MAX_ARGS = 10
+MAX_ARGS = 11
 PUBLISHED_ON = 2
 HOURS = 24
 MINS = 60

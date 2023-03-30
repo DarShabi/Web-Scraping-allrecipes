@@ -11,7 +11,7 @@ def has_other_args(args):
     :return: bool: True if any other argument is provided, False otherwise
     """
     return any([args.title, args.ingredients, args.details, args.reviews, args.rating, args.nutrition,
-                args.published, args.category, args.link])
+                args.published, args.category, args.link, args.instructions])
 
 
 def setup_argparse():
@@ -29,6 +29,7 @@ def setup_argparse():
     parser.add_argument('--published', action='store_true', help='Scrape publish date')
     parser.add_argument('--category', action='store_true', help='Scrape recipe category')
     parser.add_argument('--link', action='store_true', help='Get the link to the recipe')
+    parser.add_argument('--instructions', action='store_true', help='Get the instructions of the recipe')
     parser.add_argument('--all', action='store_true', help='Scrape all available data')
 
     return parser
@@ -66,7 +67,8 @@ def validate_args(parser):
     # If user chooses to scrape all available data
     if args_setter.all:
         args_setter.title = args_setter.ingredients = args_setter.details = args_setter.reviews = args_setter.rating \
-            = args_setter.nutrition = args_setter.published = args_setter.category = args_setter.link = True
+            = args_setter.nutrition = args_setter.published = args_setter.category = args_setter.link\
+            = args_setter.instructions = True
 
     return args_setter
 
@@ -100,7 +102,5 @@ def logging_setter():
     logging.basicConfig(
         format='%(asctime)s - %(levelname)s - %(message)s',
         level=logging.INFO,
-        handlers=[logging.FileHandler("logging_info.log"), logging.StreamHandler()]
+        handlers=[logging.FileHandler("logging_info.log", mode='w+'), logging.StreamHandler()]
     )
-
-
