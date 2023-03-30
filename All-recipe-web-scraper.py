@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 import re
 import logging
 from constants import *
+import datetime
 import scrape_links as s
 import command_line as ar
 
@@ -141,10 +142,12 @@ def get_date_published(soup):
     """
     Extracts the date that the recipe was published on allrecipes.com
     :param: BeautifulSoup object
-    :return: str: date published
+    :return: datetime object: date_published
     """
-    date_elem = soup.find('div', class_=DATE_CLASS).text.strip().split()
-    date_published = " ".join(date_elem[PUBLISHED_ON:])
+
+    date_elem = soup.find('div', class_=c.DATE_CLASS).text.strip().split()
+    date_published_str = " ".join(date_elem[c.PUBLISHED_ON:])
+    date_published = datetime.datetime.strptime(date_published_str, '%B %d, %Y')
     return date_published
 
 
@@ -157,6 +160,19 @@ def get_categories(soup):
     breadcrumb = soup.find('ul', class_=CATEGORY_CLASS)
     categories = [elem.text.strip() for elem in breadcrumb.find_all('li')]
     return categories
+
+
+def get_recipe_instructions(soup):
+    """
+    Extracts the recipe instructions from a BeautifulSoup object.
+    :param: soup: BeautifulSoup object
+    :return: dict: recipe instructions with numbered keys
+    """
+    instructions = {}
+    instructions_elem = soup.find('ol', class_=c.INSTRUCTIONS_CLASS)
+    for idx, li in enumerate(instructions_elem.find_all('li')):
+        instructions[f"Step {idx+1}"] = li.text.strip()
+    return instructions
 
 
 def scraper(all_links_scraper, args_scraper):
@@ -184,7 +200,8 @@ def scraper(all_links_scraper, args_scraper):
                     'nutrition': get_nutrition_facts,
                     'published': get_date_published,
                     'category': get_categories,
-                    'link': lambda _: link
+                    'link': lambda _: link,
+                    'instructions': get_recipe_instructions
                 }
                 scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
 
