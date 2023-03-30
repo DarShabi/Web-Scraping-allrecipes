@@ -1,7 +1,7 @@
 import logging
 import argparse
 import sys
-import constants as c
+from constants import *
 
 
 def has_other_args(args):
@@ -44,12 +44,12 @@ def validate_args(parser):
     args_setter, unknown_args = parser.parse_known_args()
 
     # Check if any arguments were passed
-    if len(sys.argv) <= c.MIN_ARGS:
+    if len(sys.argv) <= MIN_ARGS:
         message = 'No argument was passed'
         exit_gracefully(message, parser)
 
     # Check if too many arguments were passed
-    elif len(sys.argv) > c.MAX_ARGS:
+    elif len(sys.argv) > MAX_ARGS:
         message = 'Too many arguments'
         exit_gracefully(message, parser)
 
