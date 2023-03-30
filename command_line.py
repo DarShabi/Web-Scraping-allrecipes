@@ -102,6 +102,5 @@ def logging_setter():
     logging.basicConfig(
         format='%(asctime)s - %(levelname)s - %(message)s',
         level=logging.INFO,
-        handlers=[logging.FileHandler("logging_info.log"), logging.StreamHandler()]
+        handlers=[logging.FileHandler("logging_info.log", mode='w+'), logging.StreamHandler()]
     )
-
