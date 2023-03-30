@@ -161,6 +161,19 @@ def get_categories(soup):
     return categories
 
 
+def get_recipe_instructions(soup):
+    """
+    Extracts the recipe instructions from a BeautifulSoup object.
+    :param: soup: BeautifulSoup object
+    :return: dict: recipe instructions with numbered keys
+    """
+    instructions = {}
+    instructions_elem = soup.find('ol', class_=c.INSTRUCTIONS_CLASS)
+    for idx, li in enumerate(instructions_elem.find_all('li')):
+        instructions[f"Step {idx+1}"] = li.text.strip()
+    return instructions
+
+
 def scraper(all_links_scraper, args_scraper):
     """
     Scrape recipe data from allrecipes.com based on the provided arguments.
@@ -186,7 +199,8 @@ def scraper(all_links_scraper, args_scraper):
                     'nutrition': get_nutrition_facts,
                     'published': get_date_published,
                     'category': get_categories,
-                    'link': lambda _: link
+                    'link': lambda _: link,
+                    'instructions': get_recipe_instructions
                 }
                 scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
 
