@@ -7,6 +7,7 @@ Recipe Category (e.g. Main Dish, Breakfast).
 from bs4 import BeautifulSoup
 import re
 import logging
+import datetime
 import constants as c
 import scrape_links as s
 import command_line as ar
@@ -141,10 +142,11 @@ def get_date_published(soup):
     """
     Extracts the date that the recipe was published on allrecipes.com
     :param: BeautifulSoup object
-    :return: str: date published
+    :return: datetime object: date_published
     """
     date_elem = soup.find('div', class_=c.DATE_CLASS).text.strip().split()
-    date_published = " ".join(date_elem[c.PUBLISHED_ON:])
+    date_published_str = " ".join(date_elem[c.PUBLISHED_ON:])
+    date_published = datetime.datetime.strptime(date_published_str, '%B %d, %Y')
     return date_published
 
 
