@@ -17,8 +17,8 @@ cursor.execute('CREATE DATABASE recipes')
 cursor.execute("""
     CREATE TABLE recipes (
         id INT NOT NULL AUTO_INCREMENT,
-        link VARCHAR(255),
-        title VARCHAR(255),
+        link VARCHAR(150),
+        title VARCHAR(50),
         num_reviews INT,
         rating FLOAT,
         date_published DATETIME,
@@ -39,7 +39,7 @@ cursor.execute("""
     CREATE TABLE ingredients (
         id INT NOT NULL AUTO_INCREMENT,
         recipe_id INT,
-        ingredient VARCHAR(255),
+        ingredient VARCHAR(100),
         PRIMARY KEY (id),
         FOREIGN KEY (recipe_id) REFERENCES recipes(id)
     )
@@ -49,7 +49,7 @@ cursor.execute("""
 cursor.execute("""
     CREATE TABLE categories (
         id INT NOT NULL AUTO_INCREMENT,
-        category VARCHAR(255),
+        category VARCHAR(50),
         PRIMARY KEY (id)
     )
 """)
@@ -60,7 +60,7 @@ cursor.execute("""
         id INT NOT NULL AUTO_INCREMENT,
         recipe_id INT,
         step INT,
-        description VARCHAR(255),
+        description TEXT,
         PRIMARY KEY (id),
         FOREIGN KEY (recipe_id) REFERENCES recipes(id)
     )
