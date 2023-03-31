@@ -169,9 +169,9 @@ def get_recipe_instructions(soup):
     """
     instructions = {}
     instructions_elem = soup.find('ol', class_=c.INSTRUCTIONS_CLASS)
-    for idx, li in enumerate(instructions_elem.find_all('li')):
-        instructions[f"Step {idx+1}"] = li.text.strip()
-    return instructions
+    for step, description in enumerate(instructions_elem.find_all('li')):
+        instructions[int(step)] = description.text.strip()
+    print(instructions)
 
 
 def scraper(all_links_scraper, args_scraper):
