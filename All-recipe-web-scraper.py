@@ -181,6 +181,14 @@ def dump_data_into_file(output_file, recipes_scraped, scraped_data):
     output_file.write('\n')
 
 
+def helper(link):
+    function_map = {'title': get_title, 'ingredients': get_ingredients, 'details': get_recipe_details,
+                    'reviews': get_num_reviews, 'rating': get_rating, 'nutrition': get_nutrition_facts,
+                    'published': get_date_published, 'category': get_categories, 'link': lambda _: link,
+                    'instructions': get_recipe_instructions}
+    return function_map
+
+
 def scraper(all_links_scraper, args_scraper):
     """
     Scrape recipe data from allrecipes.com based on the provided arguments.
@@ -195,16 +203,9 @@ def scraper(all_links_scraper, args_scraper):
                 ingredients = get_ingredients(soup)
                 if not len(ingredients):
                     continue
-
-                function_map = {'title': get_title, 'ingredients': get_ingredients, 'details': get_recipe_details,
-                                'reviews': get_num_reviews, 'rating': get_rating, 'nutrition': get_nutrition_facts,
-                                'published': get_date_published, 'category': get_categories, 'link': lambda _: link,
-                                'instructions': get_recipe_instructions}
+                function_map = helper(link)
                 scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
-
                 dump_data_into_file(output_file, recipes_scraped, scraped_data)
-
-                # logging info
                 logging.info(f'Scraped recipe number: {recipes_scraped}\n')
                 recipes_scraped += 1
             except Exception as e:
