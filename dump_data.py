@@ -2,8 +2,8 @@ import pymysql
 
 
 # is this supposed to work with argparse? should it be **kwargs?
-def insert_recipe_data(recipe_title, ingredients, details, reviews, rating, nutrition, published_date, categories, link,
-                       instructions):
+def insert_recipe_data(title, ingredients, recipe_details, num_reviews, rating, nutrition_facts, date_published,
+                       categories, link, instructions):
     # Connect to MySQL server
     connection = pymysql.connect(
         host='localhost',
@@ -17,22 +17,22 @@ def insert_recipe_data(recipe_title, ingredients, details, reviews, rating, nutr
 
     # Check if recipe already exists in the database
     query = "SELECT id FROM recipes WHERE title=%s"
-    cursor.execute(query, recipe_title)
+    cursor.execute(query, title)
     result = cursor.fetchone()
 
     # If recipe already exists, close the connection and return
     if result:
-        print(f"{recipe_title} already exists in the database.")
+        print(f"{title} already exists in the database.")
         cursor.close()
         connection.close()
         return
 
     # Insert recipe data into the recipes table
     query = "INSERT INTO recipes (title, link, num_reviews, rating, date_published, prep_time_mins, cook_time_mins, total_time_mins, servings, calories, fat_g, carbs_g, protein_g) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-    values = (recipe_title, link, reviews, rating, published_date, details.get('Prep Time:', None),
-              details.get('Cook Time:', None), details.get('Total Time:', None), details.get('Servings:', None),
-              nutrition.get('Calories', None), nutrition.get('Fat', None), nutrition.get('Carbs', None),
-              nutrition.get('Protein', None))
+    values = (title, link, num_reviews, rating, date_published, recipe_details.get('Prep Time:', None),
+              recipe_details.get('Cook Time:', None), recipe_details.get('Total Time:', None), recipe_details.get('Servings:', None),
+              nutrition_facts.get('Calories', None), nutrition_facts.get('Fat', None), nutrition_facts.get('Carbs', None),
+              nutrition_facts.get('Protein', None))
     cursor.execute(query, values)
 
     # Get the recipe ID
@@ -75,4 +75,4 @@ def insert_recipe_data(recipe_title, ingredients, details, reviews, rating, nutr
     cursor.close()
     connection.close()
 
-    print(f"{recipe_title} has been added to the database.")
+    print(f"{title} has been added to the database.")
