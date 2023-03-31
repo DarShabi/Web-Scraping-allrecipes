@@ -171,7 +171,14 @@ def get_recipe_instructions(soup):
     instructions_elem = soup.find('ol', class_=c.INSTRUCTIONS_CLASS)
     for step, description in enumerate(instructions_elem.find_all('li')):
         instructions[int(step)] = description.text.strip()
-    print(instructions)
+    return instructions
+
+
+def dump_data_into_file(output_file, recipes_scraped, scraped_data):
+    output_file.write(f'\nRecipe {recipes_scraped}:\n')
+    for key, value in scraped_data.items():
+        output_file.write(f'{key.capitalize()}: {value}\n')
+    output_file.write('\n')
 
 
 def scraper(all_links_scraper, args_scraper):
@@ -189,26 +196,13 @@ def scraper(all_links_scraper, args_scraper):
                 if not len(ingredients):
                     continue
 
-                # call each scraping method based on the argparse arguments
-                function_map = {
-                    'title': get_title,
-                    'ingredients': get_ingredients,
-                    'details': get_recipe_details,
-                    'reviews': get_num_reviews,
-                    'rating': get_rating,
-                    'nutrition': get_nutrition_facts,
-                    'published': get_date_published,
-                    'category': get_categories,
-                    'link': lambda _: link,
-                    'instructions': get_recipe_instructions
-                }
+                function_map = {'title': get_title, 'ingredients': get_ingredients, 'details': get_recipe_details,
+                                'reviews': get_num_reviews, 'rating': get_rating, 'nutrition': get_nutrition_facts,
+                                'published': get_date_published, 'category': get_categories, 'link': lambda _: link,
+                                'instructions': get_recipe_instructions}
                 scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
 
-                # write scraped data to output file
-                output_file.write(f'\nRecipe {recipes_scraped}:\n')
-                for key, value in scraped_data.items():
-                    output_file.write(f'{key.capitalize()}: {value}\n')
-                output_file.write('\n')
+                dump_data_into_file(output_file, recipes_scraped, scraped_data)
 
                 # logging info
                 logging.info(f'Scraped recipe number: {recipes_scraped}\n')
