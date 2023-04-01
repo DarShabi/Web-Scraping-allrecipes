@@ -43,10 +43,11 @@ def get_all_links(index_links):
     :param: list: index links
     :return: list: urls
     """
-    all_links = []
+    links = []
     for link in index_links:
-        all_links.extend(get_recipe_links(link))
+        links.extend(get_recipe_links(link))
         logging.info(f'Links from: {link}  retrieved')
+    all_links = list(set(links))
     return all_links
 
 
