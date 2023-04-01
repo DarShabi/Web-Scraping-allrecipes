@@ -14,25 +14,17 @@ def build_database():
     cursor.execute('CREATE DATABASE recipes')
 
     # Create the recipes table
-    cursor.execute("""
+    cursor.execute('''
         CREATE TABLE recipes (
-            id INT NOT NULL AUTO_INCREMENT,
+            id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
             link VARCHAR(150),
             title VARCHAR(50),
             num_reviews INT,
-            rating FLOAT,
-            date_published DATETIME,
-            prep_time_mins INT,
-            cook_time_mins INT,
-            total_time_mins INT,
-            servings INT,
-            calories INT,
-            fat_g INT,
-            carbs_g INT,
-            protein_g INT,
-            PRIMARY KEY (id)
+            rating INT,
+            date_published DATETIME
         )
-    """)
+    ''')
+
 
     # Create the ingredients table
     cursor.execute("""
@@ -44,6 +36,29 @@ def build_database():
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
         )
     """)
+
+    cursor.execute('''
+        CREATE TABLE recipe_details (
+            recipe_id INT PRIMARY KEY,
+            prep_time_mins INT,
+            cook_time_mins INT,
+            total_time_mins INT,
+            servings INT,
+            FOREIGN KEY (recipe_id) REFERENCES recipes(id)
+        )
+    ''')
+
+    cursor.execute('''
+        CREATE TABLE nutrition_facts (
+            recipe_id INT PRIMARY KEY,
+            calories INT,
+            fat_g INT,
+            carbs_g INT,
+            protein_g INT,
+            FOREIGN KEY (recipe_id) REFERENCES recipes(id)
+        )
+    ''')
+
 
     # Create the categories table
     cursor.execute("""
@@ -68,7 +83,7 @@ def build_database():
 
     # Create the recipe_category table
     cursor.execute("""
-        CREATE TABLE recipe_category (
+        CREATE TABLE relationship (
             category_id INT,
             recipe_id INT,
             FOREIGN KEY (category_id) REFERENCES categories(id),
