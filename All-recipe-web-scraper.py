@@ -271,9 +271,7 @@ def main():
         args = ar.argparse_setter()
         argparse_scraper(all_links, args)
     else:
-        # build database
         db.build_database()
-        # scrape and dump data into it
         scrape_and_dump(all_links)
 
 
