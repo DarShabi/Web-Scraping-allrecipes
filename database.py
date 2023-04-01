@@ -14,7 +14,7 @@ def build_database():
     cursor.execute('CREATE DATABASE recipes')
 
     # Create the recipes table
-    cursor.execute('''
+    cursor.execute("""
         CREATE TABLE recipes (
             id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
             link VARCHAR(150),
@@ -22,11 +22,8 @@ def build_database():
             num_reviews INT,
             rating INT,
             date_published DATETIME
-        )
-    ''')
+        )""")
 
-
-    # Create the ingredients table
     cursor.execute("""
         CREATE TABLE ingredients (
             id INT NOT NULL AUTO_INCREMENT,
@@ -34,10 +31,9 @@ def build_database():
             ingredient VARCHAR(100),
             PRIMARY KEY (id),
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
-        )
-    """)
+        )""")
 
-    cursor.execute('''
+    cursor.execute("""
         CREATE TABLE recipe_details (
             recipe_id INT PRIMARY KEY,
             prep_time_mins INT,
@@ -45,10 +41,9 @@ def build_database():
             total_time_mins INT,
             servings INT,
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
-        )
-    ''')
+        )""")
 
-    cursor.execute('''
+    cursor.execute("""
         CREATE TABLE nutrition_facts (
             recipe_id INT PRIMARY KEY,
             calories INT,
@@ -56,20 +51,15 @@ def build_database():
             carbs_g INT,
             protein_g INT,
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
-        )
-    ''')
+        )""")
 
-
-    # Create the categories table
     cursor.execute("""
         CREATE TABLE categories (
             id INT NOT NULL AUTO_INCREMENT,
             category VARCHAR(50),
             PRIMARY KEY (id)
-        )
-    """)
+        )""")
 
-    # Create the instructions table
     cursor.execute("""
         CREATE TABLE instructions (
             id INT NOT NULL AUTO_INCREMENT,
@@ -78,18 +68,15 @@ def build_database():
             description TEXT,
             PRIMARY KEY (id),
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
-        )
-    """)
+        )""")
 
-    # Create the recipe_category table
     cursor.execute("""
         CREATE TABLE relationship (
             category_id INT,
             recipe_id INT,
             FOREIGN KEY (category_id) REFERENCES categories(id),
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
-        )
-    """)
+        )""")
 
     # commit changes and close the connection
     connection.commit()
