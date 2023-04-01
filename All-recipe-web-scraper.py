@@ -263,8 +263,8 @@ def scrape_and_dump(all_links):
     for link in all_links:
         recipe_data = scrape_recipe_data(link)
         if recipe_data is not None:
-            dump_recipe_data(recipe_data)
             logging.info(f'Scraped recipe number: {recipes_scraped}\n')
+            dump_recipe_data(recipe_data)
             recipes_scraped += 1
 
 
