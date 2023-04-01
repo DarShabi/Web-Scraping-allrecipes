@@ -2,18 +2,14 @@ import pymysql
 
 
 def build_database():
-    # Connect to MySQL server
     connection = pymysql.connect(
         host='localhost',
         user='root',
         password='rootroot'
     )
-
-    # Create database
     cursor = connection.cursor()
     cursor.execute('CREATE DATABASE recipes')
 
-    # Create the recipes table
     cursor.execute("""
         CREATE TABLE recipes (
             id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,

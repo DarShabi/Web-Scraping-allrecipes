@@ -34,3 +34,4 @@ MAX_ARGS = 11
 PUBLISHED_ON = 2
 HOURS = 24
 MINS = 60
+build_database = False

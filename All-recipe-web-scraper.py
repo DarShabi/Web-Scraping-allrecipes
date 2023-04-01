@@ -11,6 +11,8 @@ import datetime
 import constants as c
 import scrape_links as s
 import command_line as ar
+import dump_data as d
+import database as db
 
 
 def make_soup(link):
@@ -181,6 +183,18 @@ def dump_data_into_file(output_file, recipes_scraped, scraped_data):
     output_file.write('\n')
 
 
+def logging_setter():
+    """
+    Set up logging configuration
+    :return: logging configuration
+    """
+    logging.basicConfig(
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        level=logging.INFO,
+        handlers=[logging.FileHandler("logging_info.log", mode='w+'), logging.StreamHandler()]
+    )
+
+
 def helper(link):
     function_map = {'title': get_title, 'ingredients': get_ingredients, 'details': get_recipe_details,
                     'reviews': get_num_reviews, 'rating': get_rating, 'nutrition': get_nutrition_facts,
@@ -189,15 +203,15 @@ def helper(link):
     return function_map
 
 
-def scraper(all_links_scraper, args_scraper):
+def argparse_scraper(all_links, args_scraper):
     """
     Scrape recipe data from allrecipes.com based on the provided arguments.
-    :param: all_links_scraper: A list of URLs to scrape for recipe data.
+    :param: all_links: A list of URLs to scrape for recipe data.
             args_scraper: A Namespace object containing the parsed and validated arguments from argparse.
     """
     recipes_scraped = 1
     with open('scraping.log', 'w+', encoding='utf-8') as output_file:
-        for link in all_links_scraper:
+        for link in all_links:
             try:
                 soup = make_soup(link)
                 ingredients = get_ingredients(soup)
@@ -206,10 +220,42 @@ def scraper(all_links_scraper, args_scraper):
                 function_map = helper(link)
                 scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
                 dump_data_into_file(output_file, recipes_scraped, scraped_data)
-                logging.info(f'Scraped recipe number: {recipes_scraped}\n')
-                recipes_scraped += 1
             except Exception as e:
                 logging.error(f'Error scraping recipe details from link {link}: {e}')
+            logging.info(f'Scraped recipe number: {recipes_scraped}\n')
+            recipes_scraped += 1
+
+
+def scrape_and_dump(all_links):
+    """
+    Scrape recipe data from allrecipes.com based on the provided arguments.
+    :param: all_links: A list of URLs to scrape for recipe data.
+    """
+    recipes_scraped = 1
+    for link in all_links:
+        try:
+            soup = make_soup(link)
+            ingredients = get_ingredients(soup)
+            if not len(ingredients):
+                continue
+            title = get_title(soup)
+            recipe_details = get_recipe_details(soup)
+            num_reviews = get_num_reviews(soup)
+            rating = get_rating(soup)
+            nutrition_facts = get_nutrition_facts(soup)
+            date_published = get_date_published(soup)
+            categories = get_categories(soup)
+            instructions = get_recipe_instructions(soup)
+        except Exception as e:
+            logging.error(f'Error scraping recipe details from link {link}: {e}')
+            continue
+        logging.info(f'Scraped recipe number: {recipes_scraped}\n')
+        recipes_scraped += 1
+        try:  # DUMP DATA
+            d.insert_recipe_data(title, ingredients, recipe_details, num_reviews, rating, nutrition_facts,
+                                 date_published, categories, link, instructions)
+        except:  # FIND THE RIGHT EXCEPTION FOR THIS
+            print("problem dumping data into database, check connection")
 
 
 def main():
@@ -218,12 +264,17 @@ def main():
     all recipe links and calls scraping functions on each of them. Iteration will skip over non-recipe web pages.
     :return: None: writes output to scraping.log file
     """
-
-    ar.logging_setter()
+    logging_setter()
     index_links = s.get_index_links(c.SOURCE)
     all_links = s.get_all_links(index_links)
-    args = ar.argparse_setter()
-    scraper(all_links, args)
+    if not c.build_database:
+        args = ar.argparse_setter()
+        argparse_scraper(all_links, args)
+    else:
+        # build database
+        db.build_database()
+        # scrape and dump data into it
+        scrape_and_dump(all_links)
 
 
 if __name__ == '__main__':

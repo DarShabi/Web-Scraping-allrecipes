@@ -94,13 +94,4 @@ def argparse_setter():
     return args_setter
 
 
-def logging_setter():
-    """
-    Set up logging configuration
-    :return: logging configuration
-    """
-    logging.basicConfig(
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        level=logging.INFO,
-        handlers=[logging.FileHandler("logging_info.log", mode='w+'), logging.StreamHandler()]
-    )
+
