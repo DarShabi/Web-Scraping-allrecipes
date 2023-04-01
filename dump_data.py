@@ -10,8 +10,6 @@ def insert_recipe_data(title, ingredients, recipe_details, num_reviews, rating, 
         password='rootroot',
         database='recipes'
     )
-
-    # Create cursor object
     cursor = connection.cursor()
 
     # Insert into recipes table
@@ -21,7 +19,7 @@ def insert_recipe_data(title, ingredients, recipe_details, num_reviews, rating, 
 
     if cursor.rowcount == 0:  # if recipe was not already in the database, insert the other data
 
-        # Get the recipe_id of the last inserted row
+        # Get the recipe_id to use as a foreign key in other tables
         recipe_id = cursor.lastrowid
 
         # Insert into ingredients table
