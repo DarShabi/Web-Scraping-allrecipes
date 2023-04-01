@@ -226,6 +226,34 @@ def argparse_scraper(all_links, args_scraper):
             recipes_scraped += 1
 
 
+def scrape_recipe_data(link):
+    try:
+        soup = make_soup(link)
+        ingredients = get_ingredients(soup)
+        if not len(ingredients):
+            return None
+        title = get_title(soup)
+        recipe_details = get_recipe_details(soup)
+        num_reviews = get_num_reviews(soup)
+        rating = get_rating(soup)
+        nutrition_facts = get_nutrition_facts(soup)
+        date_published = get_date_published(soup)
+        categories = get_categories(soup)
+        instructions = get_recipe_instructions(soup)
+    except Exception as e:
+        logging.error(f'Error scraping recipe details from link {link}: {e}')
+        return None
+    return (title, ingredients, recipe_details, num_reviews, rating, nutrition_facts, date_published, categories, link,
+            instructions)
+
+
+def dump_recipe_data(data):
+    try:
+        d.insert_recipe_data(*data)
+    except Exception as e:
+        logging.error(f'Problem inserting data into the database: {e}')
+
+
 def scrape_and_dump(all_links):
     """
     Scrape recipe data from allrecipes.com based on the provided arguments.
@@ -233,29 +261,11 @@ def scrape_and_dump(all_links):
     """
     recipes_scraped = 1
     for link in all_links:
-        try:
-            soup = make_soup(link)
-            ingredients = get_ingredients(soup)
-            if not len(ingredients):
-                continue
-            title = get_title(soup)
-            recipe_details = get_recipe_details(soup)
-            num_reviews = get_num_reviews(soup)
-            rating = get_rating(soup)
-            nutrition_facts = get_nutrition_facts(soup)
-            date_published = get_date_published(soup)
-            categories = get_categories(soup)
-            instructions = get_recipe_instructions(soup)
-        except Exception as e:
-            logging.error(f'Error scraping recipe details from link {link}: {e}')
-            continue
-        logging.info(f'Scraped recipe number: {recipes_scraped}\n')
-        recipes_scraped += 1
-        try:  # DUMP DATA
-            d.insert_recipe_data(title, ingredients, recipe_details, num_reviews, rating, nutrition_facts,
-                                 date_published, categories, link, instructions)
-        except:  # FIND THE RIGHT EXCEPTION FOR THIS
-            print("problem dumping data into database, check connection")
+        recipe_data = scrape_recipe_data(link)
+        if recipe_data is not None:
+            dump_recipe_data(recipe_data)
+            logging.info(f'Scraped recipe number: {recipes_scraped}\n')
+            recipes_scraped += 1
 
 
 def main():
