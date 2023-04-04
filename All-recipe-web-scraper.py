@@ -79,6 +79,12 @@ def get_recipe_details(soup):
 
 
 def convert_to_minutes(value_str):
+    """
+    Converts a time value string to the equivalent time in minutes.
+    :param value_str: The time value string to be converted.
+    :return: The total time in minutes (int).
+    :raise: ValueError: If the time unit is invalid.
+    """
     values_list = value_str.split()
     total_minutes = 0
     for i in range(0, len(values_list), constants['NEXT_PAIR']):
@@ -186,7 +192,6 @@ def scraper(all_links_scraper, args_scraper):
     :param: all_links_scraper: A list of URLs to scrape for recipe data.
             args_scraper: A Namespace object containing the parsed and validated arguments from argparse.
     """
-    recipes_scraped = 1
     for link in all_links_scraper:
         try:
             soup = make_soup(link)

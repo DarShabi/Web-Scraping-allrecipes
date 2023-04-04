@@ -23,7 +23,7 @@ def build_database():
         CREATE TABLE ingredients (
             id INT NOT NULL AUTO_INCREMENT,
             recipe_id INT,
-            ingredient VARCHAR(300),
+            ingredient VARCHAR(500),
             PRIMARY KEY (id),
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
         )""")
@@ -90,3 +90,12 @@ def creating_db_if_nonexist():
     connection.commit()
     cursor.close()
     connection.close()
+
+
+def main():
+    creating_db_if_nonexist()
+    build_database()
+
+
+if __name__ == "__main__":
+    main()

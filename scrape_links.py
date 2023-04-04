@@ -19,7 +19,7 @@ def get_index_links(main_index_link):
         soup = BeautifulSoup(response, features="html.parser")
         a_tags = soup.find_all('a', class_=constants['INDEX_LINK_CLASS'])
         index_links = [a_tag['href'] for a_tag in a_tags]
-        return index_links[0:1]
+        return index_links
 
 
 def get_recipe_links(index_link):
@@ -67,5 +67,4 @@ def check_request_exception(link, func_name):
         response_get = requests.get(link).text
     except requests.exceptions.RequestException as e:
         logging.error(f"Problem getting link {link} in {func_name.__name__}. Error: {e}")
-        # check that this works lol
     return response_get

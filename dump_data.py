@@ -1,4 +1,3 @@
-import logging
 import sql_connection as sq
 
 
@@ -29,18 +28,31 @@ def write_to_database(scraped_data):
     execute_sql(cursor, sql, values)
 
     # insert nutrition facts into nutrition_facts table
-    nutrition = scraped_data['nutrition']
-    sql = "INSERT INTO nutrition_facts (recipe_id, calories, fat_g, carbs_g, protein_g) VALUES (%s, %s, %s, %s, %s)"
+    nutrition_not_checked = scraped_data['nutrition']
+    nutrition = check_if_keys_exist(nutrition_not_checked, ['Calories', 'Fat', 'Carbs', 'Protein'])
+    sql = "INSERT IGNORE INTO nutrition_facts (recipe_id, calories, fat_g, carbs_g, protein_g) VALUES (%s, %s, %s, %s, %s)"
     values = (recipe_id, nutrition['Calories'], nutrition['Fat'], nutrition['Carbs'], nutrition['Protein'])
     execute_sql(cursor, sql, values)
 
     # insert categories into categories table and relationship into relationship table
     categories = scraped_data['category']
     for category in categories:
-        sql = "INSERT INTO categories (category) VALUES (%s)"
-        values = (category,)
-        execute_sql(cursor, sql, values)
-        category_id = cursor.lastrowid
+        # Check if category already exists in the categories table
+        sql = "SELECT id FROM categories WHERE category=%s"
+        cursor.execute(sql, (category,))
+        result = cursor.fetchone()
+
+        if not result:
+            # If category doesn't exist, insert it into the categories table
+            sql = "INSERT INTO categories (category) VALUES (%s)"
+            values = (category,)
+            execute_sql(cursor, sql, values)
+            category_id = cursor.lastrowid
+        else:
+            # If category already exists, use its ID from the categories table
+            category_id = result[0]
+
+        # Insert relationship between category and recipe into the relationship table
         sql = "INSERT INTO relationship (category_id, recipe_id) VALUES (%s, %s)"
         values = (category_id, recipe_id)
         execute_sql(cursor, sql, values)

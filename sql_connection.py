@@ -14,4 +14,3 @@ def sql_connector():
     )
 
     return connection
-
