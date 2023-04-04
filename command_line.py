@@ -3,6 +3,7 @@ import argparse
 import sys
 import json
 
+
 with open('constants.json') as f:
     constants = json.load(f)
 

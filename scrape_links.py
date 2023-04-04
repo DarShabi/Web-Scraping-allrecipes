@@ -3,6 +3,7 @@ import logging
 import json
 from bs4 import BeautifulSoup
 
+
 with open('constants.json') as f:
     constants = json.load(f)
 

@@ -12,6 +12,7 @@ import json
 import scrape_links as s
 import command_line as ar
 
+
 with open('constants.json') as f:
     constants = json.load(f)
 
