@@ -44,7 +44,7 @@ The scraper provides several CLI arguments that allow you to scrape specific dat
 By default, none of the arguments are enabled. You need to specify which data you want to scrape by providing the corresponding argument
 
 #### Database Documentation
-This scraper stores data in a MySQL database. The EDR for the database:
+This scraper stores data in a MySQL database. The ERD for the database:
 
 ![ERD](https://user-images.githubusercontent.com/127299167/229867995-72a70735-bb5b-4893-8a0b-0f193306bf1e.png)
 
