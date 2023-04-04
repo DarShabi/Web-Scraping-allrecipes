@@ -28,5 +28,7 @@
     "MAX_ARGS": 10,
     "PUBLISHED_ON": 2,
     "HOURS": 24,
-    "MINS": 60
+    "MINS": 60,
+
+    "DATABASE_NAME": "Recipes_project"
 }

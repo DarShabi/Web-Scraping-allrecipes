@@ -19,7 +19,7 @@ def get_index_links(main_index_link):
         soup = BeautifulSoup(response, features="html.parser")
         a_tags = soup.find_all('a', class_=constants['INDEX_LINK_CLASS'])
         index_links = [a_tag['href'] for a_tag in a_tags]
-        return index_links[0:5]
+        return index_links[0:1]
 
 
 def get_recipe_links(index_link):

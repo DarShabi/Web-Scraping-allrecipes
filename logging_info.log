@@ -1,246 +1,60 @@
-2023-03-30 11:05:15,071 - INFO - Links from: https://www.allrecipes.com/recipes/23070/everyday-cooking/cookware-and-equipment/air-fryer/  retrieved
-2023-03-30 11:05:15,621 - INFO - Links from: https://www.allrecipes.com/recipes/16492/everyday-cooking/special-collections/allrecipes-allstars/  retrieved
-2023-03-30 11:05:16,527 - INFO - Scraped recipe number: 1
-
-2023-03-30 11:05:17,020 - INFO - Scraped recipe number: 2
-
-2023-03-30 11:05:17,532 - INFO - Scraped recipe number: 3
-
-2023-03-30 11:05:18,041 - INFO - Scraped recipe number: 4
-
-2023-03-30 11:05:18,533 - INFO - Scraped recipe number: 5
-
-2023-03-30 11:05:19,020 - INFO - Scraped recipe number: 6
-
-2023-03-30 11:05:19,532 - INFO - Scraped recipe number: 7
-
-2023-03-30 11:05:20,028 - INFO - Scraped recipe number: 8
-
-2023-03-30 11:05:20,547 - INFO - Scraped recipe number: 9
-
-2023-03-30 11:05:21,034 - INFO - Scraped recipe number: 10
-
-2023-03-30 11:05:21,575 - INFO - Scraped recipe number: 11
-
-2023-03-30 11:05:22,074 - INFO - Scraped recipe number: 12
-
-2023-03-30 11:05:22,569 - INFO - Scraped recipe number: 13
-
-2023-03-30 11:05:23,070 - INFO - Scraped recipe number: 14
-
-2023-03-30 11:05:23,587 - INFO - Scraped recipe number: 15
-
-2023-03-30 11:05:24,117 - INFO - Scraped recipe number: 16
-
-2023-03-30 11:05:24,618 - INFO - Scraped recipe number: 17
-
-2023-03-30 11:05:25,122 - INFO - Scraped recipe number: 18
-
-2023-03-30 11:05:25,618 - INFO - Scraped recipe number: 19
-
-2023-03-30 11:05:26,129 - INFO - Scraped recipe number: 20
-
-2023-03-30 11:05:26,629 - INFO - Scraped recipe number: 21
-
-2023-03-30 11:05:27,139 - INFO - Scraped recipe number: 22
-
-2023-03-30 11:05:27,659 - INFO - Scraped recipe number: 23
-
-2023-03-30 11:05:28,167 - INFO - Scraped recipe number: 24
-
-2023-03-30 11:05:28,684 - INFO - Scraped recipe number: 25
-
-2023-03-30 11:05:29,200 - INFO - Scraped recipe number: 26
-
-2023-03-30 11:05:29,720 - INFO - Scraped recipe number: 27
-
-2023-03-30 11:05:30,249 - INFO - Scraped recipe number: 28
-
-2023-03-30 11:05:30,766 - INFO - Scraped recipe number: 29
-
-2023-03-30 11:05:31,283 - INFO - Scraped recipe number: 30
-
-2023-03-30 11:05:31,818 - INFO - Scraped recipe number: 31
-
-2023-03-30 11:05:32,330 - INFO - Scraped recipe number: 32
-
-2023-03-30 11:05:33,246 - INFO - Scraped recipe number: 33
-
-2023-03-30 11:05:33,728 - INFO - Scraped recipe number: 34
-
-2023-03-30 11:05:34,288 - INFO - Scraped recipe number: 35
-
-2023-03-30 11:05:34,843 - INFO - Scraped recipe number: 36
-
-2023-03-30 11:05:35,488 - INFO - Scraped recipe number: 37
-
-2023-03-30 11:05:36,138 - INFO - Scraped recipe number: 38
-
-2023-03-30 11:05:36,693 - INFO - Scraped recipe number: 39
-
-2023-03-30 11:05:37,364 - INFO - Scraped recipe number: 40
-
-2023-03-30 11:05:37,907 - INFO - Scraped recipe number: 41
-
-2023-03-30 11:05:38,471 - INFO - Scraped recipe number: 42
-
-2023-03-30 11:05:39,114 - INFO - Scraped recipe number: 43
-
-2023-03-30 11:05:39,702 - INFO - Scraped recipe number: 44
-
-2023-03-30 11:05:40,270 - INFO - Scraped recipe number: 45
-
-2023-03-30 11:05:40,967 - INFO - Scraped recipe number: 46
-
-2023-03-30 11:05:41,612 - INFO - Scraped recipe number: 47
-
-2023-03-30 11:05:42,172 - INFO - Scraped recipe number: 48
-
-2023-03-30 11:05:42,795 - INFO - Scraped recipe number: 49
-
-2023-03-30 11:05:43,376 - INFO - Scraped recipe number: 50
-
-2023-03-30 11:05:43,951 - INFO - Scraped recipe number: 51
-
-2023-03-30 11:05:44,528 - INFO - Scraped recipe number: 52
-
-2023-03-30 11:05:45,170 - INFO - Scraped recipe number: 53
-
-2023-03-30 11:05:45,714 - INFO - Scraped recipe number: 54
-
-2023-03-30 11:05:46,368 - INFO - Scraped recipe number: 55
-
-2023-03-30 11:05:47,924 - INFO - Scraped recipe number: 56
-
-2023-03-30 11:05:48,484 - INFO - Scraped recipe number: 57
-
-2023-03-30 11:05:49,040 - INFO - Scraped recipe number: 58
-
-2023-03-30 11:05:49,600 - INFO - Scraped recipe number: 59
-
-2023-03-30 11:05:50,172 - INFO - Scraped recipe number: 60
-
-2023-03-30 11:05:50,791 - INFO - Scraped recipe number: 61
-
-2023-03-30 11:05:51,397 - INFO - Scraped recipe number: 62
-
-2023-03-30 11:05:51,946 - INFO - Scraped recipe number: 63
-
-2023-03-30 11:05:52,616 - INFO - Scraped recipe number: 64
-
-2023-03-30 11:05:53,214 - INFO - Scraped recipe number: 65
-
-2023-03-30 11:05:53,879 - INFO - Scraped recipe number: 66
-
-2023-03-30 11:05:54,451 - INFO - Scraped recipe number: 67
-
-2023-03-30 11:05:55,115 - INFO - Scraped recipe number: 68
-
-2023-03-30 11:05:55,664 - INFO - Scraped recipe number: 69
-
-2023-03-30 11:05:56,339 - INFO - Scraped recipe number: 70
-
-2023-03-30 11:05:57,019 - INFO - Scraped recipe number: 71
-
-2023-03-30 11:05:57,569 - INFO - Scraped recipe number: 72
-
-2023-03-30 11:05:58,137 - INFO - Scraped recipe number: 73
-
-2023-03-30 11:05:58,681 - INFO - Scraped recipe number: 74
-
-2023-03-30 11:05:59,285 - INFO - Scraped recipe number: 75
-
-2023-03-30 11:05:59,873 - INFO - Scraped recipe number: 76
-
-2023-03-30 11:06:00,535 - INFO - Scraped recipe number: 77
-
-2023-03-30 11:06:01,091 - INFO - Scraped recipe number: 78
-
-2023-03-30 11:06:01,639 - INFO - Scraped recipe number: 79
-
-2023-03-30 11:06:02,263 - INFO - Scraped recipe number: 80
-
-2023-03-30 11:06:02,848 - INFO - Scraped recipe number: 81
-
-2023-03-30 11:06:03,524 - INFO - Scraped recipe number: 82
-
-2023-03-30 11:06:04,155 - INFO - Scraped recipe number: 83
-
-2023-03-30 11:06:04,716 - INFO - Scraped recipe number: 84
-
-2023-03-30 11:06:05,271 - INFO - Scraped recipe number: 85
-
-2023-03-30 11:06:05,948 - INFO - Scraped recipe number: 86
-
-2023-03-30 11:06:06,495 - INFO - Scraped recipe number: 87
-
-2023-03-30 11:06:07,027 - INFO - Scraped recipe number: 88
-
-2023-03-30 11:06:07,555 - INFO - Scraped recipe number: 89
-
-2023-03-30 11:06:08,100 - INFO - Scraped recipe number: 90
-
-2023-03-30 11:06:08,631 - INFO - Scraped recipe number: 91
-
-2023-03-30 11:06:09,176 - INFO - Scraped recipe number: 92
-
-2023-03-30 11:06:09,696 - INFO - Scraped recipe number: 93
-
-2023-03-30 11:06:10,211 - INFO - Scraped recipe number: 94
-
-2023-03-30 11:06:10,716 - INFO - Scraped recipe number: 95
-
-2023-03-30 11:06:11,242 - INFO - Scraped recipe number: 96
-
-2023-03-30 11:06:11,771 - INFO - Scraped recipe number: 97
-
-2023-03-30 11:06:12,296 - INFO - Scraped recipe number: 98
-
-2023-03-30 11:06:12,797 - INFO - Scraped recipe number: 99
-
-2023-03-30 11:06:13,281 - INFO - Scraped recipe number: 100
-
-2023-03-30 11:06:13,792 - INFO - Scraped recipe number: 101
-
-2023-03-30 11:06:14,325 - INFO - Scraped recipe number: 102
-
-2023-03-30 11:06:14,853 - INFO - Scraped recipe number: 103
-
-2023-03-30 11:06:15,353 - INFO - Scraped recipe number: 104
-
-2023-03-30 11:06:15,873 - INFO - Scraped recipe number: 105
-
-2023-03-30 11:06:16,400 - INFO - Scraped recipe number: 106
-
-2023-03-30 11:06:16,928 - INFO - Scraped recipe number: 107
-
-2023-03-30 11:06:17,466 - INFO - Scraped recipe number: 108
-
-2023-03-30 11:06:17,979 - INFO - Scraped recipe number: 109
-
-2023-03-30 11:06:18,537 - INFO - Scraped recipe number: 110
-
-2023-03-30 11:06:19,058 - INFO - Scraped recipe number: 111
-
-2023-03-30 11:06:19,594 - INFO - Scraped recipe number: 112
-
-2023-03-30 11:06:20,122 - INFO - Scraped recipe number: 113
-
-2023-03-30 11:06:20,642 - INFO - Scraped recipe number: 114
-
-2023-03-30 11:06:21,167 - INFO - Scraped recipe number: 115
-
-2023-03-30 11:06:21,702 - INFO - Scraped recipe number: 116
-
-2023-03-30 11:06:22,221 - INFO - Scraped recipe number: 117
-
-2023-03-30 11:06:22,809 - INFO - Scraped recipe number: 118
-
-2023-03-30 11:06:23,348 - INFO - Scraped recipe number: 119
-
-2023-03-30 11:06:23,862 - INFO - Scraped recipe number: 120
-
-2023-03-30 11:06:24,431 - INFO - Scraped recipe number: 121
-
-2023-03-30 11:06:24,963 - INFO - Scraped recipe number: 122
-
+2023-04-04 17:09:35,818 - INFO - Links from: https://www.allrecipes.com/recipes/23070/everyday-cooking/cookware-and-equipment/air-fryer/  retrieved
+2023-04-04 17:09:36,323 - INFO - Recipe with title 'Air Fryer Hasselback Potatoes Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:36,828 - INFO - Recipe with title 'Homemade Croutons in the Air Fryer Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:37,356 - INFO - Recipe with title 'Air Fryer Fingerling Potatoes Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:37,846 - INFO - Recipe with title 'Air-Fried Roasted Sweet Peppers and Onions Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:38,351 - INFO - Recipe with title 'Crumbed Chicken Tenderloins (Air Fried) Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:38,844 - INFO - Recipe with title 'Air Fryer Buttermilk Fried Chicken Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:39,324 - INFO - Recipe with title 'Air Fryer Roasted Garlic Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:39,810 - INFO - Recipe with title 'Air-Fryer Roasted Veggies Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:40,316 - INFO - Recipe with title 'Air Fryer Chicken Taquitos Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:40,782 - INFO - Recipe with title 'Air Fryer Spicy Onion Rings Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:41,281 - INFO - Recipe with title 'Air Fryer Croissants with Cherries and Cream Cheese Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:41,771 - INFO - Recipe with title 'Air Fryer Chicken Cordon Bleu Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:42,267 - INFO - Recipe with title 'Air Fryer Caramelized Bananas Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:42,766 - INFO - Recipe with title 'Air Fryer Lobster Tails with Lemon-Garlic Butter Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:43,249 - INFO - Recipe with title 'Air Fryer Bacon Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:43,754 - INFO - Recipe with title 'Air Fryer BBQ Chicken Drummies Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:44,256 - INFO - Recipe with title 'Air Fryer Smoked Salmon Wontons Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:44,786 - INFO - Recipe with title 'Air Fryer Chicken Thighs Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:45,318 - INFO - Recipe with title 'Air Fryer French Fries Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:45,875 - INFO - Recipe with title 'Air Fryer Potato Wedges Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:46,854 - INFO - Recipe with title 'Air Fryer Roasted Asparagus Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:47,356 - INFO - Recipe with title 'Air Fryer Zucchini Chips Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:47,874 - INFO - Recipe with title 'Air Fryer Ranch Chicken Bites Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:48,387 - INFO - Recipe with title 'Air Fryer Sausage Patties Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:48,894 - INFO - Recipe with title 'Dry-Rub Air-Fried Chicken Wings Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:49,412 - INFO - Recipe with title 'Air Fryer Pasta Chips Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:50,321 - INFO - Recipe with title 'Easy Air Fryer Baked Potatoes Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:50,838 - INFO - Recipe with title 'Air Fryer Sweet Potato Fries Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:51,362 - INFO - Recipe with title 'Air Fryer Frozen Chicken Strips Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:51,883 - INFO - Recipe with title 'Air Fryer Tilapia with Fresh Lemon Pepper Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:52,420 - INFO - Recipe with title 'Air Fryer Rotisserie Chicken Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:52,936 - INFO - Recipe with title 'Air Fryer Crispy Cajun Black-Eyed Peas Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:53,503 - INFO - Recipe with title 'Air Fryer Rib-Eye Steak Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:54,016 - INFO - Recipe with title 'Air-Fried Raspberry Brie Bites Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:54,579 - INFO - Recipe with title 'Air Fryer Tajin Chickpeas Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:55,572 - INFO - Recipe with title 'Air Fryer Pizza Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:56,108 - INFO - Recipe with title 'Air Fryer Scotch Eggs Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:56,641 - INFO - Recipe with title 'Quick Air Fryer Tilapia Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:57,351 - INFO - Recipe with title 'Air Fryer Scrambled Eggs On The Go Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:57,902 - INFO - Recipe with title 'Air Fryer Chicken Katsu with Homemade Katsu Sauce Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:58,412 - INFO - Recipe with title 'Air Fryer Roasted Bananas Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:58,940 - INFO - Recipe with title 'Air Fryer Puffed Butter Beans Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:59,485 - INFO - Recipe with title 'Air Fryer Meatballs Recipe' already exists in the database. Skipping...
+2023-04-04 17:09:59,985 - INFO - Recipe with title 'Air Fryer Lemon Pepper Roasted Cashews Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:00,525 - INFO - Recipe with title 'Basic Air Fryer Hot Dogs Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:01,112 - INFO - Recipe with title 'Air Fryer Eggplant Parmesan Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:01,638 - INFO - Recipe with title 'Spicy Chicken Jerky in the Air Fryer Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:02,144 - INFO - Recipe with title 'Air Fryer Baked Potatoes Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:02,655 - INFO - Recipe with title 'Air Fryer Loaded Mashed Potato Cakes Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:03,162 - INFO - Recipe with title 'Air Fryer Halloumi Cheese Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:03,705 - INFO - Recipe with title 'Air Fryer Roasted Okra Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:04,619 - INFO - Recipe with title 'Air Fryer Pretzel Crescent Rolls Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:05,142 - INFO - Recipe with title 'Air Fryer Grilled Peaches with Cinnamon Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:05,686 - INFO - Recipe with title 'Air Fryer Meatloaf Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:06,261 - INFO - Recipe with title 'Easy Air Fryer Pork Chops Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:06,775 - INFO - Recipe with title 'Air Fryer Chicken Bites with Parmesan Cheese Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:07,292 - INFO - Recipe with title 'Simple Air Fryer Brussels Sprouts Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:07,815 - INFO - Recipe with title 'Air Fryer Calamari Recipe' already exists in the database. Skipping...
+2023-04-04 17:10:08,338 - INFO - Recipe with title 'Air Fryer Mini Croissants with Nutella and Jam' already exists in the database. Skipping...
