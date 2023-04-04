@@ -7,10 +7,13 @@ Recipe Category (e.g. Main Dish, Breakfast).
 from bs4 import BeautifulSoup
 import re
 import logging
-from constants import *
 import datetime
+import json
 import scrape_links as s
 import command_line as ar
+
+with open('constants.json') as f:
+    constants = json.load(f)
 
 
 def make_soup(link):
@@ -43,7 +46,7 @@ def get_ingredients(soup):
     :return: list: ingredients
     """
     ingredients = []
-    p_tags = soup.find_all("ul", class_=INGREDIENTS_CLASS)
+    p_tags = soup.find_all("ul", class_=constants['INGREDIENTS_CLASS'])
     for p in p_tags:
         ingredients.append(p.text.strip())
     if not len(ingredients):
@@ -58,17 +61,17 @@ def get_recipe_details(soup):
     :param: BeautifulSoup object
     :return: dict: recipe_details
     """
-    grid_elements = soup.find('div', class_=DETAILS_CONTENT) \
-        .find_all('div', class_=DETAILS_LABEL)
+    grid_elements = soup.find('div', class_=constants['DETAILS_CONTENT']) \
+        .find_all('div', class_=constants['DETAILS_LABEL'])
     recipe_details = {}
     for element in grid_elements:
         label = element.text.strip()
-        data = element.find_next_sibling(class_=DETAILS_VALUE).text.strip()
+        data = element.find_next_sibling(class_=constants['DETAILS_VALUE']).text.strip()
         recipe_details[label] = data
     for key, value in recipe_details.items():  # convert the time and number of servings to int
-        if TIME in key:
+        if constants['TIME'] in key:
             recipe_details[key] = convert_to_minutes(value)
-        elif key == SERVINGS and value.isdigit():
+        elif key == constants['SERVINGS'] and value.isdigit():
             recipe_details[key] = int(value)
     return recipe_details
 
@@ -76,15 +79,15 @@ def get_recipe_details(soup):
 def convert_to_minutes(value_str):
     values_list = value_str.split()
     total_minutes = 0
-    for i in range(0, len(values_list), NEXT_PAIR):
+    for i in range(0, len(values_list), constants['NEXT_PAIR']):
         value = int(values_list[i])
-        unit = values_list[i + NEXT_INDEX]
+        unit = values_list[i + constants['NEXT_INDEX']]
         if unit == 'day' or unit == 'days':
-            total_minutes += value * HOURS * MINS
+            total_minutes += value * constants['HOURS'] * constants['MINS']
         elif unit == 'mins' or unit == 'min':
             total_minutes += value
         elif unit == 'hours' or unit == 'hour' or unit == 'hrs':
-            total_minutes += value * MINS
+            total_minutes += value * constants['MINS']
         else:
             raise ValueError(f'Invalid time unit: {unit}')
     return total_minutes
@@ -96,11 +99,11 @@ def get_num_reviews(soup):
     :param: BeautifulSoup object
     :return: str: number of reviews
     """
-    num_reviews_elem = soup.find('div', {'id': REVIEWS_CLASS}).text
+    num_reviews_elem = soup.find('div', {'id': constants['REVIEWS_CLASS']}).text
     if any(char.isdigit() for char in num_reviews_elem):
         num_reviews = "".join([i for i in num_reviews_elem if i.isnumeric()])
     else:
-        num_reviews = NO_REVIEWS
+        num_reviews = constants['NO_REVIEWS']
     return num_reviews
 
 
@@ -111,7 +114,7 @@ def get_rating(soup):
     :param: BeautifulSoup object
     :return: float: recipe rating or None
     """
-    rating_elem = soup.find('div', {'id': RATING_CLASS})
+    rating_elem = soup.find('div', {'id': constants['RATING_CLASS']})
     if rating_elem:
         rating_elem_text = rating_elem.text.strip()
         rating = float(re.search(r'\d+.\d+', rating_elem_text).group())
@@ -126,14 +129,14 @@ def get_nutrition_facts(soup):
     :param: BeautifulSoup object
     :return: dict: nutrition facts
     """
-    nutrition_table = soup.find('table', class_=NUTRITION_CLASS)
+    nutrition_table = soup.find('table', class_=constants['NUTRITION_CLASS'])
     nutrition_facts = {}
     for row in nutrition_table.find_all('tr'):
         cells = row.find_all('td')
-        amount = cells[AMOUNT_INDEX].text.strip().lower()
-        label = cells[LABEL_INDEX].text.strip()
-        if GRAMS in amount:
-            amount = amount[:GRAMS_INDEX]
+        amount = cells[constants['AMOUNT_INDEX']].text.strip().lower()
+        label = cells[constants['LABEL_INDEX']].text.strip()
+        if constants['GRAMS'] in amount:
+            amount = amount[:constants['GRAMS_INDEX']]
         nutrition_facts[label] = int(amount)
     return nutrition_facts
 
@@ -145,8 +148,8 @@ def get_date_published(soup):
     :return: datetime object: date_published
     """
 
-    date_elem = soup.find('div', class_=c.DATE_CLASS).text.strip().split()
-    date_published_str = " ".join(date_elem[c.PUBLISHED_ON:])
+    date_elem = soup.find('div', class_=constants['DATE_CLASS']).text.strip().split()
+    date_published_str = " ".join(date_elem[constants['PUBLISHED_ON']:])
     date_published = datetime.datetime.strptime(date_published_str, '%B %d, %Y')
     return date_published
 
@@ -157,7 +160,7 @@ def get_categories(soup):
     :param: BeautifulSoup object
     :return: list: categories
     """
-    breadcrumb = soup.find('ul', class_=CATEGORY_CLASS)
+    breadcrumb = soup.find('ul', class_=constants['CATEGORY_CLASS'])
     categories = [elem.text.strip() for elem in breadcrumb.find_all('li')]
     return categories
 
@@ -169,7 +172,7 @@ def get_recipe_instructions(soup):
     :return: dict: recipe instructions with numbered keys
     """
     instructions = {}
-    instructions_elem = soup.find('ol', class_=c.INSTRUCTIONS_CLASS)
+    instructions_elem = soup.find('ol', class_=constants['INSTRUCTIONS_CLASS'])
     for idx, li in enumerate(instructions_elem.find_all('li')):
         instructions[f"Step {idx+1}"] = li.text.strip()
     return instructions
@@ -226,7 +229,7 @@ def main():
     """
 
     ar.logging_setter()
-    index_links = s.get_index_links(SOURCE)
+    index_links = s.get_index_links(constants['SOURCE'])
     all_links = s.get_all_links(index_links)
     args = ar.argparse_setter()
     scraper(all_links, args)

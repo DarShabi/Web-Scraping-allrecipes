@@ -12,6 +12,7 @@
     "NUTRITION_CLASS": "mntl-nutrition-facts-summary__table",
     "DATE_CLASS": "mntl-attribution__item-date",
     "CATEGORY_CLASS": "mntl-breadcrumbs",
+    "INSTRUCTIONS_CLASS": "comp mntl-sc-block-group--OL mntl-sc-block mntl-sc-block-startgroup",
 
     "NO_REVIEWS": "0",
     "TIME": "Time",
