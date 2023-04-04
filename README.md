@@ -1,7 +1,7 @@
 
 # AllRecipes Web Scraping Project
 ### Dar Shabi, Maya Halevy
-\
+
 
 The target website for this project is Allrecipes.com, which is a popular recipe website that contains a wide range of recipes from different cuisines and categories. The project aims to scrape recipe data from this website and store it in a database for further analysis and use.
 \
