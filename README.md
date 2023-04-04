@@ -52,6 +52,9 @@ This scraper stores data in a MySQL database. The ERD for the database:
 ![ERD](https://user-images.githubusercontent.com/127299167/229867995-72a70735-bb5b-4893-8a0b-0f193306bf1e.png)
 
 
-#### Schema Installation
-*  Modify the `sql_connector()` function in `sql_connection.py` with your own database credentials before running the program.
-*  Run the program with the command `python database_creation.py`.
+#### Setting up the Database
+To use this web scraper, you need to first set up the database. We have provided a script `database_creation.py` that creates the necessary database schema. Before running the script, make sure that you have the required MySQL connector for Python installed. You also need to update the connection details in the `sql_connector()` function inside `sql_connection.py` to match your local MySQL database setup.
+
+Once you have updated the connection details, you can run the database_creation.py script to create the Recipes database and the necessary tables for the scraper.
+
+Note that `sql_connection.py` is a necessary file that provides the `sql_connector()` function that connects to the MySQL database. Make sure that you have it in the same directory as `database_creation.py`.
