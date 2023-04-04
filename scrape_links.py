@@ -1,7 +1,11 @@
 import requests
 import logging
+import json
 from bs4 import BeautifulSoup
-import constants as c
+
+
+with open('constants.json') as f:
+    constants = json.load(f)
 
 
 def get_index_links(main_index_link):
@@ -13,9 +17,9 @@ def get_index_links(main_index_link):
     response = check_request_exception(main_index_link, get_index_links)
     if response:
         soup = BeautifulSoup(response, features="html.parser")
-        a_tags = soup.find_all('a', class_=c.INDEX_LINK_CLASS)
+        a_tags = soup.find_all('a', class_=constants['INDEX_LINK_CLASS'])
         index_links = [a_tag['href'] for a_tag in a_tags]
-        return index_links[:2]
+        return index_links[0:5]
 
 
 def get_recipe_links(index_link):
@@ -28,9 +32,9 @@ def get_recipe_links(index_link):
     if response:
         soup = BeautifulSoup(response, features="html.parser")
         top_link_tags = soup.find_all('a', {
-            'class': c.TOP_LINK_CLASS})
+            'class': constants['TOP_LINK_CLASS']})
         top_links = [attr['href'] for attr in top_link_tags]
-        bottom_link_tags = soup.find_all('a', class_=c.BOTTOM_LINK_CLASS)
+        bottom_link_tags = soup.find_all('a', class_=constants['BOTTOM_LINK_CLASS'])
         bottom_links = [attr['href'] for attr in bottom_link_tags]
         recipe_links = top_links + bottom_links
         return recipe_links
