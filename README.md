@@ -26,3 +26,29 @@ We opted to use ‘html parser’ instead of ‘lxml’ as it might not work on 
 
 There were some non-recipe urls listed with the same html tags as the recipe urls. We addressed this problem by only scraping websites with an ingredients list. This effectively filtered out the non-recipe websites. 
 
+#### CLI Arguments
+
+The scraper provides several CLI arguments that allow you to scrape specific data from allrecipes.com. The following arguments are available:
+
+* --title: scrape the recipe title.
+* --ingredients: scrape the recipe ingredients.
+* --details: scrape recipe details (prep time, cook time, etc.).
+* --reviews: scrape the number of reviews.
+* --rating: scrape the recipe rating.
+* --nutrition: scrape the nutrition facts.
+* --published: scrape the publish date.
+* --category: scrape the recipe category.
+* --link: get the link to the recipe.
+* --instructions: get the instructions of the recipe.
+* --all: scrape all available data.
+By default, none of the arguments are enabled. You need to specify which data you want to scrape by providing the corresponding argument
+
+#### Database Documentation
+This scraper stores data in a MySQL database. The EDR for the database:
+
+![ERD](https://user-images.githubusercontent.com/127299167/229867995-72a70735-bb5b-4893-8a0b-0f193306bf1e.png)
+
+
+#### Schema Installation
+*  Modify the `sql_connector()` function in `sql_connection.py` with your own database credentials before running the program.
+*  Run the program with the command `python database_creation.py`.
