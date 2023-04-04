@@ -11,6 +11,7 @@ import datetime
 import json
 import scrape_links as s
 import command_line as ar
+import dump_data as dd
 
 
 with open('constants.json') as f:
@@ -78,6 +79,12 @@ def get_recipe_details(soup):
 
 
 def convert_to_minutes(value_str):
+    """
+    Converts a time value string to the equivalent time in minutes.
+    :param value_str: The time value string to be converted.
+    :return: The total time in minutes (int).
+    :raise: ValueError: If the time unit is invalid.
+    """
     values_list = value_str.split()
     total_minutes = 0
     for i in range(0, len(values_list), constants['NEXT_PAIR']):
@@ -181,45 +188,43 @@ def get_recipe_instructions(soup):
 
 def scraper(all_links_scraper, args_scraper):
     """
-    Scrape recipe data from allrecipes.com based on the provided arguments.
+    Scrape recipe data from allrecipes.com based on the provided arguments and write the scraped data to the database.
     :param: all_links_scraper: A list of URLs to scrape for recipe data.
             args_scraper: A Namespace object containing the parsed and validated arguments from argparse.
     """
-    recipes_scraped = 1
-    with open('scraping.log', 'w+', encoding='utf-8') as output_file:
-        for link in all_links_scraper:
+    for link in all_links_scraper:
+        try:
+            soup = make_soup(link)
+            title = get_title(soup)
+            existing_recipe = dd.get_recipe_by_title(title)
+            if existing_recipe:
+                logging.info(f"Recipe with title '{title}' already exists in the database. Skipping...")
+                continue
+            ingredients = get_ingredients(soup)
+            if not len(ingredients):
+                continue
+
+            # call each scraping method based on the argparse arguments
+            function_map = {
+                'title': get_title,
+                'ingredients': get_ingredients,
+                'details': get_recipe_details,
+                'reviews': get_num_reviews,
+                'rating': get_rating,
+                'nutrition': get_nutrition_facts,
+                'published': get_date_published,
+                'category': get_categories,
+                'link': lambda _: str(link),
+                'instructions': get_recipe_instructions
+            }
+            scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
             try:
-                soup = make_soup(link)
-                ingredients = get_ingredients(soup)
-                if not len(ingredients):
-                    continue
-
-                # call each scraping method based on the argparse arguments
-                function_map = {
-                    'title': get_title,
-                    'ingredients': get_ingredients,
-                    'details': get_recipe_details,
-                    'reviews': get_num_reviews,
-                    'rating': get_rating,
-                    'nutrition': get_nutrition_facts,
-                    'published': get_date_published,
-                    'category': get_categories,
-                    'link': lambda _: link,
-                    'instructions': get_recipe_instructions
-                }
-                scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
-
-                # write scraped data to output file
-                output_file.write(f'\nRecipe {recipes_scraped}:\n')
-                for key, value in scraped_data.items():
-                    output_file.write(f'{key.capitalize()}: {value}\n')
-                output_file.write('\n')
-
-                # logging info
-                logging.info(f'Scraped recipe number: {recipes_scraped}\n')
-                recipes_scraped += 1
-            except Exception as e:
-                logging.error(f'Error scraping recipe details from link {link}: {e}')
+                dd.write_to_database(scraped_data)
+                logging.info(f'Recipe: {title} was Inserted to the Recipes database.')
+            except Exception as exc:
+                logging.error(f'Error executing SQL: {exc}')
+        except Exception as e:
+            logging.error(f'Error scraping recipe details from link {link}: {e}')
 
 
 def main():
@@ -228,7 +233,6 @@ def main():
     all recipe links and calls scraping functions on each of them. Iteration will skip over non-recipe web pages.
     :return: None: writes output to scraping.log file
     """
-
     ar.logging_setter()
     index_links = s.get_index_links(constants['SOURCE'])
     all_links = s.get_all_links(index_links)
