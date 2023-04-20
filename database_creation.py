@@ -1,16 +1,13 @@
 import sql_connection as sq
 
 
-def build_database():
+def create_recipes_table(cursor):
     """
-    Create tables for the Recipes database.
-    :return: None
+    Create the recipes table in the database.
+    :param cursor: Cursor object used to execute the query.
     """
-    connection = sq.sql_connector()
-    cursor = connection.cursor()
-
     cursor.execute("""
-        CREATE TABLE recipes (
+        CREATE TABLE IF NOT EXISTS recipes (
             id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
             link VARCHAR(200),
             title VARCHAR(200),
@@ -19,8 +16,14 @@ def build_database():
             date_published DATETIME
         )""")
 
+
+def create_ingredients_table(cursor):
+    """
+    Create the ingredients table in the database.
+    :param cursor: Cursor object used to execute the query.
+    """
     cursor.execute("""
-        CREATE TABLE ingredients (
+        CREATE TABLE IF NOT EXISTS ingredients (
             id INT NOT NULL AUTO_INCREMENT,
             recipe_id INT,
             ingredient VARCHAR(500),
@@ -28,8 +31,14 @@ def build_database():
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
         )""")
 
+
+def create_recipe_details_table(cursor):
+    """
+    Create the recipe_details table in the database.
+    :param cursor: Cursor object used to execute the query.
+    """
     cursor.execute("""
-        CREATE TABLE recipe_details (
+        CREATE TABLE IF NOT EXISTS recipe_details (
             recipe_id INT PRIMARY KEY,
             prep_time_mins INT,
             cook_time_mins INT,
@@ -38,8 +47,14 @@ def build_database():
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
         )""")
 
+
+def create_nutrition_facts_table(cursor):
+    """
+    Create the nutrition_facts table in the database.
+    :param cursor: Cursor object used to execute the query.
+    """
     cursor.execute("""
-        CREATE TABLE nutrition_facts (
+        CREATE TABLE IF NOT EXISTS nutrition_facts (
             recipe_id INT PRIMARY KEY,
             calories INT,
             fat_g INT,
@@ -48,15 +63,27 @@ def build_database():
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
         )""")
 
+
+def create_categories_table(cursor):
+    """
+    Create the categories table in the database.
+    :param cursor: Cursor object used to execute the query.
+    """
     cursor.execute("""
-        CREATE TABLE categories (
+        CREATE TABLE IF NOT EXISTS categories (
             id INT NOT NULL AUTO_INCREMENT,
             category VARCHAR(300),
             PRIMARY KEY (id)
         )""")
 
+
+def create_instructions_table(cursor):
+    """
+    Create the instructions table in the database.
+    :param cursor: Cursor object used to execute the query.
+    """
     cursor.execute("""
-        CREATE TABLE instructions (
+        CREATE TABLE IF NOT EXISTS instructions (
             id INT NOT NULL AUTO_INCREMENT,
             recipe_id INT,
             step INT,
@@ -65,13 +92,36 @@ def build_database():
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
         )""")
 
+
+def create_relationship_table(cursor):
+    """
+    Create the relationship table in the database.
+    :param cursor: Cursor object used to execute the query.
+    """
     cursor.execute("""
-        CREATE TABLE relationship (
+        CREATE TABLE IF NOT EXISTS relationship (
             category_id INT,
             recipe_id INT,
             FOREIGN KEY (category_id) REFERENCES categories(id),
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
         )""")
+
+
+def build_database():
+    """
+    Create tables for the Recipes database.
+    :return: None
+    """
+    connection = sq.sql_connector()
+    cursor = connection.cursor()
+
+    create_recipes_table(cursor)
+    create_ingredients_table(cursor)
+    create_recipe_details_table(cursor)
+    create_nutrition_facts_table(cursor)
+    create_categories_table(cursor)
+    create_instructions_table(cursor)
+    create_relationship_table(cursor)
 
     # commit changes and close the connection
     connection.commit()
