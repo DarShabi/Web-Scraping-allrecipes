@@ -103,6 +103,7 @@ def write_to_database(scraped_data):
     connection = sq.sql_connector()
     cursor = connection.cursor()
 
+    # Insert (link, title, num_reviews, rating, date_published) to recipes table
     insert_recipe_data(cursor, scraped_data)
 
     # get the recipe ID from the newly inserted row
