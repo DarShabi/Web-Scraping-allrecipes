@@ -109,11 +109,13 @@ def create_relationship_table(cursor):
 
 def build_database():
     """
-    Create tables for the Recipes database.
+    Create tables for the recipes database.
     :return: None
     """
-    connection = sq.sql_connector()
+    connection = sq.sql_connector(database='Recipes')
     cursor = connection.cursor()
+
+    # cursor.execute('USE recipes') ??????????
 
     create_recipes_table(cursor)
     create_ingredients_table(cursor)
@@ -130,12 +132,13 @@ def build_database():
 
 
 def creating_db_if_nonexist():
-    """Create a new Recipes database if it doesn't already exist.
+    """Create a new recipes database if it doesn't already exist.
     :return: None
     """
     connection = sq.sql_connector()
     cursor = connection.cursor()
-    cursor.execute('CREATE DATABASE IF NOT EXISTS Recipes')
+    cursor.execute('CREATE DATABASE IF NOT EXISTS recipes')
+    # cursor.execute('USE recipes') ????????????????
     # commit changes and close the connection
     connection.commit()
     cursor.close()
@@ -143,6 +146,7 @@ def creating_db_if_nonexist():
 
 
 def main():
+
     creating_db_if_nonexist()
     build_database()
 

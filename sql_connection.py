@@ -1,16 +1,18 @@
 import pymysql
 
 
-def sql_connector():
+# CHANGE PASSWORD FOR MYSQL
+def sql_connector(database=None):
     """
     Connect to the MySQL database.
+    :param database: The name of the database to connect to, if any.
     :return: A connection object.
     """
     connection = pymysql.connect(
         host='localhost',
         user='root',
-        password='root123!',
-        database='Recipes'
+        password='rootroot',
+        database=database
     )
 
     return connection
