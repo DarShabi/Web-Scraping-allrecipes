@@ -104,10 +104,14 @@ def process_recipe_details(intermediate_details):
     :return: dict: intermediate_details
     """
     for key, value in intermediate_details.items():
-        if constants['TIME'] in key:
-            intermediate_details[key] = convert_to_minutes(value)
-        elif key == constants['SERVINGS'] and value.isdigit():
-            intermediate_details[key] = int(value)
+        try:
+            if constants['TIME'] in key:
+                intermediate_details[key] = convert_to_minutes(value)
+            elif key == constants['SERVINGS'] and value.isdigit():
+                intermediate_details[key] = int(value)
+        except Exception as e:
+            logging.error(f'Error processing recipe details: {e}')
+            return None
     return intermediate_details
 
 
@@ -142,17 +146,21 @@ def convert_to_minutes(value_str):
     values_list = value_str.split()
     total_minutes = 0
 
-    for i in range(0, len(values_list), constants['NEXT_PAIR']):
-        value = int(values_list[i])
-        unit = values_list[i + constants['NEXT_INDEX']]
-        if unit == 'day' or unit == 'days':
-            total_minutes += value * constants['HOURS'] * constants['MINS']
-        elif unit == 'mins' or unit == 'min':
-            total_minutes += value
-        elif unit == 'hours' or unit == 'hour' or unit == 'hrs':
-            total_minutes += value * constants['MINS']
-        else:
-            raise ValueError(f'Invalid time unit: {unit}')
+    try:
+        for i in range(0, len(values_list), constants['NEXT_PAIR']):
+            value = int(values_list[i])
+            unit = values_list[i + constants['NEXT_INDEX']]
+            if unit == 'day' or unit == 'days':
+                total_minutes += value * constants['HOURS'] * constants['MINS']
+            elif unit == 'mins' or unit == 'min':
+                total_minutes += value
+            elif unit == 'hours' or unit == 'hour' or unit == 'hrs':
+                total_minutes += value * constants['MINS']
+            else:
+                raise ValueError(f'Invalid time unit: {unit}')
+    except Exception as e:
+        logging.error(f'Error converting recipe details to minutes: {e}')
+        return None
     return total_minutes
 
 
@@ -162,11 +170,15 @@ def get_num_reviews(soup):
     :param: BeautifulSoup object
     :return: str: number of reviews
     """
-    num_reviews_elem = soup.find('div', {'id': constants['REVIEWS_CLASS']}).text
-    if any(char.isdigit() for char in num_reviews_elem):
-        num_reviews = "".join([i for i in num_reviews_elem if i.isnumeric()])
-    else:
-        num_reviews = constants['NO_REVIEWS']
+    try:
+        num_reviews_elem = soup.find('div', {'id': constants['REVIEWS_CLASS']}).text
+        if any(char.isdigit() for char in num_reviews_elem):
+            num_reviews = "".join([i for i in num_reviews_elem if i.isnumeric()])
+        else:
+            num_reviews = constants['NO_REVIEWS']
+    except Exception as e:
+        logging.error(f'Error scraping number of reviews: {e}')
+        return None
     return num_reviews
 
 
@@ -196,13 +208,17 @@ def get_nutrition_facts(soup):
     nutrition_facts = {}
 
     if nutrition_table is not None:
-        for row in nutrition_table.find_all('tr'):
-            cells = row.find_all('td')
-            amount = cells[constants['AMOUNT_INDEX']].text.strip().lower()
-            label = cells[constants['LABEL_INDEX']].text.strip()
-            if constants['GRAMS'] in amount:
-                amount = amount[:constants['GRAMS_INDEX']]
-            nutrition_facts[label] = int(amount)
+        try:
+            for row in nutrition_table.find_all('tr'):
+                cells = row.find_all('td')
+                amount = cells[constants['AMOUNT_INDEX']].text.strip().lower()
+                label = cells[constants['LABEL_INDEX']].text.strip()
+                if constants['GRAMS'] in amount:
+                    amount = amount[:constants['GRAMS_INDEX']]
+                nutrition_facts[label] = int(amount)
+        except Exception as e:
+            logging.error(f'Error scraping nutrition facts: {e}')
+            return None
 
 
 def get_date_published(soup):
@@ -211,10 +227,13 @@ def get_date_published(soup):
     :param: BeautifulSoup object
     :return: datetime object: date_published
     """
-
-    date_elem = soup.find('div', class_=constants['DATE_CLASS']).text.strip().split()
-    date_published_str = " ".join(date_elem[constants['PUBLISHED_ON']:])
-    date_published = datetime.datetime.strptime(date_published_str, '%B %d, %Y')
+    try:
+        date_elem = soup.find('div', class_=constants['DATE_CLASS']).text.strip().split()
+        date_published_str = " ".join(date_elem[constants['PUBLISHED_ON']:])
+        date_published = datetime.datetime.strptime(date_published_str, '%B %d, %Y')
+    except Exception as e:
+        logging.error(f'Error scraping date published: {e}')
+        return None
     return date_published
 
 
@@ -224,8 +243,12 @@ def get_categories(soup):
     :param: BeautifulSoup object
     :return: list: categories
     """
-    breadcrumb = soup.find('ul', class_=constants['CATEGORY_CLASS'])
-    categories = [elem.text.strip() for elem in breadcrumb.find_all('li')]
+    try:
+        breadcrumb = soup.find('ul', class_=constants['CATEGORY_CLASS'])
+        categories = [elem.text.strip() for elem in breadcrumb.find_all('li')]
+    except Exception as e:
+        logging.error(f'Error scraping recipe categories: {e}')
+        return None
     return categories
 
 
@@ -236,9 +259,13 @@ def get_recipe_instructions(soup):
     :return: dict: recipe instructions with numbered keys
     """
     instructions = {}
-    instructions_elem = soup.find('ol', class_=constants['INSTRUCTIONS_CLASS'])
-    for idx, li in enumerate(instructions_elem.find_all('li')):
-        instructions[idx + 1] = li.text.strip()
+    try:
+        instructions_elem = soup.find('ol', class_=constants['INSTRUCTIONS_CLASS'])
+        for idx, li in enumerate(instructions_elem.find_all('li')):
+            instructions[idx + 1] = li.text.strip()
+    except Exception as e:
+        logging.error(f'Error scraping recipe instructions: {e}')
+        return None
     return instructions
 
 
@@ -269,7 +296,10 @@ def scrape_data_from_soup(soup, args_scraper, link):
         'link': lambda _: str(link),
         'instructions': get_recipe_instructions
     }
-    scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
+    scraped_data_with_nulls = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
+
+    # Filter out None values
+    scraped_data = {k: v for k, v in scraped_data_with_nulls.items() if v is not None}
 
     return scraped_data
 
