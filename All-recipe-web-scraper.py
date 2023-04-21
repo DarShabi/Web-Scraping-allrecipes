@@ -24,10 +24,13 @@ def make_soup(link):
     :param: str: link str
     :return: BeautifulSoup object
     """
-    response = s.check_request_exception(link, make_soup)
-    if response:
+    try:
+        response = s.check_request_exception(link, make_soup)
         soup = BeautifulSoup(response, features="html.parser")
         return soup
+    except Exception as e:
+        logging.error(f'Error getting response from link {link}: {e}')
+        return None
 
 
 def get_title(soup):
