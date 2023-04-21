@@ -1,4 +1,6 @@
+import pymysql
 import sql_connection as sq
+import logging
 
 
 def insert_recipe_data(cursor, scraped_data):
@@ -47,10 +49,11 @@ def insert_nutrition_facts(cursor, recipe_id, nutrition):
     :param recipe_id: The ID of the recipe.
     :param nutrition: A dictionary containing the nutrition facts.
     """
-
+    if nutrition is None:
+        return
     sql = "INSERT IGNORE INTO nutrition_facts (recipe_id, calories, fat_g, carbs_g, protein_g) " \
           "VALUES (%s, %s, %s, %s, %s)"
-    values = (recipe_id, nutrition['Calories'], nutrition['Fat'], nutrition['Carbs'], nutrition['Protein'])
+    values = (recipe_id, nutrition.get('Calories'), nutrition.get('Fat'), nutrition.get('Carbs'), nutrition.get('Protein'))
     execute_sql(cursor, sql, values)
 
 
@@ -165,8 +168,8 @@ def execute_sql(cursor, sql, values):
     """
     try:
         cursor.execute(sql, values)
-    except KeyError as ex:
-        raise KeyError(f'Error executing SQL: {ex}')
+    except pymysql.Error as ex:
+        logging.error (f'Error executing SQL: {ex}')
 
 
 def check_if_keys_exist(dict_to_check, keys_to_check):
