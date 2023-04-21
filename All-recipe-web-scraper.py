@@ -139,14 +139,15 @@ def get_nutrition_facts(soup):
     """
     nutrition_table = soup.find('table', class_=constants['NUTRITION_CLASS'])
     nutrition_facts = {}
-    for row in nutrition_table.find_all('tr'):
-        cells = row.find_all('td')
-        amount = cells[constants['AMOUNT_INDEX']].text.strip().lower()
-        label = cells[constants['LABEL_INDEX']].text.strip()
-        if constants['GRAMS'] in amount:
-            amount = amount[:constants['GRAMS_INDEX']]
-        nutrition_facts[label] = int(amount)
-    return nutrition_facts
+
+    if nutrition_table is not None:
+        for row in nutrition_table.find_all('tr'):
+            cells = row.find_all('td')
+            amount = cells[constants['AMOUNT_INDEX']].text.strip().lower()
+            label = cells[constants['LABEL_INDEX']].text.strip()
+            if constants['GRAMS'] in amount:
+                amount = amount[:constants['GRAMS_INDEX']]
+            nutrition_facts[label] = int(amount)
 
 
 def get_date_published(soup):

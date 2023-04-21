@@ -46,6 +46,9 @@ def insert_nutrition_facts(cursor, recipe_id, nutrition):
     :param recipe_id: The ID of the recipe.
     :param nutrition: A dictionary containing the nutrition facts.
     """
+    if not nutrition:  # check if the dictionary is empty
+        return  # do nothing if the dictionary is empty
+
     sql = "INSERT IGNORE INTO nutrition_facts (recipe_id, calories, fat_g, carbs_g, protein_g) " \
           "VALUES (%s, %s, %s, %s, %s)"
     values = (recipe_id, nutrition['Calories'], nutrition['Fat'], nutrition['Carbs'], nutrition['Protein'])
