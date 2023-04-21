@@ -115,7 +115,7 @@ def build_database():
     connection = sq.sql_connector(database='Recipes')
     cursor = connection.cursor()
 
-    # cursor.execute('USE recipes') ??????????
+    cursor.execute('USE recipes')
 
     create_recipes_table(cursor)
     create_ingredients_table(cursor)
@@ -138,7 +138,7 @@ def creating_db_if_nonexist():
     connection = sq.sql_connector()
     cursor = connection.cursor()
     cursor.execute('CREATE DATABASE IF NOT EXISTS recipes')
-    # cursor.execute('USE recipes') ????????????????
+    cursor.execute('USE recipes')
     # commit changes and close the connection
     connection.commit()
     cursor.close()

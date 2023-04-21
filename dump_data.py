@@ -3,14 +3,26 @@ import sql_connection as sq
 
 def insert_recipe_data(cursor, scraped_data):
     """
-    Insert recipe data into the recipes table.
+    Insert recipe data into the recipes table if the title does not already exist.
     :param cursor: Cursor object used to execute the query.
     :param scraped_data: A dictionary containing information about a recipe.
+    :return: True if the data is inserted, False if the title already exists.
     """
-    sql = "INSERT INTO recipes (link, title, num_reviews, rating, date_published) VALUES (%s, %s, %s, %s, %s)"
-    values = (scraped_data['link'], scraped_data['title'], scraped_data['reviews'], scraped_data['rating'],
-              scraped_data['published'])
-    execute_sql(cursor, sql, values)
+    # Check if the title already exists in the database
+    check_sql = "SELECT * FROM recipes WHERE title = %s"
+    check_values = (scraped_data['title'],)
+    cursor.execute(check_sql, check_values)
+    result = cursor.fetchone()
+
+    # If the title does not exist, insert the data
+    if result is None:
+        sql = "INSERT INTO recipes (link, title, num_reviews, rating, date_published) VALUES (%s, %s, %s, %s, %s)"
+        values = (scraped_data['link'], scraped_data['title'], scraped_data['reviews'], scraped_data['rating'],
+                  scraped_data['published'])
+        cursor.execute(sql, values)
+        return True
+    else:
+        return False
 
 
 def insert_recipe_details(cursor, recipe_id, details):
@@ -20,6 +32,7 @@ def insert_recipe_details(cursor, recipe_id, details):
     :param recipe_id: The ID of the recipe.
     :param details: A dictionary containing the recipe details.
     """
+
     sql = "INSERT INTO recipe_details (recipe_id, prep_time_mins, cook_time_mins, total_time_mins, servings) " \
           "VALUES (%s, %s, %s, %s, %s)"
     values = (recipe_id, details['Prep Time:'], details['Cook Time:'], details['Total Time:'], details['Servings:'])
@@ -105,44 +118,42 @@ def write_to_database(scraped_data):
 
     # Insert (link, title, num_reviews, rating, date_published) to recipes table
     insert_recipe_data(cursor, scraped_data)
+    if insert_recipe_data:  # avoid adding same recipe twice
+        # get the recipe ID from the newly inserted row
+        recipe_id = cursor.lastrowid
 
-    # get the recipe ID from the newly inserted row
-    recipe_id = cursor.lastrowid
+        details_not_checked = scraped_data['details']
+        details = check_if_keys_exist(details_not_checked, ['Prep Time:', 'Cook Time:', 'Total Time:', 'Servings:'])
+        insert_recipe_details(cursor, recipe_id, details)
 
-    details_not_checked = scraped_data['details']
-    details = check_if_keys_exist(details_not_checked, ['Prep Time:', 'Cook Time:', 'Total Time:', 'Servings:'])
-    insert_recipe_details(cursor, recipe_id, details)
+        nutrition_not_checked = scraped_data['nutrition']
+        nutrition = check_if_keys_exist(nutrition_not_checked, ['Calories', 'Fat', 'Carbs', 'Protein'])
+        insert_nutrition_facts(cursor, recipe_id, nutrition)
 
-    nutrition_not_checked = scraped_data['nutrition']
-    nutrition = check_if_keys_exist(nutrition_not_checked, ['Calories', 'Fat', 'Carbs', 'Protein'])
-    insert_nutrition_facts(cursor, recipe_id, nutrition)
+        categories = scraped_data['category']
+        insert_categories(cursor, recipe_id, categories)
 
-    categories = scraped_data['category']
-    insert_categories(cursor, recipe_id, categories)
+        ingredients = scraped_data['ingredients']
+        insert_ingredients(cursor, recipe_id, ingredients)
 
-    ingredients = scraped_data['ingredients']
-    insert_ingredients(cursor, recipe_id, ingredients)
+        instructions = scraped_data['instructions']
+        insert_instructions(cursor, recipe_id, instructions)
 
-    instructions = scraped_data['instructions']
-    insert_instructions(cursor, recipe_id, instructions)
-
-    connection.commit()
+        connection.commit()
     connection.close()
 
-
-def get_recipe_by_title(title):
-    """
+# incorporated already
+"""def get_recipe_by_title(title):
     Retrieve recipe data from the database by recipe title.
     :param title: (str) Title of the recipe to retrieve.
     :return: (tuple) A tuple containing information about the recipe, or None if not found.
-    """
     connection = sq.sql_connector()
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM recipes WHERE title=%s", (title,))
     result = cursor.fetchone()
     cursor.close()
     connection.close()
-    return result
+    return result"""
 
 
 def execute_sql(cursor, sql, values):

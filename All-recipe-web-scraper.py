@@ -196,10 +196,6 @@ def scraper(all_links_scraper, args_scraper):
         try:
             soup = make_soup(link)
             title = get_title(soup)
-            existing_recipe = dd.get_recipe_by_title(title)
-            if existing_recipe:
-                logging.info(f"Recipe with title '{title}' already exists in the database. Skipping...")
-                continue
             ingredients = get_ingredients(soup)
             if not len(ingredients):
                 continue
