@@ -112,7 +112,7 @@ def build_database():
     Create tables for the recipes database.
     :return: None
     """
-    connection = sq.sql_connector(database='Recipes')
+    connection = sq.sql_connector(database='recipes')
     cursor = connection.cursor()
 
     cursor.execute('USE recipes')

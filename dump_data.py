@@ -113,6 +113,7 @@ def write_to_database(scraped_data):
     :param scraped_data: A dictionary containing information about a recipe.
     :return: None
     """
+
     connection = sq.sql_connector()
     cursor = connection.cursor()
 
@@ -141,19 +142,6 @@ def write_to_database(scraped_data):
 
         connection.commit()
     connection.close()
-
-# incorporated already
-"""def get_recipe_by_title(title):
-    Retrieve recipe data from the database by recipe title.
-    :param title: (str) Title of the recipe to retrieve.
-    :return: (tuple) A tuple containing information about the recipe, or None if not found.
-    connection = sq.sql_connector()
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM recipes WHERE title=%s", (title,))
-    result = cursor.fetchone()
-    cursor.close()
-    connection.close()
-    return result"""
 
 
 def execute_sql(cursor, sql, values):

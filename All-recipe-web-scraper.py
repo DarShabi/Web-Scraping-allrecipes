@@ -187,40 +187,45 @@ def get_recipe_instructions(soup):
 
 
 def scraper(all_links_scraper, args_scraper):
-    """
-    Scrape recipe data from allrecipes.com based on the provided arguments and write the scraped data to the database.
-    :param: all_links_scraper: A list of URLs to scrape for recipe data.
-            args_scraper: A Namespace object containing the parsed and validated arguments from argparse.
-    """
     for link in all_links_scraper:
         try:
             soup = make_soup(link)
-            title = get_title(soup)
-            ingredients = get_ingredients(soup)
-            if not len(ingredients):
-                continue
-
-            # call each scraping method based on the argparse arguments
-            function_map = {
-                'title': get_title,
-                'ingredients': get_ingredients,
-                'details': get_recipe_details,
-                'reviews': get_num_reviews,
-                'rating': get_rating,
-                'nutrition': get_nutrition_facts,
-                'published': get_date_published,
-                'category': get_categories,
-                'link': lambda _: str(link),
-                'instructions': get_recipe_instructions
-            }
-            scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
-            try:
-                dd.write_to_database(scraped_data)
-                logging.info(f'Recipe: {title} was Inserted to the Recipes database.')
-            except Exception as exc:
-                logging.error(f'Error executing SQL: {exc}')
+            scraped_data = scrape_data_from_soup(soup, args_scraper, link)
+            write_data_to_database(scraped_data)
         except Exception as e:
             logging.error(f'Error scraping recipe details from link {link}: {e}')
+
+
+def scrape_data_from_soup(soup, args_scraper, link):
+    ingredients = get_ingredients(soup)
+    if not len(ingredients):
+        return {}
+
+    function_map = {
+        'title': get_title,
+        'ingredients': get_ingredients,
+        'details': get_recipe_details,
+        'reviews': get_num_reviews,
+        'rating': get_rating,
+        'nutrition': get_nutrition_facts,
+        'published': get_date_published,
+        'category': get_categories,
+        'link': lambda _: str(link),
+        'instructions': get_recipe_instructions
+    }
+    scraped_data = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
+
+    return scraped_data
+
+
+def write_data_to_database(scraped_data):
+    if not scraped_data:
+        return
+    try:
+        dd.write_to_database(scraped_data)
+        logging.info(f'Recipe: {scraped_data["title"]} was Inserted to the Recipes database.')
+    except Exception as exc:
+        logging.error(f'Error executing SQL: {exc}')
 
 
 def main():
