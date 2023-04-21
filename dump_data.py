@@ -17,8 +17,9 @@ def insert_recipe_data(cursor, scraped_data):
     # If the title does not exist, insert the data
     if result is None:
         sql = "INSERT INTO recipes (link, title, num_reviews, rating, date_published) VALUES (%s, %s, %s, %s, %s)"
-        values = (scraped_data['link'], scraped_data['title'], scraped_data['reviews'], scraped_data['rating'],
-                  scraped_data['published'])
+        values = (
+            scraped_data.get('link'), scraped_data.get('title'), scraped_data.get('reviews'), scraped_data.get('rating'),
+            scraped_data.get('published'))
         cursor.execute(sql, values)
         return True
     else:
@@ -46,8 +47,6 @@ def insert_nutrition_facts(cursor, recipe_id, nutrition):
     :param recipe_id: The ID of the recipe.
     :param nutrition: A dictionary containing the nutrition facts.
     """
-    if not nutrition:  # check if the dictionary is empty
-        return  # do nothing if the dictionary is empty
 
     sql = "INSERT IGNORE INTO nutrition_facts (recipe_id, calories, fat_g, carbs_g, protein_g) " \
           "VALUES (%s, %s, %s, %s, %s)"
@@ -121,27 +120,34 @@ def write_to_database(scraped_data):
     cursor = connection.cursor()
 
     # Insert (link, title, num_reviews, rating, date_published) to recipes table
+
     insert_recipe_data(cursor, scraped_data)
+
     if insert_recipe_data:  # avoid adding same recipe twice
         # get the recipe ID from the newly inserted row
         recipe_id = cursor.lastrowid
 
         details_not_checked = scraped_data['details']
-        details = check_if_keys_exist(details_not_checked, ['Prep Time:', 'Cook Time:', 'Total Time:', 'Servings:'])
-        insert_recipe_details(cursor, recipe_id, details)
+        if details_not_checked:
+            details = check_if_keys_exist(details_not_checked, ['Prep Time:', 'Cook Time:', 'Total Time:', 'Servings:'])
+            insert_recipe_details(cursor, recipe_id, details)
 
         nutrition_not_checked = scraped_data['nutrition']
-        nutrition = check_if_keys_exist(nutrition_not_checked, ['Calories', 'Fat', 'Carbs', 'Protein'])
-        insert_nutrition_facts(cursor, recipe_id, nutrition)
+        if nutrition_not_checked:
+            nutrition = check_if_keys_exist(nutrition_not_checked, ['Calories', 'Fat', 'Carbs', 'Protein'])
+            insert_nutrition_facts(cursor, recipe_id, nutrition)
 
         categories = scraped_data['category']
-        insert_categories(cursor, recipe_id, categories)
+        if categories:
+            insert_categories(cursor, recipe_id, categories)
 
         ingredients = scraped_data['ingredients']
-        insert_ingredients(cursor, recipe_id, ingredients)
+        if ingredients:
+            insert_ingredients(cursor, recipe_id, ingredients)
 
         instructions = scraped_data['instructions']
-        insert_instructions(cursor, recipe_id, instructions)
+        if instructions:
+            insert_instructions(cursor, recipe_id, instructions)
 
         connection.commit()
     connection.close()
