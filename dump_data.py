@@ -38,7 +38,7 @@ def insert_recipe_details(cursor, recipe_id, details):
 
     sql = "INSERT INTO recipe_details (recipe_id, prep_time_mins, cook_time_mins, total_time_mins, servings) " \
           "VALUES (%s, %s, %s, %s, %s)"
-    values = (recipe_id, details['Prep Time:'], details['Cook Time:'], details['Total Time:'], details['Servings:'])
+    values = (recipe_id, details.get('Prep Time:'), details.get('Cook Time:'), details.get('Total Time:'), details.get('Servings:'))
     execute_sql(cursor, sql, values)
 
 
