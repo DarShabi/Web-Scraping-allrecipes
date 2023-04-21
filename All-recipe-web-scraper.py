@@ -182,7 +182,7 @@ def get_recipe_instructions(soup):
     instructions = {}
     instructions_elem = soup.find('ol', class_=constants['INSTRUCTIONS_CLASS'])
     for idx, li in enumerate(instructions_elem.find_all('li')):
-        instructions[f"Step {idx+1}"] = li.text.strip()
+        instructions[idx+1] = li.text.strip()
     return instructions
 
 
