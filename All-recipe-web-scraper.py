@@ -13,7 +13,6 @@ import scrape_links as s
 import command_line as ar
 import dump_data as dd
 
-
 with open('constants.json') as f:
     constants = json.load(f)
 
@@ -39,7 +38,11 @@ def get_title(soup):
     :param: BeautifulSoup object
     :return: str: recipe title
     """
-    title = soup.title.string
+    try:
+        title = soup.title.string
+    except Exception as e:
+        logging.error(f'Error getting title: {e}')
+        return None
     return title
 
 
@@ -51,7 +54,11 @@ def get_ingredients(soup):
     :return: list: ingredients
     """
     ingredients = []
-    p_tags = soup.find_all("ul", class_=constants['INGREDIENTS_CLASS'])
+    try:
+        p_tags = soup.find_all("ul", class_=constants['INGREDIENTS_CLASS'])
+    except Exception as e:
+        logging.error(f'Error getting ingredients: {e}')
+        return None
     for p in p_tags:
         ingredients.append(p.text.strip())
     if not len(ingredients):
@@ -60,24 +67,68 @@ def get_ingredients(soup):
     return ingredients
 
 
+def fetch_grid_elements_for_recipe_details(soup):
+    """
+    This function gets the grid elements in the recipe details section from the web page
+    :param soup: BeautifulSoup object
+    :return: html grid elements
+    """
+    try:
+        grid_elements = soup.find('div', class_=constants['DETAILS_CONTENT']) \
+            .find_all('div', class_=constants['DETAILS_LABEL'])
+        return grid_elements
+    except Exception as e:
+        logging.error(f'Error getting recipe details label: {e}')
+        return None
+
+
+def extract_label_recipe_details(element):
+    """
+    This function takes in the grid element and scrapes the details value from the web page
+    :param element html
+    :return: tuple of the label its data
+    """
+    label = element.text.strip()
+    try:
+        value = element.find_next_sibling(class_=constants['DETAILS_VALUE']).text.strip()
+        return label, value
+    except Exception as e:
+        logging.error(f'Error recipe details value: {e}')
+        return None, None
+
+
+def process_recipe_details(intermediate_details):
+    """
+    This function takes in the recipe details and makes the times and servings into consistent values
+    :param intermediate_details:
+    :return: dict: intermediate_details
+    """
+    for key, value in intermediate_details.items():
+        if constants['TIME'] in key:
+            intermediate_details[key] = convert_to_minutes(value)
+        elif key == constants['SERVINGS'] and value.isdigit():
+            intermediate_details[key] = int(value)
+    return intermediate_details
+
+
 def get_recipe_details(soup):
     """
-    Scrapes the recipe details (e.g., "Prep Time", "Cook Time", etc.) and returns then as a dictionary.
+    Scrapes the recipe details (e.g., "Prep Time", "Cook Time", etc.) by calling fetch_grid_elements and extract_label helper functiions
+    Also calls a processing function so that dictionary has the correct and standardized recipe details
     :param: BeautifulSoup object
     :return: dict: recipe_details
     """
-    grid_elements = soup.find('div', class_=constants['DETAILS_CONTENT']) \
-        .find_all('div', class_=constants['DETAILS_LABEL'])
-    recipe_details = {}
+    grid_elements = fetch_grid_elements_for_recipe_details(soup)
+    if grid_elements is None:
+        return None
+
+    intermediate_details = {}
     for element in grid_elements:
-        label = element.text.strip()
-        data = element.find_next_sibling(class_=constants['DETAILS_VALUE']).text.strip()
-        recipe_details[label] = data
-    for key, value in recipe_details.items():  # convert the time and number of servings to int
-        if constants['TIME'] in key:
-            recipe_details[key] = convert_to_minutes(value)
-        elif key == constants['SERVINGS'] and value.isdigit():
-            recipe_details[key] = int(value)
+        label, data = extract_label_recipe_details(element)
+        if label is not None and data is not None:
+            intermediate_details[label] = data
+
+    recipe_details = process_recipe_details(intermediate_details)
     return recipe_details
 
 
@@ -90,6 +141,7 @@ def convert_to_minutes(value_str):
     """
     values_list = value_str.split()
     total_minutes = 0
+
     for i in range(0, len(values_list), constants['NEXT_PAIR']):
         value = int(values_list[i])
         unit = values_list[i + constants['NEXT_INDEX']]
@@ -186,7 +238,7 @@ def get_recipe_instructions(soup):
     instructions = {}
     instructions_elem = soup.find('ol', class_=constants['INSTRUCTIONS_CLASS'])
     for idx, li in enumerate(instructions_elem.find_all('li')):
-        instructions[idx+1] = li.text.strip()
+        instructions[idx + 1] = li.text.strip()
     return instructions
 
 
