@@ -18,9 +18,11 @@ def insert_recipe_data(cursor, scraped_data):
 
     # If the title does not exist, insert the data
     if result is None:
-        sql = "INSERT INTO recipes (link, title, num_reviews, rating, date_published) VALUES (%s, %s, %s, %s, %s)"
+        sql = "INSERT INTO recipes (id, link, title, num_reviews, rating, date_published) VALUES (NULL, %s, %s, %s, " \
+              "%s, %s) "
         values = (
-            scraped_data.get('link'), scraped_data.get('title'), scraped_data.get('reviews'), scraped_data.get('rating'),
+            scraped_data.get('link'), scraped_data.get('title'), scraped_data.get('reviews'),
+            scraped_data.get('rating'),
             scraped_data.get('published'))
         cursor.execute(sql, values)
         return True
@@ -38,7 +40,8 @@ def insert_recipe_details(cursor, recipe_id, details):
 
     sql = "INSERT INTO recipe_details (recipe_id, prep_time_mins, cook_time_mins, total_time_mins, servings) " \
           "VALUES (%s, %s, %s, %s, %s)"
-    values = (recipe_id, details.get('Prep Time:'), details.get('Cook Time:'), details.get('Total Time:'), details.get('Servings:'))
+    values = (recipe_id, details.get('Prep Time:'), details.get('Cook Time:'), details.get('Total Time:'),
+              details.get('Servings:'))
     execute_sql(cursor, sql, values)
 
 
@@ -49,11 +52,10 @@ def insert_nutrition_facts(cursor, recipe_id, nutrition):
     :param recipe_id: The ID of the recipe.
     :param nutrition: A dictionary containing the nutrition facts.
     """
-    if nutrition is None:
-        return
     sql = "INSERT IGNORE INTO nutrition_facts (recipe_id, calories, fat_g, carbs_g, protein_g) " \
           "VALUES (%s, %s, %s, %s, %s)"
-    values = (recipe_id, nutrition.get('Calories'), nutrition.get('Fat'), nutrition.get('Carbs'), nutrition.get('Protein'))
+    values = (
+        recipe_id, nutrition.get('Calories'), nutrition.get('Fat'), nutrition.get('Carbs'), nutrition.get('Protein'))
     execute_sql(cursor, sql, values)
 
 
@@ -118,15 +120,13 @@ def write_to_database(scraped_data):
     :param scraped_data: A dictionary containing information about a recipe.
     :return: None
     """
-
     connection = sq.sql_connector()
     cursor = connection.cursor()
 
     # Insert (link, title, num_reviews, rating, date_published) to recipes table
+    is_new_recipe = insert_recipe_data(cursor, scraped_data)
 
-    insert_recipe_data(cursor, scraped_data)
-
-    if insert_recipe_data:  # avoid adding same recipe twice
+    if is_new_recipe:  # avoid adding same recipe twice
         # get the recipe ID from the newly inserted row
         recipe_id = cursor.lastrowid
 
@@ -159,17 +159,15 @@ def write_to_database(scraped_data):
 def execute_sql(cursor, sql, values):
     """
     Executes an SQL query with the given cursor, SQL statement and values.
-    If an error occurs during execution, a KeyError is raised with the error message.
-    :param: cursor: (cursor object) The cursor to use for executing the SQL query.
+    :param: cursor: (cursor object)
             sql: (str) The SQL statement to execute.
             values: (tuple) The values to use for the placeholders in the SQL statement.
     :return: None
-    :raises KeyError: If an error occurs during execution.
     """
     try:
         cursor.execute(sql, values)
     except pymysql.Error as ex:
-        logging.error (f'Error executing SQL: {ex}')
+        logging.error(f'Error executing SQL: {ex}')
 
 
 def check_if_keys_exist(dict_to_check, keys_to_check):
