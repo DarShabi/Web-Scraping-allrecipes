@@ -273,17 +273,17 @@ def get_recipe_instructions(soup):
     return instructions
 
 
-def scraper(all_links_scraper, args_scraper):
-    for link in all_links_scraper:
+def scraper(all_links, args):
+    for link in all_links:
         try:
             soup = make_soup(link)
-            scraped_data = scrape_data_from_soup(soup, args_scraper, link)
+            scraped_data = scrape_data_from_soup(soup, args, link)
             write_data_to_database(scraped_data)
         except Exception as e:
             logging.error(f'Error scraping recipe details from link {link}: {e}')
 
 
-def scrape_data_from_soup(soup, args_scraper, link):
+def scrape_data_from_soup(soup, args, link):
     ingredients = get_ingredients(soup)
     if not len(ingredients):
         return {}
@@ -300,7 +300,7 @@ def scrape_data_from_soup(soup, args_scraper, link):
         'link': lambda _: str(link),
         'instructions': get_recipe_instructions
     }
-    scraped_data_with_nulls = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
+    scraped_data_with_nulls = {key: func(soup) for key, func in function_map.items() if getattr(args, key)}
 
     # Filter out None values
     scraped_data = {k: v for k, v in scraped_data_with_nulls.items() if v is not None}
