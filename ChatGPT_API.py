@@ -22,7 +22,7 @@ def categorize_ingredients(table_name):
 
     # Loop through each row and apply the 'api_query' function to the 'ingredient' column
     for row in rows:
-        ingredient = row[0]
+        ingredient = row[constants["FIRST_ELEMENT"]]
         print(api_query(ingredient))
 
     # Close the database connection
@@ -38,8 +38,6 @@ def api_query(ingredient):
     # Load API key
     openai.api_key = constants['API_KEY']
 
-    model_engine = constants['GPT_MODEL']
-
     prompt_in = f"Can you please categorize this string:{ingredient} into a two-key dictionary format with the first " \
                 f"key being 'quantity' and the second key being 'ingredient'? Please convert the quantity in ounces " \
                 f"or cups to grams, so that the value of the 'quantity' key is a float number and simplify the " \
@@ -48,15 +46,15 @@ def api_query(ingredient):
                 f"and an ingredient of 'N/A'."
 
     response = openai.Completion.create(
-        engine=model_engine,
+        engine=constants['GPT_MODEL'],
         prompt=prompt_in,
-        max_tokens=1024,
-        n=1,
+        max_tokens=constants["MAX_TOKENS"],
+        n=constants["N_GPT_COMPLETIONS"],
         stop=None,
-        temperature=0.5
+        temperature=constants["GPT_TEMP"]
     )
 
-    message = response.choices[0].text
+    message = response.choices[constants["GPT_CHOICE"]].text
     return message
 
 

@@ -32,7 +32,12 @@
     "MINS": 60,
 
     "DATABASE_NAME": "Recipes_project",
-    "API_KEY": "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",
+    "API_KEY": "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",
     "GPT_MODEL": "text-davinci-003",
-    "API_INGREDIENTS_TABLE": "ingredients"
+    "API_INGREDIENTS_TABLE": "ingredients",
+    "MAX_TOKENS": 1024,
+    "GPT_TEMP": 0.5,
+    "N_GPT_COMPLETIONS": 1,
+    "GPT_CHOICE": 0,
+    "FIRST_ELEMENT": 0
 }
