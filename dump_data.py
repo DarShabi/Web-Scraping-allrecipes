@@ -42,7 +42,7 @@ def insert_recipe_details(cursor, recipe_id, details):
           "VALUES (%s, %s, %s, %s, %s)"
     values = (recipe_id, details.get('Prep Time:'), details.get('Cook Time:'), details.get('Total Time:'),
               details.get('Servings:'))
-    execute_sql(cursor, sql, values)
+    cursor.execute(sql, values)
 
 
 def insert_nutrition_facts(cursor, recipe_id, nutrition):
@@ -56,7 +56,7 @@ def insert_nutrition_facts(cursor, recipe_id, nutrition):
           "VALUES (%s, %s, %s, %s, %s)"
     values = (
         recipe_id, nutrition.get('Calories'), nutrition.get('Fat'), nutrition.get('Carbs'), nutrition.get('Protein'))
-    execute_sql(cursor, sql, values)
+    cursor.execute(sql, values)
 
 
 def insert_categories(cursor, recipe_id, categories):
@@ -76,7 +76,7 @@ def insert_categories(cursor, recipe_id, categories):
             # If category doesn't exist, insert it into the categories table
             sql = "INSERT INTO categories (category) VALUES (%s)"
             values = (category,)
-            execute_sql(cursor, sql, values)
+            cursor.execute(sql, values)
             category_id = cursor.lastrowid
         else:
             # If category already exists, use its ID from the categories table
@@ -84,7 +84,7 @@ def insert_categories(cursor, recipe_id, categories):
 
         sql = "INSERT INTO categories_recipes (category_id, recipe_id) VALUES (%s, %s)"
         values = (category_id, recipe_id)
-        execute_sql(cursor, sql, values)
+        cursor.execute(sql, values)
 
 
 def insert_ingredients(cursor, recipe_id, ingredients):
@@ -97,7 +97,7 @@ def insert_ingredients(cursor, recipe_id, ingredients):
     for ingredient in ingredients:
         sql = "INSERT INTO ingredients (recipe_id, ingredient) VALUES (%s, %s)"
         values = (recipe_id, ingredient)
-        execute_sql(cursor, sql, values)
+        cursor.execute(sql, values)
 
 
 def insert_instructions(cursor, recipe_id, instructions):
@@ -110,7 +110,7 @@ def insert_instructions(cursor, recipe_id, instructions):
     for step, description in instructions.items():
         sql = "INSERT INTO instructions (recipe_id, step, description) VALUES (%s, %s, %s)"
         values = (recipe_id, step, description)
-        execute_sql(cursor, sql, values)
+        cursor.execute(sql, values)
 
 
 def write_to_database(scraped_data):
@@ -140,21 +140,6 @@ def write_to_database(scraped_data):
 
         connection.commit()
     connection.close()
-
-
-def execute_sql(cursor, sql, values):
-    """
-    Executes an SQL query with the given cursor, SQL statement and values.
-    :param: cursor: (cursor object)
-            sql: (str) The SQL statement to execute.
-            values: (tuple) The values to use for the placeholders in the SQL statement.
-    :return: None
-    """
-    try:
-        cursor.execute(sql, values)
-    except pymysql.Error as ex:
-        logging.error(f'Error executing SQL: {ex}')
-
 
 def check_if_keys_exist(dict_to_check, keys_to_check):
     """
