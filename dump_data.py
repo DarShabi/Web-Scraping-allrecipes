@@ -122,35 +122,22 @@ def write_to_database(scraped_data):
     """
     connection = sq.sql_connector()
     cursor = connection.cursor()
-
-    # Insert (link, title, num_reviews, rating, date_published) to recipes table
     is_new_recipe = insert_recipe_data(cursor, scraped_data)
 
     if is_new_recipe:  # avoid adding same recipe twice
-        # get the recipe ID from the newly inserted row
         recipe_id = cursor.lastrowid
-
-        details_not_checked = scraped_data['details']
-        if details_not_checked:
-            details = check_if_keys_exist(details_not_checked, ['Prep Time:', 'Cook Time:', 'Total Time:', 'Servings:'])
+        if scraped_data['details']:
+            details = check_if_keys_exist(scraped_data['details'], ['Prep Time:', 'Cook Time:', 'Total Time:', 'Servings:'])
             insert_recipe_details(cursor, recipe_id, details)
-
-        nutrition_not_checked = scraped_data['nutrition']
-        if nutrition_not_checked:
-            nutrition = check_if_keys_exist(nutrition_not_checked, ['Calories', 'Fat', 'Carbs', 'Protein'])
+        if scraped_data['nutrition']:
+            nutrition = check_if_keys_exist(scraped_data['nutrition'], ['Calories', 'Fat', 'Carbs', 'Protein'])
             insert_nutrition_facts(cursor, recipe_id, nutrition)
-
-        categories = scraped_data['category']
-        if categories:
-            insert_categories(cursor, recipe_id, categories)
-
-        ingredients = scraped_data['ingredients']
-        if ingredients:
-            insert_ingredients(cursor, recipe_id, ingredients)
-
-        instructions = scraped_data['instructions']
-        if instructions:
-            insert_instructions(cursor, recipe_id, instructions)
+        if scraped_data['category']:
+            insert_categories(cursor, recipe_id, scraped_data['category'])
+        if scraped_data['ingredients']:
+            insert_ingredients(cursor, recipe_id, scraped_data['ingredients'])
+        if scraped_data['instructions']:
+            insert_instructions(cursor, recipe_id, scraped_data['instructions'])
 
         connection.commit()
     connection.close()
