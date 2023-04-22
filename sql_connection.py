@@ -19,7 +19,7 @@ def sql_connector_initial(database=None):
     return connection
 
 
-def sql_connector(database='allrecipes'):
+def sql_connector(database='Recipes'):
     """
     Connect to the allrecipes database.
     :param database: The name of the database to connect to.
@@ -28,7 +28,7 @@ def sql_connector(database='allrecipes'):
     connection = pymysql.connect(
         host='localhost',
         user='root',
-        password='rootroot',
+        password='root123!',
         database=database
     )
 

@@ -31,5 +31,8 @@
     "HOURS": 24,
     "MINS": 60,
 
-    "DATABASE_NAME": "Recipes_project"
+    "DATABASE_NAME": "Recipes_project",
+    "API_KEY": "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",
+    "GPT_MODEL": "text-davinci-003",
+    "API_INGREDIENTS_TABLE": "ingredients"
 }
