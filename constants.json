@@ -14,6 +14,7 @@
     "DATE_CLASS": "mntl-attribution__item-date",
     "CATEGORY_CLASS": "mntl-breadcrumbs",
     "INSTRUCTIONS_CLASS": "comp mntl-sc-block-group--OL mntl-sc-block mntl-sc-block-startgroup",
+    "PHOTO_CAPTION_CLASS": "figure-article-caption-owner",
 
     "NO_REVIEWS": "0",
     "TIME": "Time",

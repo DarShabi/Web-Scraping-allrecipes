@@ -259,13 +259,17 @@ def get_recipe_instructions(soup):
     :return: dict: recipe instructions with numbered keys
     """
     instructions = {}
+    instructions_elem = soup.find('ol', class_=constants['INSTRUCTIONS_CLASS'])
     try:
-        instructions_elem = soup.find('ol', class_=constants['INSTRUCTIONS_CLASS'])
-        for idx, li in enumerate(instructions_elem.find_all('li')):
-            instructions[idx + 1] = li.text.strip()
+        for idx, tag in enumerate(instructions_elem.find_all('li')):
+            # Remove the undesired text
+            nested_elem = tag.find(class_='PHOTO_CAPTION_CLASS')
+            if nested_elem:
+                nested_elem.extract()
+            instructions[idx+1] = tag.text.strip()
     except Exception as e:
-        logging.error(f'Error scraping recipe instructions: {e}')
-        return None
+        print(f"error getting instructions {e}")
+
     return instructions
 
 
