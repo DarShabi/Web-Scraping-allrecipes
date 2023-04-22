@@ -5,7 +5,11 @@ import logging
 def is_new_recipe(cursor, title):
     check_sql = "SELECT * FROM recipes WHERE title = %s"
     check_values = (title,)
-    cursor.execute(check_sql, check_values)
+    try:
+        cursor.execute(check_sql, check_values)
+    except Exception as ex:
+        logging.error(f'SQL Error: is_new_recipe function: {ex}')
+        return False
     result = cursor.fetchone()
     if result is None:
         return True
@@ -26,7 +30,10 @@ def insert_recipe_data(cursor, scraped_data):
         scraped_data.get('link'), scraped_data.get('title'), scraped_data.get('reviews'),
         scraped_data.get('rating'),
         scraped_data.get('published'))
-    cursor.execute(sql, values)
+    try:
+        cursor.execute(sql, values)
+    except Exception as ex:
+        logging.error(f'SQL Error: insert_recipe_data function: {ex}')
 
 
 def insert_recipe_details(cursor, recipe_id, details):
