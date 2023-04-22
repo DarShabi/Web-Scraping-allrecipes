@@ -82,7 +82,6 @@ def insert_categories(cursor, recipe_id, categories):
             # If category already exists, use its ID from the categories table
             category_id = result[0]
 
-        # Insert relationship between category and recipe into the relationship table
         sql = "INSERT INTO relationship (category_id, recipe_id) VALUES (%s, %s)"
         values = (category_id, recipe_id)
         execute_sql(cursor, sql, values)
