@@ -1,4 +1,5 @@
 import pymysql
+import logging
 
 
 # CHANGE PASSWORD FOR MYSQL
@@ -9,14 +10,16 @@ def sql_connector_initial(database=None):
     :param database: The name of the database to connect to.
     :return: A connection object.
     """
-    connection = pymysql.connect(
-        host='localhost',
-        user='root',
-        password='rootroot',
-        database=database
-    )
-
-    return connection
+    try:
+        connection = pymysql.connect(
+            host='localhost',
+            user='root',
+            password='rootroot',
+            database=database
+        )
+        return connection
+    except Exception as ex:
+        logging.error(f'SQL Error: could not establish an initial connection to SQL: {ex}')
 
 
 def sql_connector(database='allrecipes'):
@@ -25,11 +28,13 @@ def sql_connector(database='allrecipes'):
     :param database: The name of the database to connect to.
     :return: A connection object.
     """
-    connection = pymysql.connect(
-        host='localhost',
-        user='root',
-        password='rootroot',
-        database=database
-    )
-
-    return connection
+    try:
+        connection = pymysql.connect(
+            host='localhost',
+            user='root',
+            password='rootroot',
+            database=database
+        )
+        return connection
+    except Exception as ex:
+        logging.error(f'SQL Error: could not establish a connection to SQL: {ex}')
