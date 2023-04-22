@@ -61,7 +61,7 @@ def insert_nutrition_facts(cursor, recipe_id, nutrition):
 
 def insert_categories(cursor, recipe_id, categories):
     """
-    Insert categories into the categories table and the relationship into the relationship table.
+    Insert categories into the categories table and the categories_recipes table.
     :param cursor: Cursor object used to execute the query.
     :param recipe_id: The ID of the recipe.
     :param categories: A list of categories.
@@ -82,7 +82,7 @@ def insert_categories(cursor, recipe_id, categories):
             # If category already exists, use its ID from the categories table
             category_id = result[0]
 
-        sql = "INSERT INTO relationship (category_id, recipe_id) VALUES (%s, %s)"
+        sql = "INSERT INTO categories_recipes (category_id, recipe_id) VALUES (%s, %s)"
         values = (category_id, recipe_id)
         execute_sql(cursor, sql, values)
 

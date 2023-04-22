@@ -93,13 +93,13 @@ def create_instructions_table(cursor):
         )""")
 
 
-def create_relationship_table(cursor):
+def create_categories_recipes_table(cursor):
     """
-    Create the relationship table in the database.
+    Create the categories_recipes table in the database.
     :param cursor: Cursor object used to execute the query.
     """
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS relationship (
+        CREATE TABLE IF NOT EXISTS categories_recipes (
             category_id INT,
             recipe_id INT,
             FOREIGN KEY (category_id) REFERENCES categories(id),
@@ -123,7 +123,7 @@ def build_database():
     create_nutrition_facts_table(cursor)
     create_categories_table(cursor)
     create_instructions_table(cursor)
-    create_relationship_table(cursor)
+    create_categories_recipes_table(cursor)
 
     # commit changes and close the connection
     connection.commit()
