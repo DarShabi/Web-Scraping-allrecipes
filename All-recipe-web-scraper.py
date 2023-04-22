@@ -219,7 +219,7 @@ def get_nutrition_facts(soup):
         except Exception as e:
             logging.error(f'Error scraping nutrition facts: {e}')
             return None
-
+    return nutrition_facts
 
 def get_date_published(soup):
     """
