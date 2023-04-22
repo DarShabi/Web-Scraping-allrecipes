@@ -2,6 +2,17 @@ import sql_connection as sq
 import logging
 
 
+def is_new_recipe(cursor, title):
+    check_sql = "SELECT * FROM recipes WHERE title = %s"
+    check_values = (title,)
+    cursor.execute(check_sql, check_values)
+    result = cursor.fetchone()
+    if result is None:
+        return True
+    else:
+        return False
+
+
 def insert_recipe_data(cursor, scraped_data):
     """
     Insert recipe data into the recipes table if the title does not already exist.
@@ -9,24 +20,13 @@ def insert_recipe_data(cursor, scraped_data):
     :param scraped_data: A dictionary containing information about a recipe.
     :return: True if the data is inserted, False if the title already exists.
     """
-    # Check if the title already exists in the database
-    check_sql = "SELECT * FROM recipes WHERE title = %s"
-    check_values = (scraped_data['title'],)
-    cursor.execute(check_sql, check_values)
-    result = cursor.fetchone()
-
-    # If the title does not exist, insert the data
-    if result is None:
-        sql = "INSERT INTO recipes (id, link, title, num_reviews, rating, date_published) VALUES (NULL, %s, %s, %s, " \
-              "%s, %s) "
-        values = (
-            scraped_data.get('link'), scraped_data.get('title'), scraped_data.get('reviews'),
-            scraped_data.get('rating'),
-            scraped_data.get('published'))
-        cursor.execute(sql, values)
-        return True
-    else:
-        return False
+    sql = "INSERT INTO recipes (id, link, title, num_reviews, rating, date_published) VALUES (NULL, %s, %s, %s, " \
+          "%s, %s) "
+    values = (
+        scraped_data.get('link'), scraped_data.get('title'), scraped_data.get('reviews'),
+        scraped_data.get('rating'),
+        scraped_data.get('published'))
+    cursor.execute(sql, values)
 
 
 def insert_recipe_details(cursor, recipe_id, details):
@@ -131,9 +131,9 @@ def write_to_database(scraped_data):
     """
     connection = sq.sql_connector()
     cursor = connection.cursor()
-    is_new_recipe = insert_recipe_data(cursor, scraped_data)
 
-    if is_new_recipe:
+    if is_new_recipe(cursor, scraped_data['title']):
+        insert_recipe_data(cursor, scraped_data)
         recipe_id = cursor.lastrowid
         if scraped_data['details']:
             details = check_if_keys_exist(scraped_data['details'],
@@ -164,4 +164,3 @@ def check_if_keys_exist(dict_to_check, keys_to_check):
         if key not in dict_to_check:
             dict_to_check[key] = None
     return dict_to_check
-
