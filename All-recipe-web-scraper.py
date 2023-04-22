@@ -221,6 +221,7 @@ def get_nutrition_facts(soup):
             return None
     return nutrition_facts
 
+
 def get_date_published(soup):
     """
     Extracts the date that the recipe was published on allrecipes.com
@@ -266,7 +267,7 @@ def get_recipe_instructions(soup):
             nested_elem = tag.find(class_='PHOTO_CAPTION_CLASS')
             if nested_elem:
                 nested_elem.extract()
-            instructions[idx+1] = tag.text.strip()
+            instructions[idx + 1] = tag.text.strip()
     except Exception as e:
         print(f"error getting instructions {e}")
 

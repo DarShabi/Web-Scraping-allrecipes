@@ -123,7 +123,7 @@ def write_to_database(scraped_data):
     cursor = connection.cursor()
     is_new_recipe = insert_recipe_data(cursor, scraped_data)
 
-    if is_new_recipe:  # avoid adding same recipe twice
+    if is_new_recipe:
         recipe_id = cursor.lastrowid
         if scraped_data['details']:
             details = check_if_keys_exist(scraped_data['details'], ['Prep Time:', 'Cook Time:', 'Total Time:', 'Servings:'])
