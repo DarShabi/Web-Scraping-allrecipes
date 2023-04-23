@@ -1,6 +1,25 @@
-import pymysql
 import sql_connection as sq
 import logging
+
+
+def is_new_recipe(cursor, title):
+    """
+    This function checks if the recipe title already exists in the database or not. If the recipe title does not
+    exist yet in the database, function returns True. If the title already exists in the database, or this an error,
+    function returns False.
+    :param cursor: Cursor object used to execute the query.
+    :param title: recipe title, unique
+    :return: True or False
+    """
+    check_sql = "SELECT COUNT(*) FROM recipes WHERE title = %s"
+    check_values = (title,)
+    try:
+        cursor.execute(check_sql, check_values)
+        result = cursor.fetchone()[0]
+        return result == 0
+    except Exception as ex:
+        logging.error(f'SQL Error: is_new_recipe function: {ex}')
+        return False
 
 
 def insert_recipe_data(cursor, scraped_data):
@@ -10,24 +29,16 @@ def insert_recipe_data(cursor, scraped_data):
     :param scraped_data: A dictionary containing information about a recipe.
     :return: True if the data is inserted, False if the title already exists.
     """
-    # Check if the title already exists in the database
-    check_sql = "SELECT * FROM recipes WHERE title = %s"
-    check_values = (scraped_data['title'],)
-    cursor.execute(check_sql, check_values)
-    result = cursor.fetchone()
-
-    # If the title does not exist, insert the data
-    if result is None:
-        sql = "INSERT INTO recipes (id, link, title, num_reviews, rating, date_published) VALUES (NULL, %s, %s, %s, " \
-              "%s, %s) "
-        values = (
-            scraped_data.get('link'), scraped_data.get('title'), scraped_data.get('reviews'),
-            scraped_data.get('rating'),
-            scraped_data.get('published'))
+    sql = "INSERT INTO recipes (id, link, title, num_reviews, rating, date_published) VALUES (NULL, %s, %s, %s, " \
+          "%s, %s) "
+    values = (
+        scraped_data.get('link'), scraped_data.get('title'), scraped_data.get('reviews'),
+        scraped_data.get('rating'),
+        scraped_data.get('published'))
+    try:
         cursor.execute(sql, values)
-        return True
-    else:
-        return False
+    except Exception as ex:
+        logging.error(f'SQL Error: insert_recipe_data function: {ex}')
 
 
 def insert_recipe_details(cursor, recipe_id, details):
@@ -37,12 +48,14 @@ def insert_recipe_details(cursor, recipe_id, details):
     :param recipe_id: The ID of the recipe.
     :param details: A dictionary containing the recipe details.
     """
-
     sql = "INSERT INTO recipe_details (recipe_id, prep_time_mins, cook_time_mins, total_time_mins, servings) " \
           "VALUES (%s, %s, %s, %s, %s)"
     values = (recipe_id, details.get('Prep Time:'), details.get('Cook Time:'), details.get('Total Time:'),
               details.get('Servings:'))
-    execute_sql(cursor, sql, values)
+    try:
+        cursor.execute(sql, values)
+    except Exception as ex:
+        logging.error(f'SQL Error: insert_recipe_details function: {ex}')
 
 
 def insert_nutrition_facts(cursor, recipe_id, nutrition):
@@ -56,7 +69,10 @@ def insert_nutrition_facts(cursor, recipe_id, nutrition):
           "VALUES (%s, %s, %s, %s, %s)"
     values = (
         recipe_id, nutrition.get('Calories'), nutrition.get('Fat'), nutrition.get('Carbs'), nutrition.get('Protein'))
-    execute_sql(cursor, sql, values)
+    try:
+        cursor.execute(sql, values)
+    except Exception as ex:
+        logging.error(f'SQL Error: insert_nutrition_facts function: {ex}')
 
 
 def insert_categories(cursor, recipe_id, categories):
@@ -66,25 +82,25 @@ def insert_categories(cursor, recipe_id, categories):
     :param recipe_id: The ID of the recipe.
     :param categories: A list of categories.
     """
-    for category in categories:
-        # Check if category already exists in the categories table
+    for category in categories:  # Check if category already exists in the categories table
         sql = "SELECT id FROM categories WHERE category=%s"
         cursor.execute(sql, (category,))
         result = cursor.fetchone()
 
-        if not result:
-            # If category doesn't exist, insert it into the categories table
+        if not result:  # If category doesn't exist, insert it into the categories table
             sql = "INSERT INTO categories (category) VALUES (%s)"
             values = (category,)
-            execute_sql(cursor, sql, values)
+            cursor.execute(sql, values)
             category_id = cursor.lastrowid
-        else:
-            # If category already exists, use its ID from the categories table
+        else:  # If category already exists, use its ID from the categories table
             category_id = result[0]
 
         sql = "INSERT INTO categories_recipes (category_id, recipe_id) VALUES (%s, %s)"
         values = (category_id, recipe_id)
-        execute_sql(cursor, sql, values)
+        try:
+            cursor.execute(sql, values)
+        except Exception as ex:
+            logging.error(f'SQL Error: insert_categories function: {ex}')
 
 
 def insert_ingredients(cursor, recipe_id, ingredients):
@@ -97,7 +113,10 @@ def insert_ingredients(cursor, recipe_id, ingredients):
     for ingredient in ingredients:
         sql = "INSERT INTO ingredients (recipe_id, ingredient) VALUES (%s, %s)"
         values = (recipe_id, ingredient)
-        execute_sql(cursor, sql, values)
+        try:
+            cursor.execute(sql, values)
+        except Exception as ex:
+            logging.error(f'SQL Error: insert_ingredients function: {ex}')
 
 
 def insert_instructions(cursor, recipe_id, instructions):
@@ -110,7 +129,10 @@ def insert_instructions(cursor, recipe_id, instructions):
     for step, description in instructions.items():
         sql = "INSERT INTO instructions (recipe_id, step, description) VALUES (%s, %s, %s)"
         values = (recipe_id, step, description)
-        execute_sql(cursor, sql, values)
+        try:
+            cursor.execute(sql, values)
+        except Exception as ex:
+            logging.error(f'SQL Error: insert_instructions function: {ex}')
 
 
 def write_to_database(scraped_data):
@@ -121,15 +143,15 @@ def write_to_database(scraped_data):
     """
     connection = sq.sql_connector()
     cursor = connection.cursor()
-    is_new_recipe = insert_recipe_data(cursor, scraped_data)
 
-    if is_new_recipe:  # avoid adding same recipe twice
+    if is_new_recipe(cursor, scraped_data['title']):
+        insert_recipe_data(cursor, scraped_data)
         recipe_id = cursor.lastrowid
         if scraped_data['details']:
-            details = check_if_keys_exist(scraped_data['details'], ['Prep Time:', 'Cook Time:', 'Total Time:', 'Servings:'])
+            details = check_keys(scraped_data['details'], ['Prep Time:', 'Cook Time:', 'Total Time:', 'Servings:'])
             insert_recipe_details(cursor, recipe_id, details)
         if scraped_data['nutrition']:
-            nutrition = check_if_keys_exist(scraped_data['nutrition'], ['Calories', 'Fat', 'Carbs', 'Protein'])
+            nutrition = check_keys(scraped_data['nutrition'], ['Calories', 'Fat', 'Carbs', 'Protein'])
             insert_nutrition_facts(cursor, recipe_id, nutrition)
         if scraped_data['category']:
             insert_categories(cursor, recipe_id, scraped_data['category'])
@@ -137,26 +159,11 @@ def write_to_database(scraped_data):
             insert_ingredients(cursor, recipe_id, scraped_data['ingredients'])
         if scraped_data['instructions']:
             insert_instructions(cursor, recipe_id, scraped_data['instructions'])
-
         connection.commit()
     connection.close()
 
 
-def execute_sql(cursor, sql, values):
-    """
-    Executes an SQL query with the given cursor, SQL statement and values.
-    :param: cursor: (cursor object)
-            sql: (str) The SQL statement to execute.
-            values: (tuple) The values to use for the placeholders in the SQL statement.
-    :return: None
-    """
-    try:
-        cursor.execute(sql, values)
-    except pymysql.Error as ex:
-        logging.error(f'Error executing SQL: {ex}')
-
-
-def check_if_keys_exist(dict_to_check, keys_to_check):
+def check_keys(dict_to_check, keys_to_check):
     """
     Checks if a dictionary contains all the specified keys. If any of the keys are missing,
     they are added to the dictionary with a value of None.

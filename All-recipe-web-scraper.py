@@ -265,31 +265,28 @@ def get_recipe_instructions(soup):
     try:
         for idx, tag in enumerate(instructions_elem.find_all('li')):
             # Remove the undesired text
-            nested_elem = tag.find(class_='PHOTO_CAPTION_CLASS')
+            nested_elem = tag.find(class_=constants['PHOTO_CAPTION_CLASS'])
             if nested_elem:
                 nested_elem.extract()
-            instructions[idx+1] = tag.text.strip()
+            instructions[idx + 1] = tag.text.strip()
     except Exception as e:
         logging.error(f"Error getting instructions: {e}")
 
     return instructions
 
 
-def scraper(all_links_scraper, args_scraper):
-    for link in all_links_scraper:
-        try:
-            soup = make_soup(link)
-            scraped_data = scrape_data_from_soup(soup, args_scraper, link)
-            write_data_to_database(scraped_data)
-        except Exception as e:
-            logging.error(f'Error scraping recipe details from link {link}: {e}')
-
-
-def scrape_data_from_soup(soup, args_scraper, link):
+def scrape_data(soup, args, link):
+    """
+    This function takes in a link and the command line argument, and scrapes the specified data. If a link does not
+    have an ingredients section, the function returns None as it is not a recipe link.
+    :param soup: beautifulsoup object
+    :param args: the arguments called from the command line
+    :param link: website link from all_links
+    :return: scraped_data or None
+    """
     ingredients = get_ingredients(soup)
     if not len(ingredients):
-        return {}
-
+        return None
     function_map = {
         'title': get_title,
         'ingredients': get_ingredients,
@@ -302,35 +299,44 @@ def scrape_data_from_soup(soup, args_scraper, link):
         'link': lambda _: str(link),
         'instructions': get_recipe_instructions
     }
-    scraped_data_with_nulls = {key: func(soup) for key, func in function_map.items() if getattr(args_scraper, key)}
-
-    # Filter out None values
+    scraped_data_with_nulls = {key: func(soup) for key, func in function_map.items() if getattr(args, key)}
     scraped_data = {k: v for k, v in scraped_data_with_nulls.items() if v is not None}
 
     return scraped_data
 
 
-def write_data_to_database(scraped_data):
-    if not scraped_data:
-        return
-    try:
-        dd.write_to_database(scraped_data)
-        logging.info(f'Recipe: {scraped_data["title"]} was Inserted to the Recipes database.')
-    except Exception as exc:
-        logging.error(f'Error executing SQL: {exc}')
+def scrape_and_dump_data(all_links, args):
+    """
+    This function calls the scraping and database dumping functions for each website link. It skips over any non-recipe
+    website links.
+    :param all_links: list of all the links to be scraped
+    :param args: the arguments called from the command line
+    """
+    for link in all_links:
+        try:
+            soup = make_soup(link)
+            scraped_data = scrape_data(soup, args, link)
+            if scraped_data is None:
+                logging.info(f'No recipe found in link: {link}. Skipping...')
+                continue
+            dd.write_to_database(scraped_data)
+            logging.info(f'Recipe: {scraped_data["title"]} was Inserted to the Recipes database.')
+        except Exception as e:
+            logging.error(f'Error scraping recipe details from link {link}: {e}')
 
 
 def main():
     """
-    Takes in the index link for allrecipes.com to begin scraping the site. Iterates over
-    all recipe links and calls scraping functions on each of them. Iteration will skip over non-recipe web pages.
-    :return: None: writes output to scraping.log file
+    Main function runs the logging configuration, calls the web scraping function that gets all index links
+    from the SOURCE allrecipes index page, calls the all_links function to scrape all links, initializes the command
+    line interface, and runs the (specified) scraping and database dumping functions for each link in all links.
+    This results in the creation of a database "allrecipes" with the webscraping contents inside it.
     """
     ar.logging_setter()
     index_links = s.get_index_links(constants['SOURCE'])
     all_links = s.get_all_links(index_links)
     args = ar.argparse_setter()
-    scraper(all_links, args)
+    scrape_and_dump_data(all_links, args)
 
 
 if __name__ == '__main__':
