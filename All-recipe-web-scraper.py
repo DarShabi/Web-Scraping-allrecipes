@@ -270,7 +270,7 @@ def get_recipe_instructions(soup):
                 nested_elem.extract()
             instructions[idx+1] = tag.text.strip()
     except Exception as e:
-        print(f"error getting instructions {e}")
+        logging.error(f"Error getting instructions: {e}")
 
     return instructions
 

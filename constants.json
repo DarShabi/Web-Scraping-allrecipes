@@ -1,4 +1,3 @@
-
 {
     "SOURCE": "https://www.allrecipes.com/recipes-a-z-6735880",
     "INDEX_LINK_CLASS": "link-list__link",
@@ -15,7 +14,6 @@
     "CATEGORY_CLASS": "mntl-breadcrumbs",
     "INSTRUCTIONS_CLASS": "comp mntl-sc-block-group--OL mntl-sc-block mntl-sc-block-startgroup",
     "PHOTO_CAPTION_CLASS": "figure-article-caption-owner",
-
     "NO_REVIEWS": "0",
     "TIME": "Time",
     "AMOUNT_INDEX": 0,
@@ -30,14 +28,14 @@
     "PUBLISHED_ON": 2,
     "HOURS": 24,
     "MINS": 60,
-
     "DATABASE_NAME": "Recipes_project",
-    "API_KEY": "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",
+    "API_KEY": "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",
     "GPT_MODEL": "text-davinci-003",
-    "API_INGREDIENTS_TABLE": "ingredients",
+    "UNPROCESSED_INGREDIENTS_TABLE": "ingredients",
     "MAX_TOKENS": 1024,
     "GPT_TEMP": 0.5,
     "N_GPT_COMPLETIONS": 1,
     "GPT_CHOICE": 0,
-    "FIRST_ELEMENT": 0
+    "FIRST_ELEMENT": 0,
+    "CLEAN_DATA_TABLE_NAME": "ingredients_clean"
 }
