@@ -22,7 +22,7 @@ def sql_connector_initial(database=None):
         logging.error(f'SQL Error: could not establish an initial connection to SQL: {ex}')
 
 
-def sql_connector(database='allrecipes'):
+def sql_connector(database='Recipes'):
     """
     Connect to the allrecipes database.
     :param database: The name of the database to connect to.
@@ -38,3 +38,4 @@ def sql_connector(database='allrecipes'):
         return connection
     except Exception as ex:
         logging.error(f'SQL Error: could not establish a connection to SQL: {ex}')
+

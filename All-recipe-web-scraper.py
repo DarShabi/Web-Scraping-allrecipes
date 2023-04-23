@@ -117,8 +117,9 @@ def process_recipe_details(intermediate_details):
 
 def get_recipe_details(soup):
     """
-    Scrapes the recipe details (e.g., "Prep Time", "Cook Time", etc.) by calling fetch_grid_elements and extract_label helper functiions
-    Also calls a processing function so that dictionary has the correct and standardized recipe details
+    Scrapes the recipe details (e.g., "Prep Time", "Cook Time", etc.) by calling fetch_grid_elements and
+    extract_label helper functions Also calls a processing function so that dictionary has the correct and
+    standardized recipe details
     :param: BeautifulSoup object
     :return: dict: recipe_details
     """
@@ -269,7 +270,7 @@ def get_recipe_instructions(soup):
                 nested_elem.extract()
             instructions[idx + 1] = tag.text.strip()
     except Exception as e:
-        print(f"error getting instructions {e}")
+        logging.error(f"Error getting instructions: {e}")
 
     return instructions
 
