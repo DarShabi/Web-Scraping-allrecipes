@@ -318,7 +318,7 @@ def scrape_and_dump_data(all_links, args):
             soup = make_soup(link)
             scraped_data = scrape_data(soup, args, link)
             if scraped_data is None:
-                logging.info(f'No recipe found in link: {link}. Skipping...')
+                logging.info(f'Not a recipe: {link}. Skipping...')
                 continue
             dd.write_to_database(scraped_data)
             logging.info(f'Recipe: {scraped_data["title"]} was Inserted to the Recipes database.')
