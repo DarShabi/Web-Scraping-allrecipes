@@ -3,17 +3,22 @@ import logging
 
 
 def is_new_recipe(cursor, title):
-    check_sql = "SELECT * FROM recipes WHERE title = %s"
+    """
+    This function checks if the recipe title already exists in the database or not. If the recipe title does not
+    exist yet in the database, function returns True. If the title already exists in the database, or this an error,
+    function returns False.
+    :param cursor: Cursor object used to execute the query.
+    :param title: recipe title, unique
+    :return: True or False
+    """
+    check_sql = "SELECT COUNT(*) FROM recipes WHERE title = %s"
     check_values = (title,)
     try:
         cursor.execute(check_sql, check_values)
+        result = cursor.fetchone()[0]
+        return result == 0
     except Exception as ex:
         logging.error(f'SQL Error: is_new_recipe function: {ex}')
-        return False
-    result = cursor.fetchone()
-    if result is None:
-        return True
-    else:
         return False
 
 
@@ -143,11 +148,10 @@ def write_to_database(scraped_data):
         insert_recipe_data(cursor, scraped_data)
         recipe_id = cursor.lastrowid
         if scraped_data['details']:
-            details = check_if_keys_exist(scraped_data['details'],
-                                          ['Prep Time:', 'Cook Time:', 'Total Time:', 'Servings:'])
+            details = check_keys(scraped_data['details'], ['Prep Time:', 'Cook Time:', 'Total Time:', 'Servings:'])
             insert_recipe_details(cursor, recipe_id, details)
         if scraped_data['nutrition']:
-            nutrition = check_if_keys_exist(scraped_data['nutrition'], ['Calories', 'Fat', 'Carbs', 'Protein'])
+            nutrition = check_keys(scraped_data['nutrition'], ['Calories', 'Fat', 'Carbs', 'Protein'])
             insert_nutrition_facts(cursor, recipe_id, nutrition)
         if scraped_data['category']:
             insert_categories(cursor, recipe_id, scraped_data['category'])
@@ -159,7 +163,7 @@ def write_to_database(scraped_data):
     connection.close()
 
 
-def check_if_keys_exist(dict_to_check, keys_to_check):
+def check_keys(dict_to_check, keys_to_check):
     """
     Checks if a dictionary contains all the specified keys. If any of the keys are missing,
     they are added to the dictionary with a value of None.
