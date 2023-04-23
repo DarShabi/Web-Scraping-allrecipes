@@ -279,7 +279,10 @@ def scraper(all_links, args):
         try:
             soup = make_soup(link)
             scraped_data = scrape_data_from_soup(soup, args, link)
-            write_data_to_database(scraped_data)
+            # write_data_to_database(scraped_data) dont need
+            dd.write_to_database(scraped_data)
+            logging.info(f'Recipe: {scraped_data["title"]} was Inserted to the Recipes database.')
+
         except Exception as e:
             logging.error(f'Error scraping recipe details from link {link}: {e}')
 
@@ -307,15 +310,6 @@ def scrape_data_from_soup(soup, args, link):
     scraped_data = {k: v for k, v in scraped_data_with_nulls.items() if v is not None}
 
     return scraped_data
-
-
-def write_data_to_database(scraped_data):
-    # took out if not scraped_data return
-    try:
-        dd.write_to_database(scraped_data)
-        logging.info(f'Recipe: {scraped_data["title"]} was Inserted to the Recipes database.')
-    except Exception as exc:
-        logging.error(f'Error executing SQL: {exc}')
 
 
 def main():
