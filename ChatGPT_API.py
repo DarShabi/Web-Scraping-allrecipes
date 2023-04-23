@@ -17,7 +17,7 @@ def create_table(table_name):
     connection = sq.sql_connector()
     cursor = connection.cursor()
     cursor.execute(f"CREATE TABLE IF NOT EXISTS {table_name} (id INT AUTO_INCREMENT PRIMARY KEY, recipe_id INT, "
-                   f"ingredient VARCHAR(255), quantity FLOAT)")
+                   f"ingredient VARCHAR(100), quantity FLOAT)")
     connection.commit()
     connection.close()
 
