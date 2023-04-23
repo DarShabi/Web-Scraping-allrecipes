@@ -11,9 +11,9 @@ def create_recipes_table(cursor):
             id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
             link VARCHAR(200),
             title VARCHAR(200),
-            num_reviews INT,
-            rating INT,
-            date_published DATETIME
+            num_reviews INT NULL,
+            rating INT NULL,
+            date_published DATETIME NULL
         )""")
 
 
