@@ -12,6 +12,7 @@ import json
 import scrape_links as s
 import command_line as ar
 import dump_data as dd
+import ChatGPT_API as gpt
 
 with open('constants.json') as f:
     constants = json.load(f)
@@ -337,6 +338,7 @@ def main():
     all_links = s.get_all_links(index_links)
     args = ar.argparse_setter()
     scrape_and_dump_data(all_links, args)
+    gpt.main()
 
 
 if __name__ == '__main__':
