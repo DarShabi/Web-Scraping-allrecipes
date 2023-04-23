@@ -56,10 +56,10 @@ def create_nutrition_facts_table(cursor):
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS nutrition_facts (
             recipe_id INT PRIMARY KEY,
-            calories INT,
-            fat_g INT,
-            carbs_g INT,
-            protein_g INT,
+            calories INT NULL,
+            fat_g INT NULL,
+            carbs_g INT NULL,
+            protein_g INT NULL,
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
         )""")
 
@@ -72,7 +72,7 @@ def create_categories_table(cursor):
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS categories (
             id INT NOT NULL AUTO_INCREMENT,
-            category VARCHAR(300),
+            category VARCHAR(300) NULL,
             PRIMARY KEY (id)
         )""")
 
