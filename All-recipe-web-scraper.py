@@ -264,7 +264,7 @@ def get_recipe_instructions(soup):
     try:
         for idx, tag in enumerate(instructions_elem.find_all('li')):
             # Remove the undesired text
-            nested_elem = tag.find(class_='PHOTO_CAPTION_CLASS')
+            nested_elem = tag.find(class_=constants['PHOTO_CAPTION_CLASS'])
             if nested_elem:
                 nested_elem.extract()
             instructions[idx + 1] = tag.text.strip()
