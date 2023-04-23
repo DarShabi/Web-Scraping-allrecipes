@@ -11,7 +11,7 @@ with open('constants.json') as f:
 
 def create_table(table_name):
     """
-    Creates a table with the given name in the Recipe database.
+    Creates a table with the given name in the allrecipes database.
     :param table_name: Name of the table to be created.
     """
     connection = sq.sql_connector()
@@ -28,15 +28,14 @@ def api_query(ingredient):
     :param ingredient: A string of an ingredient.
     :return: A string of categorized ingredient in a two-key dictionary format.
     """
-    # Load API key
     openai.api_key = constants['API_KEY']
 
-    prompt_in = f"Can you please categorize this string:{ingredient} into a two-key dictionary format with the first " \
-                f"key being 'quantity' and the second key being 'ingredient'? Please convert the quantity in ounces " \
-                f"or cups to grams, so that the value of the 'quantity' key is a float number and simplify the " \
+    prompt_in = f"Categorize this string:{ingredient} into a two-key dictionary format with the first " \
+                f"key being 'quantity' and the second key being 'ingredient'. Convert the quantity in ounces " \
+                f"or cups to grams, so that the value of the 'quantity' key is a float number, and simplify the " \
                 f"ingredient names to their most basic forms. If a specific quantity or " \
-                f"ingredient cannot be identified for a line, please categorize the line with a quantity of 'None' " \
-                f"and an ingredient of 'N/A'. Please provide only one dictionary per string."
+                f"ingredient cannot be identified for a line, categorize the line with a quantity of 'None' " \
+                f"and an ingredient of 'N/A'. Provide only one dictionary per string."
     try:
         response = openai.Completion.create(
             engine=constants['GPT_MODEL'],
@@ -60,7 +59,6 @@ def process_ingredients_data(table_name):
     :param table_name: The name of the table containing 'ingredient' column.
     :return: None
     """
-    # Connect to the database
     connection = sq.sql_connector()
     cursor = connection.cursor()
     # Check if 'processed' column exist
@@ -85,10 +83,9 @@ def process_ingredients_data(table_name):
             insert_api_data(constants["CLEAN_DATA_TABLE_NAME"], ingredients_quantity_dict, recipe_id)
             # Update the 'processed' column to indicate that the row has been processed
             cursor.execute(f"UPDATE {table_name} SET processed = 1 WHERE id = %s", (id_for_processed_check,))
-            connection.commit()  # Add a commit after updating the 'processed' column
+            connection.commit()
         except Exception as ex:
             raise Exception(f"Error processing row with id {id_for_processed_check}: {ex}")
-    # Close the database connection
     connection.commit()
     connection.close()
 
@@ -103,6 +100,8 @@ def insert_api_data(table_name, ingredient, retrieved_recipe_id):
 
     connection = sq.sql_connector()
     cursor = connection.cursor()
+
+    # split the modified ingredient string into a tuple of substrings
     if ingredient.count('{') > 1:
         ingredient = ingredient.replace('},', '} @')
         ingredient = tuple(ingredient.split('@'))
