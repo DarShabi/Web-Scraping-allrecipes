@@ -310,8 +310,7 @@ def scrape_data_from_soup(soup, args, link):
 
 
 def write_data_to_database(scraped_data):
-    if not scraped_data:
-        return
+    # took out if not scraped_data return
     try:
         dd.write_to_database(scraped_data)
         logging.info(f'Recipe: {scraped_data["title"]} was Inserted to the Recipes database.')
