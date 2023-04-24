@@ -9,6 +9,7 @@ We used python's Beautiful Soup, Requests, and Regex libraries to scrape the all
 
 We implemented ChatGPT's API to process and standardize the ingredients table. The ingredients list scraped from the allrecipes website contained multiple food items, descriptive terms, instructions, and a variety of measurement units. This was data was processed to contain only the ingredient and its corresponding quantity in grams. 
 
+
 **AllRecipes Index Link**: https://www.allrecipes.com/recipes-a-z-6735880
 
 This is the only link needed to run the script, it is included in the python code as a constant. 
@@ -55,4 +56,8 @@ To use this web scraper, you need to first set up the database. We have provided
 
 Once you have updated the connection details, you can run the database_creation.py script to create the Recipes database and the necessary tables for the scraper.
 
-Note that `sql_connection.py` is a necessary file that provides the `sql_connector()` function that connects to the MySQL database. Make sure that you have it in the same directory as `database_creation.py`.
+**Running the Code**
+
+*  `sql_connection.py` file is a necessary file that provides the `sql_connector()` function that connects to the MySQL database. Make sure that you have it in the same directory as `database_creation.py`.
+* The `database_creation.py` should be run locally before running the full file configuration, in order to set up the database on your computer.
+* ChatGPT API is not free, therefore the API KEY in the constants file will not work on all consoles, each user needs a unique key. 
