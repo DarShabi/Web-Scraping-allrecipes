@@ -40,10 +40,10 @@ def create_recipe_details_table(cursor):
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS recipe_details (
             recipe_id INT PRIMARY KEY,
-            prep_time_mins INT,
-            cook_time_mins INT,
-            total_time_mins INT,
-            servings INT,
+            prep_time_mins INT NULL,
+            cook_time_mins INT NULL,
+            total_time_mins INT NULL,
+            servings INT NULL,
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
         )""")
 
@@ -86,8 +86,8 @@ def create_instructions_table(cursor):
         CREATE TABLE IF NOT EXISTS instructions (
             id INT NOT NULL AUTO_INCREMENT,
             recipe_id INT,
-            step INT,
-            description TEXT,
+            step INT NULL,
+            description TEXT NULL,
             PRIMARY KEY (id),
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
         )""")
