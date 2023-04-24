@@ -48,7 +48,7 @@ By default, none of the arguments are enabled. You need to specify which data yo
 #### Database Documentation
 This scraper stores data in a MySQL database. The ERD for the database:
 
-![ERD Milestone 3](https://github.com/DarShabi/Web-Scraping-allrecipes/raw/main/ERD%20Milestone%203.jpg)
+![ERD Milestone 3](https://github.com/DarShabi/Web-Scraping-allrecipes/blob/main/ERD%20Milestone%203.jpg)
 
 #### Setting up the Database
 To use this web scraper, you need to first set up the database. We have provided a script `database_creation.py` that creates the necessary database schema. Before running the script, make sure that you have the required MySQL connector for Python installed. You also need to update the connection details in the `sql_connector()` function inside `sql_connection.py` to match your local MySQL database setup.
