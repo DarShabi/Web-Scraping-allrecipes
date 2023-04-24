@@ -21,6 +21,7 @@ def sql_connector_initial(database=None):
     except Exception as ex:
         logging.error(f'SQL Error: could not establish an initial connection to SQL: {ex}')
 
+
 # CHANGE DATABASE NAME
 def sql_connector(database='allrecipes'):
     """
@@ -38,4 +39,3 @@ def sql_connector(database='allrecipes'):
         return connection
     except Exception as ex:
         logging.error(f'SQL Error: could not establish a connection to SQL: {ex}')
-
