@@ -14,7 +14,7 @@ def sql_connector_initial(database=None):
         connection = pymysql.connect(
             host='localhost',
             user='root',
-            password='rootroot',
+            password='root123!',
             database=database
         )
         return connection
@@ -32,7 +32,7 @@ def sql_connector(database='Recipes'):
         connection = pymysql.connect(
             host='localhost',
             user='root',
-            password='rootroot',
+            password='root123!',
             database=database
         )
         return connection
