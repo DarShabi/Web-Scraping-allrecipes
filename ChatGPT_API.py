@@ -107,12 +107,8 @@ def apply_api(connection, cursor):
         except Exception as ex:
             raise Exception(f"Error processing row with id {id_for_processed_check}: {ex}")
 
-
+"""
 def main():
-    """
-    Execute the functions above.
-    :return: None
-    """
     cl.logging_setter() # why is this one cl and the other is ar?
     connection = sq.sql_connector()
     cursor = connection.cursor()
@@ -122,3 +118,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+"""
