@@ -35,10 +35,44 @@ def api_query(ingredient):
     except Exception as e:
         raise Exception(f"An error occurred while querying the API: {e}")
 
-    message = response.choices[constants["FIRST_RESPONSE"]].text
-    message_dict_str = message[message.index("{"):message.rindex("}") + 1]
-    print(message_dict_str)
-    return message_dict_str
+    ingredient_quant_dict = response.choices[constants["FIRST_RESPONSE"]].text
+    ingredient_quant = ingredient_quant_dict[ingredient_quant_dict.index("{"):ingredient_quant_dict.rindex("}") + 1]
+    logging.info(f"Processing: '{ingredient}' ")
+    return ingredient_quant
+
+
+def insert_api_data(ingredient_quant, recipe_id):
+    """
+    Inserts data into the table.
+    :param ingredient_quant: A two-key dictionary with keys 'quantity' and 'ingredient', or a tuple of such dictionaries.
+    :param recipe_id: The ID of the recipe in the 'recipes' table.
+    """
+    connection = sq.sql_connector()
+    cursor = connection.cursor()
+
+    # split the modified ingredient string into a tuple of substrings
+    if ingredient_quant.count('{') > 1:
+        ingredient_quant = ingredient_quant.replace('},', '} @')
+        ingredient_quant = tuple(ingredient_quant.split('@'))
+
+    # Convert the string representation of the ingredient dictionary or tuple to a Python object
+    if isinstance(ingredient_quant, str):
+        ingredient_quant = ast.literal_eval(ingredient_quant)
+        cursor.execute(f"INSERT INTO ingredients_clean (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
+                       (int(recipe_id), ingredient_quant['ingredient'], ingredient_quant['quantity']))
+        logging.info(
+            f"Clean data inserted: ingredient: {ingredient_quant['ingredient']} | quantity: {ingredient_quant['quantity']}")
+
+    # If the ingredient is a tuple of dictionaries, loop through the tuple and insert each dictionary as a separate row
+    elif isinstance(ingredient_quant, tuple):
+        for ingredient_str in ingredient_quant:
+            ingredient_dict = ast.literal_eval(ingredient_str)
+            cursor.execute(f"INSERT INTO ingredients_clean (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
+                           (int(recipe_id), ingredient_dict['ingredient'], ingredient_dict['quantity']))
+            logging.info(f"Clean data inserted: ingredient: ingredient: {ingredient_dict['ingredient']} | "
+                         f"quantity: {ingredient_dict['quantity']}")
+    connection.commit()
+    connection.close()
 
 
 def process_ingredients_data(connection, cursor):
@@ -60,46 +94,12 @@ def process_ingredients_data(connection, cursor):
         id_for_processed_check = row[2]
         try:
             ingredients_quantity_dict = api_query(ingredient)
-            insert_api_data(constants["CLEAN_DATA_TABLE_NAME"], ingredients_quantity_dict, recipe_id)
+            insert_api_data(ingredients_quantity_dict, recipe_id)
             # Update the 'processed' column to indicate that the row has been processed
             cursor.execute(f"UPDATE ingredients SET processed = 1 WHERE id = %s", (id_for_processed_check,))
             connection.commit()
         except Exception as ex:
             raise Exception(f"Error processing row with id {id_for_processed_check}: {ex}")
-    connection.commit()
-    connection.close()
-
-
-def insert_api_data(table_name, ingredient, retrieved_recipe_id):
-    """
-    Inserts data into the table.
-    :param table_name: The name of the table where data is to be inserted.
-    :param ingredient: A two-key dictionary with keys 'quantity' and 'ingredient', or a tuple of such dictionaries.
-    :param retrieved_recipe_id: The ID of the recipe in the 'recipes' table.
-    """
-    connection = sq.sql_connector()
-    cursor = connection.cursor()
-
-    # split the modified ingredient string into a tuple of substrings
-    if ingredient.count('{') > 1:
-        ingredient = ingredient.replace('},', '} @')
-        ingredient = tuple(ingredient.split('@'))
-
-    # Convert the string representation of the ingredient dictionary or tuple to a Python object
-    if isinstance(ingredient, str):
-        ingredient = ast.literal_eval(ingredient)
-        cursor.execute(f"INSERT INTO {table_name} (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
-                       (int(retrieved_recipe_id), ingredient['ingredient'], ingredient['quantity']))
-        logging.info(f"Clean data inserted: ingredient: {ingredient['ingredient']}, quantity: {ingredient['quantity']}")
-
-    # If the ingredient is a tuple of dictionaries, loop through the tuple and insert each dictionary as a separate row
-    elif isinstance(ingredient, tuple):
-        for ingredient_str in ingredient:
-            ingredient_dict = ast.literal_eval(ingredient_str)
-            cursor.execute(f"INSERT INTO {table_name} (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
-                           (int(retrieved_recipe_id), ingredient_dict['ingredient'], ingredient_dict['quantity']))
-            logging.info(f"Clean data inserted: ingredient: ingredient: {ingredient_dict['ingredient']}, "
-                         f"quantity: {ingredient_dict['quantity']}")
     connection.commit()
     connection.close()
 
