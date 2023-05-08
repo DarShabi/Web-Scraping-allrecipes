@@ -17,7 +17,7 @@ def api_query(ingredient):
     """
     openai.api_key = constants['API_KEY']
 
-    prompt_in = f"Categorize this string:{ingredient} into a two-key dictionary format with the first " \
+    prompt = f"Categorize this string:{ingredient} into a two-key dictionary format with the first " \
                 f"key being 'quantity' and the second key being 'ingredient'. Convert the quantity in ounces " \
                 f"or cups to grams, so that the value of the 'quantity' key is a float number, and simplify the " \
                 f"ingredient names to their most basic forms. If a specific quantity or " \
@@ -26,7 +26,7 @@ def api_query(ingredient):
     try:
         response = openai.Completion.create(
             engine=constants['GPT_MODEL'],
-            prompt=prompt_in,
+            prompt=prompt,
             max_tokens=constants["MAX_TOKENS"],
             n=constants["N_GPT_COMPLETIONS"],
             stop=None,
@@ -35,7 +35,7 @@ def api_query(ingredient):
     except Exception as e:
         raise Exception(f"An error occurred while querying the API: {e}")
 
-    message = response.choices[constants["GPT_CHOICE"]].text
+    message = response.choices[constants["FIRST_RESPONSE"]].text
     message_dict_str = message[message.index("{"):message.rindex("}") + 1]
     return message_dict_str
 
@@ -123,7 +123,6 @@ def main():
     :return: None
     """
     cl.logging_setter()
-    create_table(constants["CLEAN_DATA_TABLE_NAME"])
     try:
         process_ingredients_data(constants['UNPROCESSED_INGREDIENTS_TABLE'])
     except Exception as exe:
