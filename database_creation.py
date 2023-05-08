@@ -3,7 +3,7 @@ import sql_connection as sq
 
 def create_recipes_table(cursor):
     """
-    Create the recipes table in the allrecipes database.
+    Create the recipes table in the dar_maya database.
     :param cursor: Cursor object used to execute the query.
     """
     cursor.execute("""
@@ -127,10 +127,10 @@ def build_database():
     Create tables for the recipes database.
     :return: None
     """
-    connection = sq.sql_connector("allrecipes")
+    connection = sq.sql_connector("dar_maya")
     cursor = connection.cursor()
 
-    cursor.execute('USE allrecipes')
+    cursor.execute('USE dar_maya')
 
     create_recipes_table(cursor)
     create_ingredients_table(cursor)
@@ -148,13 +148,13 @@ def build_database():
 
 
 def create_db_if_nonexist():
-    """Create a new allrecipes database if it doesn't already exist.
+    """Create a new dar_maya database if it doesn't already exist.
     :return: None
     """
     connection = sq.sql_connector_initial()
     cursor = connection.cursor()
-    cursor.execute('CREATE DATABASE IF NOT EXISTS allrecipes')
-    cursor.execute('USE allrecipes')
+    cursor.execute('CREATE DATABASE IF NOT EXISTS dar_maya')
+    cursor.execute('USE dar_maya')
     # commit changes and close the connection
     connection.commit()
     connection.close()
