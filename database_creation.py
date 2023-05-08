@@ -127,13 +127,14 @@ def build_database():
     Create tables for the recipes database.
     :return: None
     """
-    connection = sq.sql_connector_initial(database='allrecipes')
+    connection = sq.sql_connector("allrecipes")
     cursor = connection.cursor()
 
     cursor.execute('USE allrecipes')
 
     create_recipes_table(cursor)
     create_ingredients_table(cursor)
+    create_ingredients_clean_table(cursor)
     create_recipe_details_table(cursor)
     create_nutrition_facts_table(cursor)
     create_categories_table(cursor)
@@ -156,13 +157,5 @@ def create_db_if_nonexist():
     cursor.execute('USE allrecipes')
     # commit changes and close the connection
     connection.commit()
-    cursor.close()
     connection.close()
 
-"""def main():
-    create_db_if_nonexist()
-    build_database()
-
-
-if __name__ == "__main__":
-    main()"""

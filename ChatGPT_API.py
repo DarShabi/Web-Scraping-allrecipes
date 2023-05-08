@@ -50,6 +50,7 @@ def insert_api_data(connection, cursor, ingredient_quant, recipe_id):
         ingredient_quant = tuple(ingredient_quant.split('@'))
 
     try:
+        ingredient_dict = None
         # Convert the string representation of the ingredient dictionary or tuple to a Python object
         if isinstance(ingredient_quant, str):
             ingredient_quant = ast.literal_eval(ingredient_quant)
@@ -58,14 +59,16 @@ def insert_api_data(connection, cursor, ingredient_quant, recipe_id):
                            (int(recipe_id), ingredient_quant['ingredient'], ingredient_quant['quantity']))
             connection.commit()
             logging.info(
-                f"Clean data inserted: ingredient: {ingredient_quant['ingredient']} | quantity: {ingredient_quant['quantity']}")
+                f"Clean data inserted: ingredient: {ingredient_quant['ingredient']} | "
+                f"quantity: {ingredient_quant['quantity']}")
 
         # If ingredient is a tuple of dicts, loop through the tuple and insert each dictionary as a separate row
         elif isinstance(ingredient_quant, tuple):
             for ingredient_str in ingredient_quant:
                 ingredient_dict = ast.literal_eval(ingredient_str)
                 # insert processed ingredient/quantity into table
-                cursor.execute(f"INSERT INTO ingredients_clean (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
+                cursor.execute(f"INSERT INTO ingredients_clean ("
+                               f"recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
                                (int(recipe_id), ingredient_dict['ingredient'], ingredient_dict['quantity']))
                 connection.commit()
                 logging.info(f"Clean data inserted: ingredient: ingredient: {ingredient_dict['ingredient']} | "
@@ -100,15 +103,3 @@ def apply_api(connection, cursor):
         except Exception as ex:
             logging.error(f"Error processing {ingredients_quantity_dict}: {ex}")
 
-"""
-def main():
-    cl.logging_setter() # why is this one cl and the other is ar?
-    connection = sq.sql_connector()
-    cursor = connection.cursor()
-    apply_api(connection, cursor)
-    connection.close()
-
-
-if __name__ == "__main__":
-    main()
-"""

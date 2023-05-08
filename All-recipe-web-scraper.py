@@ -330,23 +330,16 @@ def scrape_and_dump_data(all_links, args):
 
 
 def main():
-    """
-    Main function runs the logging configuration, calls the web scraping function that gets all index links
-    from the SOURCE allrecipes index page, calls the all_links function to scrape all links, initializes the command
-    line interface, and runs the (specified) scraping and database dumping functions for each link in all links.
-    This results in the creation of a database "allrecipes" with the webscraping contents inside it.
-    """
     ar.logging_setter()
     args = ar.argparse_setter()
-    connection = sq.sql_connector()
-    cursor = connection.cursor()
     db.create_db_if_nonexist()
+    connection = sq.sql_connector("allrecipes")
+    cursor = connection.cursor()
     db.build_database()
-    # ar.logging_setter()  # added this just for gpt file, not sure we need
-    gpt.apply_api(connection, cursor)  # move this to be after scraping
     index_links = s.get_index_links(constants['SOURCE'])
     all_links = s.get_all_links(index_links)
     scrape_and_dump_data(all_links, args)
+    gpt.apply_api(connection, cursor)
     connection.close()
 
 
