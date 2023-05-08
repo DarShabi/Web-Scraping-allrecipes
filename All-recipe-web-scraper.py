@@ -330,16 +330,17 @@ def scrape_and_dump_data(all_links, args):
 
 
 def main():
+    API = input("Please enter API key")
     ar.logging_setter()
     args = ar.argparse_setter()
     db.create_db_if_nonexist()
-    connection = sq.sql_connector("allrecipes")
+    connection = sq.sql_connector(constants["DATABASE_NAME"])
     cursor = connection.cursor()
     db.build_database()
     index_links = s.get_index_links(constants['SOURCE'])
     all_links = s.get_all_links(index_links)
     scrape_and_dump_data(all_links, args)
-    gpt.apply_api(connection, cursor)
+    gpt.apply_api(connection, cursor, API)
     connection.close()
 
 

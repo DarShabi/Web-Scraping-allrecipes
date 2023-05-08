@@ -8,13 +8,13 @@ with open('constants.json') as f:
     constants = json.load(f)
 
 
-def api_query(ingredient):
+def api_query(ingredient, API):
     """
     Send a request to OpenAI's GPT-3 API to categorize a given ingredient into a two-key dictionary format.
     :param ingredient: str: A string of an ingredient and its amount in various units (unprocessed).
     :return: message_dict_str: 2 key dict:  string of categorized ingredient and its quantity in a 2 key dictionary.
     """
-    openai.api_key = constants['API_KEY']
+    openai.api_key = API
 
     prompt = f"Categorize this string: {ingredient.strip()}" + constants['PROMPT']
 
@@ -81,7 +81,7 @@ def insert_api_data(connection, cursor, ingredient_quant, recipe_id):
         logging.error(f"An error occurred while trying to insert '{ingredient_dict}' : {ex}")
 
 
-def apply_api(connection, cursor):
+def apply_api(connection, cursor, API):
     """
     This function applies the processing of the api_query to each row of the unprocessed ingredients table.
     It marks each ingredient with a boolean, to avoid processing the same ingredient twice.
@@ -99,7 +99,7 @@ def apply_api(connection, cursor):
         recipe_id = row[1]
         id_for_processed_check = row[2]
         try:
-            ingredients_quantity_dict = api_query(ingredient)
+            ingredients_quantity_dict = api_query(ingredient, API)
             insert_api_data(connection, cursor, ingredients_quantity_dict, recipe_id)
             # Update the 'processed' column to indicate that the row has been processed
             cursor.execute(f"UPDATE ingredients SET processed = 1 WHERE id = %s", (id_for_processed_check,))

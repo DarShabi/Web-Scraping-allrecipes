@@ -13,9 +13,9 @@ def sql_connector_initial():
     """
     try:
         connection = pymysql.connect(
-            host='localhost',
-            user='root',
-            password=constants['SQL PASSWORD'],
+            host=constants['HOST'],
+            user=constants['USER'],
+            password=constants['SQL PASSWORD']
         )
         return connection
     except Exception as ex:
@@ -23,7 +23,7 @@ def sql_connector_initial():
         raise
 
 
-def sql_connector(database='allrecipes'):
+def sql_connector(database=constants["DATABASE_NAME"]):
     """
     Connect to the MySQL database.
     :param database: The name of the database to connect to.
@@ -31,8 +31,8 @@ def sql_connector(database='allrecipes'):
     """
     try:
         connection = pymysql.connect(
-            host='localhost',
-            user='root',
+            host=constants['HOST'],
+            user=constants['USER'],
             password=constants['SQL PASSWORD'],
             database=database
         )
