@@ -29,7 +29,7 @@
     "HOURS": 24,
     "MINS": 60,
     "DATABASE_NAME": "Recipes_project",
-    "API_KEY": "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",
+    "API_KEY": "INSERT VALID API KEY",
     "GPT_MODEL": "text-davinci-003",
     "UNPROCESSED_INGREDIENTS_TABLE": "ingredients",
     "MAX_TOKENS": 1024,
