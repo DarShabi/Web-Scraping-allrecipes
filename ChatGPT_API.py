@@ -8,7 +8,7 @@ with open('constants.json') as f:
     constants = json.load(f)
 
 
-def api_query(ingredient):
+def api_query(ingredient, API):
     """
     Send a request to OpenAI's GPT-3 API to categorize a given ingredient into a two-key dictionary format.
     :param ingredient: str: A string of an ingredient and its amount in various units (unprocessed).
