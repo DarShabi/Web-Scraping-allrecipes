@@ -28,7 +28,6 @@
     "PUBLISHED_ON": 2,
     "HOURS": 24,
     "MINS": 60,
-    "API_KEY": "INSERT VALID API KEY",
     "GPT_MODEL": "text-davinci-003",
     "UNPROCESSED_INGREDIENTS_TABLE": "ingredients",
     "MAX_TOKENS": 1024,
