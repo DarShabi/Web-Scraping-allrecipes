@@ -29,6 +29,7 @@ def create_ingredients_table(cursor):
             ingredient VARCHAR(500),
             PRIMARY KEY (id),
             FOREIGN KEY (recipe_id) REFERENCES recipes(id)
+            processed BOOLEAN DEFAULT 0
         )""")
 
 

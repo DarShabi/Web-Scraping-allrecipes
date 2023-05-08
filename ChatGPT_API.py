@@ -12,17 +12,17 @@ with open('constants.json') as f:
 def api_query(ingredient):
     """
     Send a request to OpenAI's GPT-3 API to categorize a given ingredient into a two-key dictionary format.
-    :param ingredient: A string of an ingredient.
-    :return: A string of categorized ingredient in a two-key dictionary format.
+    :param ingredient: str: A string of an ingredient and its amount in various units (unprocessed).
+    :return: message_dict_str: 2 key dict:  string of categorized ingredient and its quantity in a 2 key dictionary.
     """
     openai.api_key = constants['API_KEY']
 
     prompt = f"Categorize this string:{ingredient} into a two-key dictionary format with the first " \
-                f"key being 'quantity' and the second key being 'ingredient'. Convert the quantity in ounces " \
-                f"or cups to grams, so that the value of the 'quantity' key is a float number, and simplify the " \
-                f"ingredient names to their most basic forms. If a specific quantity or " \
-                f"ingredient cannot be identified for a line, categorize the line with a quantity of 'None' " \
-                f"and an ingredient of 'N/A'. Provide only one dictionary per string."
+             f"key being 'quantity' and the second key being 'ingredient'. Convert the quantity in ounces " \
+             f"or cups to grams, so that the value of the 'quantity' key is a float number, and simplify the " \
+             f"ingredient names to their most basic forms. If a specific quantity or " \
+             f"ingredient cannot be identified for a line, categorize the line with a quantity of 'None' " \
+             f"and an ingredient of 'N/A'. Provide only one dictionary per string."
     try:
         response = openai.Completion.create(
             engine=constants['GPT_MODEL'],
@@ -37,24 +37,19 @@ def api_query(ingredient):
 
     message = response.choices[constants["FIRST_RESPONSE"]].text
     message_dict_str = message[message.index("{"):message.rindex("}") + 1]
+    print(message_dict_str)
     return message_dict_str
 
 
 def process_ingredients_data(table_name):
     """
-    Retrieve all rows of 'ingredient' column from the specified table and apply the 'api_query' function to each row.
+    This function applies the processing of the api_query to each row of the unprocessed ingredients table.
+    It marks each ingredient with a boolean, to avoid processing the same ingredient twice.
     :param table_name: The name of the table containing 'ingredient' column.
     :return: None
     """
     connection = sq.sql_connector()
     cursor = connection.cursor()
-    # Check if 'processed' column exist
-    cursor.execute(f"SHOW COLUMNS FROM {table_name} LIKE 'processed'")
-    result = cursor.fetchone()
-
-    # create 'processed' column if not exist
-    if result is None:
-        cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN processed BOOLEAN DEFAULT 0")
 
     # Select unprocessed rows of 'ingredient' and 'recipe_id' columns from the specified table
     cursor.execute(f"SELECT ingredient, recipe_id, id FROM {table_name} WHERE processed = 0")
@@ -99,7 +94,7 @@ def insert_api_data(table_name, ingredient, retrieved_recipe_id):
         cursor.execute(f"INSERT INTO {table_name} (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
                        (int(retrieved_recipe_id), ingredient['ingredient'], ingredient['quantity']))
         logging.info(f"Clean data inserted to: "
-                     f"{ constants['CLEAN_DATA_TABLE_NAME'] }, "
+                     f"{constants['CLEAN_DATA_TABLE_NAME']}, "
                      f"ingredient: {ingredient['ingredient']}, "
                      f"quantity: {ingredient['quantity']}")
 
