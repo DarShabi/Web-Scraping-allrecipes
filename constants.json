@@ -37,5 +37,5 @@
     "N_GPT_COMPLETIONS": 1,
     "FIRST_RESPONSE": 0,
     "FIRST_ELEMENT": 0,
-    "CLEAN_DATA_TABLE_NAME": "ingredients_clean"
+    "SQL PASSWORD": "rootroot"
 }
