@@ -41,18 +41,16 @@ def api_query(ingredient):
     return message_dict_str
 
 
-def process_ingredients_data(table_name):
+def process_ingredients_data(connection, cursor):
     """
     This function applies the processing of the api_query to each row of the unprocessed ingredients table.
     It marks each ingredient with a boolean, to avoid processing the same ingredient twice.
-    :param table_name: The name of the table containing 'ingredient' column.
+    :param connection: connects to sql
+    :param cursor: executes sql queries
     :return: None
     """
-    connection = sq.sql_connector()
-    cursor = connection.cursor()
-
     # Select unprocessed rows of 'ingredient' and 'recipe_id' columns from the specified table
-    cursor.execute(f"SELECT ingredient, recipe_id, id FROM {table_name} WHERE processed = 0")
+    cursor.execute(f"SELECT ingredient, recipe_id, id FROM ingredients WHERE processed = 0")
     rows = cursor.fetchall()
 
     # Loop through each row and apply the 'api_query' function to the 'ingredient' column
@@ -64,7 +62,7 @@ def process_ingredients_data(table_name):
             ingredients_quantity_dict = api_query(ingredient)
             insert_api_data(constants["CLEAN_DATA_TABLE_NAME"], ingredients_quantity_dict, recipe_id)
             # Update the 'processed' column to indicate that the row has been processed
-            cursor.execute(f"UPDATE {table_name} SET processed = 1 WHERE id = %s", (id_for_processed_check,))
+            cursor.execute(f"UPDATE ingredients SET processed = 1 WHERE id = %s", (id_for_processed_check,))
             connection.commit()
         except Exception as ex:
             raise Exception(f"Error processing row with id {id_for_processed_check}: {ex}")
@@ -79,7 +77,6 @@ def insert_api_data(table_name, ingredient, retrieved_recipe_id):
     :param ingredient: A two-key dictionary with keys 'quantity' and 'ingredient', or a tuple of such dictionaries.
     :param retrieved_recipe_id: The ID of the recipe in the 'recipes' table.
     """
-
     connection = sq.sql_connector()
     cursor = connection.cursor()
 
@@ -93,10 +90,7 @@ def insert_api_data(table_name, ingredient, retrieved_recipe_id):
         ingredient = ast.literal_eval(ingredient)
         cursor.execute(f"INSERT INTO {table_name} (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
                        (int(retrieved_recipe_id), ingredient['ingredient'], ingredient['quantity']))
-        logging.info(f"Clean data inserted to: "
-                     f"{constants['CLEAN_DATA_TABLE_NAME']}, "
-                     f"ingredient: {ingredient['ingredient']}, "
-                     f"quantity: {ingredient['quantity']}")
+        logging.info(f"Clean data inserted: ingredient: {ingredient['ingredient']}, quantity: {ingredient['quantity']}")
 
     # If the ingredient is a tuple of dictionaries, loop through the tuple and insert each dictionary as a separate row
     elif isinstance(ingredient, tuple):
@@ -104,9 +98,7 @@ def insert_api_data(table_name, ingredient, retrieved_recipe_id):
             ingredient_dict = ast.literal_eval(ingredient_str)
             cursor.execute(f"INSERT INTO {table_name} (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
                            (int(retrieved_recipe_id), ingredient_dict['ingredient'], ingredient_dict['quantity']))
-            logging.info(f"Clean data inserted to: "
-                         f"{constants['CLEAN_DATA_TABLE_NAME']}, "
-                         f"ingredient: {ingredient_dict['ingredient']}, "
+            logging.info(f"Clean data inserted: ingredient: ingredient: {ingredient_dict['ingredient']}, "
                          f"quantity: {ingredient_dict['quantity']}")
     connection.commit()
     connection.close()
@@ -118,8 +110,10 @@ def main():
     :return: None
     """
     cl.logging_setter()
+    connection = sq.sql_connector()
+    cursor = connection.cursor()
     try:
-        process_ingredients_data(constants['UNPROCESSED_INGREDIENTS_TABLE'])
+        process_ingredients_data(connection, cursor)
     except Exception as exe:
         logging.error(exe)
 
