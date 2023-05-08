@@ -2,6 +2,9 @@ import logging
 import openai
 import json
 import ast
+import os
+
+API_KEY = os.environ.get('API_KEY')
 
 with open('constants.json') as f:
     constants = json.load(f)
@@ -13,7 +16,7 @@ def api_query(ingredient):
     :param ingredient: str: A string of an ingredient and its amount in various units (unprocessed).
     :return: message_dict_str: 2 key dict:  string of categorized ingredient and its quantity in a 2 key dictionary.
     """
-    openai.api_key = constants['API_KEY']
+    openai.api_key = API_KEY
 
     prompt = f"Categorize this string: {ingredient.strip()}" + constants['PROMPT']
 
