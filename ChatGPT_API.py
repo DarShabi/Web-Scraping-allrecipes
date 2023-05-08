@@ -41,16 +41,15 @@ def api_query(ingredient):
     return ingredient_quant
 
 
-def insert_api_data(ingredient_quant, recipe_id):
+def insert_api_data(connection, cursor, ingredient_quant, recipe_id):
     """
     This function receives the recipe_id and output from the API response, and inputs the ingredient and quantity values
     into the ingredients_clean table for that recipe id.
+    :param connection: connects to sql
+    :param cursor: executes sql queries
     :param ingredient_quant: A two-key dictionary with keys 'quantity' and 'ingredient', or a tuple of such dictionaries.
     :param recipe_id: The ID of the recipe in the 'recipes' table.
     """
-    connection = sq.sql_connector()
-    cursor = connection.cursor()
-
     # split the modified ingredient string into a tuple of substrings
     if ingredient_quant.count('{') > 1:
         ingredient_quant = ingredient_quant.replace('},', '} @')
@@ -61,6 +60,7 @@ def insert_api_data(ingredient_quant, recipe_id):
         ingredient_quant = ast.literal_eval(ingredient_quant)
         cursor.execute(f"INSERT INTO ingredients_clean (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
                        (int(recipe_id), ingredient_quant['ingredient'], ingredient_quant['quantity']))
+        connection.commit()
         logging.info(
             f"Clean data inserted: ingredient: {ingredient_quant['ingredient']} | quantity: {ingredient_quant['quantity']}")
 
@@ -70,10 +70,9 @@ def insert_api_data(ingredient_quant, recipe_id):
             ingredient_dict = ast.literal_eval(ingredient_str)
             cursor.execute(f"INSERT INTO ingredients_clean (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
                            (int(recipe_id), ingredient_dict['ingredient'], ingredient_dict['quantity']))
+            connection.commit()
             logging.info(f"Clean data inserted: ingredient: ingredient: {ingredient_dict['ingredient']} | "
                          f"quantity: {ingredient_dict['quantity']}")
-    connection.commit()
-    connection.close()
 
 
 def apply_api(connection, cursor):
@@ -95,7 +94,7 @@ def apply_api(connection, cursor):
         id_for_processed_check = row[2]
         try:
             ingredients_quantity_dict = api_query(ingredient)
-            insert_api_data(ingredients_quantity_dict, recipe_id)
+            insert_api_data(connection, cursor, ingredients_quantity_dict, recipe_id)
             # Update the 'processed' column to indicate that the row has been processed
             cursor.execute(f"UPDATE ingredients SET processed = 1 WHERE id = %s", (id_for_processed_check,))
             connection.commit()
