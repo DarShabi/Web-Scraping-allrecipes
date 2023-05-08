@@ -43,7 +43,8 @@ def api_query(ingredient):
 
 def insert_api_data(ingredient_quant, recipe_id):
     """
-    Inserts data into the table.
+    This function receives the recipe_id and output from the API response, and inputs the ingredient and quantity values
+    into the ingredients_clean table for that recipe id.
     :param ingredient_quant: A two-key dictionary with keys 'quantity' and 'ingredient', or a tuple of such dictionaries.
     :param recipe_id: The ID of the recipe in the 'recipes' table.
     """
@@ -75,7 +76,7 @@ def insert_api_data(ingredient_quant, recipe_id):
     connection.close()
 
 
-def process_ingredients_data(connection, cursor):
+def apply_api(connection, cursor):
     """
     This function applies the processing of the api_query to each row of the unprocessed ingredients table.
     It marks each ingredient with a boolean, to avoid processing the same ingredient twice.
@@ -100,8 +101,6 @@ def process_ingredients_data(connection, cursor):
             connection.commit()
         except Exception as ex:
             raise Exception(f"Error processing row with id {id_for_processed_check}: {ex}")
-    connection.commit()
-    connection.close()
 
 
 def main():
@@ -112,10 +111,8 @@ def main():
     cl.logging_setter()
     connection = sq.sql_connector()
     cursor = connection.cursor()
-    try:
-        process_ingredients_data(connection, cursor)
-    except Exception as exe:
-        logging.error(exe)
+    apply_api(connection, cursor)
+    connection.close()
 
 
 if __name__ == "__main__":
