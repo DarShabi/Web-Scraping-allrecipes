@@ -1,8 +1,10 @@
 import pymysql
 import logging
+import json
 
+with open('constants.json') as f:
+    constants = json.load(f)
 
-# CHANGE PASSWORD FOR MYSQL
 
 def sql_connector_initial(database=None):
     """
@@ -14,7 +16,7 @@ def sql_connector_initial(database=None):
         connection = pymysql.connect(
             host='localhost',
             user='root',
-            password='rootroot',
+            password=constants['SQL PASSWORD'],
             database=database
         )
         return connection
@@ -38,4 +40,3 @@ def sql_connector(database='allrecipes'):
         return connection
     except Exception as ex:
         logging.error(f'SQL Error: could not establish a connection to SQL: {ex}')
-
