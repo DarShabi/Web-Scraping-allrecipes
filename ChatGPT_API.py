@@ -113,7 +113,7 @@ def main():
     Execute the functions above.
     :return: None
     """
-    cl.logging_setter()
+    cl.logging_setter() # why is this one cl and the other is ar?
     connection = sq.sql_connector()
     cursor = connection.cursor()
     apply_api(connection, cursor)
