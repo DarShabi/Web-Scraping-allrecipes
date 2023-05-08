@@ -13,6 +13,9 @@ import scrape_links as s
 import command_line as ar
 import dump_data as dd
 import ChatGPT_API as gpt
+import databse_creation as db
+import command_line as cl
+import openai
 
 with open('constants.json') as f:
     constants = json.load(f)
@@ -334,6 +337,8 @@ def main():
     This results in the creation of a database "allrecipes" with the webscraping contents inside it.
     """
     ar.logging_setter()
+    db.create_db_if_nonexist()
+    db.build_database()
     index_links = s.get_index_links(constants['SOURCE'])
     all_links = s.get_all_links(index_links)
     args = ar.argparse_setter()

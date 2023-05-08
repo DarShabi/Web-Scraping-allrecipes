@@ -146,7 +146,7 @@ def build_database():
     connection.close()
 
 
-def creating_db_if_nonexist():
+def create_db_if_nonexist():
     """Create a new allrecipes database if it doesn't already exist.
     :return: None
     """
@@ -159,11 +159,3 @@ def creating_db_if_nonexist():
     cursor.close()
     connection.close()
 
-
-def main():
-    creating_db_if_nonexist()
-    build_database()
-
-
-if __name__ == "__main__":
-    main()
