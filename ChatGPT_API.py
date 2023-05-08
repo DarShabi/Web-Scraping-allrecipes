@@ -2,6 +2,7 @@ import logging
 import openai
 import json
 import ast
+import sys
 
 with open('constants.json') as f:
     constants = json.load(f)
@@ -26,6 +27,9 @@ def api_query(ingredient):
             stop=None,
             temperature=constants["GPT_TEMP"]
         )
+    except openai.error.AuthenticationError as e:
+        logging.error(f"An authentication error occurred while querying the API: {e}")
+        sys.exit(1)
     except Exception as e:
         logging.error(f"An error occurred while querying the API: {e}")
 

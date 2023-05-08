@@ -2,6 +2,7 @@ import requests
 import logging
 import json
 from bs4 import BeautifulSoup
+import random
 
 
 with open('constants.json') as f:
@@ -52,6 +53,8 @@ def get_all_links(index_links):
         links.extend(get_recipe_links(link))
         logging.info(f'Links from: {link}  retrieved')
     all_links = list(set(links))
+    # API key will limit access to links, shuffle to get a random sample
+    random.shuffle(all_links)
     return all_links
 
 
