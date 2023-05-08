@@ -32,6 +32,20 @@ def create_ingredients_table(cursor):
         )""")
 
 
+def create_ingredients_clean_table(cursor):
+    """
+    Create the ingredients_clean table in the database.
+    :param cursor: Cursor object used to execute the query.
+    """
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS ingredients_clean (
+            id INT AUTO_INCREMENT PRIMARY KEY, 
+            recipe_id INT, 
+            ingredient VARCHAR(100), 
+            quantity FLOAT
+        )""")
+
+
 def create_recipe_details_table(cursor):
     """
     Create the recipe_details table in the database.
@@ -146,7 +160,6 @@ def creating_db_if_nonexist():
 
 
 def main():
-
     creating_db_if_nonexist()
     build_database()
 

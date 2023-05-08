@@ -9,19 +9,6 @@ with open('constants.json') as f:
     constants = json.load(f)
 
 
-def create_table(table_name):
-    """
-    Creates a table with the given name in the allrecipes database.
-    :param table_name: Name of the table to be created.
-    """
-    connection = sq.sql_connector()
-    cursor = connection.cursor()
-    cursor.execute(f"CREATE TABLE IF NOT EXISTS {table_name} (id INT AUTO_INCREMENT PRIMARY KEY, recipe_id INT, "
-                   f"ingredient VARCHAR(100), quantity FLOAT)")
-    connection.commit()
-    connection.close()
-
-
 def api_query(ingredient):
     """
     Send a request to OpenAI's GPT-3 API to categorize a given ingredient into a two-key dictionary format.
