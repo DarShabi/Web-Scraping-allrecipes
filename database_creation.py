@@ -28,7 +28,7 @@ def create_ingredients_table(cursor):
             recipe_id INT,
             ingredient VARCHAR(500),
             PRIMARY KEY (id),
-            FOREIGN KEY (recipe_id) REFERENCES recipes(id)
+            FOREIGN KEY (recipe_id) REFERENCES recipes(id),
             processed BOOLEAN DEFAULT 0
         )""")
 
@@ -159,3 +159,10 @@ def create_db_if_nonexist():
     cursor.close()
     connection.close()
 
+"""def main():
+    create_db_if_nonexist()
+    build_database()
+
+
+if __name__ == "__main__":
+    main()"""
