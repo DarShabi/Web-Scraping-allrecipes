@@ -2,8 +2,6 @@ import logging
 import openai
 import json
 import ast
-import sql_connection as sq
-import command_line as cl
 
 with open('constants.json') as f:
     constants = json.load(f)
@@ -17,12 +15,8 @@ def api_query(ingredient):
     """
     openai.api_key = constants['API_KEY']
 
-    prompt = f"Categorize this string:{ingredient} into a two-key dictionary format with the first " \
-             f"key being 'quantity' and the second key being 'ingredient'. Convert the quantity in ounces " \
-             f"or cups to grams, so that the value of the 'quantity' key is a float number, and simplify the " \
-             f"ingredient names to their most basic forms. If a specific quantity or " \
-             f"ingredient cannot be identified for a line, categorize the line with a quantity of 'None' " \
-             f"and an ingredient of 'N/A'. Provide only one dictionary per string."
+    prompt = f"Categorize this string: {ingredient.strip()}" + constants['PROMPT']
+
     try:
         response = openai.Completion.create(
             engine=constants['GPT_MODEL'],
@@ -33,7 +27,7 @@ def api_query(ingredient):
             temperature=constants["GPT_TEMP"]
         )
     except Exception as e:
-        raise Exception(f"An error occurred while querying the API: {e}")
+        logging.error(f"An error occurred while querying the API: {e}")
 
     ingredient_quant_dict = response.choices[constants["FIRST_RESPONSE"]].text
     ingredient_quant = ingredient_quant_dict[ingredient_quant_dict.index("{"):ingredient_quant_dict.rindex("}") + 1]
@@ -77,8 +71,7 @@ def insert_api_data(connection, cursor, ingredient_quant, recipe_id):
                 logging.info(f"Clean data inserted: ingredient: ingredient: {ingredient_dict['ingredient']} | "
                              f"quantity: {ingredient_dict['quantity']}")
     except Exception as ex:
-        raise Exception(f"An error occurred while trying to insert the processed ingredients dictionary into "
-                        f"the ingredients_clean table: {ex}")
+        logging.error(f"An error occurred while trying to insert '{ingredient_dict}' : {ex}")
 
 
 def apply_api(connection, cursor):
@@ -105,7 +98,7 @@ def apply_api(connection, cursor):
             cursor.execute(f"UPDATE ingredients SET processed = 1 WHERE id = %s", (id_for_processed_check,))
             connection.commit()
         except Exception as ex:
-            raise Exception(f"Error processing row with id {id_for_processed_check}: {ex}")
+            logging.error(f"Error processing {ingredients_quantity_dict}: {ex}")
 
 """
 def main():

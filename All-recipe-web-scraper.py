@@ -15,7 +15,6 @@ import dump_data as dd
 import ChatGPT_API as gpt
 import database_creation as db
 import sql_connection as sq
-import command_line as cl
 import openai
 
 with open('constants.json') as f:
@@ -338,15 +337,15 @@ def main():
     This results in the creation of a database "allrecipes" with the webscraping contents inside it.
     """
     ar.logging_setter()
+    args = ar.argparse_setter()
     connection = sq.sql_connector()
     cursor = connection.cursor()
     db.create_db_if_nonexist()
     db.build_database()
-    cl.logging_setter()  # added this just for gpt file, not sure we need
+    # ar.logging_setter()  # added this just for gpt file, not sure we need
     gpt.apply_api(connection, cursor)  # move this to be after scraping
     index_links = s.get_index_links(constants['SOURCE'])
     all_links = s.get_all_links(index_links)
-    args = ar.argparse_setter()
     scrape_and_dump_data(all_links, args)
     connection.close()
 
