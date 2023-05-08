@@ -35,9 +35,9 @@
     "N_GPT_COMPLETIONS": 1,
     "FIRST_RESPONSE": 0,
     "FIRST_ELEMENT": 0,
-    "HOST": "localhost",
-    "USER": "root",
-    "SQL PASSWORD": "root123!",
-    "DATABASE_NAME": "Recipes",
+    "HOST": "http://data-mining-db1.cttpnp4olbpx.us-west-1.rds.amazonaws.com/",
+    "USER": "dar_maya",
+    "SQL PASSWORD": "dar_maya",
+    "DATABASE_NAME": "dar_maya",
     "PROMPT": "into a two-key dictionary format with the first key being 'quantity' and the second key being 'ingredient'. Convert the quantity in ounces or cups to grams, so that the value of the 'quantity' key is a float number, and simplify the ingredient names to their most basic forms. Do not include verbs, just the ingredient; for example, if the string is ‘shredded mozarella cheese’ the ingredient should be ‘mozarella cheese’; if the string is ‘diced tomatoes’ the ingredient should be ‘tomatoes’. If a specific quantity or ingredient cannot be identified for a line, categorize the line with a quantity of 'None' and an ingredient of 'N/A'. Provide only one dictionary per string."
 }
