@@ -55,24 +55,30 @@ def insert_api_data(connection, cursor, ingredient_quant, recipe_id):
         ingredient_quant = ingredient_quant.replace('},', '} @')
         ingredient_quant = tuple(ingredient_quant.split('@'))
 
-    # Convert the string representation of the ingredient dictionary or tuple to a Python object
-    if isinstance(ingredient_quant, str):
-        ingredient_quant = ast.literal_eval(ingredient_quant)
-        cursor.execute(f"INSERT INTO ingredients_clean (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
-                       (int(recipe_id), ingredient_quant['ingredient'], ingredient_quant['quantity']))
-        connection.commit()
-        logging.info(
-            f"Clean data inserted: ingredient: {ingredient_quant['ingredient']} | quantity: {ingredient_quant['quantity']}")
-
-    # If the ingredient is a tuple of dictionaries, loop through the tuple and insert each dictionary as a separate row
-    elif isinstance(ingredient_quant, tuple):
-        for ingredient_str in ingredient_quant:
-            ingredient_dict = ast.literal_eval(ingredient_str)
+    try:
+        # Convert the string representation of the ingredient dictionary or tuple to a Python object
+        if isinstance(ingredient_quant, str):
+            ingredient_quant = ast.literal_eval(ingredient_quant)
+            # insert processed ingredient/quantity into table
             cursor.execute(f"INSERT INTO ingredients_clean (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
-                           (int(recipe_id), ingredient_dict['ingredient'], ingredient_dict['quantity']))
+                           (int(recipe_id), ingredient_quant['ingredient'], ingredient_quant['quantity']))
             connection.commit()
-            logging.info(f"Clean data inserted: ingredient: ingredient: {ingredient_dict['ingredient']} | "
-                         f"quantity: {ingredient_dict['quantity']}")
+            logging.info(
+                f"Clean data inserted: ingredient: {ingredient_quant['ingredient']} | quantity: {ingredient_quant['quantity']}")
+
+        # If ingredient is a tuple of dicts, loop through the tuple and insert each dictionary as a separate row
+        elif isinstance(ingredient_quant, tuple):
+            for ingredient_str in ingredient_quant:
+                ingredient_dict = ast.literal_eval(ingredient_str)
+                # insert processed ingredient/quantity into table
+                cursor.execute(f"INSERT INTO ingredients_clean (recipe_id, ingredient, quantity) VALUES (%s, %s, %s)",
+                               (int(recipe_id), ingredient_dict['ingredient'], ingredient_dict['quantity']))
+                connection.commit()
+                logging.info(f"Clean data inserted: ingredient: ingredient: {ingredient_dict['ingredient']} | "
+                             f"quantity: {ingredient_dict['quantity']}")
+    except Exception as ex:
+        raise Exception(f"An error occurred while trying to insert the processed ingredients dictionary into "
+                        f"the ingredients_clean table: {ex}")
 
 
 def apply_api(connection, cursor):
