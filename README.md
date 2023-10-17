@@ -48,7 +48,7 @@ Our scraper offers a suite of CLI arguments to customize the data extraction pro
 
 ## 🗄 Database Integration
 - **Platform**: MySQL 
-- **Database Model**: The ERD can be viewed below
+- **Database Schema**:
 ![ERD Milestone 3](https://github.com/DarShabi/Web-Scraping-allrecipes/blob/main/ERD%20Milestone%203.jpg)
 
 ## How to Run the Code
