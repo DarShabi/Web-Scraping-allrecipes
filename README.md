@@ -3,11 +3,11 @@
 **Developers**: Dar Shabi & Maya Halevy
 
 ## 📌 Introduction
-This project is focused on extracting recipe data from [Allrecipes.com](https://www.allrecipes.com), a renowned platform that offers a plethora of recipes spanning various cuisines and categories. Our objective is to curate this data into a structured format, making it accessible for further analysis and utilization.
+This project is focused on extracting recipe data from [Allrecipes.com](https://www.allrecipes.com), a popular platform that offers a variety of recipes posted by its users. Our objective is to collect and process this data into a structured format, making it accessible for further analysis and api enrichment.
 
 ## 🛠 Tools & Libraries
 - **Web Scraping Libraries**: Beautiful Soup, Requests, and Regex (Refer to `requirements.txt` for specific versions).
-- **Data Processing**: ChatGPT's API was crucial in standardizing the ingredients table. Raw data often contained a mixture of food items, descriptive terms, units of measurement, and instructions. Our post-processing ensured the data only retained the ingredient name and its corresponding quantity in grams.
+- **Data Processing**: ChatGPT's API was crucial in standardizing the ingredients table. The raw data often contained a mixture of food items, descriptive terms, units of measurement, and instructions. Our post-processing ensured the data only retained the ingredient name and its corresponding quantity in grams.
 
 ## 🌐 Target Website & Data Collection
 - **Website Index**: [AllRecipes A-Z Index](https://www.allrecipes.com/recipes-a-z-6735880)
@@ -27,7 +27,7 @@ This project is focused on extracting recipe data from [Allrecipes.com](https://
         1. Logging Statements
         2. Scraped Data 
 
-> **Note**: While extracting, we noticed some non-recipe URLs classified under the same HTML class as valid recipes. We refined our extraction criteria to focus solely on pages featuring an ingredients section.
+> **Note**: We noticed that non-recipe URLs were classified under the same HTML class as valid recipes. We refined our extraction criteria to focus solely on pages featuring an ingredients section.
 
 ## ⚙ CLI Arguments
 Our scraper offers a suite of CLI arguments to customize the data extraction process. Below are the available arguments:
@@ -44,24 +44,18 @@ Our scraper offers a suite of CLI arguments to customize the data extraction pro
 - `--instructions`: Extract the recipe's preparation steps.
 - `--all`: Extract all available attributes.
 
-> **Note**: By default, the scraper won't fetch any data. It's essential to specify desired attributes using the arguments.
+> **Note**: By default, the scraper does not fetch any data. You need to specify which data you want to scrape by providing the corresponding argument.
 
 ## 🗄 Database Integration
 - **Platform**: MySQL 
 - **Database Model**: The ERD can be viewed [here](https://github.com/DarShabi/Web-Scraping-allrecipes/blob/main/ERD%20Milestone%203.jpg).
 
-### Setting up the Database
-1. Before utilizing our web scraper, ensure the database is correctly set up. Use the `database_creation.py` script to instantiate the requisite database schema.
-2. Ensure you have the MySQL connector for Python installed.
-3. Modify the connection parameters in `sql_connector()` (located in `sql_connection.py`) to mirror your MySQL configuration.
-4. Execute `database_creation.py` for initial database configuration.
-
 ## How to Run the Code
-
-- Ensure `sql_connection.py` (which provides the `sql_connector()` function for database connectivity) resides in the same directory as `database_creation.py`.
-- Before invoking the main scraper, locally run `database_creation.py` for proper database initialization.
-- Remember: The ChatGPT API isn't free. The provided API KEY in the constants file might not be universally functional. Users need to procure their own unique key.
+- Before running the main scraper, locally run `database_creation.py` to initialize the database.
+- Ensure you have the MySQL connector for Python installed.
+- Modify the connection parameters in `sql_connector()` (located in `sql_connection.py`) to mirror your MySQL configuration.
+- Check that `sql_connection.py` (which provides the `sql_connector()` function for database connectivity) resides in the same directory as `database_creation.py`.
+- Remember: The ChatGPT API is a paid service. The provided API KEY in the constants file is not be universally functional. 
 
 ---
 
-Good Luck with your culinary data adventures! 🥘
