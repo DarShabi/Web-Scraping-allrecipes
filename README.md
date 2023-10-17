@@ -56,7 +56,7 @@ Our scraper offers a suite of CLI arguments to customize the data extraction pro
 3. Modify the connection parameters in `sql_connector()` (located in `sql_connection.py`) to mirror your MySQL configuration.
 4. Execute `database_creation.py` for initial database configuration.
 
-## 🚀 How to Run the Code
+## How to Run the Code
 
 - Ensure `sql_connection.py` (which provides the `sql_connector()` function for database connectivity) resides in the same directory as `database_creation.py`.
 - Before invoking the main scraper, locally run `database_creation.py` for proper database initialization.
