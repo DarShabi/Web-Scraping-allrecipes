@@ -48,7 +48,8 @@ Our scraper offers a suite of CLI arguments to customize the data extraction pro
 
 ## 🗄 Database Integration
 - **Platform**: MySQL 
-- **Database Model**: The ERD can be viewed [here](https://github.com/DarShabi/Web-Scraping-allrecipes/blob/main/ERD%20Milestone%203.jpg).
+- **Database Model**: The ERD can be viewed below
+![ERD Milestone 3](https://github.com/DarShabi/Web-Scraping-allrecipes/blob/main/ERD%20Milestone%203.jpg)
 
 ## How to Run the Code
 - Before running the main scraper, locally run `database_creation.py` to initialize the database.
