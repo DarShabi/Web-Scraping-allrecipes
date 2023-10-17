@@ -2,14 +2,14 @@
 
 **Developers**: Dar Shabi & Maya Halevy
 
-## 📌 Introduction
+## Introduction
 This project is focused on extracting recipe data from [Allrecipes.com](https://www.allrecipes.com), a popular platform that offers a variety of recipes posted by its users. Our objective is to collect and process this data into a structured format, making it accessible for further analysis and api enrichment.
 
 ## 🛠 Tools & Libraries
 - **Web Scraping Libraries**: Beautiful Soup, Requests, and Regex (Refer to `requirements.txt` for specific versions).
 - **Data Processing**: ChatGPT's API was crucial in standardizing the ingredients table. The raw data often contained a mixture of food items, descriptive terms, units of measurement, and instructions. Our post-processing ensured the data only retained the ingredient name and its corresponding quantity in grams.
 
-## 🌐 Target Website & Data Collection
+## Target Website & Data Collection
 - **Website Index**: [AllRecipes A-Z Index](https://www.allrecipes.com/recipes-a-z-6735880)
     - This is the primary link referenced in our script. It's hard-coded as a constant for easy access.
 
