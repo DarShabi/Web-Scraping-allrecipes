@@ -52,11 +52,9 @@ Our scraper offers a suite of CLI arguments to customize the data extraction pro
 ![ERD Milestone 3](https://github.com/DarShabi/Web-Scraping-allrecipes/blob/main/ERD%20Milestone%203.jpg)
 
 ## How to Run the Code
-- Before running the main scraper, locally run `database_creation.py` to initialize the database.
 - Ensure you have the MySQL connector for Python installed.
 - Modify the connection parameters in `sql_connector()` (located in `sql_connection.py`) to mirror your MySQL configuration.
-- Check that `sql_connection.py` (which provides the `sql_connector()` function for database connectivity) resides in the same directory as `database_creation.py`.
-- Remember: The ChatGPT API is a paid service. The provided API KEY in the constants file is not be universally functional. 
+- Remember: The ChatGPT API is a paid service, you will need to provide your own API KEY when prompted.
 
 ---
 
